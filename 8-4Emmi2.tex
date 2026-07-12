@@ -1,0 +1,238 @@
+\chapter{Enveloping Mobius}
+
+\lettrine{E}{mily}, Amalie's younger sister arrived at Amalie's office unannounced -as was her way-fresh from a breakup with an Emminem type. 
+
+\begin{minipage}[t]{\textwidth}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\linewidth]{Illustrations/vign-Emmi.png}
+\caption{Emily once a brilliant student until hidden figures caught her attention}
+\end{figure}
+Both shared prodigious talents and often playfully challenged their uncle's upstart guests
+in parlor games during family gatherings.
+\end{minipage}
+
+\newpage
+But it was Amalie who saw beyond the mathematical frippery of their parlour game exploits.
+\noindent
+A tyical discussion between Amalie and her younger sister would go as follows:
+
+\noindent
+"I’m feeling lucky, Amalie. I’m thinking of buying a lottery ticket for Saturday. Maybe my luck is about to change!"
+
+\noindent
+"Emily, let me put this in perspective for you. If you’re going to buy a ticket, at least wait until Friday at precisely 5:43:21 PM."
+
+\noindent
+"Why so exact? Does luck improve as the week goes on?"
+
+\noindent
+"No. It’s about weighing up risks. The earlier you buy your ticket, the longer you’re exposed to possibility of an accidents or other unforeseen events that could prevent you from claiming your jackpot."
+
+\noindent
+{Emily indignant:} "Oh, come on, that’s dramatic. How bad could it be?"
+
+\noindent
+{Amalie:} "Well, let’s break it down:
+\begin{itemize}
+    \item Odds of winning the UK National Lottery jackpot are 1 in 45,057,474.
+    \item Based on UK life mortality tables, your odds of being in a fatal car crash over the next 48 hours are about 1 in 20,000,000.
+    \item Odds of being murdered over the same period are about 1 in 50,000,000.
+\end{itemize}
+Combining these, your chances of being incapacitated in some way before claiming your prize are slightly higher than winning the jackpot itself. If you buy your ticket on Friday evening, you minimize this window of exposure."
+
+\noindent
+{Emily:pretyy gnarked by now, spits} "So basically, I should avoid dreaming too early or risk becoming a cautionary tale?"
+
+\noindent
+{Amalie as always missing her younger sisters tone:} "Exactly. It’s about how absurdly small your chances are of winning, not how likely you are to meet with disaster. But hey, if you still want to try your luck, keep it to Friday at 5:43:21 PM\footnote{Based on typical UK work schedules and the timing of accidents:
+\begin{itemize}
+    \item Friday evening is optimal for minimizing exposure to risks while still allowing time to purchase the ticket.
+    \item 5:43:21 PM is chosen to provide a narrow window before the majority of lottery purchases are made, reducing crowd interactions.
+\end{itemize}}."
+
+\noindent
+{Emily saying literally how she feels but not with the contempt it shoud be delivered:} "You’re so annoyingly rational, Amalie. Can’t you just let me dream in peace?"
+
+\noindent
+{Amalie unhelpfully self-satisfied:} "Sure, dream away. Just keep one foot on the ground while you’re at it."
+
+\subsection*{The Probabilistic Nature of Primes}
+
+\lettrine{E}{mily} leaned over her cup of tea, watching her younger sister Amalie idly doom scroll through her phone. "You know," Emily began, her voice tinged with that usual mix of encouragement and slight condescension, "if you ever wanted to apply yourself, you could do something meaningful with your talents."
+
+Amalie raised an eyebrow. "Is that right," she said, "the money preservation business seems quite worthy"- but piqued enough she set her phone down and looked her in the eye, snidely - which she trusted looked just enough like calmly.
+
+
+Emily wasted no time diving in. "Why not think about primes probabilistically like you do in your working world," she said, gesturing toward her notebook. "Take the Möbius function, \(\mu(n)\). It provides insight into square-free integers. The probability \(P(n)\) that an integer \(n\) has no repeated prime factors—basically, is square-free—is derived from the product of probabilities for each prime up to the largest prime factor of \(n\):"
+\[
+P(n) = \prod_{p \leq r} \left(1 - \frac{1}{p^2}\right),
+\]
+where \(r\) is the largest prime factor of \(n\). She scribbled an example:
+\[
+n = 462 = 2^1 \times 3^1 \times 7^1 \times 11^1.
+\]
+"Let say we didn't have a means to determine whether or not 462 had a square free prime factorization. The probability \(462\) is square-free is given by excluding all the chances of it being a multiple of \(2^2\), \(3^2\), \(7^2\), and \(11^2\), so we get:"
+\[
+P(462) = \prod_{p \leq 11} \left(1 - \frac{1}{p^2}\right) \approx 0.6223.
+\]
+
+\subsection*{Square Root Law and the Möbius Sum}
+
+Emily leaned forward. "Now, let’s talk about the cumulative sum of the Möbius function, \(M(N) = \sum_{n=1}^N \mu(n)\). Here’s where it might get interesting for you. The sum doesn’t grow linearly with \(N\); instead, it’s bounded by a square root law:"
+\[
+\left| M(N) \right| \leq C \sqrt{N}.
+\]
+"For example, for \(N = 1000\), \(M(1000)\) would satisfy:"
+\[
+\left| M(1000) \right| \leq C \cdot 31.62.
+\]
+
+Amalie tapped her fingers on the table, waiting for more.
+
+Emily continued opening up her laptop as she see has reeled her in, "The ‘square root law’ is as you know a fundamental concept in time-series risk models, where variations in cumulative risk are bounded in a similar way. It’s essentially the envelope of expected behavior for \(M(N)\), as seen in this graph."
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Illustrations/envelopeMobiusCumulativeM(N)_10000std.png}
+    \caption{Cumulative Möbius Function, \(M(N)\), with Standard Deviation Envelopes}
+    \label{fig:cumMob}
+\end{figure}
+
+"The Möbius function is about more than just probabilities," Emily added, her voice taking on a philosophical tone. "It’s a measure of how we can see the underlying randomness and order in the primes. For instance, \(\mu(n)\) being zero tells us \(n\) isn’t square-free, while \(\mu(n) = \pm 1\) gives us the parity of its prime factorization."
+
+She jotted down some quick results:
+\begin{itemize}
+    \item The probability of \(\mu(n) = 0\): \(p_0 = 1 - \frac{6}{\pi^2}\).
+    \item The probability of \(\mu(n) = \pm 1\): \(p_1 = \frac{3}{\pi^2}\).
+    \item Variance of \(\mu(n)\): \(\sigma^2 = \frac{6}{\pi^2}, \quad \sigma = \frac{\sqrt{6}}{\pi}\).
+\end{itemize}
+
+\subsection*{Wandering Within the Envelope}
+
+Amalie gestured to the graph. "See how \(M(N)\) oscillates within the envelope defined by the square root law? That wandering reflects the tension between randomness and structure in the primes. Beyond it lies the realm of speculation—could these oscillations encode deeper truths about the zeta function or the primes?"
+
+Emily stared at the graph, then back at her sister. "So what you’re saying," she began slowly, "is that Möbius is a kind of wandering sage, staying within the boundaries of wisdom but sometimes coming dangerously close to chaos?"
+
+Amalie blinked, then laughed. "That’s... surprisingly poetic. Yes, something like that. Now, are you going to let me finish my tea in peace?"
+
+Emily smiled, finally taking her own sip. "Not a chance."
+\newpage
+\section*{The Weight of Composure}
+
+Amalie sat at her desk, staring blankly at the numbers flickering on her screen. The cold, indifferent digits that had once been her allies now spelled her doom. She had always prided herself on prudence, on rationality, on never overextending. 
+
+And yet, here she was with a second mortgage— having taken a
+\textit{miscalculated risk}. The Invariant Arbitrage investment had meant to secure her position, to hedge her lif against its own stagnation. Worse than the money though, worse than the shame of it, was the knowledge that Emily—her younger, ever-competitive sister—most likely knew. 
+
+\smallskip
+
+Emily hadn’t said anything yet. No knowing remarks, no sharp quips, no smug glances. Just silence. A silence Amalie knew all too well. A silence pregnant with potential. She could pretend everything was fine. Could act as if this were nothing more than a mild inconvenience. But for real, how long could she keep up the charade? 
+
+\smallskip
+
+Emily, with her BlackRock salary and her cool frivolous detachment, was in a position to help—if she \textit{chose} to. But asking her would be an admission of failure. And their father? No. That would be the ultimate disgrace. To go to him, after years of touting her financial discipline, her independence, her superior judgment — to kneel before him now and admit she had gambled and lost?
+
+\smallskip
+
+She picked at the skin around her nails beneath the desk. No, she would find another way. Amalie would say nothing, for now. Amalie would pretend. But the weight of her silence, the unbearable tension of pretending all was well in front of her little sister, was more suffocating than the financial ruin itself.
+% \section*{The Silence Emmi Chooses}
+
+\section*{The Weight of the Call}
+
+Meanwhile, Emily stands in her kitchen, staring at her phone, fingers hovering above Amalie’s contact. She hasn’t pressed call yet.  She doesn’t even know which version of the truth she would tell.  
+
+\textit{Feign ignorance? Claim she knew but had no choice? Frame it as Chris grasping at straws?}  
+
+None of them sit well. None of them feel safe.  The irony of it all is unbearable. Amalie—calculated, measured, annoyingly impervious to panic—had spent years lecturing her on risk, on hedging, on never letting emotions distort probability. And now here Emily was, trying to do the very thing Amalie always accused her of failing at: managing damage.  Except this wasn’t a game.  This was more than getting one up on her older sister. This was \textit{too much.}  
+
+\smallskip
+
+If she pretends she didn’t know, it might work for a while. Amalie might buy it, at least in the short term—she was never one for emotional suspicion. But eventually, it would unravel. 
+
+\smallskip
+
+Chris though would talk.  
+
+Not immediately, not angrily. But at some point, in some conversation, with the wrong person, he’d let slip that Emmi had known. Or worse—\textit{the circle} would know, and even if they weren’t the gossiping type, they would hold it against her in quiet, lethal ways.  Could she claim she was sworn to secrecy?  That had more merit, but it wouldn’t absolve her. Amalie was ruthless when it came to principle, and she would sniff out hesitation like blood in the water. If Emmily claimed \textit{fiduciary duty} (whatver that even means), that would be technically defensible—she had a legal obligation to her clients first.  
+
+\smallskip
+
+\textit{But not warning your own sister?}  
+
+Would Amalie care about the distinction? Would anyone?  Amalie knows there are \textit{other} investors from the Circle in the fund, though Chris never named them outright. But the very nature of the circle means that that knowledge will only trickle slowly — no one wants to admit to being burned.  
+
+\smallskip
+
+Will they talk?  Probably not publicly.  
+
+\smallskip
+
+But in hushed conversations, in measured words over coffee, in the unspoken exchanges between people too proud to admit they’d been taken for fools—yes. They would know.  They would keep the shame contained, but they would remember.  
+
+If Eleanor isn’t already aware that some of her circle were invested, she will be soon enough. And when that happens, Emmily’s silence will be even more damning.  
+
+\smallskip
+
+Her finger finally drifts away from the phone screen. No call. No explanation.  Silence is her choice.  Not because she fears the fallout—she’s already secured herself. Her job remains intact, her standing enriched by her disloyalty. It is Amalie who will have to navigate the wreckage, playing the composed, rational investor, pretending she has control even as the walls close in.  
+
+Emmily had spent years resenting her sister’s detached superiority, the way Amalie dismissed her as emotionally erratic, too impressionable, too caught up in the \textit{soft} aspects of finance.  Now Amalie would have to play a game Emmily understood better than she ever had — the slow, painful dance of deception.  
+
+And Emmily would have to watch.  
+
+Would Amalie sense it? Would she realize, deep down, that her younger sister had known and had chosen not to warn her? That every word of reassurance Emily now spun, every carefully crafted excuse, would only deepen her quiet advantage?  
+
+It was a petty, pyrrhic victory.  But some part of her enjoyed it. 
+
+\section*{Emily and the Weight of Silence}
+
+\lettrine{E}{mily} sat in her dimly lit apartment, her fingers pressed against her temples, the weight of her silence weighing on her chest. Sartre's quote surfaced unbidden in her mind, a sharp indictment of her complicity:
+
+\begin{displayquote}
+    \textit{“I am alone with my decisions in the universe.”} \\
+    —Jean-Paul Sartre
+\end{displayquote}
+
+She had chosen to say nothing. She had watched Chris stumble, his fund unravel, knowing full well what was coming. She had chosen, out of prudence—or cowardice—not to warn her sister. And now, the quiet had become deafening.
+
+\textit{Was it obligation? A professional duty to her firm that tied her tongue?} 
+
+It was a comforting fiction, but she knew better. The truth was simpler and uglier: it was self-preservation. If she had warned Amalie, she might have been forced to act. To intervene. To take a side. And now, in her inaction, she had chosen the side that left her sister exposed. 
+
+She reached for her glass of wine, swirling the liquid absentmindedly. How ironic. Amalie, the rationalist, the one who built her life around calculated risks and cold analysis, had been blindsided. And she, the younger sister, the one forever in Amalie’s shadow, had held the knowledge that could have changed everything. 
+
+\textit{Could she still pretend she hadn't known? That she was just as shocked as everyone else?} 
+
+No. Amalie would see through it eventually. And that moment—when it came—would be the worst of all.
+
+
+\subsection*{Eleanor and Amalie}
+Eleanor leans back in her chair, studying Amalie over the rim of her coffee cup. The café is quiet, the air thick with the kind of silence that invites confession—or entrapment. 
+
+\textit{"So, Amalie, what do you make of the investors circling us?"} Eleanor asks, seemingly casual, but Amalie knows better. Eleanor never wastes words. 
+
+Amalie swirls the last remnants of her espresso, eyes fixed on the liquid’s slow spiral. 
+
+\textit{"Which ones specifically?"} She asks, stalling.
+
+\textit{"The ones with real money,"} Eleanor replies, arching an eyebrow. "The ones that want something in return. IP protections, conditions—more structure than we’d like." 
+
+Amalie forces a measured nod. She needs this investment more than she wants to admit. If the money is solid, if the funding is sufficient, it could relieve her of the impossible burden she’s carrying. The second mortgage, the quiet fear that Emmi sees too much, the slow realization that she’s playing a role she no longer believes in. 
+
+\textit{"It’s a matter of trade-offs, isn’t it?"} Amalie says, choosing her words carefully. "If we accept conditional funding, it guarantees stability, but at what cost? Losing some of our autonomy? Letting someone else dictate where our research goes?" 
+
+Eleanor nods, but her gaze sharpens. \textit{"I sense hesitation, Amalie. This isn’t just an academic argument to you."} 
+
+A pause. Amalie swallows. She cannot afford for Eleanor to suspect too much. The last thing she needs is scrutiny, the kind that might connect too many dots. 
+
+\textit{"I just think we should know exactly what we’re getting into before we sign anything,"} Amalie says smoothly. "Some of these investors will be looking for an exit strategy before we’ve even published. Others might push us into areas we never wanted to explore. It’s about maintaining leverage." 
+
+Eleanor studies her, then exhales. \textit{"That’s exactly what I wanted to hear. You see, Amalie, I have my concerns too. I need people in the circle who can see beyond the mathematics, beyond the equations. Who understand the nature of power, of influence."} 
+
+Amalie’s stomach knots. Influence. Power. Control. That is exactly what she is trying to regain in her own life. And yet, she nods. Smiles. Plays the role. 
+
+\textit{"Of course,"} she says. "We have to be careful. Always."
+
+And for now, Eleanor believes her. 
+
+But how long until she doesn’t?

@@ -1,0 +1,259 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage[french]{babel}
+\usepackage[osf]{Alegreya,AlegreyaSans}
+\usepackage{graphicx}
+\usepackage[labelformat=empty,textfont={it}]{caption}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{arrows.meta}
+\usepackage{wrapfig}
+\usepackage{fnpct}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{array} % For better array handling
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz-cd}
+\usepackage{quoting}
+\usepackage[most]{tcolorbox} % in preamble
+\usepackage[justification=centering]{caption}
+\usepackage{fourier-orns}
+
+% %%willard Jovannah colours
+% \tcbset{
+% dialogue/.style={
+% colback=gray!5,
+% colframe=gray!40,
+% arc=3pt,
+% boxrule=0.5pt,
+% left=6pt,
+% right=6pt,
+% top=4pt,
+% bottom=4pt
+% },
+% willard/.style={
+% dialogue,
+% colback=blue!3,
+% colframe=blue!40
+% },
+% jovannah/.style={
+% dialogue,
+% colback=red!3,
+% colframe=red!40
+% }
+% }
+
+\definecolor{dim}{HTML}{5a5650}
+
+
+\newcommand{\El}[1]{\par\smallskip\noindent\textsc{Eleanor.}\quad #1}
+\newcommand{\Er}[1]{\par\smallskip\noindent\textsc{Ernest.}\quad #1}
+
+\definecolor{gold}{HTML}{8a6f1f}
+\definecolor{goldlt}{HTML}{e6c97a}
+\definecolor{midgrey}{HTML}{5a5a5a}
+\definecolor{forward}{HTML}{3d5a7a}
+\definecolor{joinclr}{HTML}{8a6f1f}
+\definecolor{backward}{HTML}{7a3d5a}
+\definecolor{boxbg}{HTML}{f7f3e8}
+
+% \usepackage{hyperref}
+\usepackage{csquotes} % Required for proper quotation formatting
+% \usepackage[colorlinks=true, linkcolor=blue, urlcolor=red, citecolor=green]{hyperref}
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    backgroundcolor=\color{lightgray!20},
+    keywordstyle=\bfseries,
+    frame=single
+}
+
+\lstset{
+  basicstyle=\footnotesize\ttfamily, % Change \footnotesize to \tiny for smaller font
+  frame=single,                     % Optional: Add a frame around the code
+  breaklines=true                   % Enable line breaking
+}
+
+\usetikzlibrary{fadings,shapes.arrows} % Include required libraries
+
+
+
+\usepackage[english]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-sa},
+    version={4.0},
+]{doclicense}
+% \usepackage[
+%     type={CC},
+%     modifier={by-sa},
+%     version={4.0},
+% ]{doclicense}
+\usepackage{amsmath} 
+
+% PACKAGE DEFINITION
+% typographical packages
+\usepackage{microtype} % for micro-typographical adjustments
+\usepackage{setspace} % for line spacing
+\usepackage{lettrine} % for drop caps and awesome chapter beginnings
+\usepackage{titlesec} % for manipulation of chapter titles
+\usepackage{enumitem}
+% for placeholder text
+\usepackage{lipsum} % to generate Lorem Ipsum
+
+% other
+\usepackage{calc}
+\usepackage{hologo}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{wrapfig}
+\usepackage{graphicx} % already needed for images
+
+% \usepackage[hidelinks]{hyperref}
+% \usepackage[utf8]{inputenc}
+% \usepackage{tikz}
+% \usetikzlibrary{quantikz}
+%\usepackage{showframe}
+%footnote numbering
+% \usepackage{chngcntr}
+\usepackage{geometry}
+% \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+%% \usepackage[margin=1.8cm]{geometry}
+% \usepackage{lmodern}
+% %\usepackage{xcolor}
+% \usepackage{tcolorbox}
+\usepackage{dialogue}
+\usepackage{calligra}
+\usepackage[T1]{fontenc}
+\usepackage{courier}
+\usepackage{fancyhdr}
+\geometry{margin=1in}
+\pagestyle{empty}
+\counterwithout*{footnote}{chapter}
+
+% PHYSICAL DOCUMENT SETUP
+% media settings
+%\setstocksize{210mm}{148mm}
+%\settrimmedsize{210mm}{148mm}{*}
+%\setbinding{8mm}
+%\setlrmarginsandblock{15mm}{2.1cm}{*}
+%\setulmarginsandblock{15mm}{2.1cm}{*}
+\semiisopage[12]
+% custom second title page
+\makeatletter
+\newcommand*\halftitlepage{\begingroup % Misericords, T&H p 153
+  \setlength\drop{0.1\textheight}
+  \begin{center}
+  \vspace*{\drop}
+  \rule{\textwidth}{0in}\par
+  {\Large\textsc\thetitle\par}
+  \rule{\textwidth}{0in}\par
+  \vfill
+  \end{center}
+\endgroup}
+\makeatother
+
+% custom title page
+\thispagestyle{empty}
+\makeatletter
+\newlength\drop
+\newcommand*\titleM{\begingroup % Misericords, T&H p 153
+  \setlength\drop{0.15\textheight}
+  \begin{center}
+  \vspace*{\drop}
+  \rule{\textwidth}{0in}\par
+  {\HUGE\textsc\thetitle\par}
+  \rule{\textwidth}{0in}\par
+  {\Large\textit\theauthor\par}
+  \vfill
+  {\Large\scshape\press}
+  \end{center}
+\endgroup}
+\makeatother
+
+% chapter title manipulation
+% padding with zero
+%\renewcommand*\thechapter{\ifnum\value{chapter}<10 0\fi\arabic{chapter}}
+% chapter title display
+\titleformat
+{\chapter}
+[display]
+{\normalfont\scshape\huge}
+{\HUGE\thechapter\centering}
+{0pt}
+{\vspace{5pt}\centering}[\vspace{25pt}]
+
+% typographical settings for the body text
+\setlength{\parskip}{0em}
+\linespread{1.09}
+
+% \newcommand{\thetitle}{Threadbare}
+% HEADER AND FOOTER MANIPULATION
+  % for normal pages
+  \nouppercaseheads
+  \headsep = 0.22in
+  \makepagestyle{mystyle} 
+  \setlength{\headwidth}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}
+  \makerunningwidth{mystyle}{\headwidth}
+  \makeevenhead{mystyle}{}{\textsf{\scriptsize\scshape\thetitle}}{}
+  \makeoddhead{mystyle}{}{\textsf{\scriptsize\scshape\leftmark}}{}
+  \makeevenfoot{mystyle}{}{\textsf{\scriptsize\thepage}}{}
+  \makeoddfoot{mystyle}{}{\textsf{\scriptsize\thepage}}{}
+  \makeatletter
+  \makepsmarks{mystyle}{%
+  \createmark{chapter}{left}{nonumber}{}{}}
+  \makeatother
+  % for pages where chapters begin
+  \makepagestyle{plain}
+  \makerunningwidth{plain}{\headwidth}
+  \makeevenfoot{plain}{}{}{}
+  \makeoddfoot{plain}{}{}{}
+  \pagestyle{mystyle}
+% END HEADER AND FOOTER MANIPULATION
+
+% table of contents customisation
+\renewcommand\contentsname{\normalfont\scshape Contents}
+\renewcommand\cftchapterfont{\normalfont}
+\renewcommand{\cftchapterpagefont}{\normalfont}
+\renewcommand{\printtoctitle}{\centering\Huge}
+
+
+% \newenvironment{dialogue}[1]{%
+%   \begin{mdframed}[
+%     backgroundcolor=quoteblock,
+%     linecolor=accent,
+%     linewidth=1pt,
+%     leftmargin=0pt,
+%     rightmargin=0pt,
+%     innerleftmargin=14pt,
+%     innerrightmargin=14pt,
+%     innertopmargin=10pt,
+%     innerbottommargin=10pt,
+%     roundcorner=4pt
+%   ]
+%   \textbf{\color{deep}#1}\par\smallskip
+% }{%
+%   \end{mdframed}
+% }
+ 
+\newcommand{\E}{\textbf{\color{accent}Eleanor:}\;}
+\usepackage{mdframed} 
+\definecolor{accent}{HTML}{007ACC}
+\definecolor{quoteblock}{HTML}{f5f5f5}
+
+
+
+% layout check and fix
+\checkandfixthelayout
+\fixpdflayout
+
+%\setsecnumdepth{none}
+%\maxsecnumdepth{none}

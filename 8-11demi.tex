@@ -1,0 +1,477 @@
+\chapter{Demi Moorish's Prime Cuboids}
+
+\vspace{-\baselineskip}
+
+\thispagestyle{empty} % Remove page number
+
+\lettrine{D}{emi} Moorish was a mathematician, known as much for intolerance of twits as her insights into semi-primes and radical cuboids formed by the product of three distinct primes.
+\begin{center}
+    \noindent\begin{minipage}{0.8\textwidth}
+        \centering
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.9\linewidth]{Illustrations/vign-DemiOffice.png}
+            \caption{Demi not so shorn}
+        \end{figure}
+    \end{minipage}
+\end{center}
+
+She had coined the term \emph{puboid numbers} in a whimsical nod to her past—a short-lived fling with a GI Joe who, she felt, resembled a geometric solid in both structure . Demi had found deep connections between puboid numbers, the Bell numbers, and the structure of the Fibonacci sequence, which she was convinced encoded hidden symmetries. 
+
+\subsection*{Puboid Numbers: Prime Cuboids in Number Theory}
+
+A puboid number is defined as the product of three distinct primes:
+\[
+P = p_1 \cdot p_2 \cdot p_3,
+\]
+where \(p_1, p_2, p_3\) are distinct primes. Demi imagined these numbers as directed parallelepipeds in number-theoretic space, where each prime represented a dimension.
+\begin{figure}[H]
+\includegraphics[width=1.0\linewidth]{Illustrations/demiNumbers.png}
+\caption{Demi's colored puboids}
+\end{figure}
+The factors \(p_1, p_2, p_3\) formed the edges of a cuboid, and their product, \(N\), represented the "volume." For example:
+\[
+p_1 = 2, \quad p_2 = 3, \quad p_3 = 5 \implies P = 2 \cdot 3 \cdot 5 = 30.
+\]
+Demi was fascinated by the ways a puboid could be "partitioned" into smaller regions, akin to breaking down a number into its prime factors or decomposing a geometric solid. To quantify these partitions, she turned to the Bell numbers, which count the number of ways to partition a set. The Bell numbers, denoted \(B_n\), count the number of ways to partition a set of \(n\) elements. Demi applied this idea to puboid numbers, where the partitions corresponded to ways of factoring the cuboid into smaller, meaningful components. The Bell numbers can be constructed from the Bell Triangle, which, like Pascal’s Triangle, grows recursively. Starting with 1:
+\[
+\begin{array}{c|cccc}
+1 & 1 \\
+2 & 1 & 2 \\
+3 & 2 & 3 & 5 \\
+4 & 5 & 7 & 10 & 15 \\
+\end{array}
+\]
+Each entry is the sum of the previous entry in the row and the one directly above it. The Bell numbers describe the number of distinct factorizations of puboid numbers, with the triangle encoding the structure of their partitions. For instance, \(B_3 = 5\) corresponds to the ways the puboid formed by \(p_1, p_2, p_3\) could be "partitioned" geometrically or algebraically.
+
+\section*{Zoom Call: Demi Moorish and Felicite Spearman}
+
+The screen flickered to life, with Demi’s excited face greeting Felicite’s calm, analytical demeanor.
+
+\textbf{Demi:} "Felicite, I’ve been diving into Bell numbers again, but this time with a twist. I’m thinking about their relationship to composite numbers—specifically, square-free composites with distinct prime factorizations. You know, the ones where the Möbius function doesn’t vanish."
+
+\textbf{Felicite:} "Interesting. So you’re looking at numbers like \( n = pqr \), where \( p, q, r \) are distinct primes?"
+
+\textbf{Demi:} "Exactly. For instance, take \( n = 42 \), which factors as \( 42 = 2 \cdot 3 \cdot 7 \). The Bell number \( B_3 = 5 \) perfectly describes the number of distinct partitions of these factors. Let me show you."
+
+She shared her screen and scribbled the following equations:
+\[
+\text{Partitions of } \{2, 3, 7\}: 
+\]
+\begin{align*}   
+\{\{2, 3, 7\}\}, &\quad \{\{2\}, \{3, 7\}\}, \quad \{\{3\}, \{2, 7\}\},\\ \{\{7\}, \{2, 3\}\}, &\quad \{\{2\}, \{3\}, \{7\}\}.
+\end{align*}
+
+\textbf{Demi:} "These partitions correspond to the five ways \( 42 \) can be grouped geometrically or algebraically based on its prime factors."
+
+\textbf{Felicite:} "But that’s only possible because \( 42 \) is square-free, right? If \( n \) weren’t square-free, you’d have repeated factors, complicating the partitions."
+
+\textbf{Demi:} "Exactly. The radical of \( 42 \) is:
+\[
+\mathrm{rad}(42) = 2 \cdot 3 \cdot 7 = 42,
+\]
+and since it’s square-free, \(\mu(42) = (-1)^3 = -1\), confirming it’s eligible for this interpretation."
+
+\textbf{Felicite:} "It’s beautiful how the Möbius function interweaves with these ideas. But what about larger numbers? Do the Bell numbers always capture these partitions?"
+
+\textbf{Demi:} "Yes, for square-free numbers with \( k \) distinct prime factors, the Bell number \( B_k \) describes the number of ways to partition those factors. Think about \( B_4 = 15 \): it’s the number of ways to partition four primes \( p_1, p_2, p_3, p_4 \)."
+
+Felicite’s face lit up. "It reminds me of something else. Have you considered how this ties to geometry? For instance, could the Bell numbers reflect not just algebraic partitions but also geometric ones? Like the ways to 'slice' a cuboid formed by \( p_1, p_2, p_3 \)?"
+
+\textbf{Demi:} "Exactly! That’s where the real fun begins. For \( 42 = 2 \cdot 3 \cdot 7 \), the cuboid could represent the puboid formed by those dimensions, and the partitions correspond to distinct ways to divide or factorize it geometrically."
+
+\textbf{Felicite:} "This reminds me of something I’ve been working on. If we treat the composites between two primes as a kind of 'string' and score them on different measures—Möbius function, Euler’s totient, abundance, etc.—we could then calculate concordance scores like Spearman rank or Kendall tau."
+
+\textbf{Demi:} "So you’re saying we could explore whether these partitions or scores have some underlying rank-based correlation?"
+
+\textbf{Felicite:} "Exactly. And who knows—maybe this could reveal new patterns in how composites 'fill the gaps' between primes."
+
+\textbf{Demi:} "I love it. Between your rank coefficients and my Bell number partitions, I think we’ve got a lot to work on when I visit next month."
+
+
+\newpage
+
+\section*{Modulo 4 Classification of Puboids}
+The modulo 4 behavior and sum-of-squares representation of $ P $ depend on the composition of its prime factors,
+
+\begin{equation*}
+P=(4a+x)(4b+y)(4c+z) \equiv xyz \pmod{4}.
+\end{equation*}
+and is elaborated in the flowchart classification of \textbf{Puboids}, defined as composite numbers of the form:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{Illustrations/puboidWeb.png}
+\caption{Flowchart representation of Puboid classification}
+\end{figure}
+
+\begin{itemize}
+\item $ 4n+1 $ primes, denoted as $ p_1, q_1, r_1 $ (e.g., 5, 13, 17).
+\item $ 4n+3 $ primes, denoted as $ p_3, q_3, r_3 $ (e.g., 3, 7, 11).
+\item The prime $2$, which does not fit the $4n+1$ or $4n+3$ classification.
+\end{itemize}
+
+We can summarise this chart as follows:
+\begin{itemize}
+\item If $ P $ \textbf{does not contain} $ 2 $, it falls into the standard $ 4n+1 / 4n+3 $ classification.
+\item If $ P $ \textbf{includes} $ 2 $, it immediately forces $ P \equiv 2 \pmod{4} $, and its sum-of-squares properties depend on number of $ 4n+3 $ factors.
+\end{itemize}
+
+% For cases where $ P $ does not include $ 2 $, we classify as follows:
+% \begin{itemize}
+% \item If all three primes are of the form $ 4n+1 $, then $ P \equiv 1 \pmod{4} $ and can be expressed as a sum of two squares.
+% \item If exactly one prime is $ 4n+3 $, then $ P \equiv 3 \pmod{4} $ and \textbf{cannot} be written as a sum of two squares.
+% \item If exactly two primes are $ 4n+3 $, then $ P \equiv 1 \pmod{4} $ and can be expressed as a sum of two squares.
+% \item If all three primes are $ 4n+3 $, then $ P \equiv 3 \pmod{4} $ and \textbf{cannot} be written as a sum of two squares.
+% \end{itemize}
+
+% If $ P $ includes $ 2 $, the classification deviates:
+% \begin{itemize}
+% \item The presence of $ 2 $ ensures that $ P \equiv 2 \pmod{4} $.
+% \item Whether $ P $ can be written as a sum of squares depends on the number of $ 4n+3 $ primes present: if even, then $ P $ can be written as a sum of two squares if odd, then not.
+% \end{itemize}
+
+Consider the Puboid, \( P = 2 \times 3 \times 163 = 978 \equiv 2 \pmod{4}.\) Since $ 2 \equiv 2 \pmod{4} $, $ 3 \equiv 3 \pmod{4} $, and $ 163 \equiv 3 \pmod{4} $, the inclusion of $ 2 $ disrupts the standard $ 4n+1 / 4n+3 $ classification. The presence of an even number of $ 4n+3 $ primes ($ 3, 163 $) precludes any sum-of-squares representation.
+
+\bigskip
+
+Puboids modular composition influences their resistance to algebraic attacks and determines their behavior in the Gaussian integer domain $ \mathbb{Z}[i] $. Puboids composed entirely of $ 4n+1 $ primes ($ P_{111} $) are the most vulnerable, as they factor easily in $ \mathbb{Z}[i] $ and admit a sum-of-squares representation. In contrast, mixed Puboids ($ P_{113} $ and $ P_{133} $), which contain at least one $ 4n+3 $ prime, disrupt sum-of-squares representations and partially obstruct factorization within $ \mathbb{Z}[i] $. The most secure structure is $ P_{333} $, where all prime factors are $ 4n+3 $. These remain fully irreducible in $ \mathbb{Z}[i] $, resisting sum-of-squares-based attacks and maintaining RSA-like factorization hardness.
+
+If we look at the log-log plot of surface area to volume ratio versus volume $ P = pqr $ we see the distinct clustering based on modular classification.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{Illustrations/puboidClassify10000.png}
+\caption{ \href{https://colab.research.google.com/drive/1HJIzLBt3DsKKEhKl3wnqFtFXTQeMEUQH?usp=sharing}{Puboids} by evenness or mod 4 class}
+\end{figure}
+
+Puboids formed solely from $ 4n+1 $ primes align separately from those containing one or more $ 4n+3 $ primes. 
+
+\newpage
+
+\lettrine{F}{elicite} leans forward, tapping her fingers against the table. "So, Demi, you keep emphasizing the modular behavior of puboids, but I need clarity on something—if a puboid contains the prime 2, doesn’t that change everything?"
+
+\bigskip
+
+{Demi} nods, adjusting her glasses. "Absolutely. The presence of 2 fundamentally alters the classification. First, it forces the puboid to be even, immediately giving away one of its factors, making it easier to break down."
+
+\bigskip
+
+{Felicite} furrows her brow. "Because we can always factor out the 2, right? That means instead of dealing with three unknown prime factors, we only need to factorize what’s left."
+
+\bigskip
+
+{Demi} gestures towards the board, where a set of equations is already forming. "Exactly. And beyond that, in the Gaussian integers, 2 splits as $(1+i)(1-i)$. This gives factorization methods an extra handle that they wouldn’t have if the puboid were purely odd."
+
+\bigskip
+
+{Felicite} raises an eyebrow. "So does that mean puboids containing 2 are inherently weaker?"
+
+\bigskip
+
+{Demi} shrugs. "In a sense, yes. They don’t obey the neat $4n+1 / 4n+3$ modular classification anymore. Instead, they always satisfy $P \equiv 2 \pmod{4}$, meaning the usual sum-of-squares logic no longer applies."
+
+\bigskip
+
+{Felicite} tilts her head. "And in cryptography, wouldn’t this be a red flag? If an attacker spots an even modulus, half the work is done."
+
+\bigskip
+
+Demi crosses her arms, nodding. "Precisely. That’s why even moduli are generally avoided in encryption. The presence of 2 in a puboid isn’t just a small detail—it’s a major structural weakness in factorization. Even Puboids are far more approachable from a factorization standpoint."
+
+\bigskip
+
+{Felicite} a small smile forming. "So while $4n+1$ and $4n+3$ patterns determine algebraic factorization behavior, 2 disrupts that structure and makes factorization easier."
+
+% Thus the presence of $ 2 $ imposes an additional structural constraint, altering factorization properties and sum-of-squares representation. This visualization affirming the underlying algebraic structure dictating cryptographic complexity.
+
+\subsection*{Machine Learning Clustering and Cryptographic Implications}
+
+Standard unsupervised clustering methods such as K-Means, DBSCAN, and Agglomerative Clustering fail to recover the modulo 4 classification. K-Means assumes spherical clusters, misallocating structurally distinct puboids. DBSCAN struggles with hierarchical relations, failing to delineate sum-of-squares-compatible sets. Agglomerative clustering, while hierarchical, does not naturally extract modular properties from the numerical data.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Illustrations/multipleScans10000.png}
+\caption{Failed \href{https://colab.research.google.com/drive/1HJIzLBt3DsKKEhKl3wnqFtFXTQeMEUQH?usp=sharing}{Puboid Cluster Analysis}}
+\end{figure}
+
+The inability of these algorithms to discern the algebraic modular structure hints at how factorization-based cryptanalysis relies on numerical heuristics rather than algebraic invariants, reinforcing the robustness of puboid classification in encryption strategies.
+%%%%%%%%%%%
+\lettrine{T}{he} Fibonacci sequence starts with $f_1 = 1, f_2 = 2$, and for all $n > 2$, $f_n = f_{n-1} + f_{n-2}$. The plot below represents the first 10,000,000 integers on a polar coordinate system, in which each point's radial distance from the origin is determined by the natural logarithm of the integer.
+\begin{figure}[H]\centering
+    \centering
+    \begin{subfigure}{1.0\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Illustrations/all-number_fibonacciPolarSpiral-10000000.png}
+        \caption{Prime-Fibonacci Polar \href{https://colab.research.google.com/drive/1bhOUMrdx12FRjdXaT-SHt8U8TkT7HNj1?usp=sharing}{Golden Angle Spiral}}
+        \label{fig:goldenFibPrime}
+    \end{subfigure}
+\end{figure}
+\noindent
+
+The angular position of each integer is incremented by the golden angle, which is defined by the equation \(\frac{a+b}{a} = \frac{a}{b}\), where \(a\) and \(b\) are consecutive terms of the Fibonacci sequence and \(a > b\).
+
+\begin{minipage}{0.5\textwidth}
+ The golden angle, \(\Phi\) is the fractional part of a full circle that is not covered when dividing the circumference into a segment proportional to \(\phi= \frac{1 + \sqrt{5}}{2} \approx 1.618\), the ratio of the length of the larger arc, \(a\) to the length of the smaller arc, \(b\) with the angle subtended by the smaller arc being:
+
+ \(\Phi = 360^\circ\left(1 - \frac{1}{\phi}\right)\approx 137.508^\circ\). 
+\end{minipage}%
+\begin{minipage}{0.50\textwidth}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{Illustrations/arcCircle.png}
+        % \caption{Golden angle}
+        \label{fig:goldenAngle}
+    \end{figure}
+\end{minipage}
+We have thus,
+\begin{align*}
+ \frac{\text{Golden angle}}{360^\circ} &=\left(1 - \frac{2}{1 + \sqrt{5}}\right)=\left(\frac{\sqrt{5} - 1}{\sqrt{5} + 1}\right) \times \left(\frac{\sqrt{5} - 1}{\sqrt{5} - 1}\right)\\
+\frac{\Phi}{2\pi}&=\left(\frac{(\sqrt{5} - 1)^2}{5 - 1}\right)=\left(\frac{5 - 2\sqrt{5} + 1}{4}\right)=\left(\frac{3-\sqrt{5}}{2}\right),\\
+\Phi &=(3-\sqrt{5})\pi\approx 2.39996\ \text{ rad}
+\end{align*}
+Because this angle is an irrational multiple of \(360^\circ\), our sequence fills the circle densely. The points corresponding to the Fibonacci numbers might be expected to eventually distribute across all possible angles but instead asymptotically align along a radial line which appears for these lowly numbers to be circa  \(221^\circ\). 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+Index & Fib. & Angle & Ang \\ \hline
+27 & 514229 & 222.46619 & 21/17$\pi$ \\ 
+28 & 832040 & 222.45079 & 21/17$\pi$ \\ 
+29 & 1346269 & 222.42475 & 21/17$\pi$ \\ 
+30 & 2178309 & 222.38331 & 21/17$\pi$ \\ 
+31 & 3524578 & 222.31582 & 21/17$\pi$ \\ 
+32 & 5702887 & 222.20690 & 21/17$\pi$ \\ 
+33 & 9227465 & 222.03049 & 37/30$\pi$ \\ 
+% 34 & 14930352 & 221.74516 & 16/13$\pi$ \\
+\hline
+\end{tabular}
+\caption{\href{https://colab.research.google.com/drive/1HQ3Xi8BDiK5kH8peRprMypboWtOb1vVn?usp=sharing}{Fibonacci Numbers and Their Angles}}
+\end{table}
+
+
+% Given that golden angle is irrational, this clustering might not be expected to converge to a single angle. Instead, as you plot more and more Fibonacci numbers, you might expect these clusters to spread out and fill the circle more evenly due to the density property of irrational rotations. Not so.
+\newpage
+
+\section*{Pronic Fatigue}
+The \textit{metallic mean}, \(\mathcal{M}\), arises as the positive root of the quadratic equation:
+\begin{align*}
+\mathcal{M}^2 - n\mathcal{M} - 1 &= 0,\\
+\mathcal{M}(n) &= \frac{n + \sqrt{n^2 + 4}}{2}. \label{metallica}
+\end{align*}
+We have \(\mathcal{M}(1)=\Phi\). We can extend the field of this metallic mean formula to complex values of the index \(n\), specifically to those that generate roots of unity. If we ask what complex value of the index \(n = n_k\) satisfies:
+\[
+\mathcal{M}(n_k) = \omega_k = e^{2\pi i/k},
+\]
+then we solve:
+\[
+n + \sqrt{n^2 + 4} = 2\omega_k
+\]
+Isolating and squaring gives:
+\begin{align*}
+n^2 + 4 &= (2\omega_k - n)^2 = 4\omega_k^2 - 4n\omega_k \\
+\Rightarrow 1 &= \omega_k^2 - n\omega_k \\
+\Rightarrow n_k &= \frac{\omega_k^2 - 1}{\omega_k} = \omega_k - \frac{1}{\omega_k} = 2i \sin\left(\frac{2\pi}{k}\right)
+\end{align*}
+
+Thus, the imaginary value \(n_k = 2i \sin\left(\frac{2\pi}{k}\right)\) guarantees that \(\mathcal{M}(n_k)\) lies on the unit circle and coincides with a $k$th root of unity.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$k$ & $\omega_k$ & $n_k = 2i\sin\left(\frac{2\pi}{k}\right)$ \\
+\hline
+3 & $e^{2\pi i/3}$ & $i\sqrt{3}$  \\
+4 & $e^{2\pi i/4}$ & $2i$  \\
+5 & $e^{2\pi i/5}$ & $2i\sin\left(\frac{2\pi}{5}\right)$ \\
+6 & $e^{2\pi i/6}$ & $i\sqrt{3}$  \\
+7 & $e^{2\pi i/7}$ & $2i\sin\left(\frac{2\pi}{7}\right)$ \\
+8 & $e^{2\pi i/8}$ & $2i\sin\left(\frac{2\pi}{8}\right)$  \\
+9 & $e^{2\pi i/9}$ & $2i\sin\left(\frac{2\pi}{9}\right)$ \\
+10 & $e^{2\pi i/10}$ & $2i\sin\left(\frac{2\pi}{10}\right)$  \\
+12 & $e^{2\pi i/12}$ & $i$\\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+\subsection*{Rational Metallic Means and Harmonic Structure}
+Consider again the cyclotomic angles:
+\[
+\theta_k = \frac{2\pi}{k},
+\]
+and their corresponding rational metallic means:
+\[
+\mathcal{M}_k = \frac{k}{k - 1}.
+\]
+We now ask: for what rational index \(n_k\) does this rational metallic mean arise from the standard metallic mean formula? That is,
+\[
+n_k = \mathcal{M_k} - \frac{1}{\mathcal{M_k}},
+\]
+which evaluates to:
+\[
+n_k = \frac{k}{k - 1} - \frac{k - 1}{k} = \frac{2k - 1}{k(k - 1)}.
+\]
+These are rational and their denominators form the set of \emph{oblong numbers}, or pronic integers, given by \(k(k - 1)\). This expression has a geometric interpretation being the \textbf{surface-area-to-volume ratio} for a rectangular object with dimensions \(k\) and \(k - 1\). It can also be written as:
+\[
+n_k = \frac{1}{k} + \frac{1}{k - 1} = \frac{2}{H(k, k - 1)},
+\]
+where \(H(k, k - 1)\) denotes the harmonic mean of \(k\) and \(k - 1\):
+\[
+H(k, k - 1) = \frac{2k(k - 1)}{k + (k - 1)}.
+\]
+
+This links the rational metallic mean directly to the rate of reciprocal combining between \(k\) and \(k - 1\). These values can be visualized as aspect ratios of unit-step growth rectangles, encoded in the pronic structure of their denominators.
+\subsection*{Reciprocals of Oblong Numbers}
+The sum of the reciprocals of the first $n$ oblong numbers (expressed as $k(k-1)$ for $k=2$ to $n+1$) is:
+\[
+\sum_{k=2}^{n+1} \frac{1}{k(k-1)}
+\]
+Using partial fraction decomposition:
+\[
+\frac{1}{k(k-1)} = \frac{1}{k-1} - \frac{1}{k}
+\]
+This gives a telescoping series:
+\[
+\sum_{k=2}^{n+1} \left( \frac{1}{k-1} - \frac{1}{k} \right) = 1 - \frac{1}{n+1}
+\]
+Thus,
+\[
+\sum_{k=2}^{n+1} \frac{1}{k(k-1)} = \frac{n}{n+1}
+\]
+
+This result reflects a harmonic compression ratio: the total sum of reciprocals of oblongs up to index $n$ yields the proportion $\frac{n}{n+1}$ — the \emph{inverse} of the rational metallic mean $\frac{k}{k-1}$. In other words, while the metallic mean expresses a growth ratio of successive integers, this telescoping sum captures the complementary compression ratio, tied to the same pronic structure.
+
+Hence, rational metallic means and oblong reciprocal series are dual views of the same pronic-harmonic framework.
+
+
+%%%%%%%%%%%%%%%%%
+
+\subsection*{Connections to Fibonacci and Complex Matrices}
+
+Demi's curiosity did not stop there. She was intrigued by the Fibonacci sequence, which emerged from determinants of certain complex matrices, and saw a potential link to her puboids.
+
+\paragraph{Fibonacci and Determinants:} Fibonacci numbers can be derived also from the determinant of the Real matrix:
+\[
+A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}.
+\]
+The determinant of \(A^n\) generates Fibonacci numbers recursively, tying them to linear transformations and geometric symmetries.
+
+\paragraph{Puboids as Fibonacci Parallelepipeds:} Demi envisioned puboids as directed parallelepipeds whose structure encoded Fibonacci-like symmetries. If the primes \(p_1, p_2, p_3\) represented dimensions, then their interactions—via Bell numbers or partitions—could mimic the recursive properties of Fibonacci numbers.
+
+
+
+
+\newpage
+\section*{The circle is tightening}
+
+\noindent Demi sat at her table, fingers lightly tapping against her glass of milk. Her gaze flitted to Eleanor, who was engrossed in a book. She took a deep breath, her voice quiet but steady.
+\bigskip
+
+\textit{“Excuse me, Eleanor... Professor Merriweather?”}
+
+\bigskip
+Eleanor turned, a flicker of surprise crossing her face before a warm smile replaced it. \textit{“Yes? Oh, call me Eleanor, please. And you must be Demi Moorish. Willard speaks of you often. Quite highly, I might add.”}
+
+\bigskip
+\begin{wrapfigure}{r}{0.6\textwidth}
+    \vspace{-15pt} % Adjust spacing as needed
+    \centering
+    \includegraphics[width=\linewidth]{Illustrations/vign-demiWave.png}
+    % \caption{Demi sensing a circling python.}
+    \vspace{-10pt} % Adjust spacing as needed
+\end{wrapfigure}
+
+Demi’s cheeks flushed as she fidgeted with her cup. \textit{“That’s kind of him. Though he exaggerates, I’m sure. I... I’ve been hearing about the work of your circle and wondered if... if there might be a way to join in?”}
+\bigskip
+Eleanor set her book down, her smile growing as intrigue lit her eyes. \textit{“Willard? Exaggerate? Never!”} She chuckled softly. \textit{“He told me about your puboids—something about prime products shaping radical cuboids? Honestly, it piqued my curiosity.”}
+\bigskip
+
+Demi’s nervousness began to fade as she brightened. \textit{“Yes, that’s it. Puboids—geometric structures formed by the product of three distinct primes. I think they could bridge number theory with geometry in ways we haven’t explored yet.”}
+\bigskip
+
+Eleanor leaned forward slightly, her tone warm and encouraging. \textit{“I can see why Willard was so excited. You’re playing in the same sandbox as some of our best minds. Have you thought about connecting your work with Leary’s sheaf theory? He’s been diving into twisted bundles lately—fascinating stuff.”}
+
+\bigskip
+
+Demi straightened, her voice growing steadier. \textit{“Actually, yes. I’ve been thinking about how the partitions of a puboid could be seen as sections of a sheaf, with the Bell numbers encoding the twisting. There’s... so much potential there.”}
+
+\bigskip
+
+Eleanor’s eyes lit up with delight. \textit{“You’re already halfway in, Demi. And don’t even get me started on Marjorie’s Pascalian polynomials. She’d be over the moon to hear how your puboids might tie into recursive structures. Bell numbers, Fibonacci... it’s all connected.”}
+
+\bigskip
+
+Demi leaned forward, her confidence blooming. \textit{“I’ve wondered if puboids could even help us understand scaling laws in physics. Their partitions seem to reflect physical symmetries. And the determinants of complex matrices that generate Fibonacci numbers—they might map onto puboid geometry.”}
+
+\bigskip
+
+Eleanor’s grin was infectious. \textit{“Demi, this is exactly the kind of thinking we need. The Merriweather circle thrives on ideas like yours. And let me tell you, Willard will be absolutely beside himself when he hears this.”}
+
+\bigskip
+
+Demi’s smile turned shy again. \textit{“I don’t want to overstep... I just thought, maybe, I could find a place where these ideas could grow.”}
+
+\bigskip
+
+Eleanor’s voice softened, filled with warmth and reassurance. \textit{“You’re not overstepping at all. The circle is built on collaboration and curiosity. You’ll fit right in, I’m sure of it.”}
+
+\bigskip
+
+Demi’s voice was quiet but resolute. \textit{“Thank you, Eleanor. I’ll do my best.”}
+
+\bigskip
+
+Eleanor chuckled. \textit{“Just don’t let Willard drag you into one of his endless tangents. The man has a gift for complicating the simplest ideas—but we’d all be lost without him, wouldn’t we?”}
+
+Demi’s laugh was light. \textit{“He’s... passionate, that’s for sure.”}
+\bigskip
+Eleanor leaned back with a teasing smile. \textit{“Passionate and a touch maddening. But don’t let him distract you too much. Start with something concrete—compute the Bayesian posterior. Numerically estimate $P(\text{lonely} \mid \text{prime})$ for primes in a range. Then run a few Monte Carlo simulations. You might be surprised at the results.”}
+\bigskip
+Demi nodded, her excitement evident. \textit{“I will. Thanks again, Eleanor.”}
+
+\begin{wrapfigure}{r}{0.6\textwidth}
+    \vspace{-15pt} % Adjust spacing as needed
+    \centering
+    \includegraphics[width=\linewidth]{Illustrations/vign-eleaneorBiology.png}
+    \caption{Eleanor looking at other biologically phenomena }
+    \vspace{-10pt} % Adjust spacing as needed
+\end{wrapfigure}
+
+As Demi began to gather her things, Eleanor added with a playful grin, \textit{“Oh, and Demi—don’t forget to have fun with it. Numbers like to speak for themselves when we let them.”}
+
+\section*{Demi’s Slow Realization}
+
+Demi has always known Ernest carries guilt. She has seen it in the way his eyes flick toward Sylvia at events, how he always avoids being alone with her. How he speaks of her brilliance in past tense, as if she had died instead of merely been broken.  
+\bigskip
+
+But it isn’t until she finds an old **wedding photo**—one where Sylvia, younger and full of promise, stands beside her as maid of honor—that something *shifts*.  
+\bigskip
+
+The look in Ernest’s eyes in that photo is not that of a mere mentor. It is something else.  
+
+She dismisses it at first, but the more she thinks about it—the more she *watches*—the clearer the shape of it becomes.  
+
+She is no fool. She knows about Ernest’s past indiscretions, his flirtations. But this—this is different. This is *guilt*.  
+
+And guilt of that depth? It means something worse than an affair.  
+
+She isn’t ready to ask. Not yet.  
+
+But one night, as she sits beside him in their quiet home, watching his fingers absently drum against the armrest as his gaze lingers—again—on the old wedding photo, she finally speaks.  
+
+"It wasn’t just an accident, was it?"  
+
+His hand freezes.  
+
+He doesn’t look at her. Doesn’t answer.  
+
+That is all the answer she needs.  
+
+For the first time in years, Demi feels the weight of knowledge settle over her. And she makes a decision—not to press further. 
+
+Because some truths don’t need to be spoken. Some wounds are better left closed.  
+
+And if Ernest carries this as his penance, then perhaps—just perhaps—that is enough.

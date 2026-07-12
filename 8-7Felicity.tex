@@ -1,0 +1,345 @@
+\chapter{The tao of Felicity Spearman}
+
+\enlargethispage{\baselineskip} % Expands the page slightly to fit all content
+
+\begin{minipage}{\textwidth}
+\lettrine{F}{elicity} Spearman is focused on uncovering the structural mysteries of the composite number \textit{bricks} between prime number \textit{mortar}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Illustrations/vign-wall2.png}
+\caption{Composite bricks laid with prime mortar}
+\end{figure}
+
+\noindent Her focus is on running concordance tests and eigenvector decomposition over choice factors to find descriptors for the string of composite numbers that lie between consecutive (but not adjacent) primes.
+\end{minipage}
+
+\newpage
+
+\lettrine{F}{elicity}, a fiercely independent mathematician, is always keen to let you know that she is no friend of the Kendall family or any such rankers.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Illustrations/vign-felicity3.png}
+\caption{Felicity not planting next seasons cauliflowers}
+\end{figure}
+
+Felicity seeks the good life, rooted in self-sufficiency and as such is capable of growing her own cauliflowers. 
+Despite her steadfast focus on research, she all too often reflects on a past dalliance with Chris Everett—a relationship cut short by the discovery of his unfortunate Pavlovian reflex: to only pop at the drop of the dulcet tones of Martina Navratilova from the tennis commentary box. She refected that in another one of his uncle's Universes Chris would have just wanted to have doubled up with Pam Shriver.
+
+A postdoc whose luck has run out Felicity has outlived her present tenure at the Bayesian school, and so is currently furiously preparing for a phone call to talk with Celiac Wu about a postdoctoral fellowship, a deadline that has breathed new life into her investigations. 
+
+\subsection*{Characterizing Composite Numbers Between Primes}
+
+Felicity treats composites as metaphorical "judges," each scoring\footnote{In her code, \href{https://colab.research.google.com/drive/1OQ0cHEhsAsPyH5WV1FMA9mu-05I7DJRa?usp=sharing}{tauSpearmanComposites.ipynb}} themselves based on their attributes.
+
+
+
+\begin{itemize}
+    \item \textbf{Möbius Function (\(\mu(n)\)):} Indicates the "complexity" of a number’s prime factorization. For composites, \(\mu(n) = 0\), reflecting their divisibility by repeated primes.
+    \item \textbf{Euler’s Totient Function (\(\phi(n)\)):} Measures the count of integers coprime to \(n\).
+    \item \textbf{Abundance (\(n - \sigma(n)\)):} The difference between the number and the sum of its divisors, revealing its "generosity" as a divisor-rich or divisor-poor number.
+    \item \textbf{Prime Signature:} The ordered tuple of exponents in the prime factorization of \(n\), providing a fingerprint for its prime composition.
+
+    \item \textbf{Geometric Mean of Divisors:} Reflects .
+
+    \item \textbf{Skew Mean}: Difference between the Arithmetic Mean (\(AM\)) and the Geometric Mean (\(GM\)) -a "central tendency" of divisors, often smaller for highly composite numbers-of a composite number's divisors, 
+    
+    \( \text{Skew Mean} = AM - GM\) where:
+\[
+AM = \frac{\sigma(n)}{d(n)}, \quad GM = \left( \prod_{i=1}^{d(n)} d_i \right)^{\frac{1}{d(n)}}
+\]
+Here, \(\sigma(n)\) is the sum of all divisors of \(n\), \(d(n)\) is the total number of divisors, and \(d_i\) are the individual divisors of \(n\). 
+    \item \textbf{Radical (\(\text{rad}(n)\)):} The product of the distinct prime factors of \(n\), showing the fundamental "prime base" of the composite.
+\end{itemize}
+
+% \begin{figure}[H]
+% \includegraphics[width=\linewidth]{Illustrations/tauComposites.png}
+% \caption{Concordance Matrix of string book-ended by primes}
+% \end{figure}
+
+For a given string of composites, Felicity assigns each of these measures as scores. Her goal is to calculate concordance values for the string using rank correlation metrics, such as Spearman (no relation either) Rank\footnote{The Spearman’s rank correlation coefficient:
+\(
+\rho_s = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)},
+\)
+where \(d_i\) represents the difference between the ranks of two variables, and \(n\) is the number of observations allows Felicity to evaluate the degree of association between two ranked attributes, such as Möbius function and totient values. This is particularly useful in identifying whether certain measures exhibit systematic patterns across composite strings.} or Kendall’s Tau. These metrics will quantify how well the measures align or deviate across the composite sequence providing insight into ordinal associations among the composite numbers’ scores. Kendall’s Tau:
+\[
+\tau = \frac{C - D}{\frac{1}{2}n(n-1)},
+\]
+where \(C\) is the number of concordant pairs, \(D\) is the number of discordant pairs, and \(n\) is the number of observations is particularly suited to scenarios where ties exist among the data. It evaluates the concordance and discordance of pairwise relationships among the composite scores, offering robustness to non-linear relationships.
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{Illustrations/primePairs.png}
+\caption{Concordance Scores of strings book-ended by primes}
+\end{figure}
+
+Felicity is aiming to explore whether the concordance scores of composite strings reveal hidden symmetries or trends. She hypothesizes that strings of composites with similar prime signatures may exhibit higher concordance for certain measures, while more irregular strings may have weaker correlations.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Illustrations/felicity2.png}
+\caption{Felicity not planting next seasons great idea}
+\end{figure}
+
+By examining the relationships between these rank correlations and known number-theoretic phenomena, Felicity hopes to contribute to a broader understanding of composite-prime dynamics. 
+
+\section*{Phone Discussion: Felicity's Research Pitch to Celiac}
+
+\noindent\textbf{Celiac:} Hi, Felicity. I’ve gone over the outline of your proposal. It’s intriguing, but I have a few questions. Let’s start from the top. Can you summarize your research aim in a way I can follow?
+
+\noindent\textbf{Felicity:} Sure, Celiac. I’m looking at the concordance scores of strings of composite numbers that sit between consecutive primes. My hypothesis is that these scores might reveal hidden patterns or trends in how composites behave as they fill the gaps between primes.
+
+\noindent\textbf{Celiac:} Hmm, so you’re not focusing on primes themselves?
+
+\noindent\textbf{Felicity:} Right, exactly. Between consecutive odd primes there are strings of composites.
+ The primes set the boundaries, but my interest lies in the composites that form the ``bridge'' between them. I’m asking whether the rank coefficients—essentially the concordance measures—of these composite strings can provide insight into broader patterns. For instance, do strings with certain characteristics tend to predict what lies ahead, or do they grow increasingly chaotic as the gaps widen?
+
+\noindent\textbf{Celiac:} Okay, but why focus on the rank coefficients? What’s the unique insight they provide?
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Illustrations/vign-FelicityBahti.png}
+\caption{Felicity in full flight}
+\end{figure}
+
+\noindent\textbf{Felicity:} Rank coefficients are a way of quantifying relationships within the string. They’re robust against irregularities and help highlight trends that might not be obvious from looking at the raw data. For instance, strings with similar composite ``signatures''—like those with specific factorization patterns—might exhibit stronger concordance. On the flip side, irregular or disjointed strings might show weaker correlations.
+
+\noindent\textbf{Celiac:} Interesting. And as the gaps between primes grow—because primes attenuate as numbers increase—how does that affect your analysis? Won’t the strings get longer and more unwieldy?
+
+\noindent\textbf{Felicity:} That’s a key challenge. Longer strings mean the number of ``judges,'' or the measures I use to calculate the rank coefficients, also increases. This could make the calculations computationally demanding. Part of my work will involve assessing whether these measures remain feasible to calculate as the strings grow. I suspect that while they get more complex, they might also reveal increasingly distinct patterns that could help us generalize about composite behavior.
+
+\noindent\textbf{Celiac:} I see. So, you’re essentially exploring whether these strings of composites, through their rank coefficients, can tell us something predictive or meaningful about the behavior of numbers—without directly analyzing primes themselves?
+
+\noindent\textbf{Felicity:} Exactly. Think of it as trying to decode the ``language'' of composites to understand how they fill the gaps left by primes. My goal is to see if these rank coefficients can uncover trends that have been hiding in plain sight, even as the strings grow longer.
+
+\noindent\textbf{Celiac:} Hmm. I like the premise, but it’s a bit abstract. What kind of implications do you see if your hypothesis holds true?
+
+\noindent\textbf{Felicity:} If my hypothesis is correct, it could offer a new way to approach number theory, especially in understanding composite-prime dynamics. It might help us better predict structural behaviors in large-scale number systems, with potential applications in cryptography, algorithm design, or even computational efficiency.
+
+\noindent\textbf{Celiac:} Got it. I think you’ve got something here, Felicity. Let’s work on sharpening how you present this—it’s fascinating but needs to feel a bit more grounded for the broader audience. Let me know when you’re ready to discuss next steps.
+
+\noindent\textbf{Felicity:} Absolutely, thanks for the feedback, Celiac. I’ll refine the framing and re-connect soon.
+
+%%%%%%%
+\newpage
+
+\section*{The Hampstead Threshold}
+
+The pub is heaving. A hum of conversation, laughter, the faint clinking of glass against glass. Hampstead on a Thursday night—where the well-heeled mingle with the well-read, and where Eleanor, for all her misgivings, has found herself again. 
+
+She sits, half-listening to her boyfriend’s musings on market inefficiencies, his voice pleasant but blending too easily into the background noise. Instead, her focus drifts to the two bar stools beside her—empty, yet occupied in spirit.
+
+\subsection*{A Question of Worth}
+
+
+\bigskip
+
+\textit{Who is worthy of my company?} 
+
+\bigskip
+
+It is an absurd, snobbish thought. And yet it lingers, unbidden, before she has time to quash it.
+
+\bigskip
+
+A couple loiters nearby. He in a tracksuit, she in a cap pulled low over her forehead. They hover, clearly eyeing the stools, yet they do not ask.
+
+\bigskip
+
+\textit{Not from here.}
+
+\bigskip
+
+Hampstead has a feel, a worn-in ease, a knowingness that comes with generations of literary ghosts. Even the newcomers, the ones who came into their wealth overnight, acquire the posture eventually—a certain slack in the shoulders, a quiet confidence in their placement. 
+
+But these two? No. 
+
+\bigskip
+
+\textit{They don’t have the decency to ask.}
+
+\bigskip
+
+She hates the thought as soon as it forms. 
+
+What a snob.
+
+\bigskip
+
+And yet. And yet. 
+
+\bigskip
+
+It is exhaustion more than prejudice. These neighborhoods are earned, not merely by wealth, but by the slow erosion of effort into something resembling comfort. They are places where the anxious edge of ambition is dulled, where no one \textit{needs} to fight for a space, because the spaces have long since been allotted. 
+
+And they—this couple, these interlopers—carry the tension of people still negotiating their right to be anywhere.
+
+\bigskip
+
+\textit{Obviously from lower lands.}
+
+\bigskip
+
+Not just geographically. Socially, too. She recognizes it now—the quiet defense mechanism, the refusal to ask because to ask is to admit displacement, to invite a refusal, to reveal an expectation of rejection.
+
+\bigskip
+
+And so they wait, hovering on the threshold, unwilling to claim the space but resentful, perhaps, that it has not been offered.
+
+\bigskip
+
+Eleanor exhales, looking away, suddenly embarrassed by the sharpness of her own mind.
+
+\bigskip
+
+\textit{God, how tired I am of these calculations.} 
+
+\bigskip
+
+Tired of reading every moment like a text. Tired of the silent negotiations of status, of worth, of belonging.
+
+She turns back to her boyfriend, tuning into his words at last. Something about liquidity traps. 
+
+She nods, offers a small smile. 
+
+\bigskip
+
+The couple is gone.
+
+\section*{Eavesdropping a Decision}
+
+Felicity had no intention of eavesdropping. 
+
+She had been waiting for a drink at the bar, her mind elsewhere, when the conversation unfolded just beside her—a couple, voices low but urgent, the soft lilts of Australian vowels curling around the air between them.
+
+\bigskip
+
+\textit{"I can't do it halfway,"} the woman says, quiet but resolute. \textit{"If I come, I come for good."}
+
+\bigskip
+
+Felicity’s fingers tighten slightly around her glass.  
+
+\bigskip
+
+\textit{A sentence like that—so simple, yet so catastrophic.}
+
+\bigskip
+
+The man exhales, his voice heavier. \textit{"I know."}  
+
+\bigskip
+
+She doesn’t turn to look at them. That would be an admission. An intrusion. Instead, she stares ahead, her pulse attuned to the rawness between them, to the weight of a decision that neither one can carry alone.
+
+\bigskip
+
+\textit{A move like this is not just about love. It’s about control.}
+
+\bigskip
+
+She knows this. She has seen it before, in the way people step willingly into cages of their own making. 
+
+\bigskip
+
+The woman is right. She cannot do it halfway.  
+To leave behind one world and step into another is an obliteration, a surrender, a declaration of faith that cannot be taken lightly.  
+\textit{To move like that is to burn the bridges behind you, to place your fate in the hands of another.}
+
+\bigskip
+
+\textbf{Felicity knows this well.}
+
+She has lived her life avoiding precisely this moment—this need to choose between the illusion of control and the certainty of dependence.
+
+\bigskip
+
+The man shifts, restless. \textit{"But what if it doesn’t work out?"}
+
+A pause. A sharp inhale. Then the woman, steady as stone:  
+
+\textit{"Then I’ll be lost."}
+
+\bigskip
+
+Felicity closes her eyes.  
+
+\textit{To be lost.}
+
+\bigskip
+
+It is the thing she has spent years engineering her life to avoid. The reason she keeps her accounts separate, the reason she moves cities before roots take hold, the reason she never lets her heart drift beyond her own reach.
+
+\bigskip
+
+\textit{If I come, I come for good.}
+
+\bigskip
+
+The finality of it terrifies her. And yet, some deep, treacherous part of her envies it. 
+
+The woman is willing to make the leap. To choose.
+
+\bigskip
+
+And Felicity—Felicity is still standing at the threshold, forever waiting.
+
+
+\section*{postscript}
+Felicity seeing some conflation between her descriptive factors applied Principal Component Analysis (PCA) to reduce the dimensionality of the six numerical factors into two principal components (\(PC_1\) and \(PC_2\)), which capture most of the variation in the dataset:
+\[
+\text{Explained Variance Ratios: } PC_1 = 48.3\%, \, PC_2 = 29.0\%.
+\]
+The PCA plot (Figure 1) shows the distribution of composite strings in the reduced \(PC_1\)-\(PC_2\) space. Each point represents a composite <<brick only wall>> string. (\(PC_1\) and \(PC_2\)) are uncorrelated and represent the eigenvectors of the covariance matrix of the dataset:
+\begin{itemize}
+    \item \textbf{Independence:} Orthogonality ensures that each PC captures a unique aspect of the variation in the data. 
+    \item \textbf{Variance Explanation:}  \(PC_1\) captures the maximum variance in the data, \(PC_2\) captures the next largest variance orthogonal to \(PC_1\), and so on.
+    \item \textbf{Eigenvector Decomposition:} This eigenvector decomposition of the covariance matrix gives directions of maximum variance, with eigenvalues indicating the magnitude of this variance.
+\end{itemize}
+The orthogonality of the eigenvectors ensures that the data's variability is decomposed into linearly independent components, allowing for meaningful dimensionality reduction.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{Illustrations/PCAfinal.png}
+\caption{PCA: Factors Reduced to Two Dimensions (With Skew Mean).}
+\end{figure}
+
+\subsection*{Loadings Analysis}
+The PCA loadings analysis (Figure 2) shows the contribution of each factor to \(PC_1\) and \(PC_2\). Significant observations include:
+\begin{itemize}
+    \item \textbf{Skew Mean} strongly contributes to \(PC_1\) (0.514), indicating its importance in explaining primary variability.
+    \item \textbf{Radical} and \textbf{Totient} are also significant contributors to \(PC_1\), capturing variability related to prime factor structure and coprime counts.
+    \item \textbf{Abundance} primarily contributes to \(PC_2\) (0.669), explaining orthogonal variation in divisor richness.
+    \item \textbf{Prime Signature} has negative loadings for both \(PC_1\) and \(PC_2\), suggesting it contrasts with the other factors.
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{Illustrations/pCA1-2-loadings2-skewMean.png}
+\caption{PCA Loadings: Factor Contributions to Principal Components.}
+\end{figure}
+
+\subsection*{Concordance and Correlation Matrices}
+
+The \textbf{Kendall's Tau Concordance Matrix} measures the agreement between the factors within a single composite string. Figure 3 illustrates the concordance matrix for composite numbers between primes 233 and 239. High concordance (red areas) indicates strong agreement between ranks of factors, while low concordance (blue areas) indicates disagreement.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{Illustrations/tauComposites.png}
+\caption{Kendall's Tau Concordance Matrix: Primes 233-239.}
+\end{figure}
+The \textbf{Correlation Matrix}, on the other hand, summarizes the relationships between the factors across all composite strings in the analyzed range. Unlike the concordance matrix, which applies to a single composite string, the correlation matrix aggregates pairwise relationships globally. Figure 4 highlights strong correlations between:
+\begin{itemize}
+    \item Radical and Totient (positive correlation).
+    \item Skew Mean and Abundance (negative correlation).
+\end{itemize}
+
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.8\textwidth]{Illustrations/correlationMatrix.png}
+% \caption{Correlation Matrix of Factors Across All Composite Strings.}
+% \end{figure}
+
+
+
+
+

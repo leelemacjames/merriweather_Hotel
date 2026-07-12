@@ -1,0 +1,73 @@
+\chapter*{Choie's Composite Prime Shadows}
+
+\begin{minipage}[t]{\textwidth}
+\lettrine{J}{inyoung} Choie, a young number theorist often found herself contemplating the nature of accumulation. 
+
+\begin{figure}[H]
+\includegraphics[width=1.0\linewidth]{Illustrations/vign-celiac.png}
+\caption{Jinyoung, a little more then she appears}
+\end{figure}
+
+For her, composites were an "accumulated flux" of contributions from its nearest prime factors, Jinyoung sought to explore how these contributions diminished as composites grew larger.
+\end{minipage}
+
+% \section*{Composites as Accumulated Flux}
+Jinyoung envisioned a composite number \( C \) as the result of flux contributions from its prime factors \( p_1, p_2, \ldots, p_k \). Each prime \( p_i \) contributed a share to \( C \), inversely proportional to the size of \( p_i \) and modulated by the thinning density of primes as \( C \) increased. The contribution of a prime factor \( p_i \) to \( C \) was modeled as:
+\[
+F(p_i, C) = \frac{1}{p_i \cdot \ln(C)},
+\]
+where:
+\begin{itemize}
+    \item \( F(p_i, C) \) represents the flux contribution of \( p_i \) to \( C \),
+    \item \( p_i \) is a prime factor of \( C \),
+    \item \( \ln(C) \) reflects the density of primes thinning as \( C \) increases.
+\end{itemize}
+
+The total flux \( F(C) \) for a composite \( C \) was then given by:
+\[
+F(C) = \sum_{p_i \mid C} \frac{1}{p_i \cdot \ln(C)}.
+\]
+
+% \section*{Prime Multipliers and Composite Growth}
+Jinyoung noted that composites, while products of primes, grew at a slower rate relative to the accumulation of all primes. Unlike the factorial \( n! \), which grows explosively and leaves no integers untouched in its interval, the composites had gaps determined by their prime structure.
+
+She recalled the classic proof of the infinitude of primes, which relies on factorials:
+\[
+n! + 1 \quad \text{is either prime or divisible by a prime not in } \{2, 3, \ldots, n\}.
+\]
+In contrast, the composite numbers in Jinyoung’s framework were defined by their "prime multipliers," or the set of primes contributing to their formation.
+
+If \( C \) is a composite formed by primes \( p_1, p_2, \ldots, p_k \), the prime multiplier factorial \( P(C) \) is:
+\[
+P(C) = p_1 \cdot p_2 \cdot \ldots \cdot p_k.
+\]
+
+For example:
+\begin{itemize}
+    \item For \( C = 30 = 2 \cdot 3 \cdot 5 \), \( P(C) = 2 \cdot 3 \cdot 5 = 30 \).
+    \item For \( C = 60 = 2^2 \cdot 3 \cdot 5 \), \( P(C) = 2 \cdot 3 \cdot 5 = 30 \) (ignoring multiplicity).
+\end{itemize}
+
+% \section*{The Diminishing Flux of Primes}
+Jinyoung liked the interplay of diminishing contributions from larger primes as composites grew larger. The flux contributions \( F(p_i, C) \) weakened not only because of the inverse proportionality to \( p_i \) but also because the density of primes thinned as \( C \) increased. To quantify this, she explored the Prime Number Theorem:
+\[
+\pi(x) \sim \frac{x}{\ln(x)},
+\]
+where \( \pi(x) \) counts the number of primes less than or equal to \( x \). For a composite \( C \), the density of contributing primes was proportional to:
+\[
+\frac{\pi(C)}{C} \sim \frac{1}{\ln(C)}.
+\]
+Thus, the thinning of primes introduced an additional decay factor to the total flux:
+\[
+F(C) \sim \frac{1}{\ln(C)} \sum_{p_i \mid C} \frac{1}{p_i}.
+\]
+
+% \section*{Prime Shadows}
+Jinyoung referred to the flux contributions from prime factors as "prime shadows" cast on the composite number. These shadows dimmed as:
+\begin{enumerate}
+    \item The composite grew larger, increasing \( \ln(C) \),
+    \item The contributing primes became sparser, reducing \( \sum_{p_i \mid C} \frac{1}{p_i} \).
+\end{enumerate}
+
+
+

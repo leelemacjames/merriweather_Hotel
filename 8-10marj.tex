@@ -1,0 +1,128 @@
+\chapter{Marjorie's Pascalian Roots of Unity}
+
+\vspace{-\baselineskip}
+\lettrine{M}{arjorie} Worpitsky had always been a curious figure in the academic world. Her colleagues described her as square, a paragon of precision and order. . 
+
+\begin{figure}[H]
+\includegraphics[width=1.0\linewidth]{Illustrations/vign-marjotie3.png}
+\caption{Marjorie contemplating if her roots are operating in unity}
+\end{figure}
+By day she wore neat cardigans, kept her workspace immaculate, and spoke in measured tones. By night though. Bye George.
+
+% \section*{jumper action}
+
+\lettrine{M}{arjorie} had always been drawn to problems that combined artistry and logic. To quell the cacophony of random thoughts of her patchwork quilt of a mind a hobby she practiced was embroidery. Sitting mindfully in her cozy studio one winter afternoon, Marj started to drift. She contemplated the colorful squares of embroidery she had painstakingly stitched over the years. Each square was unique in its design, and now, she had the idea to repurpose them into a jumper. 
+
+Always looking back. Always looking for a reason. 
+
+But this wasn’t just any jumper—it had to be a seamless rectangle filled with non-overlapping squares, where every square fit perfectly into the whole. 
+
+\begin{wrapfigure}{r}{0.7\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Illustrations/vign-jumper.png}
+    \caption{Marjorie miscalculates jumper tesselation}
+    \label{fig:jumper}
+\end{wrapfigure}
+
+The challenge of filling a rectangle with non-overlapping squares had fascinated mathematicians for centuries. For Marj, this geometrical problem became a gateway to exploring a deeper connection: how such a problem could be reimagined as a network graph and solved using the principles of circuit theory.
+
+% \section*{Filling the Rectangle: A Combinatorial Problem}
+
+The essence of the problem was simple to state but hard to solve: given a rectangle of dimensions \(a \times b\), how could one decompose it into non-overlapping squares, each with integer side lengths? For some rectangles, the solution was straightforward—for instance, a square itself (\(a = b\)) required no decomposition. For others, the process required dividing and subdividing until the rectangle was completely filled.
+
+Marjorie envisioned the rectangle as a mathematical number, where the goal was to represent it as a sum of square numbers:
+\[
+\text{Area of rectangle } = a \times b = \sum_{i} s_i^2,
+\]
+where \(s_i\) are the side lengths of the squares. This representation had echoes of classic number theory, and Marjorie delighted in the interplay of algebra and geometry.
+
+% % \section*{From Squares to Networks}
+
+As she arranged her embroidery pieces on the floor, Marj began to think of the problem in a new way. Each square could be represented as a \textit{node} in a network, and the adjacency of squares could be represented as \textit{edges} connecting the nodes. 
+
+To simplify the visualization, she imagined the rectangle as a graph. The boundaries of the squares created vertices, while the edges represented the relationships between adjacent squares. This transformation from geometry to topology allowed Marjorie to connect the problem to graph theory. The rectangular decomposition became a network, and Marjorie realized that the solution could be analyzed using Kirchhoff’s laws, originally devised for electrical circuits:
+
+\begin{enumerate}
+    \item \textbf{Conservation of Charge (Node Rule):} At each vertex, the sum of currents entering and leaving must equal zero.
+    \item \textbf{Conservation of Energy (Loop Rule):} The sum of voltage drops around any closed loop in the network must equal zero.
+\end{enumerate}
+
+In her rectangular graph, each square could be thought of as a resistor, with the "current" flowing between adjacent squares. The resistances corresponded to the side lengths of the squares, and the voltage drops represented the geometric constraints of the rectangle.
+
+Marjorie set up the equivalent equations for the graph:
+\[
+\sum_{j \in \text{adj}(i)} I_{ij} = 0 \quad \text{(Conservation of Current)},
+\]
+where \(I_{ij}\) represents the current between nodes \(i\) and \(j\), and
+\[
+\sum_{\text{loop}} R_{ij}I_{ij} = 0 \quad \text{(Voltage around a loop)},
+\]
+where \(R_{ij}\) is the resistance (side length) between adjacent squares.
+
+\lettrine{U}{sing} Kirchhoff’s framework, Marjorie devised a system of linear equations to solve for the currents and voltages. The currents represented the alignment of the squares, ensuring that no gaps or overlaps occurred. The voltages ensured that the constraints of the rectangle were satisfied. The process reminded her of solving a resistor network, where the solution was the set of currents and voltages that minimized the total energy:
+\[
+\text{Energy } = \frac{1}{2} \sum_{(i,j)} R_{ij} I_{ij}^2.
+\]
+
+As she pieced together her jumper, Marjorie cursed herself for ruining a a practical, artistic endeavor with such mathematical frippery. All well and good rejoicing in the interplay of geometry, topology, and graph theory to solve the puzzle of fitting the squares but what of the stitch in time saving nine?.
+
+So under that tidy exterior was a mathematician of immense creativity, with an uncanny ability to see connections where others saw only formulas. Marjorie’s current obsession was a generalization of the roots of unity, an idea she called the Pascalian roots of unity, inspired by the recursive structure of Pascal’s triangle and its connection to the difference of powers.
+
+\subsection*{The Pascalian Roots of Unity: A New Framework}
+
+Marjorie began with the equation:
+\[
+x^n - (x-1)^n + (-1)^n = 0,
+\]
+for any positive integer \(n\). She called this the Pascalian difference of powers equation, and she was captivated by its properties.
+
+\paragraph{Difference of Two Powers and a Constant:} The equation represented a higher-order generalization of the difference of two squares. By expanding \((x-1)^n\) using the binomial theorem, the equation became:
+\[
+x^n - \left(x^n - n x^{n-1} + \binom{n}{2} x^{n-2} - \cdots + (-1)^n\right) + (-1)^n = 0.
+\]
+Simplifying, this led to:
+\[
+n x^{n-1} - \binom{n}{2} x^{n-2} + \cdots + (-1)^n = 0.
+\]
+The coefficients of the resulting polynomial, she realized, were the absolute values of the inner entries of Pascal’s triangle, excluding the edges.
+
+\paragraph{A Recursive Structure:} Each \(n\)-th order Pascalian polynomial exhibited recursive symmetry, mirroring the self-similarity of Pascal’s triangle. For \(n=4\), for example:
+\[
+x^4 - (x-1)^4 + (-1)^4 = 0
+\]
+expanded to:
+\[
+4x^3 - 6x^2 + 4x = 0.
+\]
+
+\paragraph{Connection to Cyclotomic Polynomials:} Marjorie noted a tantalizing similarity between these Pascalian polynomials and cyclotomic polynomials, which defined the roots of unity:
+\[
+\Phi_n(x) = \prod_{k=1, \, \gcd(k,n)=1}^{n-1} (x - e^{2\pi i k / n}).
+\]
+The cyclotomic polynomials encoded the symmetry of \(n\)-th roots of unity, while her Pascalian polynomials described an analogous structure arising from Pascal’s triangle.
+
+As Marjorie delved deeper, she began to see a bridge between the Pascalian difference of powers and the classical roots of unity:
+
+\paragraph{Absolute Value of Coefficients:} The coefficients of the Pascalian polynomial, derived from the inner entries of Pascal’s triangle, reflected combinatorial symmetries similar to those in cyclotomic polynomials. Both sets of polynomials seemed to arise from deep connections between symmetry and recursion.
+
+\paragraph{Geometric Interpretation:} The roots of her Pascalian polynomials appeared to encode geometric symmetries that generalized those of the unit circle. For example, while cyclotomic roots corresponded to rotations in the complex plane, the Pascalian roots seemed to describe a higher-order twisting of geometric space, possibly tied to lattices or tessellations.
+
+\paragraph{Scaling Properties:} Marjorie speculated that the Pascalian polynomials could also reveal scaling laws, much like the cyclotomic polynomials encoded scaling symmetries in number fields.
+
+\subsection*{Marjorie’s Eureka Moment}
+
+One afternoon, as Marjorie worked in the Studio of Equilibrium, she had a breakthrough. She realized that her Pascalian polynomials could be reinterpreted as roots of a twisted sheaf over a base space. In geometric terms:
+\begin{itemize}
+    \item The Pascalian difference of powers equation defined a bundle of lines, where each line represented a recursive relationship between coefficients.
+    \item The resulting sheaf encoded twisting and scaling properties that mirrored those of cyclotomic fields but extended them into a combinatorial framework.
+\end{itemize}
+
+As Marjorie sat back, she thought about the broader implications of her work. Could these Pascalian polynomials offer insights into unsolved problems, such as the distribution of primes or the nature of algebraic fields? Could they provide a combinatorial framework for understanding the symmetries of space and time?
+
+\begin{figure}[H]
+\includegraphics[width=1.0\linewidth]{Illustrations/vign-marjorie2.png}
+\caption{Marjorie rooted to the spot}
+\end{figure}
+
+She smiled to herself, adjusting her cardigan. Beneath her disarmingly disorderly exterior, her mind was alive issues beyond her next hair colour. The Pascalian roots of unity were just the beginning, and Marjorie Worpitsky was ready to push their implications as far as she could take them.
+
