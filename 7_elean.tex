@@ -424,133 +424,137 @@ The nave was dim but for a few candles. Eleanor lingered in the pews as the prie
 
 
 
-\section*{postscript: Heegner Cycles}
+% >>>>>> ANNEX B (cut-sheet v2): the Heegner-cycles postscript and the hyperbolic parameterization — block commented out below, pointer left in text <<<<<<
+\textit{(The Heegner-cycles postscript and the hyperbolic parameterization --- the full working is set out in Annexe B.)}
 
-Angular measure \(\theta\) links rotations to the unit circle, while "rapidity" \(\phi\) connects the square hyperbola to exponential growth and space-time boosts.
-
-The trigonometric functions \(\cos\) and \(\sin\) emerge as projections of the radius onto the axes of the unit circle, encoding rotational motion in Euclidean geometry. In contrast, the hyperbolic functions \(\cosh\) and \(\sinh\) describe the exponential divergence of the square hyperbola along its axes. 
-
-The parameter \(\phi\), termed \textit{rapidity}, derives from the Latin \textit{raptus}, meaning seized or carried away, capturing the accelerating, non-linear growth intrinsic to hyperbolic geometry and its application in space-time transformations.
-
-
-\subsection*{Hyperbolic Parameterization: \(x^2 - y^2 = 1\)}
-The hyperbolic functions are defined as:
-\[
-\cosh\phi = \frac{e^\phi + e^{-\phi}}{2}, \quad \sinh\phi = \frac{e^\phi - e^{-\phi}}{2}.
-\]
-Substituting these into \(x = \cosh\phi\), \(y = \sinh\phi\), we verify \(x^2 - y^2 = 1\):
-\[
-\cosh^2\phi - \sinh^2\phi = 
-\left(\frac{e^\phi + e^{-\phi}}{2}\right)^2 - \left(\frac{e^\phi - e^{-\phi}}{2}\right)^2.
-\]
-Expanding the squares:
-\[
-\cosh^2\phi = \frac{(e^\phi + e^{-\phi})^2}{4}, \quad \sinh^2\phi = \frac{(e^\phi - e^{-\phi})^2}{4}.
-\]
-Simplify denominator terms:
-\[
-(e^\phi + e^{-\phi})^2 = e^{2\phi} + 2 + e^{-2\phi}, \quad (e^\phi - e^{-\phi})^2 = e^{2\phi} - 2 + e^{-2\phi}.
-\]
-Subtracting the two:
-\[
-\cosh^2\phi - \sinh^2\phi = \frac{e^{2\phi} + 2 + e^{-2\phi}}{4} - \frac{e^{2\phi} - 2 + e^{-2\phi}}{4}= \frac{4}{4} = 1.
-\]
-
-
-Since \(e^{\pi \sqrt{d}}\) for Heegner numbers is nearly an integer, the sine function evaluates to an oscillatory but structured value. Each Heegner number, with its unique modular symmetry, would produce a periodicity encoded by its arithmetic. For the hyperbolic counterpart, using \(\sinh(x) = \frac{e^x - e^{-x}}{2}\):
-\[
-\sinh\left(\frac{\pi}{d}\right) = \frac{e^{\pi/d} - e^{-\pi/d}}{2}.
-\]
-Here, the near-integral value of \(e^{\pi \sqrt{d}}\) leads to \(\sinh\left(\frac{\pi}{d}\right)\) being dominated by the exponential divergence of \(e^{\pi/d}\), creating a hyperbolic "shadow" of the modular structure. These expressions, she realized, encoded a deep connection between the transcendental expansions of \(e\) and the modular properties of \(\frac{\pi}{d}\).
-
-
-The radian, defined through \(\pi\) as the ratio of a circle's circumference to its diameter, was tied to the geometry of Euclidean space. But Eleanor wondered: What if we redefined angles based on modular symmetries and the Heegner numbers?
-
-\paragraph*{From Radians to Heegners:} She was contemplating a new unit of angle, the \emph{Heegner}, defined by the cyclicity of modular forms associated with \(Q(\sqrt{-d})\). Instead of using \(\pi\) as the fundamental constant for angle measurement, one would use the Heegner number itself. For example:
-\[
-1 \, \text{Heegner} = \frac{\pi}{163} \, \text{radians}.
-\]
-In this system, the full angle of a circle would be given in Heegner units as:
-\[
-\text{Full circle in Heegners} = \frac{2\pi}{d}.
-\]
-
-\paragraph*{Cyclality Through Modularity:} This new angle system would encode the modular symmetry of the Heegner field into the geometry of a circle. Instead of periodicity defined by \(\pi\), periodicity would be tied to the arithmetic of the Heegner primes, creating a natural clock arithmetic based on \(-d\). Eleanor then considered how the ratio of the circumference of a circle to its area, \(\frac{C}{A}\), changes in different geometries:
-
-
-\paragraph*{Ratio of Circumference to Area in Curved Space}
-
-For small geodesic circles of radius \(r\) on a surface with \textbf{Gaussian curvature} \(K\), the circumference and area are approximated by\footnote{do Carmo, \textit{Differential Geometry of Curves and Surfaces}, Prentice-Hall, 1976.}:
-\[
-C \approx 2\pi r \left(1 - \frac{K}{6} r^2\right), \quad
-A \approx \pi r^2 \left(1 - \frac{K}{12} r^2\right).
-\]
-The ratio of circumference to area is then:
-\[
-\frac{C}{A} \approx \frac{2}{r} \cdot \frac{1 - \frac{K}{6}r^2}{1 - \frac{K}{12}r^2}
-\approx \frac{2}{r} \left(1 - \frac{K}{12}r^2\right),
-\]
-which reduces to \(2/r\) in the Euclidean case (\(K = 0\)).
-
-\paragraph*{In Ricci-curved space:}
-\begin{itemize}
-    \item Positive curvature (e.g., sphere): \(C/A < 2/r\),
-    \item Negative curvature (e.g., hyperbolic): \(C/A > 2/r\).
-\end{itemize}
-
-\paragraph*{Quantized Curvature via \(C/A = n\)}
-
-We ask whether this ratio can take the form:
-\[
-\frac{C}{A} = n \cdot \frac{2}{r}, \quad n \in \mathbb{N},
-\]
-implying:
-\[
-\frac{2}{r} \left(1 - \frac{K}{12}r^2\right) = n \quad \Rightarrow \quad K r^2 + 6n r - 12 = 0,
-\]
-a quadratic in \(r\). Solving for curvature:
-\[
-K(n, r) = \frac{12}{r^2} \left(1 - \frac{n r}{2}\right),
-\quad \text{with } r < \frac{2}{n},
-\]
-and the corresponding critical radius:
-\[
-\boxed{r_n = \frac{-3n + 3\sqrt{n^2 + \frac{4K}{3}}}{K}}.
-\]
-
-\begin{tcolorbox}[title=Maximal Quantized Perimeter/Area under Positive Curvature, colback=blue!5!white, colframe=blue!75!black]
-For a surface of constant positive Gaussian curvature \(K > 0\), suppose the ratio of circumference to area for small geodesic circles satisfies:
-\[
-\frac{C}{A} = n \cdot \frac{2}{r}, \quad n \in \mathbb{N}.
-\]
-Then the \textbf{maximum possible value} of this quantized ratio occurs uniquely when:
-\[
-n = 2, \quad \Delta = 36n^2 + 48K = 163,
-\]
-the largest Heegner number.
-
-\vspace{0.5em}
-Under this condition:
-\begin{itemize}
-  \item Curvature: \(K = \frac{19}{48}\),
-  \item Critical radius: \(r_{\text{crit}} = \frac{-288 + 24\sqrt{163}}{19}\),
-  \item Exact ratio:
- \[
-\boxed{
-\left(\frac{C}{A}\right)_{\text{max}} = 2 + \frac{\sqrt{163}}{6} \approx \frac{3971}{962}
-}
-\] 
-  \item Regge calculus deficit angle:
-  \[
-  \delta = \pi K r_{\text{crit}}^2 \approx 1.168 \text{ radians} \approx 66.92^\circ.
-  \]
-\end{itemize}
-
-This identifies a geometric extremum governed by arithmetic structure: among all Heegner numbers, only \(D = 163\) admits a quantized integer ratio \(\frac{C}{A} = \frac{4}{r}\), thus realizing the maximal value under positive curvature.
-\end{tcolorbox}
-
-
-
+% \section*{postscript: Heegner Cycles}
+% 
+% Angular measure \(\theta\) links rotations to the unit circle, while "rapidity" \(\phi\) connects the square hyperbola to exponential growth and space-time boosts.
+% 
+% The trigonometric functions \(\cos\) and \(\sin\) emerge as projections of the radius onto the axes of the unit circle, encoding rotational motion in Euclidean geometry. In contrast, the hyperbolic functions \(\cosh\) and \(\sinh\) describe the exponential divergence of the square hyperbola along its axes. 
+% 
+% The parameter \(\phi\), termed \textit{rapidity}, derives from the Latin \textit{raptus}, meaning seized or carried away, capturing the accelerating, non-linear growth intrinsic to hyperbolic geometry and its application in space-time transformations.
+% 
+% 
+% \subsection*{Hyperbolic Parameterization: \(x^2 - y^2 = 1\)}
+% The hyperbolic functions are defined as:
+% \[
+% \cosh\phi = \frac{e^\phi + e^{-\phi}}{2}, \quad \sinh\phi = \frac{e^\phi - e^{-\phi}}{2}.
+% \]
+% Substituting these into \(x = \cosh\phi\), \(y = \sinh\phi\), we verify \(x^2 - y^2 = 1\):
+% \[
+% \cosh^2\phi - \sinh^2\phi = 
+% \left(\frac{e^\phi + e^{-\phi}}{2}\right)^2 - \left(\frac{e^\phi - e^{-\phi}}{2}\right)^2.
+% \]
+% Expanding the squares:
+% \[
+% \cosh^2\phi = \frac{(e^\phi + e^{-\phi})^2}{4}, \quad \sinh^2\phi = \frac{(e^\phi - e^{-\phi})^2}{4}.
+% \]
+% Simplify denominator terms:
+% \[
+% (e^\phi + e^{-\phi})^2 = e^{2\phi} + 2 + e^{-2\phi}, \quad (e^\phi - e^{-\phi})^2 = e^{2\phi} - 2 + e^{-2\phi}.
+% \]
+% Subtracting the two:
+% \[
+% \cosh^2\phi - \sinh^2\phi = \frac{e^{2\phi} + 2 + e^{-2\phi}}{4} - \frac{e^{2\phi} - 2 + e^{-2\phi}}{4}= \frac{4}{4} = 1.
+% \]
+% 
+% 
+% Since \(e^{\pi \sqrt{d}}\) for Heegner numbers is nearly an integer, the sine function evaluates to an oscillatory but structured value. Each Heegner number, with its unique modular symmetry, would produce a periodicity encoded by its arithmetic. For the hyperbolic counterpart, using \(\sinh(x) = \frac{e^x - e^{-x}}{2}\):
+% \[
+% \sinh\left(\frac{\pi}{d}\right) = \frac{e^{\pi/d} - e^{-\pi/d}}{2}.
+% \]
+% Here, the near-integral value of \(e^{\pi \sqrt{d}}\) leads to \(\sinh\left(\frac{\pi}{d}\right)\) being dominated by the exponential divergence of \(e^{\pi/d}\), creating a hyperbolic "shadow" of the modular structure. These expressions, she realized, encoded a deep connection between the transcendental expansions of \(e\) and the modular properties of \(\frac{\pi}{d}\).
+% 
+% 
+% The radian, defined through \(\pi\) as the ratio of a circle's circumference to its diameter, was tied to the geometry of Euclidean space. But Eleanor wondered: What if we redefined angles based on modular symmetries and the Heegner numbers?
+% 
+% \paragraph*{From Radians to Heegners:} She was contemplating a new unit of angle, the \emph{Heegner}, defined by the cyclicity of modular forms associated with \(Q(\sqrt{-d})\). Instead of using \(\pi\) as the fundamental constant for angle measurement, one would use the Heegner number itself. For example:
+% \[
+% 1 \, \text{Heegner} = \frac{\pi}{163} \, \text{radians}.
+% \]
+% In this system, the full angle of a circle would be given in Heegner units as:
+% \[
+% \text{Full circle in Heegners} = \frac{2\pi}{d}.
+% \]
+% 
+% \paragraph*{Cyclality Through Modularity:} This new angle system would encode the modular symmetry of the Heegner field into the geometry of a circle. Instead of periodicity defined by \(\pi\), periodicity would be tied to the arithmetic of the Heegner primes, creating a natural clock arithmetic based on \(-d\). Eleanor then considered how the ratio of the circumference of a circle to its area, \(\frac{C}{A}\), changes in different geometries:
+% 
+% 
+% \paragraph*{Ratio of Circumference to Area in Curved Space}
+% 
+% For small geodesic circles of radius \(r\) on a surface with \textbf{Gaussian curvature} \(K\), the circumference and area are approximated by\footnote{do Carmo, \textit{Differential Geometry of Curves and Surfaces}, Prentice-Hall, 1976.}:
+% \[
+% C \approx 2\pi r \left(1 - \frac{K}{6} r^2\right), \quad
+% A \approx \pi r^2 \left(1 - \frac{K}{12} r^2\right).
+% \]
+% The ratio of circumference to area is then:
+% \[
+% \frac{C}{A} \approx \frac{2}{r} \cdot \frac{1 - \frac{K}{6}r^2}{1 - \frac{K}{12}r^2}
+% \approx \frac{2}{r} \left(1 - \frac{K}{12}r^2\right),
+% \]
+% which reduces to \(2/r\) in the Euclidean case (\(K = 0\)).
+% 
+% \paragraph*{In Ricci-curved space:}
+% \begin{itemize}
+%     \item Positive curvature (e.g., sphere): \(C/A < 2/r\),
+%     \item Negative curvature (e.g., hyperbolic): \(C/A > 2/r\).
+% \end{itemize}
+% 
+% \paragraph*{Quantized Curvature via \(C/A = n\)}
+% 
+% We ask whether this ratio can take the form:
+% \[
+% \frac{C}{A} = n \cdot \frac{2}{r}, \quad n \in \mathbb{N},
+% \]
+% implying:
+% \[
+% \frac{2}{r} \left(1 - \frac{K}{12}r^2\right) = n \quad \Rightarrow \quad K r^2 + 6n r - 12 = 0,
+% \]
+% a quadratic in \(r\). Solving for curvature:
+% \[
+% K(n, r) = \frac{12}{r^2} \left(1 - \frac{n r}{2}\right),
+% \quad \text{with } r < \frac{2}{n},
+% \]
+% and the corresponding critical radius:
+% \[
+% \boxed{r_n = \frac{-3n + 3\sqrt{n^2 + \frac{4K}{3}}}{K}}.
+% \]
+% 
+% \begin{tcolorbox}[title=Maximal Quantized Perimeter/Area under Positive Curvature, colback=blue!5!white, colframe=blue!75!black]
+% For a surface of constant positive Gaussian curvature \(K > 0\), suppose the ratio of circumference to area for small geodesic circles satisfies:
+% \[
+% \frac{C}{A} = n \cdot \frac{2}{r}, \quad n \in \mathbb{N}.
+% \]
+% Then the \textbf{maximum possible value} of this quantized ratio occurs uniquely when:
+% \[
+% n = 2, \quad \Delta = 36n^2 + 48K = 163,
+% \]
+% the largest Heegner number.
+% 
+% \vspace{0.5em}
+% Under this condition:
+% \begin{itemize}
+%   \item Curvature: \(K = \frac{19}{48}\),
+%   \item Critical radius: \(r_{\text{crit}} = \frac{-288 + 24\sqrt{163}}{19}\),
+%   \item Exact ratio:
+%  \[
+% \boxed{
+% \left(\frac{C}{A}\right)_{\text{max}} = 2 + \frac{\sqrt{163}}{6} \approx \frac{3971}{962}
+% }
+% \] 
+%   \item Regge calculus deficit angle:
+%   \[
+%   \delta = \pi K r_{\text{crit}}^2 \approx 1.168 \text{ radians} \approx 66.92^\circ.
+%   \]
+% \end{itemize}
+% 
+% This identifies a geometric extremum governed by arithmetic structure: among all Heegner numbers, only \(D = 163\) admits a quantized integer ratio \(\frac{C}{A} = \frac{4}{r}\), thus realizing the maximal value under positive curvature.
+% \end{tcolorbox}
+% 
+% 
+% 
+% >>>>>> end of annexed block <<<<<<
 \subsection*{The Nested Dance of Curves and Modularity}
 
 Eleanor realized that redefining angles and circles through Heegner numbers tied geometry directly to modular forms. In this system:

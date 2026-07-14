@@ -187,145 +187,149 @@ As Celiac packed her notebooks her mind was filled with possibilities. Could the
 
 This classification reduces the prime sequence into a stream of ternary digits—\textbf{trits}—each labeled \( 0 \), \( 1 \), or \( 2 \) based on the generative “affinity” of the corresponding prime.
 
-\subsection*{Affinity Codon Partitioning}
+% >>>>>> ANNEX E (cut-sheet v2): affinity-codon partitioning and transition matrices — block commented out below, pointer left in text <<<<<<
+\textit{(Affinity-codon partitioning and transition matrices --- the full working is set out in Annexe E.)}
 
-By grouping these ternary digits into triplets, or \emph{codons}, she generates a symbolic vocabulary of 27 distinct types. The resulting affinity codon sequence serves as a \textbf{coarse-grained} representation of the prime sequence, allowing her to study statistical patterns of interaction among prime types rather than focusing on individual values. For Celiac, often partial to analogies from biology, this evokes the genetic code: while the letters A, T, G, and C carry basic information, meaningful biological structure emerges only at the level of codons. 
-
-The first sixteen primes fall into the following affinity classes:
-
-\begin{itemize}
-  \item Affinity 2: \texttt{[5, 7, 37]}
-  \item Affinity 1: \texttt{[2, 3, 11, 13, 17, 19, 31, 41, 43, 47]}
-  \item Affinity 0: \texttt{[23, 29, 53]}
-\end{itemize}
-
-Affinity-2 primes are what she calls \emph{twin generators}, affinity-1 are \emph{singletons}, and affinity-0 are \emph{anti-twins}. Anti-twins are rare early in the prime sequence, though they become more common as prime density decreases. The following table shows how each early prime maps to its affine extensions and classification:
-
-\begin{center}
-\begin{tabular}{r|r|r|c|c}
-\textbf{Prime \( p \)} & \( 4p + 1 \) & \( 4p + 3 \) & \textbf{Class} & \textbf{Affinity} \\
-\toprule
-2 & 9 (\texttimes) & 11 (\checkmark) & Singleton & 1 \\
-3 & 13 (\checkmark) & 15 (\texttimes) & Singleton & 1 \\
-5 & 21 (\texttimes) & 23 (\checkmark) & Singleton & 1 \\
-7 & 29 (\checkmark) & 31 (\checkmark) & Twin Generator & 2 \\
-11 & 45 (\texttimes) & 47 (\checkmark) & Singleton & 1 \\
-13 & 53 (\checkmark) & 55 (\texttimes) & Singleton & 1 \\
-17 & 69 (\texttimes) & 71 (\checkmark) & Singleton & 1 \\
-19 & 77 (\texttimes) & 79 (\checkmark) & Singleton & 1 \\
-23 & 93 (\texttimes) & 95 (\texttimes) & Anti-Twin & 0 \\
-29 & 117 (\texttimes) & 119 (\texttimes) & Anti-Twin & 0 \\
-31 & 125 (\texttimes) & 127 (\checkmark) & Singleton & 1 \\
-37 & 149 (\checkmark) & 151 (\checkmark) & Twin Generator & 2 \\
-41 & 165 (\texttimes) & 167 (\checkmark) & Singleton & 1 \\
-43 & 173 (\checkmark) & 175 (\texttimes) & Singleton & 1 \\
-47 & 189 (\texttimes) & 191 (\checkmark) & Singleton & 1 \\
-53 & 213 (\texttimes) & 215 (\texttimes) & Anti-Twin & 0 \\
-\bottomrule
-\end{tabular}
-\end{center}
-Note that in this affinity nomenclature it is \(7\) that is the affinity twin prime generator.
-This ternary symbolic sequence can then be sliced into overlapping codons of three digits, yielding a total of \(3^3 = 27\) codon types. Although this transformation loses detail about specific primes, it may reveal emergent structure across the sequence.
-
-\subsection*{Transition Matrices and Coarse-Grained Dynamics}
-
-Once the prime sequence is encoded as a trit stream, Celiac explores its statistical behavior using transition matrices—tools familiar from domains like credit risk modeling. Just as S\&P rating matrices record the likelihood of a bond shifting from AA to A, BBB, or default, Celia tracks the likelihood that one affinity codon is followed by another.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\linewidth]{Illustrations/codonTransit.png}
-\caption{Transition Matrix of Affinity Primes.}
-\label{fig:celiac_pangolin}
-\end{figure}
-
-She \href{https://colab.research.google.com/drive/1SMj0VufGM7QB_-U4CkfzXC-kPCktWAEi?usp=sharing}{computes} both:
-\begin{itemize}
-  \item a \textbf{codon-to-codon transition matrix} over the 27 codons, and
-  \item a simpler \textbf{trit-to-trit transition matrix} over the digits \{0,1,2\}
-\end{itemize}
-
-With \( T_{i,j} \) representing the probability that codon \( i \) is followed by codon \( j \):
-\[
-T_{i,j} = \mathbb{P}(\text{codon}_{t+1} = j \mid \text{codon}_t = i)
-\]
-While \( D_{a,b} \) represents the probability of a trit-level transition:
-\[
-D_{a,b} = \mathbb{P}(\text{trit}_{t+1} = b \mid \text{trit}_t = a)
-\]
-
-She also compares:
-\begin{itemize}
-  \item the \textbf{empirical frequency} of each codon
-  \item the \textbf{expected frequency} assuming independence of trits
-\end{itemize}
-
-Discrepancies between the two may indicate underlying bias or structure in the codon distribution.
-
-Beyond pairwise transitions, she explores cyclic structures—such as 3-cycles of the form \( a \rightarrow b \rightarrow c \rightarrow a \)—to test for longer-term motifs and dynamical memory in the codon stream. In this way, Celiac treats the affinity codon system not just as a summary of the primes, but as a symbolic grammar in its own right.
-
-\subsection*{Affinity Distributions: Unconditioned vs Codon-Prior Inference}
-
-At first glance, the affinity scheme seemed elegant. Early primes like \( 3, 5, 7, 11 \) were largely singletons, with occasional twin-generators (like 5 and 7) and rare anti-twins (like 23). This gave her the impression that \textbf{singleton affinity primes dominated}. But when she \href{https://colab.research.google.com/drive/1Uzg2Z7i_UxFBM1xkN2PAIeTOjQKS5JRm?usp=sharing}{extended} her search to primes less than 10,000, she was struck by the reversal:
-\begin{itemize}
-  \item Only \textbf{36\%} of primes were singletons
-  \item The remaining \textbf{64\%} were non-singletons (either twin or anti-twin)
-\end{itemize}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\linewidth]{Illustrations/affinityDlution.png}
-\caption{Affinities part ways.}
-\label{fig:celiac_afinity}
-\end{figure}
-
+% \subsection*{Affinity Codon Partitioning}
+% 
+% By grouping these ternary digits into triplets, or \emph{codons}, she generates a symbolic vocabulary of 27 distinct types. The resulting affinity codon sequence serves as a \textbf{coarse-grained} representation of the prime sequence, allowing her to study statistical patterns of interaction among prime types rather than focusing on individual values. For Celiac, often partial to analogies from biology, this evokes the genetic code: while the letters A, T, G, and C carry basic information, meaningful biological structure emerges only at the level of codons. 
+% 
+% The first sixteen primes fall into the following affinity classes:
+% 
+% \begin{itemize}
+%   \item Affinity 2: \texttt{[5, 7, 37]}
+%   \item Affinity 1: \texttt{[2, 3, 11, 13, 17, 19, 31, 41, 43, 47]}
+%   \item Affinity 0: \texttt{[23, 29, 53]}
+% \end{itemize}
+% 
+% Affinity-2 primes are what she calls \emph{twin generators}, affinity-1 are \emph{singletons}, and affinity-0 are \emph{anti-twins}. Anti-twins are rare early in the prime sequence, though they become more common as prime density decreases. The following table shows how each early prime maps to its affine extensions and classification:
+% 
+% \begin{center}
+% \begin{tabular}{r|r|r|c|c}
+% \textbf{Prime \( p \)} & \( 4p + 1 \) & \( 4p + 3 \) & \textbf{Class} & \textbf{Affinity} \\
+% \toprule
+% 2 & 9 (\texttimes) & 11 (\checkmark) & Singleton & 1 \\
+% 3 & 13 (\checkmark) & 15 (\texttimes) & Singleton & 1 \\
+% 5 & 21 (\texttimes) & 23 (\checkmark) & Singleton & 1 \\
+% 7 & 29 (\checkmark) & 31 (\checkmark) & Twin Generator & 2 \\
+% 11 & 45 (\texttimes) & 47 (\checkmark) & Singleton & 1 \\
+% 13 & 53 (\checkmark) & 55 (\texttimes) & Singleton & 1 \\
+% 17 & 69 (\texttimes) & 71 (\checkmark) & Singleton & 1 \\
+% 19 & 77 (\texttimes) & 79 (\checkmark) & Singleton & 1 \\
+% 23 & 93 (\texttimes) & 95 (\texttimes) & Anti-Twin & 0 \\
+% 29 & 117 (\texttimes) & 119 (\texttimes) & Anti-Twin & 0 \\
+% 31 & 125 (\texttimes) & 127 (\checkmark) & Singleton & 1 \\
+% 37 & 149 (\checkmark) & 151 (\checkmark) & Twin Generator & 2 \\
+% 41 & 165 (\texttimes) & 167 (\checkmark) & Singleton & 1 \\
+% 43 & 173 (\checkmark) & 175 (\texttimes) & Singleton & 1 \\
+% 47 & 189 (\texttimes) & 191 (\checkmark) & Singleton & 1 \\
+% 53 & 213 (\texttimes) & 215 (\texttimes) & Anti-Twin & 0 \\
+% \bottomrule
+% \end{tabular}
+% \end{center}
+% Note that in this affinity nomenclature it is \(7\) that is the affinity twin prime generator.
+% This ternary symbolic sequence can then be sliced into overlapping codons of three digits, yielding a total of \(3^3 = 27\) codon types. Although this transformation loses detail about specific primes, it may reveal emergent structure across the sequence.
+% 
+% \subsection*{Transition Matrices and Coarse-Grained Dynamics}
+% 
+% Once the prime sequence is encoded as a trit stream, Celiac explores its statistical behavior using transition matrices—tools familiar from domains like credit risk modeling. Just as S\&P rating matrices record the likelihood of a bond shifting from AA to A, BBB, or default, Celia tracks the likelihood that one affinity codon is followed by another.
+% 
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.85\linewidth]{Illustrations/codonTransit.png}
+% \caption{Transition Matrix of Affinity Primes.}
+% \label{fig:celiac_pangolin}
+% \end{figure}
+% 
+% She \href{https://colab.research.google.com/drive/1SMj0VufGM7QB_-U4CkfzXC-kPCktWAEi?usp=sharing}{computes} both:
+% \begin{itemize}
+%   \item a \textbf{codon-to-codon transition matrix} over the 27 codons, and
+%   \item a simpler \textbf{trit-to-trit transition matrix} over the digits \{0,1,2\}
+% \end{itemize}
+% 
+% With \( T_{i,j} \) representing the probability that codon \( i \) is followed by codon \( j \):
+% \[
+% T_{i,j} = \mathbb{P}(\text{codon}_{t+1} = j \mid \text{codon}_t = i)
+% \]
+% While \( D_{a,b} \) represents the probability of a trit-level transition:
+% \[
+% D_{a,b} = \mathbb{P}(\text{trit}_{t+1} = b \mid \text{trit}_t = a)
+% \]
+% 
+% She also compares:
+% \begin{itemize}
+%   \item the \textbf{empirical frequency} of each codon
+%   \item the \textbf{expected frequency} assuming independence of trits
+% \end{itemize}
+% 
+% Discrepancies between the two may indicate underlying bias or structure in the codon distribution.
+% 
+% Beyond pairwise transitions, she explores cyclic structures—such as 3-cycles of the form \( a \rightarrow b \rightarrow c \rightarrow a \)—to test for longer-term motifs and dynamical memory in the codon stream. In this way, Celiac treats the affinity codon system not just as a summary of the primes, but as a symbolic grammar in its own right.
+% 
+% \subsection*{Affinity Distributions: Unconditioned vs Codon-Prior Inference}
+% 
+% At first glance, the affinity scheme seemed elegant. Early primes like \( 3, 5, 7, 11 \) were largely singletons, with occasional twin-generators (like 5 and 7) and rare anti-twins (like 23). This gave her the impression that \textbf{singleton affinity primes dominated}. But when she \href{https://colab.research.google.com/drive/1Uzg2Z7i_UxFBM1xkN2PAIeTOjQKS5JRm?usp=sharing}{extended} her search to primes less than 10,000, she was struck by the reversal:
+% \begin{itemize}
+%   \item Only \textbf{36\%} of primes were singletons
+%   \item The remaining \textbf{64\%} were non-singletons (either twin or anti-twin)
+% \end{itemize}
+% 
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.85\linewidth]{Illustrations/affinityDlution.png}
+% \caption{Affinities part ways.}
+% \label{fig:celiac_afinity}
+% \end{figure}
+% 
 % So much for intuition.
-
+% 
 % Celiac observed that when affinity values are assigned to the primes without reference to context, the relative frequencies settle into a striking empirical distribution over large samples: approximately
 % \[
 % \mathbb{P}(\text{Affinity} = 0) \approx 60\%, \quad
 % \mathbb{P}(\text{Aff.} = 1) \approx 38\%, \quad
 % \mathbb{P}(\text{Aff.} = 2) \approx 2\%.
 % \]
-This unsurprising diverging asymmetry reflects that, in the long run, most primes tend to lose their “generative” power with respect to the affine rule as prime rarefy. But this flat, unconditional view of the sequence may obscure finer structure. To investigate this, Celiac performs a codon-based analysis: she partitions the affinity sequence into non overlapping triplets and measures how the identity of one codon predicts the next. In doing so, she effectively conditions the probability of the next affinity value on its codon predecessor. This method is conceptually analogous to the \emph{poker test} used in the analysis of pseudo-random number\footnote{The hallmarks of pseudorandomness are uniformity, independence, and lack of autocorrelation} generators (PRNGs), where runs, pairs, and repetitions in symbolic substrings reveal non-random bias or memory. 
-
+% This unsurprising diverging asymmetry reflects that, in the long run, most primes tend to lose their “generative” power with respect to the affine rule as prime rarefy. But this flat, unconditional view of the sequence may obscure finer structure. To investigate this, Celiac performs a codon-based analysis: she partitions the affinity sequence into non overlapping triplets and measures how the identity of one codon predicts the next. In doing so, she effectively conditions the probability of the next affinity value on its codon predecessor. This method is conceptually analogous to the \emph{poker test} used in the analysis of pseudo-random number\footnote{The hallmarks of pseudorandomness are uniformity, independence, and lack of autocorrelation} generators (PRNGs), where runs, pairs, and repetitions in symbolic substrings reveal non-random bias or memory. 
+% 
 % Here, the poker hand is replaced by a 3-digit affinity codon, and the analysis tracks which hands lead to which others — that is, how often one codon follows another.
-
-The divergence between the unconditional affinity distribution and the codon-conditioned transition probabilities highlights possible \emph{memory effects} within the prime sequence. For example, while Affinity 2 digits are rare in general, they may be disproportionately likely to follow certain codons, suggesting that their presence is context-sensitive. Could it reflect perhaps the way these primes behaved under integer partitions?
-
-A \textbf{partition} of an integer is a way of writing it as a sum of positive integers, unordered. For instance, the number 5 has seven partitions of respectively 1 \textbf{part}, 2 parts ,.. 5 parts:
-\[
-5, \quad 4+1, \quad 3+2, \quad 3+1+1, \quad 2+2+1, \quad 2+1+1+1, \quad 1+1+1+1+1
-\]
-To each partition, one can assign statistics such as:
-\begin{itemize}
-  \item \textbf{rank} = largest part-number of parts
-  \item \textbf{crank}, defined as:
-    \begin{itemize}
-      \item  crank = largest part-If partition has no 1s:
-      \item crank = (number of parts greater than 1) minus (number of 1s) otherwise
-    \end{itemize}
-\end{itemize}
-Celia computed the difference between rank and crank across all partitions of each prime \( p \), and compared this statistic for singleton and non-singleton primes.
-\begin{center}
-\begin{tabular}{c|c|c}
-\textbf{Partition} & \textbf{Rank} & \textbf{Crank} \\
-\hline
-\( 5 \) & \( 5 - 1 = 4 \) & \( 5 \) (no 1s) \\
-\( 4 + 1 \) & \( 4 - 2 = 2 \) & \( 1 - 1 = 0 \) \\
-\( 3 + 2 \) & \( 3 - 2 = 1 \) & \( 3 \) (no 1s) \\
-\( 3 + 1 + 1 \) & \( 3 - 3 = 0 \) & \( 1 - 2 = -1 \) \\
-\( 2 + 2 + 1 \) & \( 2 - 3 = -1 \) & \( 2 - 1 = 1 \) \\
-\( 2 + 1 + 1 + 1 \) & \( 2 - 4 = -2 \) & \( 1 - 3 = -2 \) \\
-\( 1 + 1 + 1 + 1 + 1 \) & \( 1 - 5 = -4 \) & \( 0 - 5 = -5 \) \\
-\end{tabular}
-\end{center}
- What emerged was unexpected as can be seen in  \href{https://colab.research.google.com/drive/1v5DLDSt10CtcwXJErokp31rBRyzApFwx?usp=sharing}{violin plots} of the distributions:
-\begin{itemize}
-  \item \textbf{Singleton affinity primes} showed a tighter, more uniform distribution with lower variance
-  \item \textbf{Non-singletons} (twin and anti-twin generators) exhibited broader, more irregular behavior, often with more negative mean values
-\end{itemize}
-ven if the affinity classification was uneven, its influence echoed in the combinatorics of partitions. Reducing primes to a ternary symbolic stream and so treating them not as numbers but as \emph{types} amounted to a form of symbolic code dynamics.
-
+% 
+% The divergence between the unconditional affinity distribution and the codon-conditioned transition probabilities highlights possible \emph{memory effects} within the prime sequence. For example, while Affinity 2 digits are rare in general, they may be disproportionately likely to follow certain codons, suggesting that their presence is context-sensitive. Could it reflect perhaps the way these primes behaved under integer partitions?
+% 
+% A \textbf{partition} of an integer is a way of writing it as a sum of positive integers, unordered. For instance, the number 5 has seven partitions of respectively 1 \textbf{part}, 2 parts ,.. 5 parts:
+% \[
+% 5, \quad 4+1, \quad 3+2, \quad 3+1+1, \quad 2+2+1, \quad 2+1+1+1, \quad 1+1+1+1+1
+% \]
+% To each partition, one can assign statistics such as:
+% \begin{itemize}
+%   \item \textbf{rank} = largest part-number of parts
+%   \item \textbf{crank}, defined as:
+%     \begin{itemize}
+%       \item  crank = largest part-If partition has no 1s:
+%       \item crank = (number of parts greater than 1) minus (number of 1s) otherwise
+%     \end{itemize}
+% \end{itemize}
+% Celia computed the difference between rank and crank across all partitions of each prime \( p \), and compared this statistic for singleton and non-singleton primes.
+% \begin{center}
+% \begin{tabular}{c|c|c}
+% \textbf{Partition} & \textbf{Rank} & \textbf{Crank} \\
+% \hline
+% \( 5 \) & \( 5 - 1 = 4 \) & \( 5 \) (no 1s) \\
+% \( 4 + 1 \) & \( 4 - 2 = 2 \) & \( 1 - 1 = 0 \) \\
+% \( 3 + 2 \) & \( 3 - 2 = 1 \) & \( 3 \) (no 1s) \\
+% \( 3 + 1 + 1 \) & \( 3 - 3 = 0 \) & \( 1 - 2 = -1 \) \\
+% \( 2 + 2 + 1 \) & \( 2 - 3 = -1 \) & \( 2 - 1 = 1 \) \\
+% \( 2 + 1 + 1 + 1 \) & \( 2 - 4 = -2 \) & \( 1 - 3 = -2 \) \\
+% \( 1 + 1 + 1 + 1 + 1 \) & \( 1 - 5 = -4 \) & \( 0 - 5 = -5 \) \\
+% \end{tabular}
+% \end{center}
+%  What emerged was unexpected as can be seen in  \href{https://colab.research.google.com/drive/1v5DLDSt10CtcwXJErokp31rBRyzApFwx?usp=sharing}{violin plots} of the distributions:
+% \begin{itemize}
+%   \item \textbf{Singleton affinity primes} showed a tighter, more uniform distribution with lower variance
+%   \item \textbf{Non-singletons} (twin and anti-twin generators) exhibited broader, more irregular behavior, often with more negative mean values
+% \end{itemize}
+% ven if the affinity classification was uneven, its influence echoed in the combinatorics of partitions. Reducing primes to a ternary symbolic stream and so treating them not as numbers but as \emph{types} amounted to a form of symbolic code dynamics.
+% 
+% >>>>>> end of annexed block <<<<<<
 \section*{Zoom Dialogue: Irregularity and Affinity (13:04 GMT)}
 
 \begin{itemize}[leftmargin=0cm, label={}]
@@ -448,10 +452,8 @@ The fact that you even get structure under relaxed conditions is telling. It sug
 \section*{Modular Arithmetic and the Prime Sieve}
 
  The sieve of Eratosthenes works by excluding numbers divisible by small primes and this logic is embedded into modular systems like mod 10, 30, and beyond. The key insight lies in how many residue classes are \emph{coprime} to the modulus i.e., survive this filtering. This count is given by Euler’s totient function:
-\[
-\phi(n) = \#\{k < n \mid \gcd(k, n) = 1\}
-\]
-Demi's \textit{puboid} semi-prime as a modulus $30 = 2 \times 3 \times 5$ is especially potent\footnote{Modulus 30 as the product of the first three primes (2, 3, 5), therefore excludes all numbers divisible by them. This makes it an efficient sieve. \( \phi(42) = 12 > \phi(30) = 8 \), mod 42 includes 7 but omits 5. Since 5 appears more frequently among small integers, mod 30 performs better at sieving early primes. Thus, mod 30 offers a sharp residue structure, with minimal.}, acting as a compact sieve that filters out multiples of the first three primes. Like mod 10, which only excludes even numbers and multiples of 5, mod 30 blocks numbers divisible by 2 and 5 but additionally by 3. 
+\[ \phi(n) = \#\{k < n \mid \gcd(k, n) = 1\} \]
+Demi's \textit{puboid} semi-prime as a modulus $30 = 2 \times 3 \times 5$ is especially potent\footnote{Modulus 30 as the product of the first three primes (2, 3, 5), therefore excludes all numbers divisible by them. This makes it an efficient sieve. \( \phi(42) = 12 > \phi(30) = 8 \), mod 42 includes 7 but omits 5. Since 5 appears more frequently among small integers, mod 30 performs better at sieving early primes. Thus, mod 30 offers a sharp residue structure, with minimal.}, acting as a compact sieve that filters out multiples of the first three primes. Like mod 10, which only excludes even numbers and multiples of 5, mod 30 blocks numbers divisible by 2 and 5 as well as 3. 
 
 \begin{tcolorbox}[title=Euler's Totient and Prime Sieves, colback=gray!5, colframe=gray!80!black, fonttitle=\bfseries]
 Euler's totient function $\phi(n)$ counts the number of integers less than $n$ that are coprime to it:
@@ -468,97 +470,101 @@ Mod 30 is an efficient sieve that lets through only those numbers relatively pri
 These residues form the multiplicative group \( \mathbb{Z}_n^\times \), the invertible elements mod \( n \). Each such group has internal symmetry, which is cyclic in some cases, decomposable in others.
 \vspace{1em}
 
-\subsection*{Multiplicative Group Wheels and Sieve Geometry}
+% >>>>>> ANNEX E (cut-sheet v2): multiplicative group wheels and sieve geometry — block commented out below, pointer left in text <<<<<<
+\textit{(Multiplicative group wheels and sieve geometry has full working set out in Annexe E.)}
 
-Each modular ring $\mathbb{Z}_n^\times$ forms a group of units. Visualizing these as circular arrangements reveals their internal symmetry:
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\linewidth]{Illustrations/multiplicative_group_wheels.png}
-\caption{\textbf{Multiplicative Group Wheels for \( \mathbb{Z}_n^\times \).} for moduli $n=10,30,42$. Spacing is equal-angular (normalizes each modulus to its internal arithmetic symmetry group) to reflect group symmetry. 
-Each circular layer displays the groups of invertible elements modulo \( n \), which are \href{https://colab.research.google.com/drive/1jd-nsH1qsqHkfVUFQrmIMkQLw5yJWgOx?usp=sharing}{arranged} with equal angular spacing to reflect their internal cyclic symmetry.}
-\end{figure}
-\begin{itemize}
-    \item Mod 10: 4 directions — coarse sieve.
-    \item Mod 30: 8 directions — a full octal compass.
-    \item Mod 42: 12 directions — a proper clock but with less clarity.
-\end{itemize}
- Aligning the residues by position highlights the internal lattice structure of each ring emphasizing how each modulus “tiles” its residue space.
-
-\begin{tcolorbox}[title=Cyclic Multiplicative Groups \( \mathbb{Z}_n^\times \), colback=blue!5, colframe=blue!75!black, fonttitle=\bfseries]
-
-A multiplicative group \( \mathbb{Z}_n^\times \) is said to be \textbf{cyclic} if there exists a \textit{primitive root} \( g \) such that:
-\[
-\mathbb{Z}_n^\times = \langle g \rangle = \{ g^0, g^1, g^2, \ldots, g^{\phi(n)-1} \} \mod n.
-\]
-
-This means that every coprime residue mod \( n \) is a power of \( g \) modulo \( n \).
-
-\bigskip
-
-\textbf{Example:} For \( n = 7 \), we have:
-\[
-\mathbb{Z}_7^\times = \{1, 2, 3, 4, 5, 6\}, \quad \phi(7) = 6.
-\]
-Let’s take \( g = 3 \). We compute:
-\[
-3^1 = 3,\quad
-3^2 = 2,\quad
-3^3 = 6,\quad
-3^4 = 4,\quad
-3^5 = 5,\quad
-3^6 = 1 \mod 7.
-\]
-So 3 generates all of \( \mathbb{Z}_7^\times \), and the group is cyclic:
-\[
-\mathbb{Z}_7^\times \cong C_6.
-\]
-
-\textbf{Notation Note:}  
-
-\( \mathbb{Z}_n \): integers mod \( n \) (an additive ring) ; \( \mathbb{Z}_n^\times \): multiplicative group of units mod \( n \) ; \( C_k \): abstract cyclic group of order \( k \)
-
-When \( \mathbb{Z}_n^\times \) is cyclic, we can write \( \mathbb{Z}_n^\times \cong C_{\phi(n)} \). This is always true for:
-\[
-n = 2,\ 4,\ p^k,\ 2p^k \quad \text{with } p \text{ an odd prime}.
-\]
-For other \( n \), \( \mathbb{Z}_n^\times \) is not cyclic, but may still decompose into products of cyclic groups. See the next box.
-
-\end{tcolorbox}
+% \subsection*{Multiplicative Group Wheels and Sieve Geometry}
+% 
+% Each modular ring $\mathbb{Z}_n^\times$ forms a group of units. Visualizing these as circular arrangements reveals their internal symmetry:
+% 
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.7\linewidth]{Illustrations/multiplicative_group_wheels.png}
+% \caption{\textbf{Multiplicative Group Wheels for \( \mathbb{Z}_n^\times \).} for moduli $n=10,30,42$. Spacing is equal-angular (normalizes each modulus to its internal arithmetic symmetry group) to reflect group symmetry. 
+% Each circular layer displays the groups of invertible elements modulo \( n \), which are \href{https://colab.research.google.com/drive/1jd-nsH1qsqHkfVUFQrmIMkQLw5yJWgOx?usp=sharing}{arranged} with equal angular spacing to reflect their internal cyclic symmetry.}
+% \end{figure}
+% \begin{itemize}
+%     \item Mod 10: 4 directions — coarse sieve.
+%     \item Mod 30: 8 directions — a full octal compass.
+%     \item Mod 42: 12 directions — a proper clock but with less clarity.
+% \end{itemize}
+%  Aligning the residues by position highlights the internal lattice structure of each ring emphasizing how each modulus “tiles” its residue space.
+% 
+% \begin{tcolorbox}[title=Cyclic Multiplicative Groups \( \mathbb{Z}_n^\times \), colback=blue!5, colframe=blue!75!black, fonttitle=\bfseries]
+% 
+% A multiplicative group \( \mathbb{Z}_n^\times \) is said to be \textbf{cyclic} if there exists a \textit{primitive root} \( g \) such that:
+% \[
+% \mathbb{Z}_n^\times = \langle g \rangle = \{ g^0, g^1, g^2, \ldots, g^{\phi(n)-1} \} \mod n.
+% \]
+% 
+% This means that every coprime residue mod \( n \) is a power of \( g \) modulo \( n \).
+% 
+% \bigskip
+% 
+% \textbf{Example:} For \( n = 7 \), we have:
+% \[
+% \mathbb{Z}_7^\times = \{1, 2, 3, 4, 5, 6\}, \quad \phi(7) = 6.
+% \]
+% Let’s take \( g = 3 \). We compute:
+% \[
+% 3^1 = 3,\quad
+% 3^2 = 2,\quad
+% 3^3 = 6,\quad
+% 3^4 = 4,\quad
+% 3^5 = 5,\quad
+% 3^6 = 1 \mod 7.
+% \]
+% So 3 generates all of \( \mathbb{Z}_7^\times \), and the group is cyclic:
+% \[
+% \mathbb{Z}_7^\times \cong C_6.
+% \]
+% 
+% \textbf{Notation Note:}  
+% 
+% \( \mathbb{Z}_n \): integers mod \( n \) (an additive ring) ; \( \mathbb{Z}_n^\times \): multiplicative group of units mod \( n \) ; \( C_k \): abstract cyclic group of order \( k \)
+% 
+% When \( \mathbb{Z}_n^\times \) is cyclic, we can write \( \mathbb{Z}_n^\times \cong C_{\phi(n)} \). This is always true for:
+% \[
+% n = 2,\ 4,\ p^k,\ 2p^k \quad \text{with } p \text{ an odd prime}.
+% \]
+% For other \( n \), \( \mathbb{Z}_n^\times \) is not cyclic, but may still decompose into products of cyclic groups. See the next box.
+% 
+% \end{tcolorbox}
 %%%%%%%%%%%
-\begin{tcolorbox}[title=How \( \mathbb{Z}_{30}^\times \cong C_4 \times C_2 \): Two Independent Cycles, colback=green!5, colframe=green!60!black, fonttitle=\bfseries]
-
-The group \( \mathbb{Z}_{30}^\times = \{1,7,11,13,17,19,23,29\} \) has 8 elements, but it is \textbf{not cyclic}. There is no single element whose powers generate the entire group.
-
-Instead, it splits as:
-\[
-\mathbb{Z}_{30}^\times \cong C_4 \times C_2,
-\]
-the direct product of a cyclic group of order 4 and one of order 2. 
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\linewidth]{Illustrations/multiplicative_Cross.png}
-\caption{\href{https://colab.research.google.com/drive/15AeMC8U2iMfe0A1wdy5kjOLE0yRwYEXT?usp=sharing}{Direct} product of cyclic group.}
-\label{fig:rankCrank}
-\end{figure}
-
-This means the group behaves like two independent "rotations":
-\begin{itemize}
-  \item One rotation of order 4 — like turning a gear 90° each step (4 steps = full turn)
-  \item Another rotation of order 2 — just a flip (2 steps total)
-\end{itemize}
-
-{Algebraically} this means each group element can be written uniquely as:
-\[
-(a^i, b^j) \quad \text{where } i \in \{0,1,2,3\},\ j \in \{0,1\}
-\]
-with \( a \) generating \( C_4 \), and \( b \) generating \( C_2 \). 
-
-Total elements: \( 4 \times 2 = 8 \).
-
-\textit{This is why the structure is regular and symmetric, but not cyclic: no single movement covers all paths.}
-\end{tcolorbox}
+% \begin{tcolorbox}[title=How \( \mathbb{Z}_{30}^\times \cong C_4 \times C_2 \): Two Independent Cycles, colback=green!5, colframe=green!60!black, fonttitle=\bfseries]
+% 
+% The group \( \mathbb{Z}_{30}^\times = \{1,7,11,13,17,19,23,29\} \) has 8 elements, but it is \textbf{not cyclic}. There is no single element whose powers generate the entire group.
+% 
+% Instead, it splits as:
+% \[
+% \mathbb{Z}_{30}^\times \cong C_4 \times C_2,
+% \]
+% the direct product of a cyclic group of order 4 and one of order 2. 
+% 
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.85\linewidth]{Illustrations/multiplicative_Cross.png}
+% \caption{\href{https://colab.research.google.com/drive/15AeMC8U2iMfe0A1wdy5kjOLE0yRwYEXT?usp=sharing}{Direct} product of cyclic group.}
+% \label{fig:rankCrank}
+% \end{figure}
+% 
+% This means the group behaves like two independent "rotations":
+% \begin{itemize}
+%   \item One rotation of order 4 — like turning a gear 90° each step (4 steps = full turn)
+%   \item Another rotation of order 2 — just a flip (2 steps total)
+% \end{itemize}
+% 
+% {Algebraically} this means each group element can be written uniquely as:
+% \[
+% (a^i, b^j) \quad \text{where } i \in \{0,1,2,3\},\ j \in \{0,1\}
+% \]
+% with \( a \) generating \( C_4 \), and \( b \) generating \( C_2 \). 
+% 
+% Total elements: \( 4 \times 2 = 8 \).
+% 
+% \textit{This is why the structure is regular and symmetric, but not cyclic: no single movement covers all paths.}
+% \end{tcolorbox}
+% >>>>>> end of annexed block <<<<<<
 \subsection*{Quadratic Binary Primes}
 
 We now restrict to a structured subset of primes given by the binary quadratic form:
@@ -573,121 +579,123 @@ This form traces a paraboloid in the $(p,q)$-plane. When reduced modulo 30, it p
 \caption{Residue class distributions of quadratic-form primes modulo 10, 30, 42. Only coprime residues are shown. Note the asymmetries in mod 30. Each \href{https://colab.research.google.com/drive/1ms83l9rPd1BIYDhor_TArWJh_ZFGRn_g?usp=sharing}{subplot} shows the empirical distribution of such primes modulo $m = 10$, $30$, $42$, and $9$, respectively. Only residues coprime to the modulus are shown. While mod 9 yields a relatively flat and noisy distribution, moduli like 30 and 42 reveal sharp asymmetries, with certain classes heavily favored. This suggests that larger, semi-prime moduli (e.g., $30 = 2 \cdot 3 \cdot 5$) act as finer sieves, highlighting structured biases induced by the quadratic form. These biases vanish under random expectations, reinforcing the non-uniformity of prime distributions across arithmetic partitions.}
 \end{figure}
 %%%%%%%%%%%
-\newpage
-\subsection*{Entropy and Divergence Across Modular Residues}
+% >>>>>> ANNEX E (cut-sheet v2): entropy across modular residues; codon dynamics, random versus prime-induced — block commented out below, pointer left in text <<<<<<
+\textit{(Entropy across modular residues; codon dynamics, random versus prime-induced --- the full working is set out in Annexe E.)}
 
-To quantify the non-uniformity in the distribution of quadratic-form primes, Claude computes the \textbf{Shannon entropy} and the \textbf{Kullback--Leibler (KL) divergence} for their frequencies across four residue systems: mod 10, mod 30, mod 42, and digital root (mod 9).
-
-\begin{itemize}
-  \item \textbf{Entropy $H(P)$} measures the unpredictability of a distribution. A uniform distribution maximizes entropy.
-  \item \textbf{Max Entropy} is $\log_2(k)$, where $k$ is the number of possible residues.
-  \item \textbf{KL Divergence $D_{\text{KL}}(P\,||\,U)$} measures how much the actual distribution $P$ deviates from a uniform reference distribution $U$.
-  \item \textbf{Entropy Ratio} is $H(P) / \log_2(k)$, giving a normalized measure of uniformity.
-\end{itemize}
-
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-\textbf{Modulus} & \textbf{Residue Class} & \textbf{Entropy, S} & \textbf{Max S} & \textbf{KL Div} & \textbf{S Ratio} \\
-\hline
-10 & 4 & 1.272 & 2.000 & 0.728 & 0.636 \\
-30 & 8 & 1.447 & 3.000 & 1.553 & 0.482 \\
-42 & 11 & 2.688 & 3.459 & 0.772 & 0.777 \\
+% \subsection*{Entropy and Divergence Across Modular Residues}
+% 
+% To quantify the non-uniformity in the distribution of quadratic-form primes, Claude computes the \textbf{Shannon entropy} and the \textbf{Kullback--Leibler (KL) divergence} for their frequencies across four residue systems: mod 10, mod 30, mod 42, and digital root (mod 9).
+% 
+% \begin{itemize}
+%   \item \textbf{Entropy $H(P)$} measures the unpredictability of a distribution. A uniform distribution maximizes entropy.
+%   \item \textbf{Max Entropy} is $\log_2(k)$, where $k$ is the number of possible residues.
+%   \item \textbf{KL Divergence $D_{\text{KL}}(P\,||\,U)$} measures how much the actual distribution $P$ deviates from a uniform reference distribution $U$.
+%   \item \textbf{Entropy Ratio} is $H(P) / \log_2(k)$, giving a normalized measure of uniformity.
+% \end{itemize}
+% 
+% \begin{center}
+% \begin{tabular}{|c|c|c|c|c|c|}
+% \hline
+% \textbf{Modulus} & \textbf{Residue Class} & \textbf{Entropy, S} & \textbf{Max S} & \textbf{KL Div} & \textbf{S Ratio} \\
+% \hline
+% 10 & 4 & 1.272 & 2.000 & 0.728 & 0.636 \\
+% 30 & 8 & 1.447 & 3.000 & 1.553 & 0.482 \\
+% 42 & 11 & 2.688 & 3.459 & 0.772 & 0.777 \\
 % 9 (Digital Root) & 6 & 1.759 & 2.5850 & 0.8253 & 0.6807 \\
-\hline
-\end{tabular}
-\end{center}
-
-\subsubsection*{Interpretation}
-\begin{itemize}
-  \item \textbf{Mod 30} shows the strongest bias, with the lowest entropy ratio (48\%) and highest KL divergence --- suggesting structural filtering by the prime sieve.
-  \item \textbf{Mod 42} has the most uniform distribution (entropy ratio $\approx$ 78\%), likely due to its finer-grained class structure.
-  \item \textbf{Mod 10} reveals moderate structure, showing the final-digit patterning and additive residue effects respectively.
-\end{itemize}
+% \hline
+% \end{tabular}
+% \end{center}
+% 
+% \subsubsection*{Interpretation}
+% \begin{itemize}
+%   \item \textbf{Mod 30} shows the strongest bias, with the lowest entropy ratio (48\%) and highest KL divergence --- suggesting structural filtering by the prime sieve.
+%   \item \textbf{Mod 42} has the most uniform distribution (entropy ratio $\approx$ 78\%), likely due to its finer-grained class structure.
+%   \item \textbf{Mod 10} reveals moderate structure, showing the final-digit patterning and additive residue effects respectively.
+% \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%
-The rotational symmetry of \( \mathbb{Z}_{30}^\times \), with only 8 affine directions, visually aligns with the reduced entropy
-
-
-
-
+% The rotational symmetry of \( \mathbb{Z}_{30}^\times \), with only 8 affine directions, visually aligns with the reduced entropy
+% 
+% 
+% 
+% 
 %%%%%%%%%%%%%%%%%%%%%%
-
+% 
 %%%%%%%%%%%%
-
-\newpage
-
-
-\subsection*{Codon Dynamics: Random vs Prime-Induced}
-
-To probe symbolic patterns within the prime sequence, Claude compared codon transition statistics against a well-understood random baseline. A \textit{codon} is defined here as an overlapping triplet of ternary digits derived from prime values via a modular sieve:
-\[
-n = p^2 + 4q^2 \mod 30 \longrightarrow \mod 8 \longrightarrow \text{ternary codon}.
-\]
-The resulting sequence encodes symbolic “motion” through the prime lattice filtered by a binary quadratic form. Claude then built a transition matrix of codon-to-codon transitions to reveal preferred symbolic flows.
-
-\paragraph{The RPS Baseline.} As a null model, Claude simulated a random sequence over the trinary alphabet $\{R, P, S\}$. This is analogous to the Rock–Paper–Scissors game. Though each symbol appears with equal likelihood, the transition structure between codons (e.g., \texttt{RRP} $\rightarrow$ \texttt{RPS}) is nontrivial paralleling the classic coin toss paradox: Alice waits for \texttt{HT}, Bob for \texttt{HH}, but Bob waits longer on average — despite both outcomes being equally likely in two tosses. this non intuitive tructure arises from sequence memory, not symbol probability alone.
-
-\paragraph{Transition Matrices.} Both the affine prime codon sequence and the random RPS codons yield Markov transition matrices. These are visualized in Figure~\ref{fig:rankCrank}. The affine case shows selective flows—some codon transitions dominate while others vanish entirely. In contrast, the RPS matrix is uniform and isotropic.
-
-\paragraph{Interpretation.} The affine codon stream is measurably less entropic and more structured than the RPS baseline. Certain transitions dominate (e.g., \texttt{001} \(\to\) \texttt{111}) while others vanish entirely. These dynamics suggest arithmetic constraints at play which are likely from the quadratic form and modular projection, rather than pure randomness.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\linewidth]{Illustrations/transitionCodon.png}
-\caption{Transition matrices for codons derived from the quadratic form $p^2 + 4q^2$ (left) and a uniform RPS random model (right). The affine case shows marked asymmetry and suppression.}
-\label{fig:rankCrank}
-\end{figure}
-
-\subsubsection*{Quantitative Comparison}
-
-To quantify these differences, Claude computed:
-\begin{itemize}
-    \item \textbf{KL Divergence (Affine || RPS)}: \texttt{0.516} — A significant divergence: codon transitions from the affine sieve deviate from memoryless randomness.
-    
-    \item \textbf{Shannon Entropy (Affine)}: \texttt{2.49} — Lower entropy than RPS, indicating more structured, predictable transitions.
-
-    \item \textbf{Shannon Entropy (RPS)}: \texttt{2.65} — Near maximal entropy for 4-symbol states, consistent with a memoryless trinary source.
-\end{itemize}
-
-\textbf{Shannon entropy} quantifies unpredictability: how many yes-no questions you’d need to guess a residue.  
-\textbf{KL divergence} tells how inefficient it is to assume the distribution is uniform when it's not.  A lower Shannon entropy $H(P)$  indicates that the system is more constrained or repetitive. In our case, the entropy of the affine codon process is significantly lower than that of the RPS baseline ($H = 2.49$ vs. $2.65$), suggesting that the affine-generated primes do not evolve randomly. The \textbf{Kullback–Leibler divergence} $\mathrm{KL}(P \,\|\, Q)$ measures the discrepancy between two distributions, in this case between the empirical codon transitions $P$ and the uniform RPS model $Q$. A positive divergence ($\mathrm{KL} \approx 0.52$) confirms that the affine codons deviate substantially from the null model, validating the visual asymmetry seen in the heatmaps.
-
-Together, these results underscore that the symbolic dynamics of primes, when filtered through quadratic forms and modular encodings, are far from random. Even when cast as ternary strings, these codons retain deep arithmetic regularities—structure not evident from their individual frequencies alone, but made clear in their sequential transitions. Such structure explains why naive models (like mod 10 digit endings) fail to capture the true statistical texture of the primes.
-
-\paragraph{Implication.} The observed structure suggests that prime codon sequences, especially under arithmetic sieves like $p^2 + 4q^2$, are not merely symbolic noise. They encode genuine arithmetic regularities, invisible in unfiltered prime streams. This partially explains phenomena like the underrepresentation of consecutive final digits (e.g., \texttt{1} following \texttt{1}) in primes modulo 10 or 30 — a behavior that cannot be replicated by naive random models. These symbolic sequences allow Claude to identify subtle constraints in prime behavior that go beyond simple digit counts. They serve as:
-
-\begin{itemize}
-    \item A \textbf{surrogate stochastic process} over trinary symbols induced by number-theoretic constraints,
-    \item A \textbf{diagnostic sieve} for detecting low-entropy structure in the distribution of primes,
-    \item And a \textbf{measure of deviation} from randomness, useful for contrasting affine prime filters with the full prime stream or with artificial controls like RPS.
-\end{itemize}
-
-This framework reveals that even though primes appear “random,” their transitions — when filtered through modular and quadratic sieves — are far from memoryless. They encode arithmetic structure, which Claude’s codon-based heatmaps render visible.
+% 
+% \newpage
+% 
+% 
+% \subsection*{Codon Dynamics: Random vs Prime-Induced}
+% 
+% To probe symbolic patterns within the prime sequence, Claude compared codon transition statistics against a well-understood random baseline. A \textit{codon} is defined here as an overlapping triplet of ternary digits derived from prime values via a modular sieve:
+% \[
+% n = p^2 + 4q^2 \mod 30 \longrightarrow \mod 8 \longrightarrow \text{ternary codon}.
+% \]
+% The resulting sequence encodes symbolic “motion” through the prime lattice filtered by a binary quadratic form. Claude then built a transition matrix of codon-to-codon transitions to reveal preferred symbolic flows.
+% 
+% \paragraph{The RPS Baseline.} As a null model, Claude simulated a random sequence over the trinary alphabet $\{R, P, S\}$. This is analogous to the Rock–Paper–Scissors game. Though each symbol appears with equal likelihood, the transition structure between codons (e.g., \texttt{RRP} $\rightarrow$ \texttt{RPS}) is nontrivial paralleling the classic coin toss paradox: Alice waits for \texttt{HT}, Bob for \texttt{HH}, but Bob waits longer on average — despite both outcomes being equally likely in two tosses. this non intuitive tructure arises from sequence memory, not symbol probability alone.
+% 
+% \paragraph{Transition Matrices.} Both the affine prime codon sequence and the random RPS codons yield Markov transition matrices. These are visualized in Figure~\ref{fig:rankCrank}. The affine case shows selective flows—some codon transitions dominate while others vanish entirely. In contrast, the RPS matrix is uniform and isotropic.
+% 
+% \paragraph{Interpretation.} The affine codon stream is measurably less entropic and more structured than the RPS baseline. Certain transitions dominate (e.g., \texttt{001} \(\to\) \texttt{111}) while others vanish entirely. These dynamics suggest arithmetic constraints at play which are likely from the quadratic form and modular projection, rather than pure randomness.
+% 
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.85\linewidth]{Illustrations/transitionCodon.png}
+% \caption{Transition matrices for codons derived from the quadratic form $p^2 + 4q^2$ (left) and a uniform RPS random model (right). The affine case shows marked asymmetry and suppression.}
+% \label{fig:rankCrank}
+% \end{figure}
+% 
+% \subsubsection*{Quantitative Comparison}
+% 
+% To quantify these differences, Claude computed:
+% \begin{itemize}
+%     \item \textbf{KL Divergence (Affine || RPS)}: \texttt{0.516} — A significant divergence: codon transitions from the affine sieve deviate from memoryless randomness.
+%     
+%     \item \textbf{Shannon Entropy (Affine)}: \texttt{2.49} — Lower entropy than RPS, indicating more structured, predictable transitions.
+% 
+%     \item \textbf{Shannon Entropy (RPS)}: \texttt{2.65} — Near maximal entropy for 4-symbol states, consistent with a memoryless trinary source.
+% \end{itemize}
+% 
+% \textbf{Shannon entropy} quantifies unpredictability: how many yes-no questions you’d need to guess a residue.  
+% \textbf{KL divergence} tells how inefficient it is to assume the distribution is uniform when it's not.  A lower Shannon entropy $H(P)$  indicates that the system is more constrained or repetitive. In our case, the entropy of the affine codon process is significantly lower than that of the RPS baseline ($H = 2.49$ vs. $2.65$), suggesting that the affine-generated primes do not evolve randomly. The \textbf{Kullback–Leibler divergence} $\mathrm{KL}(P \,\|\, Q)$ measures the discrepancy between two distributions, in this case between the empirical codon transitions $P$ and the uniform RPS model $Q$. A positive divergence ($\mathrm{KL} \approx 0.52$) confirms that the affine codons deviate substantially from the null model, validating the visual asymmetry seen in the heatmaps.
+% 
+% Together, these results underscore that the symbolic dynamics of primes, when filtered through quadratic forms and modular encodings, are far from random. Even when cast as ternary strings, these codons retain deep arithmetic regularities—structure not evident from their individual frequencies alone, but made clear in their sequential transitions. Such structure explains why naive models (like mod 10 digit endings) fail to capture the true statistical texture of the primes.
+% 
+% \paragraph{Implication.} The observed structure suggests that prime codon sequences, especially under arithmetic sieves like $p^2 + 4q^2$, are not merely symbolic noise. They encode genuine arithmetic regularities, invisible in unfiltered prime streams. This partially explains phenomena like the underrepresentation of consecutive final digits (e.g., \texttt{1} following \texttt{1}) in primes modulo 10 or 30 — a behavior that cannot be replicated by naive random models. These symbolic sequences allow Claude to identify subtle constraints in prime behavior that go beyond simple digit counts. They serve as:
+% 
+% \begin{itemize}
+%     \item A \textbf{surrogate stochastic process} over trinary symbols induced by number-theoretic constraints,
+%     \item A \textbf{diagnostic sieve} for detecting low-entropy structure in the distribution of primes,
+%     \item And a \textbf{measure of deviation} from randomness, useful for contrasting affine prime filters with the full prime stream or with artificial controls like RPS.
+% \end{itemize}
+% 
+% This framework reveals that even though primes appear “random,” their transitions — when filtered through modular and quadratic sieves — are far from memoryless. They encode arithmetic structure, which Claude’s codon-based heatmaps render visible.
 % \subsection*{Codons and Symbolic Transition Maps}
-
+% 
 % We now explore how these modular filters affect symbolic dynamics through codon encoding and transition matrices.
 % %%%%%
 % To probe symbolic patterns within the prime sequence, we compare codon transition statistics derived from an arithmetic sieve to those from a uniform random baseline. A \emph{codon} here refers to an overlapping triplet of ternary digits derived from residue classes:
 % \begin{equation*}
 % n = p^2 + 4q^2 \mod 30 \longrightarrow \mod 8 \longrightarrow \text{ternary codon}.
 % \end{equation*}
-
+% 
 % \paragraph{RPS Baseline.} We simulate a random symbolic sequence over a trinary alphabet {R, P, S}, forming a Markov process analogous to Rock--Paper--Scissors. This null model has uniform one-step transition probabilities and serves as a control for structured behavior.
-
+% 
 % \paragraph{Affine Codon Construction.} We generate codons from the sequence of primes filtered through the quadratic form \(p^2 + 4q^2\), reduced modulo 30. The result is then encoded mod 8 and expressed as a base-3 (ternary) triplet. Transition matrices are then constructed from this symbolic stream.
-
+% 
 % \begin{figure}[H]
 % \centering
 % \includegraphics[width=0.85\linewidth]{Illustrations/transitionCodon.png}
 % \caption{Codon transition matrices for primes via \(p^2 + 4q^2\) (left) versus uniform RPS (right). The affine matrix shows banded asymmetry and suppressed transitions. RPS yields a balanced, isotropic transition field.}
 % \label{fig:rankCrank}
 % \end{figure}
-
+% 
 % To distinguish structured arithmetic phenomena from mere randomness, Celiac compares symbolic codon transitions derived from the quadratic affine form $n = p^2 + 4q^2$ (modulo 30 and mapped into ternary form) against a randomized baseline generated by simulating codons from the game Rock–Paper–Scissors (RPS). This random model, governed by a memoryless uniform distribution over a three-symbol alphabet, serves as a surrogate Markov process: it approximates the behavior of codon transitions in the absence of arithmetic constraints. The transition matrix constructed from the affine codons, by contrast, exhibits strong directional preferences—certain transitions such as \texttt{001} to \texttt{111} are dominant, while others are effectively absent. These near-zero transition probabilities reflect suppressed autocorrelation and hint at underlying Diophantine structure. Those banded gaps in the matrix on the left? That’s what I mean by structured suppression.
-
-
-
-
+% 
+% 
+% 
+% 
 % \paragraph{Key Measures.}
 % Claude computes:
 % \begin{itemize}
@@ -698,138 +706,139 @@ This framework reveals that even though primes appear “random,” their transi
 % \item \textbf{Shannon Entropy (RPS)}: \texttt{2.65} \newline
 % Approaches maximum entropy for a memoryless, uniform codon generator.
 % \end{itemize}
-
-\begin{tcolorbox}[title=Symbolic Insights from Codon Transitions, colback=blue!5, colframe=blue!75!black, fonttitle=\bfseries]
-\begin{itemize}
-\item The RPS matrix serves as a \textbf{null model}---what codon transitions should look like without structure.
-\item The affine sieve over primes induces a \textbf{surrogate Markov process} over ternary symbols, with visible preferences.
-\item Strong asymmetry and suppressed transitions signal \textbf{Diophantine regularities}.
-\end{itemize}
-\end{tcolorbox}
-
-%%%%%%%%%%%%%%%5
-\begin{itemize}[leftmargin=0.6cm, label={}]
-
-\item[\textbf{Claude}]  
-You know, Celia, these charts you're making — mod 10, mod 30 — they remind me of prime sieves. Only you’ve dressed them up as pastels. What we’re really interested in seeing is the residue architecture of the primes Mod 30? That’s the real shadow space. Being that is, the smallest semi-prime cuboid as the product of 2, 3, 5 everything filters through it.
-
-\item[\textbf{Celia}]  
-You mean the entropy drop? I saw it with less than 50\% of full entropy. And KL divergence off the charts.
-
-\item[\textbf{Claude}]  
-Exactly. You think you’re seeing randomness, but it’s just modular choreography. Your interesting move was bringing in mod 42. Demi’s been looking at semi-prime moduli too — mod 30, 42, 210 — treating them as modular phase spaces, almost like quantum wells.
-
-\item[\textbf{Celia}]  
-(frowning a little) And what does that mean for the \( p^2 + 4q^2 \) primes?
-
-\item[\textbf{Claude}]  
-It means your {\em paraboloid primes} live in a residue sheaf and those entropy bars you’re plotting? They’re cross-sections. You’ve found a useful point of view I think, Celia. I am not sure, perhaps you just haven’t decided if it’s arithmetic or symbolic.
-
-\item[\textbf{Celia}]  
-(smirking and marking irksomeness) I’ll take pastel portals over any of your grayscale smugness any day.
-\end{itemize}
-
-\begin{itemize}[leftmargin=0.6cm, label={}]
-
-\item[\textbf{Claude}]  
-(Immune) Notice something, Celia — mod 30 has exactly double the number of coprime  residues as mod 10 : that is eight, (1,7,11,13,17,19,23,29) versus four,(1,3,7,9). And mod 42 has triple that number: 12. But already by mod 30, you’ve resolved most of the ambiguity. The extra Babylonian-adjacent resolution in 42 is redundant, structurally speaking. We're switching from four cardinal directions to eight, which is enough to locate most symmetry. Going to twelve doesn’t add proportionate insight. The double coverage is the sweet spot. Any more is like adding spokes to a wheel that already turns true.
-
-\item[\textbf{Celia}]  
-So mod 30 acts like a complete “residue compass.” Everything else is just overlaid texture?
-
-\item[\textbf{Claude}]  
-Exactly. Mod 10 is a shadow. Mod 30 is the stencil.
-
-\end{itemize}
-
-\begin{tcolorbox}[title=Why Mod 30 Sieves Sharper Than Mod 42?, colback=gray!5, colframe=gray!80!black, fonttitle=\bfseries]
-
-The effectiveness of a modular sieve is not solely about how large the modulus is or how many residue classes it contains — it depends on how many \emph{non-prime residues} the modulus eliminates.
-
-\begin{itemize}
-  \item The modulus $30 = 2 \times 3 \times 5$ eliminates numbers divisible by the first \textbf{three} primes.
-  \item $42 = 2 \times 3 \times 7$ skips over 5 and includes 7 instead, but 5 divides \emph{many more small integers} than 7 does.
-\end{itemize}
-
-This gives mod 30 a sharper filtering action at small scales, even though both mod 30 and mod 42 have three distinct prime factors.
-
-\bigskip
-
-Euler’s \textbf{totient function} $\phi(n)$ counts the number of integers less than $n$ that are \textbf{coprime} to $n$. It determines the number of residue classes that survive sieving:
-
-\[
-\begin{aligned}
-\phi(10) &= 4 &\quad (\text{coarse sieve})\\
-\phi(30) &= 8 &\quad (\textbf{compact, efficient sieve})\\
-\phi(42) &= 12 &\quad (\text{finer, but not more decisive})
-\end{aligned}
-\]
-
-Although $\phi(42) > \phi(30)$, the residues mod 30 tend to expose clearer patterns in prime structure, especially when filtering via small factors.
-
-\medskip
-\textit{Mod 30 acts like a tight, efficient stencil. Mod 42 adds granularity, but no more clarity.}
-\end{tcolorbox}
-
-\begin{itemize}[leftmargin=0.6cm, label={}]
-
-\item[\textbf{Claude}]  
-You do realize, Celia, that \( \phi(n) \) isn’t just counting residues — it’s measuring symmetry. The group \( \mathbb{Z}_n^\times \), the units modulo \( n \), forms a multiplicative group of order \( \phi(n) \).... So when you’re comparing mod 10, 30, and 42 — you’re really comparing the internal rotational symmetry of those rings. Mod 30 has 8 coprime residues. That’s 8 distinct directions the primes can legally travel.
-
-\item[\textbf{Celia}]  
-Agreed, the entropy I see in mod 30 isn’t just information loss — it’s group symmetry revealing structure?
-
-    \item[\textbf{Claude}]  
-    Yes, for all the elegance of your affinity primes and ternary codons, there’s a more ancient structure at work here — the residue classes modulo 30. Every prime beyond 5 lives inside \( \mathbb{Z}_{30}^\times \), and those 8 slots form a natural octal alphabet. You don’t need to contrive a ternary.
-
-    \item[\textbf{Celia}]  
-    I’m aware. But those residue classes are fixed — they’re backward-facing. They don’t tell us anything about a prime’s future. My ternary map captures \textit{what a prime might generate}, not just where it sits.
-
-    \item[\textbf{Claude}]  
-    True — your affinities look forward. Mine look back. But the octal map arises from the group structure itself — not an imposed condition. And even your codons suffer the same fate: statistical bias, entropy drift. Since nothing’s uniform.
-
-    \item[\textbf{Celia}]  
-    I never expected uniformity. But the codon transition biases might be the very thing that breaks the illusion of prime randomness. You saw the cycles. The entropy. The memory.
-
-    \item[\textbf{Claude}]  
-    Then perhaps both models are useful. One gives a lattice to stand on. The other, a direction to walk in.
-
-    \item[\textbf{Celia}]  
-    Fair. OK lets agree, your mod 30 residues are the floorboards. My codons are the footsteps.
-
-\end{itemize}
-
+% 
+% \begin{tcolorbox}[title=Symbolic Insights from Codon Transitions, colback=blue!5, colframe=blue!75!black, fonttitle=\bfseries]
+% \begin{itemize}
+% \item The RPS matrix serves as a \textbf{null model}---what codon transitions should look like without structure.
+% \item The affine sieve over primes induces a \textbf{surrogate Markov process} over ternary symbols, with visible preferences.
+% \item Strong asymmetry and suppressed transitions signal \textbf{Diophantine regularities}.
+% \end{itemize}
 % \end{tcolorbox}
-
-
-\begin{tcolorbox}[title=Transition Entropy: Mod 30 vs Digital vs Octal Root Encodings, colback=gray!5!white, colframe=black!85!white, fonttitle=\bfseries]
-
-\textbf To symbolically compress the behavior of primes modulo 30, we test two different 4-class encoding schemes:
-\begin{enumerate}
-    \item \textbf{Digital Root Compression}: maps each residue to its digital root (mod 9).
-    \item \textbf{Octal Root Compression}: maps each residue to its value mod 8.
-\end{enumerate}
-
-We compare their symbolic \textit{transition entropy}, measuring how surprising (in Shannon's sense) the next state is, given the current one.
-
-\medskip
-\textbf{Results (entropy in bits):}
-\begin{itemize}
-  \item Mod 30 residues (8 states): \textbf{2.45} bits
-  \item Digital Root (4 states): \textbf{2.18} bits (\(\sim 89\%\) of full entropy)
-  \item Octal Root (4 states): \textbf{1.91} bits (\(\sim 78\%\) of full entropy)
-\end{itemize}
-
-\textbf{Interpretation:}  
-A lower entropy implies \textit{higher predictability}. In Shannon's framework, less entropy means less "surprise" about what symbol comes next. Octal Root encoding, by reducing entropy the most, yields the most \textit{deterministic} symbolic transitions among the three.
-
-\medskip
-\textbf{Claude's Note:}  
-\emph{“So your codons and digital roots shuffle the cards nicely — but the octal root? That’s closer to the dealer’s hand. Less randomness, more memory. You might say the primes are whispering in base 8.”}
-
-\end{tcolorbox}
-
-\newpage
+% 
+%%%%%%%%%%%%%%%5
+% \begin{itemize}[leftmargin=0.6cm, label={}]
+% 
+% \item[\textbf{Claude}]  
+% You know, Celia, these charts you're making — mod 10, mod 30 — they remind me of prime sieves. Only you’ve dressed them up as pastels. What we’re really interested in seeing is the residue architecture of the primes Mod 30? That’s the real shadow space. Being that is, the smallest semi-prime cuboid as the product of 2, 3, 5 everything filters through it.
+% 
+% \item[\textbf{Celia}]  
+% You mean the entropy drop? I saw it with less than 50\% of full entropy. And KL divergence off the charts.
+% 
+% \item[\textbf{Claude}]  
+% Exactly. You think you’re seeing randomness, but it’s just modular choreography. Your interesting move was bringing in mod 42. Demi’s been looking at semi-prime moduli too — mod 30, 42, 210 — treating them as modular phase spaces, almost like quantum wells.
+% 
+% \item[\textbf{Celia}]  
+% (frowning a little) And what does that mean for the \( p^2 + 4q^2 \) primes?
+% 
+% \item[\textbf{Claude}]  
+% It means your {\em paraboloid primes} live in a residue sheaf and those entropy bars you’re plotting? They’re cross-sections. You’ve found a useful point of view I think, Celia. I am not sure, perhaps you just haven’t decided if it’s arithmetic or symbolic.
+% 
+% \item[\textbf{Celia}]  
+% (smirking and marking irksomeness) I’ll take pastel portals over any of your grayscale smugness any day.
+% \end{itemize}
+% 
+% \begin{itemize}[leftmargin=0.6cm, label={}]
+% 
+% \item[\textbf{Claude}]  
+% (Immune) Notice something, Celia — mod 30 has exactly double the number of coprime  residues as mod 10 : that is eight, (1,7,11,13,17,19,23,29) versus four,(1,3,7,9). And mod 42 has triple that number: 12. But already by mod 30, you’ve resolved most of the ambiguity. The extra Babylonian-adjacent resolution in 42 is redundant, structurally speaking. We're switching from four cardinal directions to eight, which is enough to locate most symmetry. Going to twelve doesn’t add proportionate insight. The double coverage is the sweet spot. Any more is like adding spokes to a wheel that already turns true.
+% 
+% \item[\textbf{Celia}]  
+% So mod 30 acts like a complete “residue compass.” Everything else is just overlaid texture?
+% 
+% \item[\textbf{Claude}]  
+% Exactly. Mod 10 is a shadow. Mod 30 is the stencil.
+% 
+% \end{itemize}
+% 
+% \begin{tcolorbox}[title=Why Mod 30 Sieves Sharper Than Mod 42?, colback=gray!5, colframe=gray!80!black, fonttitle=\bfseries]
+% 
+% The effectiveness of a modular sieve is not solely about how large the modulus is or how many residue classes it contains — it depends on how many \emph{non-prime residues} the modulus eliminates.
+% 
+% \begin{itemize}
+%   \item The modulus $30 = 2 \times 3 \times 5$ eliminates numbers divisible by the first \textbf{three} primes.
+%   \item $42 = 2 \times 3 \times 7$ skips over 5 and includes 7 instead, but 5 divides \emph{many more small integers} than 7 does.
+% \end{itemize}
+% 
+% This gives mod 30 a sharper filtering action at small scales, even though both mod 30 and mod 42 have three distinct prime factors.
+% 
+% \bigskip
+% 
+% Euler’s \textbf{totient function} $\phi(n)$ counts the number of integers less than $n$ that are \textbf{coprime} to $n$. It determines the number of residue classes that survive sieving:
+% 
+% \[
+% \begin{aligned}
+% \phi(10) &= 4 &\quad (\text{coarse sieve})\\
+% \phi(30) &= 8 &\quad (\textbf{compact, efficient sieve})\\
+% \phi(42) &= 12 &\quad (\text{finer, but not more decisive})
+% \end{aligned}
+% \]
+% 
+% Although $\phi(42) > \phi(30)$, the residues mod 30 tend to expose clearer patterns in prime structure, especially when filtering via small factors.
+% 
+% \medskip
+% \textit{Mod 30 acts like a tight, efficient stencil. Mod 42 adds granularity, but no more clarity.}
+% \end{tcolorbox}
+% 
+% \begin{itemize}[leftmargin=0.6cm, label={}]
+% 
+% \item[\textbf{Claude}]  
+% You do realize, Celia, that \( \phi(n) \) isn’t just counting residues — it’s measuring symmetry. The group \( \mathbb{Z}_n^\times \), the units modulo \( n \), forms a multiplicative group of order \( \phi(n) \).... So when you’re comparing mod 10, 30, and 42 — you’re really comparing the internal rotational symmetry of those rings. Mod 30 has 8 coprime residues. That’s 8 distinct directions the primes can legally travel.
+% 
+% \item[\textbf{Celia}]  
+% Agreed, the entropy I see in mod 30 isn’t just information loss — it’s group symmetry revealing structure?
+% 
+%     \item[\textbf{Claude}]  
+%     Yes, for all the elegance of your affinity primes and ternary codons, there’s a more ancient structure at work here — the residue classes modulo 30. Every prime beyond 5 lives inside \( \mathbb{Z}_{30}^\times \), and those 8 slots form a natural octal alphabet. You don’t need to contrive a ternary.
+% 
+%     \item[\textbf{Celia}]  
+%     I’m aware. But those residue classes are fixed — they’re backward-facing. They don’t tell us anything about a prime’s future. My ternary map captures \textit{what a prime might generate}, not just where it sits.
+% 
+%     \item[\textbf{Claude}]  
+%     True — your affinities look forward. Mine look back. But the octal map arises from the group structure itself — not an imposed condition. And even your codons suffer the same fate: statistical bias, entropy drift. Since nothing’s uniform.
+% 
+%     \item[\textbf{Celia}]  
+%     I never expected uniformity. But the codon transition biases might be the very thing that breaks the illusion of prime randomness. You saw the cycles. The entropy. The memory.
+% 
+%     \item[\textbf{Claude}]  
+%     Then perhaps both models are useful. One gives a lattice to stand on. The other, a direction to walk in.
+% 
+%     \item[\textbf{Celia}]  
+%     Fair. OK lets agree, your mod 30 residues are the floorboards. My codons are the footsteps.
+% 
+% \end{itemize}
+% 
+% \end{tcolorbox}
+% 
+% 
+% \begin{tcolorbox}[title=Transition Entropy: Mod 30 vs Digital vs Octal Root Encodings, colback=gray!5!white, colframe=black!85!white, fonttitle=\bfseries]
+% 
+% \textbf To symbolically compress the behavior of primes modulo 30, we test two different 4-class encoding schemes:
+% \begin{enumerate}
+%     \item \textbf{Digital Root Compression}: maps each residue to its digital root (mod 9).
+%     \item \textbf{Octal Root Compression}: maps each residue to its value mod 8.
+% \end{enumerate}
+% 
+% We compare their symbolic \textit{transition entropy}, measuring how surprising (in Shannon's sense) the next state is, given the current one.
+% 
+% \medskip
+% \textbf{Results (entropy in bits):}
+% \begin{itemize}
+%   \item Mod 30 residues (8 states): \textbf{2.45} bits
+%   \item Digital Root (4 states): \textbf{2.18} bits (\(\sim 89\%\) of full entropy)
+%   \item Octal Root (4 states): \textbf{1.91} bits (\(\sim 78\%\) of full entropy)
+% \end{itemize}
+% 
+% \textbf{Interpretation:}  
+% A lower entropy implies \textit{higher predictability}. In Shannon's framework, less entropy means less "surprise" about what symbol comes next. Octal Root encoding, by reducing entropy the most, yields the most \textit{deterministic} symbolic transitions among the three.
+% 
+% \medskip
+% \textbf{Claude's Note:}  
+% \emph{“So your codons and digital roots shuffle the cards nicely — but the octal root? That’s closer to the dealer’s hand. Less randomness, more memory. You might say the primes are whispering in base 8.”}
+% 
+% \end{tcolorbox}
+% 
+% \newpage
+% >>>>>> end of annexed block <<<<<<
 \section*{Nephroidian slips}
 
 It is a late afternoon with sunlight glading it across the table between Celiac and Jovannah, cluttered with residue wheels and codon map honed with Staedler finery. A coffee cup casts a curious shadow.
@@ -916,30 +925,46 @@ Thus, prime-based quadratic forms act as \textbf{nonlinear symbolic filters}, en
 
 \end{tcolorbox}
 
-\section*{Postscript: The Arithmetic Caustic of $\mathbf{N=30}$}
+% >>>>>> ANNEX B (cut-sheet v2): the arithmetic caustic postscript — block commented out below, pointer left in text <<<<<<
+\textit{(The arithmetic caustic postscript --- the full working is set out in Annexe B.)}
 
-The modular sieve $\mathbb{Z}_{30}^\times$ is the number-theoretic equivalent of a \emph{Caustic Catastrophe}. Just as the \textbf{Nephroid} is the geometric singularity where constrained light rays achieve maximal \textbf{concentration} and deterministic focus, $\mathbf{\text{Mod } 30}$ is the minimal modulus to achieve optimal
-\emph{periodic signal elimination} of the dominant low-frequency components in the integer sequence.
-
-\medskip
-
-\noindent The multiples of any prime $p$ form a periodic signal with fundamental frequency $f_p = 1/p$. The critical sieving components are the lowest frequencies, $P = \{1/2, 1/3, 1/5\}$.
-
-\begin{itemize}
-    \item The modulus $N=30$ is the \emph{Least Common Multiple} of the first three primes:
-    \[
-    N = 30 = \text{lcm}(2, 3, 5).
-    \]
-
-    \item In the context of the Fourier Transform, winding the integer sequence around a circle of period $N=30$ ensures that all periodic signals corresponding to $1/2$, $1/3$, and $1/5$ are \emph{perfectly synchronized and eliminated}. This is the arithmetic analog of the Fourier winding number $\omega$ matching the signal frequency $f_p$, resulting in a zero "center of mass" for the cancelled components.
-
-    \item $N=30$ is thus the $\mathbf{minimal\ winding\ period}$ that achieves maximal $\mathbf{cancellation\ of\ low\ frequency\ noise}$ ($\phi(30)=8$ residue classes remaining).
-
-\end{itemize}
-
-The low $\mathbf{Shannon\ Entropy}$ and high $\mathbf{KL\ Divergence}$ observed in the $\mathbb{Z}_{30}^\times$ residue distribution are not random artifacts; they are the measurable signature of this minimal, deterministic constraint. The remaining 8 residues represent the $\mathbf{Arithmetic\ Caustic}$: a highly structured $\mathbf{concentration}$ of non-randomness that survived the optimal low-pass filter defined by the modulus $30 = 2 \cdot 3 \cdot 5$. The "cup" of $\bmod 30$ is the geometric chamber for this pure arithmetic focus.
-
+% \section*{Postscript: The Arithmetic Caustic of $\mathbf{N=30}$}
+% 
+% The modular sieve $\mathbb{Z}_{30}^\times$ is the number-theoretic equivalent of a \emph{Caustic Catastrophe}. Just as the \textbf{Nephroid} is the geometric singularity where constrained light rays achieve maximal \textbf{concentration} and deterministic focus, $\mathbf{\text{Mod } 30}$ is the minimal modulus to achieve optimal
+% \emph{periodic signal elimination} of the dominant low-frequency components in the integer sequence.
+% 
+% \medskip
+% 
+% \noindent The multiples of any prime $p$ form a periodic signal with fundamental frequency $f_p = 1/p$. The critical sieving components are the lowest frequencies, $P = \{1/2, 1/3, 1/5\}$.
+% 
+% \begin{itemize}
+%     \item The modulus $N=30$ is the \emph{Least Common Multiple} of the first three primes:
+%     \[
+%     N = 30 = \text{lcm}(2, 3, 5).
+%     \]
+% 
+%     \item In the context of the Fourier Transform, winding the integer sequence around a circle of period $N=30$ ensures that all periodic signals corresponding to $1/2$, $1/3$, and $1/5$ are \emph{perfectly synchronized and eliminated}. This is the arithmetic analog of the Fourier winding number $\omega$ matching the signal frequency $f_p$, resulting in a zero "center of mass" for the cancelled components.
+% 
+%     \item $N=30$ is thus the $\mathbf{minimal\ winding\ period}$ that achieves maximal $\mathbf{cancellation\ of\ low\ frequency\ noise}$ ($\phi(30)=8$ residue classes remaining).
+% 
+% \end{itemize}
+% 
+% The low $\mathbf{Shannon\ Entropy}$ and high $\mathbf{KL\ Divergence}$ observed in the $\mathbb{Z}_{30}^\times$ residue distribution are not random artifacts; they are the measurable signature of this minimal, deterministic constraint. The remaining 8 residues represent the $\mathbf{Arithmetic\ Caustic}$: a highly structured $\mathbf{concentration}$ of non-randomness that survived the optimal low-pass filter defined by the modulus $30 = 2 \cdot 3 \cdot 5$. The "cup" of $\bmod 30$ is the geometric chamber for this pure arithmetic focus.
+% 
 % \epigram{I write because I don't know what I think until I read what I say} \parencite{oconnor1995habit}.
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% >>>>>> end of annexed block <<<<<<
+
+
 
 
 

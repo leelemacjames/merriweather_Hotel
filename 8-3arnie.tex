@@ -14,76 +14,80 @@ While his grandfather’s notations had simplified physics, they had also been b
 
 Arnie’s intellectual pursuits reflected a need to make amends. Where his grandfather’s work was pragmatic, Arnie sought the aesthetic and the profound. He delved into the world of cyclotomic polynomials and their connection to the roots of unity, finding beauty in their symmetry and a link to the failures, triumphs, and lingering questions of mathematical history.
 
-\subsection*{The Legacy of Roots of Unity}
+% >>>>>> ANNEX B (cut-sheet v2): roots of unity and quaternionic lattices — block commented out below, pointer left in text <<<<<<
+\textit{(Roots of unity and quaternionic lattices --- the full working is set out in Annexe B.)}
 
-Arnie’s fascination began with the third roots of unity, famously tied to Eisenstein numbers and the geometry of equilateral triangles in the complex plane. He marveled at their simplicity:
-\[
-\omega = e^{2\pi i / 3}, \quad \omega^2 + \omega + 1 = 0.
-\]
-The third roots of unity are the solutions to the equation
-\begin{equation}
-    z^3 = 1,
-\end{equation}
-in the complex plane. Explicitly, these roots are:
-\begin{align*}
-    z = 1, \quad z = \omega = e^{2\pi i / 3}, \quad z = \omega^2 = e^{4\pi i / 3}.
-\end{align*}
-Expanding \(\omega\) and \(\omega^2\) in terms of real and imaginary components gives:
-\begin{align*}
-    \omega &= -\frac{1}{2} + i\frac{\sqrt{3}}{2}, \\
-    \omega^2 &= -\frac{1}{2} - i\frac{\sqrt{3}}{2}.
-\end{align*}
-where \(\omega\)  is reserved for the \emph{primitive root of unity}, specifically \(\omega = e^{2\pi i / 3}\). This root generates all other roots under multiplication and encodes the symmetry of the system.
-
-These roots form the vertices of an equilateral triangle inscribed in the unit circle. The rotational symmetry of this triangle corresponds to the cyclic group \(C_3\), where successive rotations by \(120^\circ\) leave the triangle invariant.
-
-\subsection*{Quaternionic Lattices}
-
+% \subsection*{The Legacy of Roots of Unity}
+% 
+% Arnie’s fascination began with the third roots of unity, famously tied to Eisenstein numbers and the geometry of equilateral triangles in the complex plane. He marveled at their simplicity:
+% \[
+% \omega = e^{2\pi i / 3}, \quad \omega^2 + \omega + 1 = 0.
+% \]
+% The third roots of unity are the solutions to the equation
+% \begin{equation}
+%     z^3 = 1,
+% \end{equation}
+% in the complex plane. Explicitly, these roots are:
+% \begin{align*}
+%     z = 1, \quad z = \omega = e^{2\pi i / 3}, \quad z = \omega^2 = e^{4\pi i / 3}.
+% \end{align*}
+% Expanding \(\omega\) and \(\omega^2\) in terms of real and imaginary components gives:
+% \begin{align*}
+%     \omega &= -\frac{1}{2} + i\frac{\sqrt{3}}{2}, \\
+%     \omega^2 &= -\frac{1}{2} - i\frac{\sqrt{3}}{2}.
+% \end{align*}
+% where \(\omega\)  is reserved for the \emph{primitive root of unity}, specifically \(\omega = e^{2\pi i / 3}\). This root generates all other roots under multiplication and encodes the symmetry of the system.
+% 
+% These roots form the vertices of an equilateral triangle inscribed in the unit circle. The rotational symmetry of this triangle corresponds to the cyclic group \(C_3\), where successive rotations by \(120^\circ\) leave the triangle invariant.
+% 
+% \subsection*{Quaternionic Lattices}
+% 
 % \subsection*{Eisenstein Integers}
-The \emph{Eisenstein integers} are a lattice of numbers in the complex plane:
-\begin{equation}
-    z = a + b\omega, \quad \text{where } a, b \in \mathbb{Z}.
-\end{equation}
-This lattice reflects the hexagonal symmetry of the third roots of unity, with the generator \(\omega\) encoding the fundamental rotational symmetry.
-
+% The \emph{Eisenstein integers} are a lattice of numbers in the complex plane:
+% \begin{equation}
+%     z = a + b\omega, \quad \text{where } a, b \in \mathbb{Z}.
+% \end{equation}
+% This lattice reflects the hexagonal symmetry of the third roots of unity, with the generator \(\omega\) encoding the fundamental rotational symmetry.
+% 
 % \section*{Quaternionic and Higher-Dimensional Symmetries}
-
-Arnie's musings naturally lead to questions about higher-dimensional analogs of roots of unity. The fourth roots of unity in the complex plane are the solutions to:
-\begin{equation}
-    z^4 = 1,
-\end{equation}
-which are:
-\begin{align*}
-    z = 1, \quad z = i, \quad z = -1, \quad z = -i.
-\end{align*}
-These roots form the vertices of a square inscribed in the unit circle and correspond to the cyclic group \(C_4\), representing rotations by \(90^\circ\).
-
+% 
+% Arnie's musings naturally lead to questions about higher-dimensional analogs of roots of unity. The fourth roots of unity in the complex plane are the solutions to:
+% \begin{equation}
+%     z^4 = 1,
+% \end{equation}
+% which are:
+% \begin{align*}
+%     z = 1, \quad z = i, \quad z = -1, \quad z = -i.
+% \end{align*}
+% These roots form the vertices of a square inscribed in the unit circle and correspond to the cyclic group \(C_4\), representing rotations by \(90^\circ\).
+% 
 % \subsection*{Quaternions and the 3D Analog}
-\emph{quaternions} provide a higher-dimensional extension of complex numbers and are defined as:
-\begin{equation}
-    q = a + bi + cj + dk, \quad \text{where } a, b, c, d \in \mathbb{R},
-\end{equation}
-with the imaginary units \(i, j, k\) satisfying the following multiplication rules:
-\begin{align*}
-    i^2 &= j^2 = k^2 = ijk = -1, \\ \quad ij &= k, \quad ji = -k, \quad jk = i, \quad kj = -i, \quad ki = j, \quad ik = -j.
-\end{align*}
-
-Quaternions naturally encode rotational symmetries in 3D space, forming the foundation for the quaternion group \(Q_8\):
-\begin{equation}
-    \{\pm 1, \pm i, \pm j, \pm k\}.
-\end{equation}
-This group extends the cyclic nature of \(C_4\) to non-commutative symmetries, reflecting the algebraic richness of higher dimensions.
-
-A direct analogy to Eisenstein integers in 3D can be constructed using quaternionic lattices. These are numbers of the form:
-\begin{equation}
-    q = a + bi + cj + dk, \quad \text{where } a, b, c, d \in \mathbb{Z}.
-\end{equation}
-Such lattices encode symmetries in 3D space, with the quaternionic units \(i, j, k\) extending the concept of rotational symmetry beyond the 2D unit circle.
-
-Roots of unity, Eisenstein integers, and quaternions are deeply connected through their shared symmetry and geometric richness. Arnie pondered whether the algebraic properties of quaternions might hint at even higher-dimensional extensions of roots of unity, perhaps involving objects like octonions or more exotic algebraic structures. The journey, as always, begins with symmetry and ends with endless possibilities.
-
-Each step deeper into the roots of unity felt like uncovering a secret language, a dance of numbers and symmetry that could define entire fields of mathematics. Yet, Arnie was haunted by a peculiar failure: why did these roots of unity stumble at 23, as Kummer and Liouville had pointed out to Lamé?
-
+% \emph{quaternions} provide a higher-dimensional extension of complex numbers and are defined as:
+% \begin{equation}
+%     q = a + bi + cj + dk, \quad \text{where } a, b, c, d \in \mathbb{R},
+% \end{equation}
+% with the imaginary units \(i, j, k\) satisfying the following multiplication rules:
+% \begin{align*}
+%     i^2 &= j^2 = k^2 = ijk = -1, \\ \quad ij &= k, \quad ji = -k, \quad jk = i, \quad kj = -i, \quad ki = j, \quad ik = -j.
+% \end{align*}
+% 
+% Quaternions naturally encode rotational symmetries in 3D space, forming the foundation for the quaternion group \(Q_8\):
+% \begin{equation}
+%     \{\pm 1, \pm i, \pm j, \pm k\}.
+% \end{equation}
+% This group extends the cyclic nature of \(C_4\) to non-commutative symmetries, reflecting the algebraic richness of higher dimensions.
+% 
+% A direct analogy to Eisenstein integers in 3D can be constructed using quaternionic lattices. These are numbers of the form:
+% \begin{equation}
+%     q = a + bi + cj + dk, \quad \text{where } a, b, c, d \in \mathbb{Z}.
+% \end{equation}
+% Such lattices encode symmetries in 3D space, with the quaternionic units \(i, j, k\) extending the concept of rotational symmetry beyond the 2D unit circle.
+% 
+% Roots of unity, Eisenstein integers, and quaternions are deeply connected through their shared symmetry and geometric richness. Arnie pondered whether the algebraic properties of quaternions might hint at even higher-dimensional extensions of roots of unity, perhaps involving objects like octonions or more exotic algebraic structures. The journey, as always, begins with symmetry and ends with endless possibilities.
+% 
+% Each step deeper into the roots of unity felt like uncovering a secret language, a dance of numbers and symmetry that could define entire fields of mathematics. Yet, Arnie was haunted by a peculiar failure: why did these roots of unity stumble at 23, as Kummer and Liouville had pointed out to Lamé?
+% 
+% >>>>>> end of annexed block <<<<<<
 \subsection*{The Python of 23}
 
 Lamé, believing he had solved Fermat’s Last Theorem, relied heavily on roots of unity. His idea was simple: if the equation 
@@ -120,52 +124,51 @@ and intersecting it with the line \(y = mx + m\), the rational points of interse
 \caption{Arnie ain't heavy}
 \end{figure}
 
-\subsection*{Hamilton’s Quaternions and Roots of Unity}
+% >>>>>> ANNEX B (cut-sheet v2): Hamilton's quaternions and roots of unity — block commented out below, pointer left in text <<<<<<
+\textit{(Hamilton's quaternions and roots of unity --- the full working is set out in Annexe B.)}
 
-Arnie could never think of roots of unity without also considering Hamilton’s quaternions. The connection wasn’t immediately obvious, but Arnie was intrigued by the algebraic richness of both systems. Quaternions, defined as:
-\[
-q = a + b i + c j + d k,
-\]
-obeyed non-commutative multiplication rules where
-
-\(i^2 = j^2 = k^2 = ijk = -1\).
-
-Arnie wondered: could these imaginary units \(i, j, k\) be seen as higher-dimensional roots of unity? After all, they encoded rotational symmetries in three dimensions, much like how \(e^{2\pi i / n}\) encoded symmetries on the unit circle. 
-
-To explore this, he considered the analogy:
-\begin{itemize}
-    \item The roots of unity defined rotational symmetries in 2D, corresponding to \(SO(2)\).
-    \item The quaternions defined rotational symmetries in 3D, corresponding to \(SO(3)\).
-\end{itemize}
-But quaternions also extended naturally to Pythagorean triples. For instance, the norm of a quaternion:
-\[
-|q|^2 = a^2 + b^2 + c^2 + d^2,
-\]
-resembled the Pythagorean theorem in four dimensions. Could this norm, Arnie wondered, connect quaternions to roots of unity in a generalized way?
-
-Cyclotomic polynomials, which captured the essence of roots of unity, fascinated Arnie. He wrote down the general form:
-\[
-\Phi_n(x) = \prod_{1 \leq k \leq n, \gcd(k, n) = 1}(x - e^{2\pi i k / n}).
-\]
-These polynomials defined the minimal equations satisfied by \(n\)th roots of unity. Arnie speculated: could quaternionic analogs of cyclotomic polynomials exist? If so, they might encode rotational symmetries in higher dimensions, generalizing the interplay between algebra and geometry. He envisioned a quaternionic cyclotomic polynomial:
-\[
-\Psi_n(q) = \prod_{1 \leq k \leq n, \gcd(k, n) = 1}(q - \text{QuaternionRoot}(k, n)),
-\]
-where \(\text{QuaternionRoot}(k, n)\) represented rotations in 3D defined by quaternionic roots of unity. Such a polynomial, if it existed, could unify the worlds of roots of unity, quaternions, and Pythagorean triples.
-
+% \subsection*{Hamilton’s Quaternions and Roots of Unity}
+% 
+% Arnie could never think of roots of unity without also considering Hamilton’s quaternions. The connection wasn’t immediately obvious, but Arnie was intrigued by the algebraic richness of both systems. Quaternions, defined as:
+% \[
+% q = a + b i + c j + d k,
+% \]
+% obeyed non-commutative multiplication rules where
+% 
+% \(i^2 = j^2 = k^2 = ijk = -1\).
+% 
+% Arnie wondered: could these imaginary units \(i, j, k\) be seen as higher-dimensional roots of unity? After all, they encoded rotational symmetries in three dimensions, much like how \(e^{2\pi i / n}\) encoded symmetries on the unit circle. 
+% 
+% To explore this, he considered the analogy:
+% \begin{itemize}
+%     \item The roots of unity defined rotational symmetries in 2D, corresponding to \(SO(2)\).
+%     \item The quaternions defined rotational symmetries in 3D, corresponding to \(SO(3)\).
+% \end{itemize}
+% But quaternions also extended naturally to Pythagorean triples. For instance, the norm of a quaternion:
+% \[
+% |q|^2 = a^2 + b^2 + c^2 + d^2,
+% \]
+% resembled the Pythagorean theorem in four dimensions. Could this norm, Arnie wondered, connect quaternions to roots of unity in a generalized way?
+% 
+% Cyclotomic polynomials, which captured the essence of roots of unity, fascinated Arnie. He wrote down the general form:
+% \[
+% \Phi_n(x) = \prod_{1 \leq k \leq n, \gcd(k, n) = 1}(x - e^{2\pi i k / n}).
+% \]
+% These polynomials defined the minimal equations satisfied by \(n\)th roots of unity. Arnie speculated: could quaternionic analogs of cyclotomic polynomials exist? If so, they might encode rotational symmetries in higher dimensions, generalizing the interplay between algebra and geometry. He envisioned a quaternionic cyclotomic polynomial:
+% \[
+% \Psi_n(q) = \prod_{1 \leq k \leq n, \gcd(k, n) = 1}(q - \text{QuaternionRoot}(k, n)),
+% \]
+% where \(\text{QuaternionRoot}(k, n)\) represented rotations in 3D defined by quaternionic roots of unity. Such a polynomial, if it existed, could unify the worlds of roots of unity, quaternions, and Pythagorean triples.
+% 
 % \subsection*{The Roots of Unity and Cyclotomic polynomials}
+% 
+% \begin{figure}[H]
+% \includegraphics[width=0.8\linewidth]{Illustrations/3rd rootUnityR.png}
+% \caption{The third root of Unity}
+% \end{figure}
+% 
+% Arnie’s cousin Emmi had often spoken of her ancestor Emmy Noether, whose work on symmetry and conservation had revolutionized physics. For Arnie, the connection was clear: roots of unity embodied symmetry, which are the foundation of conservation laws. The unit circle, Pythagorean triples, quaternions—all were manifestations of the same underlying principle. As Arnie closed his notebook, he thought about the arc of mathematical history. The roots of unity had failed Lamé, but in doing so, they had given rise to Kummer’s ideals and the modern theory of fields. Hamilton’s quaternions had fallen out of favor, yet their non-commutative structure remained a cornerstone of geometry and physics.
 
-\begin{figure}[H]
-\includegraphics[width=0.8\linewidth]{Illustrations/3rd rootUnityR.png}
-\caption{The third root of Unity}
-\end{figure}
-
-Arnie’s cousin Emmi had often spoken of her ancestor Emmy Noether, whose work on symmetry and conservation had revolutionized physics. For Arnie, the connection was clear: roots of unity embodied symmetry, which are the foundation of conservation laws. The unit circle, Pythagorean triples, quaternions—all were manifestations of the same underlying principle. As Arnie closed his notebook, he thought about the arc of mathematical history. The roots of unity had failed Lamé, but in doing so, they had given rise to Kummer’s ideals and the modern theory of fields. Hamilton’s quaternions had fallen out of favor, yet their non-commutative structure remained a cornerstone of geometry and physics.
-
-\begin{quote}
-"Mathematics," Arnie mused, "isn’t just about solutions. 
-It’s about the structures we uncover along the way."
-\end{quote}
-
-% For him, the roots of unity, the Fibonacci-like quaternions, and the Pythagorean triples were all part of a larger tapestry—a tapestry that hinted at connections yet to be discovered.
-
+% 
+% 
+% >>>>>> end of annexed block <<<<<<

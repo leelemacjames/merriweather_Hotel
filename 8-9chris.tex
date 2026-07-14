@@ -150,7 +150,7 @@ They simultaneously guffawed awkwardly, the academic come corporate tension morp
 
 \lettrine{“S}o, Chris,” Emmi punctuated the pause in faux-cordialities, tapping her teacup thoughtfully, “about the blended likelihood approach the speaker mentioned. I get that we’re combining empirical data and theoretical priors, but why did it feel like he was just fitting parameters to get a decent hit rate?”
 
-Chris leaned back, brushing crumbs or something off his jacket. “It’s not just fitting parameters, Emmi. It’s about balancing two competing goals: being specific enough to capture local behaviors and general enough to work across different scales. That’s why he blended empirical likelihoods with theoretical models.”
+Chris backing off ever so slightly, brushing crumbs or something off his jacket. “It’s not just fitting parameters, Emmi. It’s about balancing two competing goals: being specific enough to capture local behaviors and general enough to work across different scales. That’s why he blended empirical likelihoods with theoretical models.”
 
 “Ah, yes,” Emmi teased, “because nothing says 'reliable model' like \(\alpha\), the magic blending factor.” She smirked. “How do you even decide its value?”
 
@@ -171,19 +171,19 @@ Chris caught her gaze (for too long) then fixed on the plot he had just pulled u
 
 "Here I trained the model on the first 5000 primes, using a scaling factor to dampen the impact once we move outside the training window, a smoothing factor at 0.9 for momentum, and blending factor \(\alpha = 0.1\).”
 
-Emmi leaned in, examining the plot closely. “It’s… interesting,” she said hesitantly. “The model does seem to capture something, but the deviations are all over the place. How do you even know those three parameters are meaningful?”
+Emmi half looking, then fully examining the plot closely. “It’s… interesting,” she said hesitantly. “The model does seem to capture something, but the deviations are all over the place. How do you even know those three parameters are meaningful?”
 
 Chris chuckled. “That’s exactly the point, Emmi. There’s too much freedom here-this is the embodiment of model risk. I can tweak the scaling factor, adjust the smoothing, or fiddle with \(\alpha\), and I’ll get a slightly different result each time. But does it tell us anything fundamental about the primes? That’s the real question.”
 
 “So, it’s like backtesting a trading strategy,” Emmi said, catching on. “You use past data to predict future behavior, then evaluate the strategy’s performance on unseen data.”
 
-Chris leaned forward, impressed. “Exactly. And for primes, the gaps are analogous to log price differences in finance. Both are inherently unpredictable at small scales but exhibit statistical patterns over larger scales.”
+Chris, impressed. “Exactly. And for primes, the gaps are analogous to log price differences in finance. Both are inherently unpredictable at small scales but exhibit statistical patterns over larger scales.”
 
-Emmi frowned, leaning forward. “Okay, but looking closer at its predictions so far—it's static hit rates, with limited improvement—don’t inspire confidence. Shouldn’t the model adapt as more gaps are observed? Like, update itself dynamically?”
+Emmi frowning rather over-dramatically, but knowingly tellingly “Okay, but looking closer at its predictions so far—it's static hit rates, with limited improvement—don’t inspire confidence. Shouldn’t the model adapt as more gaps are observed? Like, update itself dynamically?”
 
 Chris nodded. “Exactly. That’s where posterior updates come in. Each observed gap modifies the prior, making the model smarter as it learns. Think of it like Bayesian reasoning—predict, observe, adjust, repeat.”
 
-Chris leaned into his laptop. "To make this concrete, let me show you the core of the code that blends empirical and theoretical likelihoods. This snippet computes the blended likelihood, which is the backbone of the Bayesian model."
+Chris held grace with his laptop. "To make this concrete, let me show you the core of the code that blends empirical and theoretical likelihoods. This snippet computes the blended likelihood, which is the backbone of the Bayesian model."
 
 % \section*{Blended Likelihood Code}
 
@@ -219,11 +219,12 @@ Chris pointed to the \texttt{compute\_blended\_likelihood} function. "This is wh
 Emmi nodded, following along. "So, the \(\lambda\) parameter is estimated from the average gap size in the training data?"
 
 "Exactly," Chris replied. "And this function dynamically combines both models to create a predictive posterior distribution. The normalization step is crucial—it ensures the probabilities are meaningful and comparable across different scenarios."
-She tilted her head, intrigued. “So,  your training window is 5000 primes, and you’re predicting the next 100 gaps. Would the model’s predictions evolve during those 100, or is it stuck with what it learned from the training set?”
 
-“It evolves,” Chris said, “but the pace depends on your blending factor and how much the new data deviates from the training data. If gaps follow the expected distribution, the posterior updates are minor. But if something unusual happens—like a cluster of unexpected large gaps—it shifts more dramatically.”
+She duly showed intrigue nodding ever so perceptably. “So,  your training window is 5000 primes, and you’re predicting the next 100 gaps. Would the model’s predictions evolve during those 100, or is it stuck with what it learned from the training set?”
 
-Emmi nodded, her finance background kicking in. “In my world, we’d say this is a classic case of over-fitting. Too many dials to turn, too much room to explain the past without a robust prediction of the future. A good risk model—like the ones we try to use at BlackRock—has as few free parameters as possible. Simplicity, of course they are a little more pompous about it - parsimony- often wins.”
+“It evolves,” Chris said, “but the pace depends on your blending factor and how much the new data deviates from the training data. If gaps follow the expected distribution, the posterior updates are minor. But if something unusual happens, like say a cluster of unexpected large price drops it shifts more dramatically.”
+
+Emmi nodded, her finance background kicking in. “In my world, we’d say this is a classic case of over-fitting. Too many dials to turn, too much room to explain the past without a robust prediction of the future. A good risk model like the ones we try to use at BlackRock, has as few free parameters as possible. Simplicity, of course but naturally limtied as the execs are they are a little more pompous about it in saying that parsimony often wins.”
 
 Chris smiled. “Exactly. That’s the holy grail of modeling: finding the least number of free parameters that still capture the essence of the system. With primes, as with price tick data the gaps don't occur deterministic—they’re inherently random in some ways, but there’s some structure buried in the randomness.”
 
@@ -241,17 +242,13 @@ Chris’s eyes lit up. “Now that’s an idea. Instead of juggling three or fou
 
 “And,” Emmi added, with Emily’s advice echoing in her mind, “those patterns can be framed in terms of probabilities. The discovery of irregular primes could be treated as an event with a prior probability. A predictive model can adjust its hit rate dynamically to reflect how well it’s capturing the gaps.”
 
-
 Chris nodded, his respect for Emmi growing. “Exactly. It’s not just about fitting; rather it’s about understanding the stochastic nature of the process and validating the model iteratively. We’re not chasing numbers; we’re modeling a living, breathing number line.”
 
-He leaned closer, his tone conspiratorial. “But here’s the rub, Emmi. Even with all this, we’re still blending hindsight into foresight. It’s always going to be part art, part science. That’s the nature of primes—they defy pure regularity.”
+He leaned closer, his tone conspiratorial. “But here’s the rub, Emmi. Even with all this, we’re still blending hindsight into foresight. It’s always going to be part art, part science. That’s the nature of primes given they defy pure regularity.”
 
 Emmi smiled. “And maybe that’s why they’re so fascinating. There’s always another layer, another challenge. But if we can even glimpse a little clarity through the noise, maybe that’s enough.”
 
 Chris nodded, raising his now cold cup of tea; again with instant regret. “To models with fewer dials and more insight.” Emmi clinked hers clumsily against his. her eyes perceptibly if fleetingly, locking with his.
-
-
- 
 
 % Chris grinned. “You’re thinking like a risk manager now. Validation is all about the hit rate. You compare predicted gaps to actual gaps and measure the fraction of correct predictions. But here’s the twist: accuracy isn’t everything. You also want consistency and robustness. That’s where moving windows help.”
 
@@ -313,71 +310,75 @@ Emmi blushed, her thoughts flickering to Chris. "Well, let’s just say I have a
 
 As they left the café, Emily felt inspired to revisit her calculations with a Bayesian perspective, while Emmi walked away with a growing confidence in her understanding of risk and probability. Together, they were bridging their worlds, one conversation at a time.
 
-\section*{Postscript}
-The \textbf{Sieve of Eratosthenes} is used to generate prime numbers up to a specified limit:
-\[
-\text{primes} = \{p \mid p \text{ is prime and } p < n\}.
-\]
-The primes are split into:
-\begin{itemize}
-    \item \textbf{Training set:} First $w$ primes for training.
-    \item \textbf{Test set:} Next $p$ primes for testing.
-\end{itemize}
-The gaps between consecutive primes are calculated as:
-\[
-\text{Gap}(i) = \text{Prime}(i+1) - \text{Prime}(i).
-\]
-This yields:
-\begin{itemize}
-    \item $\text{train\_gaps}$ from the training primes.
-    \item $\text{test\_gaps}$ from the test primes.
-\end{itemize}
-The empirical likelihood is computed from the training gaps:
-\[
-L_{\text{empirical}}(g) = \frac{\text{Count of gap } g \text{ in } \text{train\_gaps}}{\text{Total gaps in train\_gaps}}.
-\]
-The theoretical likelihood is based on a \textbf{Poisson distribution}, which models the expected frequency of gaps:
-\[
-L_{\text{theoretical}}(g) = \frac{\lambda^g e^{-\lambda}}{g!},
-\]
-where:
-\begin{itemize}
-    \item $\lambda = \log(\bar{x})$, the mean gap size estimated from the average prime in the training set.
-\end{itemize}
-The two likelihoods are blended as:
-\[
-L_{\text{blended}}(g) = \alpha L_{\text{empirical}}(g) + (1 - \alpha) L_{\text{theoretical}}(g),
-\]
-where $\alpha$ is a blending factor that adjusts the weight of empirical vs. theoretical data. The blended likelihood is normalized:
-\[
-L_{\text{blended}}(g) \gets \frac{L_{\text{blended}}(g)}{\sum_{g} L_{\text{blended}}(g)}.
-\]
-The posterior is updated using the blended likelihood and the prior:
-\[
-\text{Posterior}(g) \propto \text{Prior}(g) \cdot L_{\text{blended}}(g).
-\]
-The prior is initially uniform:
-\[
-\text{Prior}(g) = \frac{1}{|\text{Unique Gaps}|}.
-\]
-Predicted gaps are sampled probabilistically from the posterior distribution:
-\[
-\text{Predicted Gap} \sim \text{Posterior}(g).
-\]
-The posterior is updated incrementally with each observed gap in the test set. The \textbf{hit rate} evaluates the prediction accuracy:
-\[
-\text{Hit Rate} = \frac{\text{Number of Correct Predictions}}{\text{Total Test Gaps}}.
-\]
+% >>>>>> ANNEX C (cut-sheet v2): the Bayesian blended-likelihood postscript — block commented out below, pointer left in text <<<<<<
+\textit{(The Bayesian blended-likelihood postscript --- the full working is set out in Annexe C.)}
 
-This blended approach leverages:
-\begin{itemize}
-    \item \textbf{Empirical Data:} For local accuracy based on observed gaps.
-    \item \textbf{Theoretical Knowledge:} For generalization based on the Poisson distribution.
-\end{itemize}
-
-By combining these, the model achieves robust predictions for prime gaps across both the training and test sets.
-
-\newpage
+% \section*{Postscript}
+% The \textbf{Sieve of Eratosthenes} is used to generate prime numbers up to a specified limit:
+% \[
+% \text{primes} = \{p \mid p \text{ is prime and } p < n\}.
+% \]
+% The primes are split into:
+% \begin{itemize}
+%     \item \textbf{Training set:} First $w$ primes for training.
+%     \item \textbf{Test set:} Next $p$ primes for testing.
+% \end{itemize}
+% The gaps between consecutive primes are calculated as:
+% \[
+% \text{Gap}(i) = \text{Prime}(i+1) - \text{Prime}(i).
+% \]
+% This yields:
+% \begin{itemize}
+%     \item $\text{train\_gaps}$ from the training primes.
+%     \item $\text{test\_gaps}$ from the test primes.
+% \end{itemize}
+% The empirical likelihood is computed from the training gaps:
+% \[
+% L_{\text{empirical}}(g) = \frac{\text{Count of gap } g \text{ in } \text{train\_gaps}}{\text{Total gaps in train\_gaps}}.
+% \]
+% The theoretical likelihood is based on a \textbf{Poisson distribution}, which models the expected frequency of gaps:
+% \[
+% L_{\text{theoretical}}(g) = \frac{\lambda^g e^{-\lambda}}{g!},
+% \]
+% where:
+% \begin{itemize}
+%     \item $\lambda = \log(\bar{x})$, the mean gap size estimated from the average prime in the training set.
+% \end{itemize}
+% The two likelihoods are blended as:
+% \[
+% L_{\text{blended}}(g) = \alpha L_{\text{empirical}}(g) + (1 - \alpha) L_{\text{theoretical}}(g),
+% \]
+% where $\alpha$ is a blending factor that adjusts the weight of empirical vs. theoretical data. The blended likelihood is normalized:
+% \[
+% L_{\text{blended}}(g) \gets \frac{L_{\text{blended}}(g)}{\sum_{g} L_{\text{blended}}(g)}.
+% \]
+% The posterior is updated using the blended likelihood and the prior:
+% \[
+% \text{Posterior}(g) \propto \text{Prior}(g) \cdot L_{\text{blended}}(g).
+% \]
+% The prior is initially uniform:
+% \[
+% \text{Prior}(g) = \frac{1}{|\text{Unique Gaps}|}.
+% \]
+% Predicted gaps are sampled probabilistically from the posterior distribution:
+% \[
+% \text{Predicted Gap} \sim \text{Posterior}(g).
+% \]
+% The posterior is updated incrementally with each observed gap in the test set. The \textbf{hit rate} evaluates the prediction accuracy:
+% \[
+% \text{Hit Rate} = \frac{\text{Number of Correct Predictions}}{\text{Total Test Gaps}}.
+% \]
+% 
+% This blended approach leverages:
+% \begin{itemize}
+%     \item \textbf{Empirical Data:} For local accuracy based on observed gaps.
+%     \item \textbf{Theoretical Knowledge:} For generalization based on the Poisson distribution.
+% \end{itemize}
+% 
+% By combining these, the model achieves robust predictions for prime gaps across both the training and test sets.
+% 
+% \newpage
+% >>>>>> end of annexed block <<<<<<
 \section*{Chris was Stochastic Fair game}
 
 We are in a  quiet pub, Chris and Willard are playing a game. A low table, a backgammon board unfolded,  
@@ -418,7 +419,7 @@ Because isolated checkers (“blots”) are vulnerable, some dice combinations a
 \begin{tcolorbox}[colback=blue!5!white, colframe=blue!50!black, title=Backgammon as a Fair Game]
 Backgammon can proceed through distinct phases, each with its own relationship between \emph{luck} (dice) and \emph{skill} (position/state):
 
-\scalebox{0.8}{
+\scalebox{0.7}{
 \begin{center}
 \begin{tabular}{llll}
 \toprule
@@ -578,14 +579,14 @@ So after a long backgammon match Chris, has just lost miserably to Willard, who 
 
 \noindent\textbf{Willard:} ``Yes. Every model lives only within its phase of validity. Then comes a roll that doesn’t fit the prior. That’s the moment of Gumbel revelation, when an upper-tail shock hits, when markets mass psychology realigns.''
 
-\noindent\textbf{Chris:} ``And so liquidity evaporates, and even the simplest bivariate correlations, become—''
+\noindent\textbf{Chris:} ``And so liquidity evaporates, and even the simplest bi-variate correlations, become ...''
 
-\noindent\textbf{Willard:} ``Claytonian. Lower-tail locksted as everyone is running for the same door. You’d built a perfect lattice under a shifting sky. Convexity was supposed to protect you, but it marked you instead. They could see your structure such that every rescue trade was a signal flare.''
+\noindent\textbf{Willard:} ``Claytonian. Lower-tail lockstep as everyone is running for the same door. You’d built a perfect lattice under a shifting sky. Convexity was supposed to protect you, but it marked you instead. They could see your structure such that every rescue trade was a signal flare.''
 
 \vspace{0.5em}
 
 Willard now annoyingly tapping the board, on a roll with little resistance.  
-``Thes phases changes, the regime changes they came too fast. You started as Gaussian—balanced, diffuse, ...  and then your success made you Gumbel, all upper-tail ambition.  That turned you Clayton, well it should have done, should have forced you to be defensive. And when you belatedly tried to bear off, to exit gracefully, there was no linearity left—no Gaussian calm to return to.  The market had changed state around you.''
+``These phases changes, the regime changes they came too fast. You started as Gaussian—balanced, diffuse, ...  and then your success made you Gumbel, all upper-tail ambition.  That turned you Clayton, well it should have done, should have forced you to be defensive. And when you belatedly tried to bear off, to exit gracefully, there was no linearity left—no Gaussian calm to return to.  The market had changed state around you.''
 
 \vspace{0.5em}
 
@@ -602,50 +603,32 @@ Chris looks forlornly down at his last two checkers marooned on the bar of the l
 \subsection*{Epilogue: Affordance and Curvature}
 
 \textbf{Chris:}    
-In bond maths we say a portfolio is convex when small shifts in ratesproduce asymmetric gains: 
-you make more when yields fall than you lose when they rise.  
-Backgammon feels like that:  
-some positions have positive convexity, others negative.
+In bond maths we say a portfolio is convex when small shifts in rates produce asymmetric gains: you make more when yields fall than you lose when they rise.  Backgammon feels like that:  some positions have positive convexity, others negative.
 
 \textbf{Willard:}  
-Yes that works as an analogy.  
-Convexity in rates is curvature in price–yield space.  
-In backgammon it’s curvature in the equity–luck surface.
+Yes that works as an analogy.  Convexity in rates is curvature in price–yield space.  In backgammon I guess it’s curvature in the equity–luck surface.
 
 \textbf{Chris:}  
-So when you blitzed me earlier—you’d built positive convexity:  a handful of high rolls gave you explosive returns.
+So when you blitzed me earlier ... you’d built positive convexity:  a handful of high rolls gave you explosive returns.
 
 \textbf{Willard:} 
 Yes Each copula family corresponds to a different way that \emph{random events}
-(luck) and \emph{system state} (skill or structure)
-combine to produce outcomes; convexity describes how the outcome surface bends under perturbation. That was Gumbel copula territory.  Then, when you played the back game, you built negative convexity: bad rolls punished you more than good ones helped. Clayton.
+(luck) and \emph{system state} (skill or structure) combine to produce outcomes; convexity describes how the outcome surface bends under perturbation. That was Gumbel copula territory.  Then, when you played the back game, you built negative convexity: bad rolls punished you more than good ones helped. Clayton.
 
 \medskip
 \textbf{Chris:}  
-I used to think the market afforded opportunity—  
-that convexity was a door I could open wider  
-just by being clever.  
-Now I see it was a door that closes faster  
-the more people reach for the handle.
+I used to think the market afforded opportunity. That is,  that convexity was a door I could open wider just by being clever.  Now I see it was a door that closes faster  the more people reach for the handle.
 
 \textbf{Willard:}  
-That’s an old story.  
-In games the geometry is fixed;  
-in markets it moves beneath you.  
-The more you exploit an affordance, the more it disappears.  
-Liquidity is a receding surface.
+That’s an old story.   In games the geometry is fixed;  in markets it moves beneath you.   The more you exploit an affordance, the more it disappears.  Liquidity is a receding surface.
 
 \textbf{Chris:}  
-So I built my book like a backgammon position—  
-trying to make every roll work for me.  
-But when the big funds turned,  
-they changed the copula itself.  
-My convexity flattened overnight.
+So I built my book like a backgammon position in trying to make every roll work for me.   But when the big funds turned,  
+they changed the copula itself.   My convexity flattened overnight.
 
 \textbf{Willard:}  
 You were Claytoned, not Gumbled.  
-Lower-tail dependence—every bad move reinforcing the next.  
-It happens when the structure stops affording you any escape.
+Lower-tail dependence, in which every bad move was reinforcing the next.  It happens when the structure stops affording you any escape.
 
 \textbf{Chris:}  
 And there’s no Gaussian phase in markets?
@@ -656,253 +639,244 @@ Markets never bear off.
 They just reset the board and ask again what your structure affords.
 
 \textbf{Chris:}  
-So in the end, the difference between a game and a market  
-is that one ends in closure,  
-and the other keeps reconfiguring its own geometry.
+So in the end, the difference between a game and a market   is that one ends in closure,  and the other keeps reconfiguring its own geometry. The memory of that wooden board will linger
 
 \textbf{Willard:}  
-Yes.  
-And the skill—whether in dice or derivatives—  
-is knowing when your convexity is real,  
-and when it’s just a shape the market allows you to see for a moment.
-
-\medskip
-\textbf{Narrator’s note.}  
-Chris will keep trading,  
-but the memory of that wooden board will linger—  
-how each move had a physical affordance,  
-and how the true game lay not in rolling better,  
-but in shaping the field where luck could matter at all.
+Yes.  And the skill ... whether playing dice or derivatives ... is knowing when your convexity is real,  and when it’s just a shape the market allows you to see for a moment.
 
 \noindent\footnotesize{\textcolor{gray}{%
 \textbf{Note.} ``Regime change'' as in a phase change is defined by its dependence geometry: the \em{copula} linking variables.  When external feedback loops (e.g., reflexivity in Soros’ sense) alter those dependencies, the system crosses a phase boundary.  Markets and games alike become \textit{endogenous}: the act of modeling changes what is modeled.}}
 
-\subsection*{Copulas: The Geometry Beneath Correlation}
+% >>>>>> ANNEX C (cut-sheet v2): copulas and the Betti dynamics worked example — block commented out below, pointer left in text <<<<<<
+\textit{(Copulas and the Betti dynamics worked example --- the full working is set out in Annexe C.)}
 
-A \textbf{copula} isolates the structure of dependence between random variables
-from their individual behaviour.  
-For any joint distribution \(F_{XY}(x,y)\) with continuous marginals \(F_X, F_Y\),
-there exists a copula \(C:[0,1]^2 \to [0,1]\) such that
-\[
-F_{XY}(x,y) = C(F_X(x),\,F_Y(y)).
-\]
-By defining \(U=F_X(X)\) and \(V=F_Y(Y)\),
-we obtain two uniform variables on \([0,1]\) whose joint law is \(C(u,v)\).
-
-\emph{Sklar’s theorem} tells us:  
-copulas are the invariant core of dependence, independent of marginal shape.
-
-If \((X,Y)\) are jointly normal with correlation \(\rho\),
-their copula is the \textbf{Gaussian copula}:
-\[
-C_\rho(u,v) = 
-\Phi_\rho\!\bigl(\Phi^{-1}(u),\,\Phi^{-1}(v)\bigr),
-\]
-where \(\Phi^{-1}\) is the univariate normal quantile function
-and \(\Phi_\rho\) is the bivariate normal CDF with correlation \(\rho\).
-
-\begin{quote}
-Correlation measures how two variables line up on average.\\
-Copulas reveal \emph{where} they align---in the middle, or in the tails.
-\end{quote}
-
-The familiar Pearson coefficient \(\rho\) is thus simply the coordinate of the Gaussian copula. thus not the dependence itself, rather merely the parameter of this one copula family describing the \emph{elliptical} symmetry of Linear correlation. Other copulas reveal shapes of dependence that correlation alone cannot express:
-
-\begin{itemize}
-  \item \textbf{Clayton copula} --- strong \emph{lower-tail} connection:
-        bad outcomes cluster together.
-  \item \textbf{Gumbel copula} --- strong \emph{upper-tail} connection:
-        extreme good outcomes reinforce each other.
-  \item \textbf{Frank copula} --- balanced but non-elliptical symmetry.
-\end{itemize}
-
-So dependence can have curvature, asymmetry, or saturation
-independent of how their marginal distributions scale. In games, markets, or physical systems, the copula tells us whether luck and skill reinforce each other in the tails, cancel symmetrically, or diverge. Correlation is only the linear shadow of that richer geometry.
-
-\begin{center}
-\begin{tikzpicture}[scale=1.1]
-  % Axes helper
-  \def\axes{
-    \draw[->,thin,gray] (0,0)--(1.1,0) node[right,gray]{$U$};
-    \draw[->,thin,gray] (0,0)--(0,1.1) node[above,gray]{$V$};
-    \draw[gray!40] (0,0) rectangle (1,1);
-  }
-  % Gaussian
-  \begin{scope}[shift={(0,0)}]
-    \axes
-    \draw[blue!60, thick, domain=0:1,samples=30] plot (\x,\x+0.05*rnd);
-    \node[below right,blue!70!black]{\small Gaussian};
-  \end{scope}
-  % Gumbel
-  \begin{scope}[shift={(2.5,0)}]
-    \axes
-    \draw[red!70, thick, domain=0:1,samples=30] plot (\x,{\x^(0.8)+0.1*rnd});
-    \fill[red!20,opacity=0.4] (0.6,0.6) rectangle (1,1);
-    \node[below right,red!70!black]{\small Gumbel};
-  \end{scope}
-  % Clayton
-  \begin{scope}[shift={(5,0)}]
-    \axes
-    \draw[orange!80!black, thick, domain=0:1,samples=30] plot (\x,{1-(1-\x)^(0.8)+0.1*rnd});
-    \fill[orange!20,opacity=0.4] (0,0) rectangle (0.4,0.4);
-    \node[below right,orange!80!black]{\small Clayton};
-  \end{scope}
-  % Mixed
-  \begin{scope}[shift={(7.5,0)}]
-    \axes
-    \draw[violet!70, thick, domain=0:1,samples=30] plot (\x,{0.9*\x+0.1*sin(5*deg(\x))+0.05*rnd});
-    \node[below right,violet!70!black]{\small Mixed};
-  \end{scope}
-\end{tikzpicture}
-\end{center}
-
-\noindent
-Each copula describes a distinct ``shape of dependence'' between two percentile
-variables $(U,V)$. \textbf{Gaussian}: a smooth, symmetric diagonal—good outcomes mirror good rolls linearly. \textbf{Gumbel}: clustering in the \emph{upper-right}—excellent rolls amplify success.\textbf{Clayton}: clustering in the \emph{lower-left}—poor rolls amplify loss. \textbf{Mixed}: a hybrid with moderate, uneven dependence.
-\newpage
-\subsection*{Example: Betti Dynamics on a 4×4 Mini–Checkers Lattice}
-
-We illustrate the homological interpretation of play using a reduced 4×4 checkers board 
-containing only the dark squares
-\[
-S = \{(1,2),(1,4),(2,1),(2,3),(3,2),(3,4),(4,1),(4,3)\},
-\]
-with rows numbered from bottom ($1$) to top ($4$).
-White moves diagonally upward.
-
-\paragraph{Step 0 (initial position).}
-White occupies $(1,2)$ and $(1,4)$, Black occupies $(4,1)$ and $(4,3)$.
-For White, legal forward steps are
-\[
-(1,2)\to\{(2,1),(2,3)\}, \qquad (1,4)\to(2,3),
-\]
-giving the vertex set
-\[
-V_0=\{(1,2),(1,4),(2,1),(2,3)\},
-\quad 
-E_0=\{(1,2)\!-\!(2,1),(1,2)\!-\!(2,3),(1,4)\!-\!(2,3)\}.
-\]
-Since all vertices are connected, the mobility graph $G_0$ has
-\[
-b_0(G_0)=1, \qquad b_1(G_0)=0.
-\]
-White’s mobility forms one cohesive region without loops.
-
-\paragraph{Step 1 (White moves the middle piece).}
-White advances $(1,2)\to(2,1)$, leaving
-\[
-V_1=\{(2,1),(1,4),(3,2),(2,3)\}, \quad
-E_1=\{(2,1)\!-\!(3,2),(1,4)\!-\!(2,3)\}.
-\]
-The two pairs are disconnected, giving
-\[
-b_0(G_1)=2,\qquad b_1(G_1)=0.
-\]
-The mobility surface fragments: White now plays in two disjoint corridors.
-
-\paragraph{Step 2 (Black replies).}
-Black advances $(4,3)\to(3,2)$, blocking one lane but enabling a jump:
-\[
-(2,1)\to(4,3) \quad \text{over the black at } (3,2).
-\]
-Adding this long ``jump edge'' extends the reach of $(2,1)$ but keeps components disjoint for now:
-\[
-b_0(G_2)=2,\qquad b_1(G_2)=0.
-\]
-The topology is poised for change—an impending capture corresponds to a collapsing boundary.
-
-\paragraph{Step 3 (White executes the jump).}
-White captures $(3,2)$ and lands on $(4,3)$, merging the reachable regions:
-\[
-b_0(G_3)=1,\qquad b_1(G_3)=0.
-\]
-A local topological singularity has been resolved; the mobility space becomes connected again.
-
-\paragraph{Interpretation.}
-The Betti sequence
-\[
-(b_0,b_1):\ (1,0)\ \rightarrow\ (2,0)\ \rightarrow\ (2,0)\ \rightarrow\ (1,0)
-\]
-tracks the fragmentation and re–coalescence of the player’s decision space.
-An increase in $b_0$ marks regime bifurcation (loss of coherence);
-a decrease signals consolidation (capture or merger).
-A future \emph{king} would introduce backward mobility, closing a loop
-and producing the first nonzero $b_1$.
-
-\paragraph{Willard’s note.}
-\begin{quote}\small
-``Each checker move reshapes the topology.
-When $b_0$ splits, the field fragments; when $b_0$ contracts, it fuses.
-Only when a king appears does $b_1$ breathe—then the board acquires memory.''
-\end{quote}
-
-\begin{figure}[h!]
-\centering
-\begin{tikzpicture}[scale=1.15, every node/.style={circle, minimum size=6pt, inner sep=0pt}]
-\tikzset{
-    node/.style={circle, draw=black, fill=gray!15, minimum size=10pt},
-    whitep/.style={circle, draw=black, fill=white, thick, minimum size=10pt},
-    blackp/.style={circle, draw=black, fill=black, minimum size=10pt},
-    step/.style={dotted, thick, gray!70},
-    jump/.style={dashed, thick, red!70},
-}
-
+% \subsection*{Copulas: The Geometry Beneath Correlation}
+% 
+% A \textbf{copula} isolates the structure of dependence between random variables
+% from their individual behaviour.  
+% For any joint distribution \(F_{XY}(x,y)\) with continuous marginals \(F_X, F_Y\),
+% there exists a copula \(C:[0,1]^2 \to [0,1]\) such that
+% \[
+% F_{XY}(x,y) = C(F_X(x),\,F_Y(y)).
+% \]
+% By defining \(U=F_X(X)\) and \(V=F_Y(Y)\),
+% we obtain two uniform variables on \([0,1]\) whose joint law is \(C(u,v)\).
+% 
+% \emph{Sklar’s theorem} tells us:  
+% copulas are the invariant core of dependence, independent of marginal shape.
+% 
+% If \((X,Y)\) are jointly normal with correlation \(\rho\),
+% their copula is the \textbf{Gaussian copula}:
+% \[
+% C_\rho(u,v) = 
+% \Phi_\rho\!\bigl(\Phi^{-1}(u),\,\Phi^{-1}(v)\bigr),
+% \]
+% where \(\Phi^{-1}\) is the univariate normal quantile function
+% and \(\Phi_\rho\) is the bivariate normal CDF with correlation \(\rho\).
+% 
+% \begin{quote}
+% Correlation measures how two variables line up on average.\\
+% Copulas reveal \emph{where} they align---in the middle, or in the tails.
+% \end{quote}
+% 
+% The familiar Pearson coefficient \(\rho\) is thus simply the coordinate of the Gaussian copula. thus not the dependence itself, rather merely the parameter of this one copula family describing the \emph{elliptical} symmetry of Linear correlation. Other copulas reveal shapes of dependence that correlation alone cannot express:
+% 
+% \begin{itemize}
+%   \item \textbf{Clayton copula} --- strong \emph{lower-tail} connection:
+%         bad outcomes cluster together.
+%   \item \textbf{Gumbel copula} --- strong \emph{upper-tail} connection:
+%         extreme good outcomes reinforce each other.
+%   \item \textbf{Frank copula} --- balanced but non-elliptical symmetry.
+% \end{itemize}
+% 
+% So dependence can have curvature, asymmetry, or saturation
+% independent of how their marginal distributions scale. In games, markets, or physical systems, the copula tells us whether luck and skill reinforce each other in the tails, cancel symmetrically, or diverge. Correlation is only the linear shadow of that richer geometry.
+% 
+% \begin{center}
+% \begin{tikzpicture}[scale=1.1]
+%   % Axes helper
+%   \def\axes{
+%     \draw[->,thin,gray] (0,0)--(1.1,0) node[right,gray]{$U$};
+%     \draw[->,thin,gray] (0,0)--(0,1.1) node[above,gray]{$V$};
+%     \draw[gray!40] (0,0) rectangle (1,1);
+%   }
+%   % Gaussian
+%   \begin{scope}[shift={(0,0)}]
+%     \axes
+%     \draw[blue!60, thick, domain=0:1,samples=30] plot (\x,\x+0.05*rnd);
+%     \node[below right,blue!70!black]{\small Gaussian};
+%   \end{scope}
+%   % Gumbel
+%   \begin{scope}[shift={(2.5,0)}]
+%     \axes
+%     \draw[red!70, thick, domain=0:1,samples=30] plot (\x,{\x^(0.8)+0.1*rnd});
+%     \fill[red!20,opacity=0.4] (0.6,0.6) rectangle (1,1);
+%     \node[below right,red!70!black]{\small Gumbel};
+%   \end{scope}
+%   % Clayton
+%   \begin{scope}[shift={(5,0)}]
+%     \axes
+%     \draw[orange!80!black, thick, domain=0:1,samples=30] plot (\x,{1-(1-\x)^(0.8)+0.1*rnd});
+%     \fill[orange!20,opacity=0.4] (0,0) rectangle (0.4,0.4);
+%     \node[below right,orange!80!black]{\small Clayton};
+%   \end{scope}
+%   % Mixed
+%   \begin{scope}[shift={(7.5,0)}]
+%     \axes
+%     \draw[violet!70, thick, domain=0:1,samples=30] plot (\x,{0.9*\x+0.1*sin(5*deg(\x))+0.05*rnd});
+%     \node[below right,violet!70!black]{\small Mixed};
+%   \end{scope}
+% \end{tikzpicture}
+% \end{center}
+% 
+% \noindent
+% Each copula describes a distinct ``shape of dependence'' between two percentile
+% variables $(U,V)$. \textbf{Gaussian}: a smooth, symmetric diagonal—good outcomes mirror good rolls linearly. \textbf{Gumbel}: clustering in the \emph{upper-right}—excellent rolls amplify success.\textbf{Clayton}: clustering in the \emph{lower-left}—poor rolls amplify loss. \textbf{Mixed}: a hybrid with moderate, uneven dependence.
+% \newpage
+% \subsection*{Example: Betti Dynamics on a 4×4 Mini–Checkers Lattice}
+% 
+% We illustrate the homological interpretation of play using a reduced 4×4 checkers board 
+% containing only the dark squares
+% \[
+% S = \{(1,2),(1,4),(2,1),(2,3),(3,2),(3,4),(4,1),(4,3)\},
+% \]
+% with rows numbered from bottom ($1$) to top ($4$).
+% White moves diagonally upward.
+% 
+% \paragraph{Step 0 (initial position).}
+% White occupies $(1,2)$ and $(1,4)$, Black occupies $(4,1)$ and $(4,3)$.
+% For White, legal forward steps are
+% \[
+% (1,2)\to\{(2,1),(2,3)\}, \qquad (1,4)\to(2,3),
+% \]
+% giving the vertex set
+% \[
+% V_0=\{(1,2),(1,4),(2,1),(2,3)\},
+% \quad 
+% E_0=\{(1,2)\!-\!(2,1),(1,2)\!-\!(2,3),(1,4)\!-\!(2,3)\}.
+% \]
+% Since all vertices are connected, the mobility graph $G_0$ has
+% \[
+% b_0(G_0)=1, \qquad b_1(G_0)=0.
+% \]
+% White’s mobility forms one cohesive region without loops.
+% 
+% \paragraph{Step 1 (White moves the middle piece).}
+% White advances $(1,2)\to(2,1)$, leaving
+% \[
+% V_1=\{(2,1),(1,4),(3,2),(2,3)\}, \quad
+% E_1=\{(2,1)\!-\!(3,2),(1,4)\!-\!(2,3)\}.
+% \]
+% The two pairs are disconnected, giving
+% \[
+% b_0(G_1)=2,\qquad b_1(G_1)=0.
+% \]
+% The mobility surface fragments: White now plays in two disjoint corridors.
+% 
+% \paragraph{Step 2 (Black replies).}
+% Black advances $(4,3)\to(3,2)$, blocking one lane but enabling a jump:
+% \[
+% (2,1)\to(4,3) \quad \text{over the black at } (3,2).
+% \]
+% Adding this long ``jump edge'' extends the reach of $(2,1)$ but keeps components disjoint for now:
+% \[
+% b_0(G_2)=2,\qquad b_1(G_2)=0.
+% \]
+% The topology is poised for change—an impending capture corresponds to a collapsing boundary.
+% 
+% \paragraph{Step 3 (White executes the jump).}
+% White captures $(3,2)$ and lands on $(4,3)$, merging the reachable regions:
+% \[
+% b_0(G_3)=1,\qquad b_1(G_3)=0.
+% \]
+% A local topological singularity has been resolved; the mobility space becomes connected again.
+% 
+% \paragraph{Interpretation.}
+% The Betti sequence
+% \[
+% (b_0,b_1):\ (1,0)\ \rightarrow\ (2,0)\ \rightarrow\ (2,0)\ \rightarrow\ (1,0)
+% \]
+% tracks the fragmentation and re–coalescence of the player’s decision space.
+% An increase in $b_0$ marks regime bifurcation (loss of coherence);
+% a decrease signals consolidation (capture or merger).
+% A future \emph{king} would introduce backward mobility, closing a loop
+% and producing the first nonzero $b_1$.
+% 
+% \paragraph{Willard’s note.}
+% \begin{quote}\small
+% ``Each checker move reshapes the topology.
+% When $b_0$ splits, the field fragments; when $b_0$ contracts, it fuses.
+% Only when a king appears does $b_1$ breathe—then the board acquires memory.''
+% \end{quote}
+% 
+% \begin{figure}[h!]
+% \centering
+% \begin{tikzpicture}[scale=1.15, every node/.style={circle, minimum size=6pt, inner sep=0pt}]
+% \tikzset{
+%     node/.style={circle, draw=black, fill=gray!15, minimum size=10pt},
+%     whitep/.style={circle, draw=black, fill=white, thick, minimum size=10pt},
+%     blackp/.style={circle, draw=black, fill=black, minimum size=10pt},
+%     step/.style={dotted, thick, gray!70},
+%     jump/.style={dashed, thick, red!70},
+% }
+% 
 %%% PANEL (a): Start
-\node at (0,2.8) {\textbf{(a) Start: $(b_0,b_1)=(1,0)$}};
+% \node at (0,2.8) {\textbf{(a) Start: $(b_0,b_1)=(1,0)$}};
 % nodes
-\node[node] (a12) at (0,0) {};
-\node[node] (a14) at (1.2,0) {};
-\node[node] (a21) at (-0.6,0.8) {};
-\node[node] (a23) at (0.6,0.8) {};
+% \node[node] (a12) at (0,0) {};
+% \node[node] (a14) at (1.2,0) {};
+% \node[node] (a21) at (-0.6,0.8) {};
+% \node[node] (a23) at (0.6,0.8) {};
 % pieces
-\node[whitep] at (0,0) {};   % (1,2)
-\node[whitep] at (1.2,0) {}; % (1,4)
+% \node[whitep] at (0,0) {};   % (1,2)
+% \node[whitep] at (1.2,0) {}; % (1,4)
 % edges
-\draw[step] (0,0) -- (-0.6,0.8);
-\draw[step] (0,0) -- (0.6,0.8);
-\draw[step] (1.2,0) -- (0.6,0.8);
-
+% \draw[step] (0,0) -- (-0.6,0.8);
+% \draw[step] (0,0) -- (0.6,0.8);
+% \draw[step] (1.2,0) -- (0.6,0.8);
+% 
 %%% PANEL (b): After White moves (fragmented)
-\node at (4.0,2.8) {\textbf{(b) After move: $(b_0,b_1)=(2,0)$}};
-\node[node] (b21) at (3.4,0.8) {};
-\node[node] (b32) at (3.4,1.6) {};
-\node[node] (b14) at (5.0,0) {};
-\node[node] (b23) at (4.4,0.8) {};
+% \node at (4.0,2.8) {\textbf{(b) After move: $(b_0,b_1)=(2,0)$}};
+% \node[node] (b21) at (3.4,0.8) {};
+% \node[node] (b32) at (3.4,1.6) {};
+% \node[node] (b14) at (5.0,0) {};
+% \node[node] (b23) at (4.4,0.8) {};
 % pieces
-\node[whitep] at (3.4,0.8) {}; % (2,1)
-\node[whitep] at (5.0,0) {};   % (1,4)
+% \node[whitep] at (3.4,0.8) {}; % (2,1)
+% \node[whitep] at (5.0,0) {};   % (1,4)
 % edges
-\draw[step] (3.4,0.8) -- (3.4,1.6);
-\draw[step] (5.0,0) -- (4.4,0.8);
-
+% \draw[step] (3.4,0.8) -- (3.4,1.6);
+% \draw[step] (5.0,0) -- (4.4,0.8);
+% 
 %%% PANEL (c): Black replies → jump path reconnects
-\node at (8.0,2.8) {\textbf{(c) Jump phase: $(b_0,b_1)=(1,0)$}};
+% \node at (8.0,2.8) {\textbf{(c) Jump phase: $(b_0,b_1)=(1,0)$}};
 % nodes
-\node[node] (c21) at (7.4,0.8) {};
-\node[node] (c14) at (9.0,0) {};
-\node[node] (c23) at (8.4,0.8) {};
-\node[node] (c32) at (7.4,1.6) {};
-\node[node] (c43) at (8.6,2.4) {};
+% \node[node] (c21) at (7.4,0.8) {};
+% \node[node] (c14) at (9.0,0) {};
+% \node[node] (c23) at (8.4,0.8) {};
+% \node[node] (c32) at (7.4,1.6) {};
+% \node[node] (c43) at (8.6,2.4) {};
 % pieces
-\node[whitep] at (7.4,0.8) {}; % (2,1)
-\node[whitep] at (9.0,0) {};   % (1,4)
-\node[blackp] at (7.4,1.6) {}; % (3,2) black moved down
+% \node[whitep] at (7.4,0.8) {}; % (2,1)
+% \node[whitep] at (9.0,0) {};   % (1,4)
+% \node[blackp] at (7.4,1.6) {}; % (3,2) black moved down
 % edges
-\draw[step] (9.0,0) -- (8.4,0.8);
-\draw[jump] (7.4,0.8) -- (8.6,2.4); % jump edge over (3,2)
-
-\end{tikzpicture}
-\caption{Evolution of White’s mobility graph on the 4×4 mini–checkers lattice.  
-(a) Initial position: a single connected mobility component $(b_0,b_1)=(1,0)$.  
-(b) After White moves, the graph fragments into two independent regions $(b_0=2)$.  
-(c) Black advances, enabling a long jump edge (red dashed), which re-connects the graph $(b_0=1)$.  
-At no stage does a loop appear ($b_1=0$), but a future king could generate $b_1>0$.}
-\end{figure}
-
-
-
-\newpage
-
+% \draw[step] (9.0,0) -- (8.4,0.8);
+% \draw[jump] (7.4,0.8) -- (8.6,2.4); % jump edge over (3,2)
+% 
+% \end{tikzpicture}
+% \caption{Evolution of White’s mobility graph on the 4×4 mini–checkers lattice.  
+% (a) Initial position: a single connected mobility component $(b_0,b_1)=(1,0)$.  
+% (b) After White moves, the graph fragments into two independent regions $(b_0=2)$.  
+% (c) Black advances, enabling a long jump edge (red dashed), which re-connects the graph $(b_0=1)$.  
+% At no stage does a loop appear ($b_1=0$), but a future king could generate $b_1>0$.}
+% \end{figure}
+% 
+% 
+% 
+% \newpage
+% 
+% >>>>>> end of annexed block <<<<<<
 \subsection*{Metrics and Monetization}
 
 \lettrine{E}{leanor’s} first stop was New York City. The boardroom  was sleek, filled with steely-eyed investors more interested in quarterly returns than abstract theorems. Eleanor presented the Merriweather Circle’s groundbreaking work—but her words bounced off the polished walls.
@@ -937,7 +911,7 @@ Eleanor faltered slightly but recovered. \textit{“Wavelets and Fourier transfo
 \bigskip
 
 There were polite nods, but Eleanor could tell it wasn’t enough. As the meeting ended, an older woman approached her. \textit{“Refine your pitch, dear. They won’t understand unless you connect it to something they already do.”}
-\bigskip
+\smallskip
 
 Eleanor walked out of the building with a growing awareness: the purity of her Circle’s work was its greatest strength, but it might also be its greatest liability.
 
@@ -954,13 +928,13 @@ By the time Eleanor reached Berlin, she was weary but determined. The boardroom 
 
 Eleanor began, but Larissa interrupted her with a booming laugh. \textit{“Enough about purity and ideals! Tell me how this could work for me.”}
 
-\bigskip
+\smallskip
 
 Eleanor hesitated, then pivoted. \textit{“Wavelets and Fourier transforms. Tiziana and Chris Everett’s methods could optimize your data pipelines. And Nambu’s monopole primes? They might hold implications for encryption.”}
-\bigskip
+\smallskip
 
 Larissa leaned back, grinning. \textit{“Now you’re talking. But I’ll fund the pure work too—on one condition. I want your Circle to get its hands a little dirty with AI models and real-world data. Pure math feeds applied math, Eleanor. Let’s not pretend they’re separate.”}
-\bigskip
+\smallskip
 
 For the first time, Eleanor felt a spark of hope. Larissa got it—more than anyone else had so far.
 
@@ -968,21 +942,20 @@ For the first time, Eleanor felt a spark of hope. Larissa got it—more than any
 \subsection*{Quantum Challenges in Networking}
 
 Eleanor’s fourth meeting, back in London, brought her to a consultancy firm partnered with a telecom conglomerate. Their mission: future-proofing global networks against the rise of quantum computing and the vulnerabilities it posed to traditional encryption.
-\bigskip
-
+\smallskip
 Dr. Alan Greaves, a seasoned consultant, greeted her. \textit{“Professor Merriweather, we’ve followed the Circle’s work. Help us bridge the gap between theoretical mathematics and practical solutions.”}
-\bigskip
+\smallskip
 
 Eleanor began, outlining the looming threat posed by Shor’s algorithm and the need for quantum-resilient encryption. \textit{“The days of RSA and ECC encryption are numbered. The Merriweather Circle is exploring lattice-based cryptography and other number-theoretic constructs that could offer alternatives.”}
-\bigskip
+\smallskip
 
-The room leaned in, intrigued. \textit{“Rough primes,” Eleanor continued, “primes that avoid small factors, could inspire algorithms resistant to quantum attacks. And our work on Fibonacci-inspired tilings could enhance quantum communication by organizing qubit states with reduced error rates.”}
-\bigskip
+The room collectively drew closer, \textit{“Rough primes,” Eleanor continued, “primes that avoid small factors, could inspire algorithms resistant to quantum attacks. And our work on Fibonacci-inspired tilings could enhance quantum communication by organizing qubit states with reduced error rates.”}
+\smallskip
 
 A young engineer, Priya Malik, asked, \textit{“Are you suggesting this work could aid in secure quantum communication?”}
 
 \begin{figure}[H]
-\includegraphics[width=1.0\linewidth]{Illustrations/vign-eleanorCOMpSoence.png}
+\includegraphics[width=0.8\linewidth]{Illustrations/vign-eleanorCOMpSoence.png}
 \caption{Eleanor having a code}
 \end{figure}
 
@@ -999,4 +972,6 @@ Yet beneath it all lay a growing tension. How could she balance the Circle’s c
 \bigskip
 
 Eleanor sighed, staring out at the city lights. The stakes had never been higher, but neither had the potential. One thing was clear: the Circle’s path forward would require not just brilliance but courage—and Eleanor was ready to lead.
+
+
 

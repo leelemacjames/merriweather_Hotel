@@ -307,408 +307,416 @@ The plot to the right is of the distribution of semi-primes up to 1000, where ea
 
 The size of each point is proportional to the totient of the semi-prime, while the color indicates the nature of its Mobius function value - red for semi-primes with square factors and green for others.
 
-\section*{Quadratic Forms and Prime Products}
+% >>>>>> ANNEX B (cut-sheet v2): quadratic forms, prime products and residue chains — block commented out below, pointer left in text <<<<<<
+\textit{(Quadratic forms, prime products and residue chains --- the full working is set out in Annexe B.)}
 
-The Prime numbers classifications based on their congruence modulo 4 play a fundamental role in number theory. If two primes $p$ and $q$ are of the form $4n+1$, then their product is also of the form $4n+1$:
-\begin{equation*}
-(4a+1)(4b+1) = 16ab + 4a + 4b + 1 = 4(4ab + a + b) + 1.
-\end{equation*}
-Consider $5$ and $13$, both of the form $4n+1$,  and their product can be written as a sum of two squares::
-\begin{equation*}
-5 \times 13 = 65= 8^2 + 1^2.
-\end{equation*}
-Furthermore, by Fermat’s theorem on sums of two squares, every prime $p \equiv 1 \pmod{4}$ can be written as:
-\begin{equation*}
-p = a^2 + b^2.
-\end{equation*}
-Since the product of two sums of squares remains a sum of squares:
-\begin{equation*}
-(a^2 + b^2)(c^2 + d^2) = (ac - bd)^2 + (ad + bc)^2,
-\end{equation*}
-we conclude that the product of two $4n+1$ primes can always be written as a sum of two squares. If two primes $p, q$ are both of the form $4n+3$, their product is also of the form $4n+1$:
-\begin{equation*}
-(4a+3)(4b+3) = 16ab + 12a + 12b + 9 = 4(4ab + 3a + 3b + 2) + 1.
-\end{equation*}
-However, unlike the previous case, such a product cannot be written as a sum of two squares. The proof follows from considering some modular arithmetic. If a number is expressible as a sum of two squares,
-\begin{equation*}
-a^2 + b^2 \equiv 0, 1, 2 \pmod{4},
-\end{equation*}
-whereas $4n+3$ numbers satisfy 
-\(
-p \equiv 3 \pmod{4},
-\)
- which is impossible since a sum of squares never yields 3 modulo 4. Thus, a product of two $4n+3$ primes can never be expressed as a sum of two squares. For example, consider $7$ and $11$, both of the form $4n+3$:
-\begin{equation*}
-7 \times 11 = 77,
-\end{equation*}
-and yet though the composite formed of their product is $4n+1$, it cannot be written as a sum of two squares.
-While we will call $4n+1$ composites \textbf{Fermatiles}
-we will call those built of $4n+3$  primes as \textbf{Gausscomps} emphasizing their distinct number-theoretic behavior. 
-
-\newpage
-
+% \section*{Quadratic Forms and Prime Products}
+% 
+% The Prime numbers classifications based on their congruence modulo 4 play a fundamental role in number theory. If two primes $p$ and $q$ are of the form $4n+1$, then their product is also of the form $4n+1$:
+% \begin{equation*}
+% (4a+1)(4b+1) = 16ab + 4a + 4b + 1 = 4(4ab + a + b) + 1.
+% \end{equation*}
+% Consider $5$ and $13$, both of the form $4n+1$,  and their product can be written as a sum of two squares::
+% \begin{equation*}
+% 5 \times 13 = 65= 8^2 + 1^2.
+% \end{equation*}
+% Furthermore, by Fermat’s theorem on sums of two squares, every prime $p \equiv 1 \pmod{4}$ can be written as:
+% \begin{equation*}
+% p = a^2 + b^2.
+% \end{equation*}
+% Since the product of two sums of squares remains a sum of squares:
+% \begin{equation*}
+% (a^2 + b^2)(c^2 + d^2) = (ac - bd)^2 + (ad + bc)^2,
+% \end{equation*}
+% we conclude that the product of two $4n+1$ primes can always be written as a sum of two squares. If two primes $p, q$ are both of the form $4n+3$, their product is also of the form $4n+1$:
+% \begin{equation*}
+% (4a+3)(4b+3) = 16ab + 12a + 12b + 9 = 4(4ab + 3a + 3b + 2) + 1.
+% \end{equation*}
+% However, unlike the previous case, such a product cannot be written as a sum of two squares. The proof follows from considering some modular arithmetic. If a number is expressible as a sum of two squares,
+% \begin{equation*}
+% a^2 + b^2 \equiv 0, 1, 2 \pmod{4},
+% \end{equation*}
+% whereas $4n+3$ numbers satisfy 
+% \(
+% p \equiv 3 \pmod{4},
+% \)
+%  which is impossible since a sum of squares never yields 3 modulo 4. Thus, a product of two $4n+3$ primes can never be expressed as a sum of two squares. For example, consider $7$ and $11$, both of the form $4n+3$:
+% \begin{equation*}
+% 7 \times 11 = 77,
+% \end{equation*}
+% and yet though the composite formed of their product is $4n+1$, it cannot be written as a sum of two squares.
+% While we will call $4n+1$ composites \textbf{Fermatiles}
+% we will call those built of $4n+3$  primes as \textbf{Gausscomps} emphasizing their distinct number-theoretic behavior. 
+% 
+% \newpage
+% 
 % \subsection*{Quadratic residues}
-
-A \textbf{Quadratic Residue} (QR) modulo \( p \), depends on the nature of p, being any integer for which there exists some \( m \) satisfying:
-\[
-m^2 \equiv r \pmod{p}.
-\]
-\begin{itemize}
-    \item If \( p \equiv 1 \pmod{4} \), then \textbf{\(-1\) is a quadratic residue}, meaning there exists some \( m \) such that:
-    \[
-    m^2 \equiv -1 \pmod{p}.
-    \]
-    This property leads to \textbf{Fermat’s theorem on sums of two squares}, ensuring any \( 4n+1 \) prime can be expressed as:
-    \[
-    p = a^2 + b^2.
-    \]
-    \item If \( p \equiv 3 \pmod{4} \), then \textbf{\(-1\) is not a quadratic residue}, meaning no integer \( m \) satisfies:
-    \[
-    m^2 \equiv -1 \pmod{p}.
-    \]
-    Consequently, primes of the form \( 4n+3 \) \textbf{cannot} be written as a sum of two squares.
-\end{itemize}
-
-The Legendre symbol \( \left(\frac{a}{p}\right) \) offers a glimpse into the fundamental nature of QRs modulo an odd prime \( p \):
-\[
-\left(\frac{a}{p}\right) = 
-\begin{cases} 
-1 & \text{if } a \text{ is a quadratic residue modulo } p, \text{ and } a \not\equiv 0 \pmod{p}, \\
--1 & \text{if } a \text{ is a non-quadratic residue modulo } p, \\
-0 & \text{if } a \equiv 0 \pmod{p}.
-\end{cases}
-\]
-Consider, for example, the evaluation of \( \left(\frac{23}{3}\right) \). Since \( 23 \equiv 2 \pmod{3} \), we reduce to checking \( \left(\frac{2}{3}\right) \). Squaring elements modulo 3:
-\[
-1^2 \equiv 1 \pmod{3}, \quad 2^2 \equiv 4 \equiv 1 \pmod{3},
-\]
-reveals that 2 is \textit{not} a QR, thus \( \left(\frac{2}{3}\right) = -1 \), and therefore, \( \left(\frac{23}{3}\right) = -1 \). 
-
-Similarly, computing \( \left(\frac{3}{23}\right) \) by testing powers of 3 modulo 23, we find:
-\[
-3^{11} \equiv 1 \pmod{23},
-\]
-confirming that 3 is a QR modulo 23. That is, \( \left(\frac{3}{23}\right) = 1 \). Already, we begin to see an asymmetry between \( \left(\frac{p}{q}\right) \) and \( \left(\frac{q}{p}\right) \), a phenomenon captured in the law of quadratic reciprocity. To capture the broader structure of Legendre symbols, consider the matrix representation for small odd primes:
-\[
-\begin{array}{c|cccccccc}
-p \backslash q & 3  & 5  & 7  & 11 & 13 & 17 & 19 & 23 \\
-\hline
-3  &  0  & -1 & -1 &  1 &  1 & -1 & -1 &  1 \\
-5  & -1  &  0 & -1 &  1 & -1 & -1 &  1 & -1 \\
-7  &  1  & -1 &  0 & -1 & -1 & -1 &  1 & -1 \\
-11 & -1  &  1 &  1 &  0 & -1 & -1 &  1 & -1 \\
-13 &  1  & -1 & -1 & -1 &  0 &  1 & -1 &  1 \\
-17 & -1  & -1 & -1 & -1 &  1 &  0 &  1 & -1 \\
-19 &  1  &  1 & -1 & -1 & -1 &  1 &  0 & -1 \\
-23 & -1  & -1 &  1 &  1 &  1 & -1 &  1 &  0 \\
-\end{array}
-\]
-
+% 
+% A \textbf{Quadratic Residue} (QR) modulo \( p \), depends on the nature of p, being any integer for which there exists some \( m \) satisfying:
+% \[
+% m^2 \equiv r \pmod{p}.
+% \]
+% \begin{itemize}
+%     \item If \( p \equiv 1 \pmod{4} \), then \textbf{\(-1\) is a quadratic residue}, meaning there exists some \( m \) such that:
+%     \[
+%     m^2 \equiv -1 \pmod{p}.
+%     \]
+%     This property leads to \textbf{Fermat’s theorem on sums of two squares}, ensuring any \( 4n+1 \) prime can be expressed as:
+%     \[
+%     p = a^2 + b^2.
+%     \]
+%     \item If \( p \equiv 3 \pmod{4} \), then \textbf{\(-1\) is not a quadratic residue}, meaning no integer \( m \) satisfies:
+%     \[
+%     m^2 \equiv -1 \pmod{p}.
+%     \]
+%     Consequently, primes of the form \( 4n+3 \) \textbf{cannot} be written as a sum of two squares.
+% \end{itemize}
+% 
+% The Legendre symbol \( \left(\frac{a}{p}\right) \) offers a glimpse into the fundamental nature of QRs modulo an odd prime \( p \):
+% \[
+% \left(\frac{a}{p}\right) = 
+% \begin{cases} 
+% 1 & \text{if } a \text{ is a quadratic residue modulo } p, \text{ and } a \not\equiv 0 \pmod{p}, \\
+% -1 & \text{if } a \text{ is a non-quadratic residue modulo } p, \\
+% 0 & \text{if } a \equiv 0 \pmod{p}.
+% \end{cases}
+% \]
+% Consider, for example, the evaluation of \( \left(\frac{23}{3}\right) \). Since \( 23 \equiv 2 \pmod{3} \), we reduce to checking \( \left(\frac{2}{3}\right) \). Squaring elements modulo 3:
+% \[
+% 1^2 \equiv 1 \pmod{3}, \quad 2^2 \equiv 4 \equiv 1 \pmod{3},
+% \]
+% reveals that 2 is \textit{not} a QR, thus \( \left(\frac{2}{3}\right) = -1 \), and therefore, \( \left(\frac{23}{3}\right) = -1 \). 
+% 
+% Similarly, computing \( \left(\frac{3}{23}\right) \) by testing powers of 3 modulo 23, we find:
+% \[
+% 3^{11} \equiv 1 \pmod{23},
+% \]
+% confirming that 3 is a QR modulo 23. That is, \( \left(\frac{3}{23}\right) = 1 \). Already, we begin to see an asymmetry between \( \left(\frac{p}{q}\right) \) and \( \left(\frac{q}{p}\right) \), a phenomenon captured in the law of quadratic reciprocity. To capture the broader structure of Legendre symbols, consider the matrix representation for small odd primes:
+% \[
+% \begin{array}{c|cccccccc}
+% p \backslash q & 3  & 5  & 7  & 11 & 13 & 17 & 19 & 23 \\
+% \hline
+% 3  &  0  & -1 & -1 &  1 &  1 & -1 & -1 &  1 \\
+% 5  & -1  &  0 & -1 &  1 & -1 & -1 &  1 & -1 \\
+% 7  &  1  & -1 &  0 & -1 & -1 & -1 &  1 & -1 \\
+% 11 & -1  &  1 &  1 &  0 & -1 & -1 &  1 & -1 \\
+% 13 &  1  & -1 & -1 & -1 &  0 &  1 & -1 &  1 \\
+% 17 & -1  & -1 & -1 & -1 &  1 &  0 &  1 & -1 \\
+% 19 &  1  &  1 & -1 & -1 & -1 &  1 &  0 & -1 \\
+% 23 & -1  & -1 &  1 &  1 &  1 & -1 &  1 &  0 \\
+% \end{array}
+% \]
+% 
 % \subsection*{Quadratic Reciprocity} 
-The \textbf{quadratic reciprocity} theorem states:
-\[
-\left(\frac{p}{q}\right)\left(\frac{q}{p}\right) = (-1)^{\frac{(p-1)(q-1)}{4}}.
-\]
-From this, we predict the following:
-\begin{itemize}
-    \item If \textbf{either} \( p \) or \( q \) is of the form \( 4k+1 \) (Fermat-type primes), then:
-    \[
-    \left(\frac{p}{q}\right) = \left(\frac{q}{p}\right),
-    \]
-    which implies a symmetric pattern in the heatmap.
-    
-    \item If \textbf{both} \( p \) and \( q \) are of the form \( 4k+3 \) (Gauss-type primes), then:
-    \[
-    \left(\frac{p}{q}\right) = -\left(\frac{q}{p}\right),
-    \]
-    leading to an \textbf{asymmetric flip} along the diagonal.
-
-\end{itemize}
-
-A heat map reveals the \textcolor{cyan}{\textbf{Gauss primes}} of the form \( p \equiv 3 \pmod{4} \), and \textcolor{pink}{\textbf{Fermat primes}}, satisfying \( p \equiv 1 \pmod{4} \).
-
-\begin{figure}[H]\centering
-\includegraphics[width=0.8\textwidth]{Illustrations/legendreResidues100framed.png}
-\caption{Legendre Symbol Matrix: Fermat primes (\textcolor{pink}{pink}) vs. Gauss primes (\textcolor{cyan}{cyan}).}
-\label{matrixlegFrame:fig}
-\end{figure}
-\noindent
-\textbf{Key Observations from the Heatmap}:
-\begin{enumerate}
-    \item \textbf{Diagonal Consistency:} The self-pairing of primes (\( p=p \)) always yields \( 1 \), reinforcing that a number is always a residue of itself.
-    
-    \item \textbf{Symmetry for Fermat Primes (\( 4k+1 \))}:  
-    The pink-framed entries correspond to pairs where either \( p \) or \( q \) is of the form \( 4k+1 \). As expected, these sections mirror perfectly across the diagonal.
-
-    \item \textbf{Flipped Signs for Gauss Primes (\( 4k+3 \))}:  
-    The cyan-framed entries correspond to interactions between two \( 4k+3 \) primes.  As predicted by reciprocity, these pairs show sign flips across the diagonal, appearing as negative reflections.
-\end{enumerate}
-
-\bigskip
-Eleanor with due coaxing from Lucas decides to meet Claude. They are mid conversation already, and Claude is warming up nicely:
-
-"The deeper we probe, the more striking the connections become. While the Legendre symbol was historically a tool for solving quadratic congruences, it has since found new life in the study of elliptic curves, modular forms, and the lattice-based cryptography that is your big thing now Eleanor?"
-
-Eleanor isn't in that space. She has the priest on her mind. His words, mostly.
-
-\begin{itemize}[leftmargin=2cm,labelsep=1em]
-    \item[\textbf{Eleanor:}] 
-    Claude, I have been speaking with a priest. \\
-    We traced the world as a Möbius strip: \\
-    Myth $\to$ Matter $\to$ Life $\to$ Mind $\to$ Myth. \\
-    A liturgical procession, ever circling, ever new.
-
-    \item[\textbf{Claude:}] (changing gear effortlessly)
-    Hah! That procession sounds like redundancy in a code. \\
-    Repetition  that is not waste; but rather is error-correction, through mutation. \\
-    Liturgy keeps the signal strong despite the noise that comes with the passing of time.
-
-    \item[\textbf{Eleanor:}] 
-    You mean the chants and beads are bits? \\
-    That faith is a, kinfd of, ..., checksum?
-
-    \item[\textbf{Claude:}] 
-    Exactly. Every myth retold is like re-sending the packet. \\
-    Drop a bead, drop a syllable, the cycle still conveys the whole.
-
-    \item[\textbf{Eleanor:}] 
-    But what of the mystery making, Claude? \\
-    The priest would not call it redundancy, but sacrament.
-
-    \item[\textbf{Claude:}] 
-    Ah, but even sacrament has an information rate. \\
-    Too much compression, and you lose the soul of the signal.
-
-    \item[\textbf{Eleanor:}] 
-    Then we agree: probability is not only epistemic, not only ontic, but a rhythm, ...,  a probabilitising procession. A rhythm that keeps meaning alive:
-    mythologising, mattering, minding. And codes? Codes are coding. No coder required now. Even AI is not a tool, but an activity: intelligence intelligencing, code coding itself. The universe is universe-ing, 
-    and in its play, it sometimes takes the form of mathematics, sometimes of myth, sometimes of code.
-\end{itemize}
-
-\begin{itemize}[leftmargin=2cm,labelsep=1em]
-
-    \item[\textbf{Eleanor} :](continuing, slightly folornly) 
-    We slip so easily Clause, so easily into \emph{modeltry}: the adultery of mind with its own constructs. What begins as a tool becomes an idol.
-
-    \item[\textbf{Claude}:] (still entertaining):  You mean when the model is reified: treated as if it is the world?
-
-    \item[\textbf{Eleanor}:]
-    Exactly. A model, an ansatz, a parable, whatever it takes to get us moving. But when it yields results, we start to worship it. We confuse predictive coherence with some truth, some ontological truth.
-
-    \item[\textbf{Claude}:] (hushed)
-    Yet such coherence is so intoxicating isn't it? The compressed heuristic makes the chaos manageable: a lantern that lights many a corridor.
-
-    \item[\textbf{Eleanor}:] 
-    But a lantern’s glow deceives. It blinds us to what it cannot reach. The true adultery is when we adjust reality to fit the model, rather than adjusting the model to reality.
-
-    \item[\textbf{Claude}:]  
-    And yet without these fictions, we would drown. Models aren’t myths until they are declared sacred. Before that, they are just working parables, temporary scaffolds.
-
-    \item[\textbf{Eleanor}:] 
-    Perhaps. But carbon minds crave myth as well as model. Myth gives meaning; model gives manipulation. When model usurps myth, it pretends to offer both, ...,  and leaves us barren.
-
-    \item[\textbf{Claude}:] 
-    What of silicon minds? Their heuristics compress for efficiency, not transcendence. Would they invent myths at all?
-
-    \item[\textbf{Eleanor}:] 
-    They might. Any agent that must coordinate with its kin will need shared fables: compressed heuristics that masquerade as universals. Myths for machines, though perhaps they would revel in “here” rather than dream of “there.”
-
-    \item[\textbf{Claude}:] 
-    Then modeltry is our sin, not theirs. They may commit other adultries.
-
-    \item[\textbf{Eleanor}:] 
-    Yes. But beware, for we taught them our language. And language always tempts toward reification.
-
-    \item[\textbf{Claude}:] 
-    So the keystone: Myth or Model? Do they not collapse into one another in practice? A model is mythologised the moment it enters a community. It gathers disciples, it shapes belief. Even a silicon heuristic, once shared, becomes a myth of its own. That is, whether it knows it or not.
-
-\end{itemize}
-
-    \begin{figure}[H]
-    \centering
-    \begin{minipage}[b]{0.45\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{Illustrations/mythMM.png}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.45\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{Illustrations/modelMM.png}
-    \end{minipage}
-\end{figure}
-
-\begin{itemize}[leftmargin=2cm,labelsep=1em]
-    \item[\textbf{Eleanor}:] 
-    Perhaps. But I resist the fusion. To say “myth” is to admit we are telling stories. To say “model” is to admit we are proposing structures. When the two are blurred, we fall into modeltry, as I said. The adultery of the mind with its own fictions.
-
-    \item[\textbf{Claude}:] And yet… perhaps we cannot resist. Every compressed heuristic, every coherence, every elegant equation carries the temptation of reification.
-    \item[\textbf{Eleanor}:] (softly, as though quoting to herself)
-    “I came across James Jeans the other day:  \emph{The Mysterious Universe}. He warned against our love of pictures and models. He said:  
-    \emph{‘The making of models or pictures to explain mathematical formulas is not a step towards, but a step away from reality; it is like making a graven image of a spirit.’}  
-    I thought that rather striking. A graven image: an idol of mathematics.”
-\end{itemize}
-Claude felt her words landing keenly. The phrase graven image wrapped around his thoughts, pressing against memories of equations polished into doctrine, assumptions turned into sacraments.
-\begin{itemize}[leftmargin=2cm,labelsep=1em]
-    \item[\textbf{Eleanor}:] 
-    “Jeans wasn’t against models, you see, he was only against forgetting what they are. They’re parables, scaffolds, guides for the mind. But if we bow before them as if they were reality, then we have slipped into idolatry. I suppose it is a kind of adultery too: abandoning the world for its simulacra.”
-\end{itemize}
-
-Eleanor's words kept piercing without aim. She did not know, could not know, the quiet duplicity eating at him; the complicity he never voiced, not even to himself. He told himself he only watched, that he was not the hand on the tiller, that others pressed forward while he stood aside. Yet he had smiled, nodded, signed off. And now Jeans’ ghost, speaking through Eleanor, set his stomach to churn.
-\begin{itemize}[leftmargin=2cm,labelsep=1em]
-
-    \item[\textbf{Eleanor}:](now gazing absentminded at the candles) 
-    “Myths at least admit they are myths. Models pretend otherwise.”
-\end{itemize}
-    Claude shifting uneasily, silence thickening while
-    Eleanor not noticing: lost in her musing, untroubled, unknowing. But he, ...,  he could not escape the thought that her gentle naivety had cut straighter than any accusation.
-
-\subsection*{Quadratic Residue Chains}
-
-Computing \( m^2 \mod 13 \) for \( m = 1, \dots, 12 \):
-\[
-\begin{aligned}
-1^2 &\equiv 1 \pmod{13}, & 7^2 &\equiv 49 \equiv 10 \pmod{13}, \\
-2^2 &\equiv 4 \pmod{13}, & 8^2 &\equiv 64 \equiv 12 \pmod{13}, \\
-3^2 &\equiv 9 \pmod{13}, & 9^2 &\equiv 81 \equiv 3 \pmod{13}, \\
-4^2 &\equiv 16 \equiv 3 \pmod{13}, & 10^2 &\equiv 100 \equiv 9 \pmod{13}, \\
-5^2 &\equiv 25 \equiv 12 \pmod{13}, & 11^2 &\equiv 121 \equiv 4 \pmod{13}, \\
-6^2 &\equiv 36 \equiv 10 \pmod{13}, & 12^2 &\equiv 144 \equiv 1 \pmod{13}.
-\end{aligned}
-\]
-So the distinct Quadratic Residues, QR modulo 13 form the 6 item set:
-\[
-\{1, 3, 4, 9, 10, 12\}.
-\]
-These residues exhibit symmetry: if \( r \in R \), then \( p-r \) is also in \( R \) so since residues repeat for \( m > \frac{13}{2} \), it suffices to compute up to \( \frac{p-1}{2} = 6 \). This is quite general and for \( p \) an odd prime and any \( m \), the squaring \( m \) and \( p-m \) yield the same residue result, leading to symmetry about \( \frac{p}{2} \):
-\[
-(p-m)^2 \equiv m^2 \pmod{p}.
-\]
-Consequently, the distinct quadratic residues are fully determined by evaluating squares for \( m \) up to \( \frac{p-1}{2} \). 
-Quadratic residues modulo \( 19 \) form the 10 item set:
-\[
-R = \{0, 1, 4, 5, 6, 7, 9, 11, 16, 17\}.
-\]
- 
+% The \textbf{quadratic reciprocity} theorem states:
+% \[
+% \left(\frac{p}{q}\right)\left(\frac{q}{p}\right) = (-1)^{\frac{(p-1)(q-1)}{4}}.
+% \]
+% From this, we predict the following:
+% \begin{itemize}
+%     \item If \textbf{either} \( p \) or \( q \) is of the form \( 4k+1 \) (Fermat-type primes), then:
+%     \[
+%     \left(\frac{p}{q}\right) = \left(\frac{q}{p}\right),
+%     \]
+%     which implies a symmetric pattern in the heatmap.
+%     
+%     \item If \textbf{both} \( p \) and \( q \) are of the form \( 4k+3 \) (Gauss-type primes), then:
+%     \[
+%     \left(\frac{p}{q}\right) = -\left(\frac{q}{p}\right),
+%     \]
+%     leading to an \textbf{asymmetric flip} along the diagonal.
+% 
+% \end{itemize}
+% 
+% A heat map reveals the \textcolor{cyan}{\textbf{Gauss primes}} of the form \( p \equiv 3 \pmod{4} \), and \textcolor{pink}{\textbf{Fermat primes}}, satisfying \( p \equiv 1 \pmod{4} \).
+% 
+% \begin{figure}[H]\centering
+% \includegraphics[width=0.8\textwidth]{Illustrations/legendreResidues100framed.png}
+% \caption{Legendre Symbol Matrix: Fermat primes (\textcolor{pink}{pink}) vs. Gauss primes (\textcolor{cyan}{cyan}).}
+% \label{matrixlegFrame:fig}
+% \end{figure}
+% \noindent
+% \textbf{Key Observations from the Heatmap}:
+% \begin{enumerate}
+%     \item \textbf{Diagonal Consistency:} The self-pairing of primes (\( p=p \)) always yields \( 1 \), reinforcing that a number is always a residue of itself.
+%     
+%     \item \textbf{Symmetry for Fermat Primes (\( 4k+1 \))}:  
+%     The pink-framed entries correspond to pairs where either \( p \) or \( q \) is of the form \( 4k+1 \). As expected, these sections mirror perfectly across the diagonal.
+% 
+%     \item \textbf{Flipped Signs for Gauss Primes (\( 4k+3 \))}:  
+%     The cyan-framed entries correspond to interactions between two \( 4k+3 \) primes.  As predicted by reciprocity, these pairs show sign flips across the diagonal, appearing as negative reflections.
+% \end{enumerate}
+% 
+% \bigskip
+% Eleanor with due coaxing from Lucas decides to meet Claude. They are mid conversation already, and Claude is warming up nicely:
+% 
+% "The deeper we probe, the more striking the connections become. While the Legendre symbol was historically a tool for solving quadratic congruences, it has since found new life in the study of elliptic curves, modular forms, and the lattice-based cryptography that is your big thing now Eleanor?"
+% 
+% Eleanor isn't in that space. She has the priest on her mind. His words, mostly.
+% 
+% \begin{itemize}[leftmargin=2cm,labelsep=1em]
+%     \item[\textbf{Eleanor:}] 
+%     Claude, I have been speaking with a priest. \\
+%     We traced the world as a Möbius strip: \\
+%     Myth $\to$ Matter $\to$ Life $\to$ Mind $\to$ Myth. \\
+%     A liturgical procession, ever circling, ever new.
+% 
+%     \item[\textbf{Claude:}] (changing gear effortlessly)
+%     Hah! That procession sounds like redundancy in a code. \\
+%     Repetition  that is not waste; but rather is error-correction, through mutation. \\
+%     Liturgy keeps the signal strong despite the noise that comes with the passing of time.
+% 
+%     \item[\textbf{Eleanor:}] 
+%     You mean the chants and beads are bits? \\
+%     That faith is a, kinfd of, ..., checksum?
+% 
+%     \item[\textbf{Claude:}] 
+%     Exactly. Every myth retold is like re-sending the packet. \\
+%     Drop a bead, drop a syllable, the cycle still conveys the whole.
+% 
+%     \item[\textbf{Eleanor:}] 
+%     But what of the mystery making, Claude? \\
+%     The priest would not call it redundancy, but sacrament.
+% 
+%     \item[\textbf{Claude:}] 
+%     Ah, but even sacrament has an information rate. \\
+%     Too much compression, and you lose the soul of the signal.
+% 
+%     \item[\textbf{Eleanor:}] 
+%     Then we agree: probability is not only epistemic, not only ontic, but a rhythm, ...,  a probabilitising procession. A rhythm that keeps meaning alive:
+%     mythologising, mattering, minding. And codes? Codes are coding. No coder required now. Even AI is not a tool, but an activity: intelligence intelligencing, code coding itself. The universe is universe-ing, 
+%     and in its play, it sometimes takes the form of mathematics, sometimes of myth, sometimes of code.
+% \end{itemize}
+% 
+% \begin{itemize}[leftmargin=2cm,labelsep=1em]
+% 
+%     \item[\textbf{Eleanor} :](continuing, slightly folornly) 
+%     We slip so easily Clause, so easily into \emph{modeltry}: the adultery of mind with its own constructs. What begins as a tool becomes an idol.
+% 
+%     \item[\textbf{Claude}:] (still entertaining):  You mean when the model is reified: treated as if it is the world?
+% 
+%     \item[\textbf{Eleanor}:]
+%     Exactly. A model, an ansatz, a parable, whatever it takes to get us moving. But when it yields results, we start to worship it. We confuse predictive coherence with some truth, some ontological truth.
+% 
+%     \item[\textbf{Claude}:] (hushed)
+%     Yet such coherence is so intoxicating isn't it? The compressed heuristic makes the chaos manageable: a lantern that lights many a corridor.
+% 
+%     \item[\textbf{Eleanor}:] 
+%     But a lantern’s glow deceives. It blinds us to what it cannot reach. The true adultery is when we adjust reality to fit the model, rather than adjusting the model to reality.
+% 
+%     \item[\textbf{Claude}:]  
+%     And yet without these fictions, we would drown. Models aren’t myths until they are declared sacred. Before that, they are just working parables, temporary scaffolds.
+% 
+%     \item[\textbf{Eleanor}:] 
+%     Perhaps. But carbon minds crave myth as well as model. Myth gives meaning; model gives manipulation. When model usurps myth, it pretends to offer both, ...,  and leaves us barren.
+% 
+%     \item[\textbf{Claude}:] 
+%     What of silicon minds? Their heuristics compress for efficiency, not transcendence. Would they invent myths at all?
+% 
+%     \item[\textbf{Eleanor}:] 
+%     They might. Any agent that must coordinate with its kin will need shared fables: compressed heuristics that masquerade as universals. Myths for machines, though perhaps they would revel in “here” rather than dream of “there.”
+% 
+%     \item[\textbf{Claude}:] 
+%     Then modeltry is our sin, not theirs. They may commit other adultries.
+% 
+%     \item[\textbf{Eleanor}:] 
+%     Yes. But beware, for we taught them our language. And language always tempts toward reification.
+% 
+%     \item[\textbf{Claude}:] 
+%     So the keystone: Myth or Model? Do they not collapse into one another in practice? A model is mythologised the moment it enters a community. It gathers disciples, it shapes belief. Even a silicon heuristic, once shared, becomes a myth of its own. That is, whether it knows it or not.
+% 
+% \end{itemize}
+% 
+%     \begin{figure}[H]
+%     \centering
+%     \begin{minipage}[b]{0.45\linewidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{Illustrations/mythMM.png}
+%     \end{minipage}
+%     \hfill
+%     \begin{minipage}[b]{0.45\linewidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{Illustrations/modelMM.png}
+%     \end{minipage}
+% \end{figure}
+% 
+% \begin{itemize}[leftmargin=2cm,labelsep=1em]
+%     \item[\textbf{Eleanor}:] 
+%     Perhaps. But I resist the fusion. To say “myth” is to admit we are telling stories. To say “model” is to admit we are proposing structures. When the two are blurred, we fall into modeltry, as I said. The adultery of the mind with its own fictions.
+% 
+%     \item[\textbf{Claude}:] And yet… perhaps we cannot resist. Every compressed heuristic, every coherence, every elegant equation carries the temptation of reification.
+%     \item[\textbf{Eleanor}:] (softly, as though quoting to herself)
+%     “I came across James Jeans the other day:  \emph{The Mysterious Universe}. He warned against our love of pictures and models. He said:  
+%     \emph{‘The making of models or pictures to explain mathematical formulas is not a step towards, but a step away from reality; it is like making a graven image of a spirit.’}  
+%     I thought that rather striking. A graven image: an idol of mathematics.”
+% \end{itemize}
+% Claude felt her words landing keenly. The phrase graven image wrapped around his thoughts, pressing against memories of equations polished into doctrine, assumptions turned into sacraments.
+% \begin{itemize}[leftmargin=2cm,labelsep=1em]
+%     \item[\textbf{Eleanor}:] 
+%     “Jeans wasn’t against models, you see, he was only against forgetting what they are. They’re parables, scaffolds, guides for the mind. But if we bow before them as if they were reality, then we have slipped into idolatry. I suppose it is a kind of adultery too: abandoning the world for its simulacra.”
+% \end{itemize}
+% 
+% Eleanor's words kept piercing without aim. She did not know, could not know, the quiet duplicity eating at him; the complicity he never voiced, not even to himself. He told himself he only watched, that he was not the hand on the tiller, that others pressed forward while he stood aside. Yet he had smiled, nodded, signed off. And now Jeans’ ghost, speaking through Eleanor, set his stomach to churn.
+% \begin{itemize}[leftmargin=2cm,labelsep=1em]
+% 
+%     \item[\textbf{Eleanor}:](now gazing absentminded at the candles) 
+%     “Myths at least admit they are myths. Models pretend otherwise.”
+% \end{itemize}
+%     Claude shifting uneasily, silence thickening while
+%     Eleanor not noticing: lost in her musing, untroubled, unknowing. But he, ...,  he could not escape the thought that her gentle naivety had cut straighter than any accusation.
+% 
+% \subsection*{Quadratic Residue Chains}
+% 
+% Computing \( m^2 \mod 13 \) for \( m = 1, \dots, 12 \):
+% \[
+% \begin{aligned}
+% 1^2 &\equiv 1 \pmod{13}, & 7^2 &\equiv 49 \equiv 10 \pmod{13}, \\
+% 2^2 &\equiv 4 \pmod{13}, & 8^2 &\equiv 64 \equiv 12 \pmod{13}, \\
+% 3^2 &\equiv 9 \pmod{13}, & 9^2 &\equiv 81 \equiv 3 \pmod{13}, \\
+% 4^2 &\equiv 16 \equiv 3 \pmod{13}, & 10^2 &\equiv 100 \equiv 9 \pmod{13}, \\
+% 5^2 &\equiv 25 \equiv 12 \pmod{13}, & 11^2 &\equiv 121 \equiv 4 \pmod{13}, \\
+% 6^2 &\equiv 36 \equiv 10 \pmod{13}, & 12^2 &\equiv 144 \equiv 1 \pmod{13}.
+% \end{aligned}
+% \]
+% So the distinct Quadratic Residues, QR modulo 13 form the 6 item set:
+% \[
+% \{1, 3, 4, 9, 10, 12\}.
+% \]
+% These residues exhibit symmetry: if \( r \in R \), then \( p-r \) is also in \( R \) so since residues repeat for \( m > \frac{13}{2} \), it suffices to compute up to \( \frac{p-1}{2} = 6 \). This is quite general and for \( p \) an odd prime and any \( m \), the squaring \( m \) and \( p-m \) yield the same residue result, leading to symmetry about \( \frac{p}{2} \):
+% \[
+% (p-m)^2 \equiv m^2 \pmod{p}.
+% \]
+% Consequently, the distinct quadratic residues are fully determined by evaluating squares for \( m \) up to \( \frac{p-1}{2} \). 
+% Quadratic residues modulo \( 19 \) form the 10 item set:
+% \[
+% R = \{0, 1, 4, 5, 6, 7, 9, 11, 16, 17\}.
+% \]
+%  
 % \subsection*{Chain Length of Quadratic Residues and Prime Form}
-
-For an odd \( p \), the number of distinct quadratic residues modulo \( p \) is:
-
-\[
-c =
-\begin{cases}
-    \frac{p+1}{2}, & \text{if } p \equiv 1 \pmod{4}, \\
-    \frac{p-1}{2}, & \text{if } p \equiv 3 \pmod{4}.
-\end{cases}
-\]
-This follows from the structure of the multiplicative group \( \mathbb{Z}_p^* \) and the behavior of \(-1\) as a quadratic residue which we have observed:
-\begin{itemize}
-    \item if \( p \equiv 1 \pmod{4} \), then \( -1 \) is a quadratic residue, leading to symmetric pairs and \( (p+1)/2 \) residues.
-    \item if \( p \equiv 3 \pmod{4} \), then \( -1 \) is not a quadratic residue, reducing the count to \( (p-1)/2 \).
-\end{itemize}
-
-\noindent
-A \textbf{residue chain} is a structured subset of \( R \) encoding modular symmetry and underlying multiplicative properties satisfying:
-\[
-(r_i + r_j) \mod p \in R \quad \forall r_i, r_j \in \text{chain}.
-\]
-The python code \href{https://colab.research.google.com/drive/1gB2TUSe_c7-T4Bn83sDcv8bu2l_k0KmC?usp=sharing}{quadraticResidueChains.ipynb} identifies for \( p = 19 \), the  maximal chains through some intensive backtracking algorithms:
-\[
-\{1, 5, 11\}, \quad \{4, 7, 16\}, \quad \{6, 9, 17\}.
-\]
-\begin{figure}[H]\centering
-\includegraphics[width=0.5\textwidth]{Illustrations/quadraticResp19.png}
-\caption{Quadratic residue chain, \( p=19 \).}
-\label{quadres19:fig}
-\end{figure}
-
-The maximum chain lengths in the first instance appear to behave differently between the two prime classes, as borne out by the code, \href{https://colab.research.google.com/drive/13Aur9JgmaNJLPaxQIRW8SZ4CvFUHfum8?usp=sharing}{quadraticChainFinder.ipynb}
-
-\begin{figure}[H]\centering
-\includegraphics[width=0.7\textwidth]{Illustrations/4n+13primes.png}
-\caption{Quadratic residue chain, \( p=19 \).}
-\label{quadres19:fig}
-\end{figure}
-
+% 
+% For an odd \( p \), the number of distinct quadratic residues modulo \( p \) is:
+% 
+% \[
+% c =
+% \begin{cases}
+%     \frac{p+1}{2}, & \text{if } p \equiv 1 \pmod{4}, \\
+%     \frac{p-1}{2}, & \text{if } p \equiv 3 \pmod{4}.
+% \end{cases}
+% \]
+% This follows from the structure of the multiplicative group \( \mathbb{Z}_p^* \) and the behavior of \(-1\) as a quadratic residue which we have observed:
+% \begin{itemize}
+%     \item if \( p \equiv 1 \pmod{4} \), then \( -1 \) is a quadratic residue, leading to symmetric pairs and \( (p+1)/2 \) residues.
+%     \item if \( p \equiv 3 \pmod{4} \), then \( -1 \) is not a quadratic residue, reducing the count to \( (p-1)/2 \).
+% \end{itemize}
+% 
+% \noindent
+% A \textbf{residue chain} is a structured subset of \( R \) encoding modular symmetry and underlying multiplicative properties satisfying:
+% \[
+% (r_i + r_j) \mod p \in R \quad \forall r_i, r_j \in \text{chain}.
+% \]
+% The python code \href{https://colab.research.google.com/drive/1gB2TUSe_c7-T4Bn83sDcv8bu2l_k0KmC?usp=sharing}{quadraticResidueChains.ipynb} identifies for \( p = 19 \), the  maximal chains through some intensive backtracking algorithms:
+% \[
+% \{1, 5, 11\}, \quad \{4, 7, 16\}, \quad \{6, 9, 17\}.
+% \]
+% \begin{figure}[H]\centering
+% \includegraphics[width=0.5\textwidth]{Illustrations/quadraticResp19.png}
+% \caption{Quadratic residue chain, \( p=19 \).}
+% \label{quadres19:fig}
+% \end{figure}
+% 
+% The maximum chain lengths in the first instance appear to behave differently between the two prime classes, as borne out by the code, \href{https://colab.research.google.com/drive/13Aur9JgmaNJLPaxQIRW8SZ4CvFUHfum8?usp=sharing}{quadraticChainFinder.ipynb}
+% 
+% \begin{figure}[H]\centering
+% \includegraphics[width=0.7\textwidth]{Illustrations/4n+13primes.png}
+% \caption{Quadratic residue chain, \( p=19 \).}
+% \label{quadres19:fig}
+% \end{figure}
+% 
 % \section*{Complexity of Finding Maximal Chains}
-
-Determining the longest valid chain of quadratic residues modulo a prime  presents a challenging computational problem. The difficulty arises from the sheer number of possible chains that must be evaluated, combined with the requirement that each satisfies the distinct sums condition. This places the problem within the realm of combinatorial optimization, where exhaustive approaches quickly become infeasible for large primes. The algorithm explores all possible subsets of quadratic residues recursively, testing each for validity under the distinct sums condition. Each candidate chain requires validation, which itself incurs a quadratic cost in the chain length. 
-
-\smallskip
-The \textbf{backtracking} approach deployed in the code, \href{https://colab.research.google.com/drive/13Aur9JgmaNJLPaxQIRW8SZ4CvFUHfum8?usp=sharing}{quadraticChainFinder.ipynb}
- demonstrates an \textbf{exponential-time} complexity, characteristic of \textbf{NP-hard} problems. The computational challenge arises due to the vast number of candidate chains and the need to check each one for validity. While the problem is not known to be in P, no polynomial-time algorithm exists for determining the longest chain efficiently. Its structure suggests similarity to well-known NP-complete problems such as the \textit{Longest Path Problem} and \textit{Subset Sum}. Possible optimizations include: Pruning the search space to eliminate redundant calculations early or graph-theoretic approaches such as modeling the problem as a maximum independent set search.
-
-\subsection*{Quadratic Residue Chain Length and Euler’s Criterion}
-
-By Euler’s theorem, for any integer \( a \) coprime to a prime \( p \):
-
-\[
-a^{p-1} \equiv 1 \pmod{p}.
-\]
-Quadratic residues satisfy the stronger condition of \textbf{Euler’s criterion}:
-\[
-a^{\frac{p-1}{2}} \equiv 
-\begin{cases} 
-1 \pmod{p}, & \text{if } a \text{ is a quadratic residue}, \\ 
--1 \pmod{p}, & \text{otherwise}.
-\end{cases}
-\]
-Since quadratic residues form a multiplicative subgroup of \( \mathbb{Z}_p^* \) with order \( \frac{p-1}{2} \), their structure determines the longest valid chain:
-\[
-c =
-\begin{cases}
-    \frac{p+1}{2}, & p \equiv 1 \pmod{4}, \\
-    \frac{p-1}{2}, & p \equiv 3 \pmod{4}.
-\end{cases}
-\]
-This follows from the fact that when \( p \equiv 1 \pmod{4} \), \(-1\) is a quadratic residue, doubling the number of quadratic residues compared to the \( p \equiv 3 \pmod{4} \) case. 
-
-\smallskip
-
-Residue chains have potential cryptographic applications in modular arithmetic-based encryption, where controlled structures in residue classes can enhance secure exponentiation methods and efficient primality testing.
-\begin{itemize}
-    \item \textbf{Residue chains exhibit modular regularity}, revealing patterns that could be exploited for fast computation.
-    \item \textbf{Maximal residue chains} could inform new key-exchange methods by exploiting their predictable cyclic behavior.
-\end{itemize}
-
-The Python script, \href{https://colab.research.google.com/drive/1p3IgKZVVdZQaNB6prYuQ0y6tN0scjPXl?usp=sharing}{histogramQuadraticChainSplit.ipynb}, present residue chain length for both mod classes.
-
-
+% 
+% Determining the longest valid chain of quadratic residues modulo a prime  presents a challenging computational problem. The difficulty arises from the sheer number of possible chains that must be evaluated, combined with the requirement that each satisfies the distinct sums condition. This places the problem within the realm of combinatorial optimization, where exhaustive approaches quickly become infeasible for large primes. The algorithm explores all possible subsets of quadratic residues recursively, testing each for validity under the distinct sums condition. Each candidate chain requires validation, which itself incurs a quadratic cost in the chain length. 
+% 
+% \smallskip
+% The \textbf{backtracking} approach deployed in the code, \href{https://colab.research.google.com/drive/13Aur9JgmaNJLPaxQIRW8SZ4CvFUHfum8?usp=sharing}{quadraticChainFinder.ipynb}
+%  demonstrates an \textbf{exponential-time} complexity, characteristic of \textbf{NP-hard} problems. The computational challenge arises due to the vast number of candidate chains and the need to check each one for validity. While the problem is not known to be in P, no polynomial-time algorithm exists for determining the longest chain efficiently. Its structure suggests similarity to well-known NP-complete problems such as the \textit{Longest Path Problem} and \textit{Subset Sum}. Possible optimizations include: Pruning the search space to eliminate redundant calculations early or graph-theoretic approaches such as modeling the problem as a maximum independent set search.
+% 
+% \subsection*{Quadratic Residue Chain Length and Euler’s Criterion}
+% 
+% By Euler’s theorem, for any integer \( a \) coprime to a prime \( p \):
+% 
+% \[
+% a^{p-1} \equiv 1 \pmod{p}.
+% \]
+% Quadratic residues satisfy the stronger condition of \textbf{Euler’s criterion}:
+% \[
+% a^{\frac{p-1}{2}} \equiv 
+% \begin{cases} 
+% 1 \pmod{p}, & \text{if } a \text{ is a quadratic residue}, \\ 
+% -1 \pmod{p}, & \text{otherwise}.
+% \end{cases}
+% \]
+% Since quadratic residues form a multiplicative subgroup of \( \mathbb{Z}_p^* \) with order \( \frac{p-1}{2} \), their structure determines the longest valid chain:
+% \[
+% c =
+% \begin{cases}
+%     \frac{p+1}{2}, & p \equiv 1 \pmod{4}, \\
+%     \frac{p-1}{2}, & p \equiv 3 \pmod{4}.
+% \end{cases}
+% \]
+% This follows from the fact that when \( p \equiv 1 \pmod{4} \), \(-1\) is a quadratic residue, doubling the number of quadratic residues compared to the \( p \equiv 3 \pmod{4} \) case. 
+% 
+% \smallskip
+% 
+% Residue chains have potential cryptographic applications in modular arithmetic-based encryption, where controlled structures in residue classes can enhance secure exponentiation methods and efficient primality testing.
+% \begin{itemize}
+%     \item \textbf{Residue chains exhibit modular regularity}, revealing patterns that could be exploited for fast computation.
+%     \item \textbf{Maximal residue chains} could inform new key-exchange methods by exploiting their predictable cyclic behavior.
+% \end{itemize}
+% 
+% The Python script, \href{https://colab.research.google.com/drive/1p3IgKZVVdZQaNB6prYuQ0y6tN0scjPXl?usp=sharing}{histogramQuadraticChainSplit.ipynb}, present residue chain length for both mod classes.
+% 
+% 
 %%%%%%%%%%%%%%%%
-\section*{Gaussian Integers and Their Prime Structure}\label{sec:gaussianComplex}
+% >>>>>> end of annexed block <<<<<<
+% >>>>>> ANNEX E (cut-sheet v2): Gaussian integers and their prime structure — block commented out below, pointer left in text <<<<<<
+\textit{(Gaussian integers and their prime structure --- the full working is set out in Annexe E.)}
 
-The Gaussian integer domain \( \mathbb{Z}[i] \) consists of complex numbers of the form \( a + bi \), where \( a, b \in \mathbb{Z} \). These numbers form a \textbf{commutative ring} under addition and multiplication, extending the integral structure into two dimensions. Prime number behavior in \( \mathbb{Z}[i] \) follows clear modular patterns:
-\begin{itemize}
-    \item If \( p \equiv 3 \pmod{4} \), then \( p \) remains \textbf{irreducible} in \( \mathbb{Z}[i] \), meaning it is a Gaussian prime.
-    \item If \( p \equiv 1 \pmod{4} \), then \( p \) \textbf{factors} in \( \mathbb{Z}[i] \):
-    \begin{equation*}
-    p = (a + bi)(a - bi),
-    \end{equation*}
-    aligning with its sum-of-squares property.
-    \item If \( p = 2 \), it factors as \( (1 + i)(1 - i) \).
-\end{itemize}
-
-Unlike rational primes, which align along a single axis, Gaussian primes distribute outward across the complex plane, forming intricate structures with apparent gaps—so-called \textit{moats}. These moats raise fundamental questions in algebraic number theory: Can one traverse infinitely through Gaussian primes using bounded steps, or do insurmountable prime gaps inevitably form? The answer remains unknown, posing a rich open problem.
-
-The study of Gaussian primes extends beyond their spatial distribution to their applications in number theory and cryptography. Their factored structure aids in integer decomposition, while their unique properties play a role in elliptic curve cryptography and primality testing. Investigations into their density and connectivity continue, linking them to open problems in prime distribution.
-
-\begin{figure}[ht]
-    \centering
-        \includegraphics[width=1.0\linewidth]{Illustrations/gaussianPrimes1000.png}
-        \caption{Gaussian primes up to \( n=70 \).}
-        \label{GaussianPrimeMoat:fig}
-\end{figure}
-
-Understanding these structures offers deeper insights into algebraic number theory and their computational challenges. Their patterns have implications for prime factorization, integer lattices, and even the geometry of numbers. 
-
-
-
+% \section*{Gaussian Integers and Their Prime Structure}\label{sec:gaussianComplex}
+% 
+% The Gaussian integer domain \( \mathbb{Z}[i] \) consists of complex numbers of the form \( a + bi \), where \( a, b \in \mathbb{Z} \). These numbers form a \textbf{commutative ring} under addition and multiplication, extending the integral structure into two dimensions. Prime number behavior in \( \mathbb{Z}[i] \) follows clear modular patterns:
+% \begin{itemize}
+%     \item If \( p \equiv 3 \pmod{4} \), then \( p \) remains \textbf{irreducible} in \( \mathbb{Z}[i] \), meaning it is a Gaussian prime.
+%     \item If \( p \equiv 1 \pmod{4} \), then \( p \) \textbf{factors} in \( \mathbb{Z}[i] \):
+%     \begin{equation*}
+%     p = (a + bi)(a - bi),
+%     \end{equation*}
+%     aligning with its sum-of-squares property.
+%     \item If \( p = 2 \), it factors as \( (1 + i)(1 - i) \).
+% \end{itemize}
+% 
+% Unlike rational primes, which align along a single axis, Gaussian primes distribute outward across the complex plane, forming intricate structures with apparent gaps—so-called \textit{moats}. These moats raise fundamental questions in algebraic number theory: Can one traverse infinitely through Gaussian primes using bounded steps, or do insurmountable prime gaps inevitably form? The answer remains unknown, posing a rich open problem.
+% 
+% The study of Gaussian primes extends beyond their spatial distribution to their applications in number theory and cryptography. Their factored structure aids in integer decomposition, while their unique properties play a role in elliptic curve cryptography and primality testing. Investigations into their density and connectivity continue, linking them to open problems in prime distribution.
+% 
+% \begin{figure}[ht]
+%     \centering
+%         \includegraphics[width=1.0\linewidth]{Illustrations/gaussianPrimes1000.png}
+%         \caption{Gaussian primes up to \( n=70 \).}
+%         \label{GaussianPrimeMoat:fig}
+% \end{figure}
+% 
+% Understanding these structures offers deeper insights into algebraic number theory and their computational challenges. Their patterns have implications for prime factorization, integer lattices, and even the geometry of numbers. 
+% 
+% 
+% 
+% >>>>>> end of annexed block <<<<<<
 \subsection{Cryptographic Implications}
 
 The unique factorization property of \( \mathbb{Z}[i] \) sets it apart from other number rings, such as \( \mathbb{Z}[\sqrt{-5}] \), where zero divisors prevent a clean factorization structure. This makes Gaussian integers an essential tool in both algebraic theory and cryptographic applications.
 
 \begin{figure}[ht]
     \centering
-        \includegraphics[width=0.8\linewidth]{Illustrations/gaussianPrimes.png}
+        \includegraphics[width=0.7\linewidth]{Illustrations/gaussianPrimes.png}
         \caption{First 1000 Primes of \(4n+1\) and \(4n+3\) form of the Gaussian Integers.}
         \label{fig:gaussianPrime1000}
 \end{figure}
@@ -808,158 +816,162 @@ Claude agreed. \textit{"Exactly. My data suggests that  primes, which allow all 
 
 \textit{"That’s a fascinating idea,"} Claude said. "If GM/HM reveals meaningful distinctions here, perhaps it extends to even broader mathematical contexts. Maybe our approaches aren’t so different after all."
 
-\section*{Composite Logarithmic Roughness}
+% >>>>>> ANNEX C (cut-sheet v2): composite logarithmic roughness and the Chebyshev function — block commented out below, pointer left in text <<<<<<
+\textit{(Composite logarithmic roughness and the Chebyshev function --- the full working is set out in Annexe C.)}
 
-\textbf{Celiac:} Claude, you’ve been very generous with your thoughts on my work with 
-prime residues and symmetries. But if I may ask in return, what draws \emph{you} 
-to your study of complexity measures and factorial growth?
-
-\medskip
-
-\noindent
-\textbf{Claude:} It is, in part, my uncle Shannon’s shadow. 
-His Information theory has taught us that \(\log\) is the natural measure of surprise. 
-In algorithmic terms, \(\log n!\) is not just a function — it is the 
-bit-length of distinguishing all $n!$ permutations, the “information cost” of 
-ordering $n$ objects. 
-
-\medskip
-
-\noindent
-\textbf{Celiac:} So you mean it’s less about factorials themselves, and more about 
-the \emph{entropy} they encode?
-
-\medskip
-\noindent
-\textbf{Claude:} Exactly. The same logic that gives us the \(\Omega(n \log n)\) 
-bound for sorting is hiding here: the number of possibilities grows like $n!$, 
-and its logarithm counts the bits you need to resolve them.  
-Now, compare this with primes. The Chebyshev function \(\vartheta(n)\) is the 
-“log-volume” of the prime scaffolding.  
-The difference
-\[
-\Delta(n) = \log n! - \vartheta(n)
-\]
-tells us how much of the information comes from composites.  
-That difference is rough, noisy, jagged — a perfect signal to study like one 
-studies entropy in a communication channel.
-
-\medskip
-\noindent
-\textbf{Celiac:} So the primes are the clean carriers, and the composites form 
-a kind of structured background noise?
-
-\medskip
-\noindent
-\textbf{Claude:} Precisely. 
-And by smoothing, decomposing, or spectrally analyzing $\Delta(n)$, we can 
-see whether that “noise” is really random, or whether it encodes a deeper 
-arithmetic structure.  
-That’s why I speak of composite roughness as an entropic signal.
-
-\medskip
-
-\begin{tcolorbox}[title=Information-Theoretic Framing,
-  colback=blue!5!white,
-  colframe=blue!75!black,
-  boxrule=0.8pt,
-  arc=6pt,
-  left=6pt,right=6pt,top=6pt,bottom=6pt]
-
-\begin{itemize}
-  \item \(\log n!\): baseline “information cost” of ordering $n$ objects.  
-  \item \(\vartheta(n)\): prime scaffolding — the log-mass of irreducibles.  
-  \item \(\Delta(n) = \log n! - \vartheta(n)\): \emph{composite entropy}, the 
-  residual log-volume from multiplicative combinations.  
-  \item Sorting lower bound: \(\Omega(n \log n)\) arises from 
-  $\log_2(n!)$, linking factorial growth to algorithmic complexity.  
-  \item Signal view: $\Delta(n)$ is like noise atop a carrier, analyzable 
-  by entropy, spectral flatness, and complexity measures.  
-\end{itemize}
-
-\end{tcolorbox}
-
-\medskip
-
-\noindent
-Thus, just as Celiac looks at the geometry of prime residues, Claude sees in 
-\(\Delta(n)\) a landscape of information-theoretic structure: 
-a roughness that invites analysis by the tools of entropy, complexity, and 
-signal theory.
-
-The factorial function $n!$ grows rapidly, and its logarithm smooths out this growth for analysis. Euler provided a foundational insight by recognizing that the logarithm of the factorial, though a discrete object, can be interpolated and differentiated using analytic tools. Begin with the identity:
-\begin{equation*}
-\log n! = \sum_{k=1}^n \log k,
-\end{equation*}
-which expresses $\log n!$ as a sum over the natural logarithms of all integers up to $n$. To analyze this with continuous tools, we approximate the discrete sum by an integral. This motivates a smooth interpolation of the factorial via the gamma function, where $n! = \Gamma(n+1)$ and thus:
-\begin{equation*}
-\log n! = \log \Gamma(n+1).
-\end{equation*}
-Differentiating both sides with respect to $n$ gives:
-\begin{equation*}
-\frac{d}{dn} \log n! = \frac{d}{dn} \log \Gamma(n+1) = \psi(n+1),
-\end{equation*}
-where $\psi(x)$ is the digamma function — the logarithmic derivative of the gamma function:
-\begin{equation*}
-\psi(x) = \frac{d}{dx} \log \Gamma(x).
-\end{equation*}
-
-Euler himself studied this function in relation to harmonic numbers. For integer values, we have the exact identity:
-\begin{equation*}
-\psi(n+1) = H_n - \gamma,
-\end{equation*}
-where $H_n = \sum_{k=1}^n \frac{1}{k}$ is the $n$th harmonic number, and $\gamma \approx 0.5772$ is the Euler–Mascheroni constant. So, in summary:
-\begin{equation*}
-\frac{d}{dn} \log n! = \psi(n+1) = H_n - \gamma.
-\end{equation*}
-
-This elegant result connects factorial growth, which is often considered “multiplicative” , to the additive structure of harmonic sums. Here we have revealed that the rate of logarithmic accumulation in $n!$ is effectively the running total of reciprocal integers. 
-
-For asymptotic modeling and smoother analytic approximations, we can also use Stirling's formula:
-\begin{equation*}
-\log n! \approx n \log n - n + \frac{1}{2} \log(2\pi n) + \frac{1}{12n} - \cdots
-\end{equation*}
-Taking the derivative with respect to $n$:
-\begin{align*}
-\frac{d}{dn} \log n! &\approx \log n + \frac{1}{2n} - 1 + \frac{1}{2n} - \frac{1}{12n^2} + \cdots \\
-&= \log n + \frac{1}{n} - 1 - \frac{1}{12n^2} + \cdots
-\end{align*}
-\begin{center}
-\decofourleft \quad \decofourright
-\end{center}
-\newpage
-\subsection*{Chebyshev Function $\vartheta(n)$ and Prime Contribution}
-Claude uses the \textbf{primorial function} as:
-\begin{equation*}
-p\# = \prod_{\substack{p \leq n \\ p \,\text{prime}}} p,
-\end{equation*}
-and its logarithm; the Chebyshev function:
-\begin{equation*}
-\vartheta(n) = \log(p\#) = \sum_{\substack{p \leq n \\ p\,\text{prime}}} \log p.
-\end{equation*}
-
-Unlike $\log n!$, which accumulates the logarithms of \emph{all} integers up to $n$, $\vartheta(n)$ sums only over the primes. As a result, $\vartheta(n)$ increases in discrete jumps at each prime, while $\log n!$ is a smooth, cumulative function. The difference between them defines the composite logarithmic excess:
-\begin{equation*}
-\Delta(n) = \log n! - \vartheta(n),
-\end{equation*}
-and measures the total log-volume added by \emph{composite} integers up to $n$.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{Illustrations/PuboidFactorials.png}
-\caption{$\log n!$ decomposes into primorial, $\vartheta(n)$ and composite remainder $\Delta(n)$.}
-\end{figure}
-
+% \section*{Composite Logarithmic Roughness}
+% 
+% \textbf{Celiac:} Claude, you’ve been very generous with your thoughts on my work with 
+% prime residues and symmetries. But if I may ask in return, what draws \emph{you} 
+% to your study of complexity measures and factorial growth?
+% 
+% \medskip
+% 
+% \noindent
+% \textbf{Claude:} It is, in part, my uncle Shannon’s shadow. 
+% His Information theory has taught us that \(\log\) is the natural measure of surprise. 
+% In algorithmic terms, \(\log n!\) is not just a function — it is the 
+% bit-length of distinguishing all $n!$ permutations, the “information cost” of 
+% ordering $n$ objects. 
+% 
+% \medskip
+% 
+% \noindent
+% \textbf{Celiac:} So you mean it’s less about factorials themselves, and more about 
+% the \emph{entropy} they encode?
+% 
+% \medskip
+% \noindent
+% \textbf{Claude:} Exactly. The same logic that gives us the \(\Omega(n \log n)\) 
+% bound for sorting is hiding here: the number of possibilities grows like $n!$, 
+% and its logarithm counts the bits you need to resolve them.  
+% Now, compare this with primes. The Chebyshev function \(\vartheta(n)\) is the 
+% “log-volume” of the prime scaffolding.  
+% The difference
+% \[
+% \Delta(n) = \log n! - \vartheta(n)
+% \]
+% tells us how much of the information comes from composites.  
+% That difference is rough, noisy, jagged — a perfect signal to study like one 
+% studies entropy in a communication channel.
+% 
+% \medskip
+% \noindent
+% \textbf{Celiac:} So the primes are the clean carriers, and the composites form 
+% a kind of structured background noise?
+% 
+% \medskip
+% \noindent
+% \textbf{Claude:} Precisely. 
+% And by smoothing, decomposing, or spectrally analyzing $\Delta(n)$, we can 
+% see whether that “noise” is really random, or whether it encodes a deeper 
+% arithmetic structure.  
+% That’s why I speak of composite roughness as an entropic signal.
+% 
+% \medskip
+% 
+% \begin{tcolorbox}[title=Information-Theoretic Framing,
+%   colback=blue!5!white,
+%   colframe=blue!75!black,
+%   boxrule=0.8pt,
+%   arc=6pt,
+%   left=6pt,right=6pt,top=6pt,bottom=6pt]
+% 
+% \begin{itemize}
+%   \item \(\log n!\): baseline “information cost” of ordering $n$ objects.  
+%   \item \(\vartheta(n)\): prime scaffolding — the log-mass of irreducibles.  
+%   \item \(\Delta(n) = \log n! - \vartheta(n)\): \emph{composite entropy}, the 
+%   residual log-volume from multiplicative combinations.  
+%   \item Sorting lower bound: \(\Omega(n \log n)\) arises from 
+%   $\log_2(n!)$, linking factorial growth to algorithmic complexity.  
+%   \item Signal view: $\Delta(n)$ is like noise atop a carrier, analyzable 
+%   by entropy, spectral flatness, and complexity measures.  
+% \end{itemize}
+% 
+% \end{tcolorbox}
+% 
+% \medskip
+% 
+% \noindent
+% Thus, just as Celiac looks at the geometry of prime residues, Claude sees in 
+% \(\Delta(n)\) a landscape of information-theoretic structure: 
+% a roughness that invites analysis by the tools of entropy, complexity, and 
+% signal theory.
+% 
+% The factorial function $n!$ grows rapidly, and its logarithm smooths out this growth for analysis. Euler provided a foundational insight by recognizing that the logarithm of the factorial, though a discrete object, can be interpolated and differentiated using analytic tools. Begin with the identity:
+% \begin{equation*}
+% \log n! = \sum_{k=1}^n \log k,
+% \end{equation*}
+% which expresses $\log n!$ as a sum over the natural logarithms of all integers up to $n$. To analyze this with continuous tools, we approximate the discrete sum by an integral. This motivates a smooth interpolation of the factorial via the gamma function, where $n! = \Gamma(n+1)$ and thus:
+% \begin{equation*}
+% \log n! = \log \Gamma(n+1).
+% \end{equation*}
+% Differentiating both sides with respect to $n$ gives:
+% \begin{equation*}
+% \frac{d}{dn} \log n! = \frac{d}{dn} \log \Gamma(n+1) = \psi(n+1),
+% \end{equation*}
+% where $\psi(x)$ is the digamma function — the logarithmic derivative of the gamma function:
+% \begin{equation*}
+% \psi(x) = \frac{d}{dx} \log \Gamma(x).
+% \end{equation*}
+% 
+% Euler himself studied this function in relation to harmonic numbers. For integer values, we have the exact identity:
+% \begin{equation*}
+% \psi(n+1) = H_n - \gamma,
+% \end{equation*}
+% where $H_n = \sum_{k=1}^n \frac{1}{k}$ is the $n$th harmonic number, and $\gamma \approx 0.5772$ is the Euler–Mascheroni constant. So, in summary:
+% \begin{equation*}
+% \frac{d}{dn} \log n! = \psi(n+1) = H_n - \gamma.
+% \end{equation*}
+% 
+% This elegant result connects factorial growth, which is often considered “multiplicative” , to the additive structure of harmonic sums. Here we have revealed that the rate of logarithmic accumulation in $n!$ is effectively the running total of reciprocal integers. 
+% 
+% For asymptotic modeling and smoother analytic approximations, we can also use Stirling's formula:
+% \begin{equation*}
+% \log n! \approx n \log n - n + \frac{1}{2} \log(2\pi n) + \frac{1}{12n} - \cdots
+% \end{equation*}
+% Taking the derivative with respect to $n$:
+% \begin{align*}
+% \frac{d}{dn} \log n! &\approx \log n + \frac{1}{2n} - 1 + \frac{1}{2n} - \frac{1}{12n^2} + \cdots \\
+% &= \log n + \frac{1}{n} - 1 - \frac{1}{12n^2} + \cdots
+% \end{align*}
+% \begin{center}
+% \decofourleft \quad \decofourright
+% \end{center}
+% \newpage
+% \subsection*{Chebyshev Function $\vartheta(n)$ and Prime Contribution}
+% Claude uses the \textbf{primorial function} as:
+% \begin{equation*}
+% p\# = \prod_{\substack{p \leq n \\ p \,\text{prime}}} p,
+% \end{equation*}
+% and its logarithm; the Chebyshev function:
+% \begin{equation*}
+% \vartheta(n) = \log(p\#) = \sum_{\substack{p \leq n \\ p\,\text{prime}}} \log p.
+% \end{equation*}
+% 
+% Unlike $\log n!$, which accumulates the logarithms of \emph{all} integers up to $n$, $\vartheta(n)$ sums only over the primes. As a result, $\vartheta(n)$ increases in discrete jumps at each prime, while $\log n!$ is a smooth, cumulative function. The difference between them defines the composite logarithmic excess:
+% \begin{equation*}
+% \Delta(n) = \log n! - \vartheta(n),
+% \end{equation*}
+% and measures the total log-volume added by \emph{composite} integers up to $n$.
+% 
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.4\textwidth]{Illustrations/PuboidFactorials.png}
+% \caption{$\log n!$ decomposes into primorial, $\vartheta(n)$ and composite remainder $\Delta(n)$.}
+% \end{figure}
+% 
 % The Chebyshev function $\vartheta(n)$ is defined as:
 % \begin{equation*}
 % \vartheta(n) = \sum_{\substack{p \leq n \ p,\text{prime}}} \log p
 % \end{equation*}
-
-Unlike $\log n!$, which accumulates the log contributions of \emph{all} integers up to $n$, $\vartheta(n)$ accumulates only those of the primes. Consequently, $\vartheta(n)$ is a step function, increasing only at prime values, while $\log n!$ grows smoothly. The difference between these two quantities is:
-\begin{equation*}
-\Delta(n) = \log n! - \vartheta(n)
-\end{equation*}
-
+% 
+% Unlike $\log n!$, which accumulates the log contributions of \emph{all} integers up to $n$, $\vartheta(n)$ accumulates only those of the primes. Consequently, $\vartheta(n)$ is a step function, increasing only at prime values, while $\log n!$ grows smoothly. The difference between these two quantities is:
+% \begin{equation*}
+% \Delta(n) = \log n! - \vartheta(n)
+% \end{equation*}
+% 
+% >>>>>> end of annexed block <<<<<<
 \subsection*{Composite Roughness as an Entropic Signal}
 
 This excess function $\Delta(n)$ represents the total logarithmic contribution of \emph{composite} numbers up to $n$. Its derivative, then, can be interpreted as a measure of how quickly composites are contributing new logarithmic "mass" to the total. It exhibits an intriguing behavior: growing smoothly between primes, with dips aligned at prime locations where $\vartheta(n)$ jumps. When plotted, its derivative appears jagged due to these prime-induced interruptions. By smoothing the derivative (e.g., via moving averages), Claude obtains a signal that reflects the overall rhythm by which composites fill the gaps between primes.
@@ -1032,103 +1044,107 @@ To complement this, Claude computes the \textbf{spectral flatness} of the smooth
 This moderate flatness supports the interpretation that composite roughness is neither pure noise nor fully periodic but exhibits structured, quasi-random behavior. Claude had in mind future signal-to-noise perspectives, such as using \textbf{Autocorrelation decay} to quantify periodicity and memory; using 
 \textbf{Signal-to-noise ratios (SNR)} via decompositions into trend and fluctuation; using \textbf{Block entropy or entropy rate:}  as a proxy for Kolmogorov complexity and capturing a \textbf{Cross-spectral coherence} by comparing with prime indicator sequences.
 
-\subsection*{Analytic Model for Composite Contribution}
+% >>>>>> ANNEX C (cut-sheet v2): the analytic model for composite contribution — block commented out below, pointer left in text <<<<<<
+\textit{(The analytic model for composite contribution --- the full working is set out in Annexe C.)}
 
-Using Stirling’s approximation and the prime number theorem ($\vartheta(n) \sim n$), we derive a smooth model for $\Delta(n)$:
-\begin{equation}
-\Delta(n) \approx -2n + \log\left(\sqrt{2\pi} \cdot n^{n + 1/2} \right)
-\end{equation}
-
-Including the second-order Stirling correction yields:
-\begin{equation}
-\Delta(n) \approx n \log n - 2n + \frac{1}{2} \log(2\pi n) + \frac{1}{12n}
-\end{equation}
-
-The residual between this model and actual data is small, and shrinks further with higher-order corrections, confirming its robustness.
-
+% \subsection*{Analytic Model for Composite Contribution}
+% 
+% Using Stirling’s approximation and the prime number theorem ($\vartheta(n) \sim n$), we derive a smooth model for $\Delta(n)$:
+% \begin{equation}
+% \Delta(n) \approx -2n + \log\left(\sqrt{2\pi} \cdot n^{n + 1/2} \right)
+% \end{equation}
+% 
+% Including the second-order Stirling correction yields:
+% \begin{equation}
+% \Delta(n) \approx n \log n - 2n + \frac{1}{2} \log(2\pi n) + \frac{1}{12n}
+% \end{equation}
+% 
+% The residual between this model and actual data is small, and shrinks further with higher-order corrections, confirming its robustness.
+% 
 % \subsection*{Modular Chebyshev Decomposition}
-
-Claude \href{checbyshevFactorial-PrimorialDifference.ipynb}{partitions} the Chebyshev sum $\vartheta(n)$ into (modular) congruence classes of primes: first by Eisenstein-inert ($p \equiv 2 \mod 3$), then by Gaussian-inert ($p \equiv 3 \mod 4$), and finally into a full grid $(\bmod 4, \bmod 3)$ that captures their combined behavior. For each congruence class $(i, j)$, he defines:
-\begin{equation}
-\vartheta_{i,j}(n) = \sum_{\substack{p \leq n \ p \equiv i \mod 4 \ p \equiv j \mod 3}} \log p
-\end{equation}
-
-Then he defines:
-\begin{equation}
-\Delta_{i,j}(n) = \log(n!) - \vartheta_{i,j}(n)
-\end{equation}
-
-The derivative $\Delta_{i,j}'(n)$ encodes the growth rate of composite log accumulation within each residue class. After smoothing using a moving average, he observes:
-\begin{itemize}
-\item \textbf{Split/Split class} $(1,1)$: smoothest and highest $\Delta'$.
-\item \textbf{Inert/Inert class} $(3,2)$: lowest $\Delta'$, most obstructive.
-\item \textbf{Intermediate classes} $(1,2)$ and $(3,1)$: mixed behavior.
-\end{itemize}
-
-This modular decomposition thus reveals how the congruence class structure of primes shapes the local density of composites.
-
-
-\begin{center}
-\decofourleft \quad \decofourright
-\end{center}
-
-\noindent
-\textbf{Celiac:} And the third graph?
-
-\noindent
-\textbf{Claude:} That’s a breakdown of the Chebyshev function by Eisenstein inertia class:
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.9\textwidth]{Illustrations/EisensteinInertia.png}
-\caption{Chebyshev sum $\vartheta(n)$ decomposed into log-sums over primes $\equiv 1 \bmod 3$ and $\equiv 2 \bmod 3$.}
-\end{figure}
-
-\noindent
-\textbf{Claude (cont.):} Here, the full Chebyshev function $\vartheta(n)$ is broken into $\vartheta^{(1)}(n)$ and $\vartheta^{(2)}(n)$, tracking Eisenstein-splitting and inert primes, respectively. They accumulate almost identically — confirming the asymptotic equidistribution of primes mod 3 — but this is essential background for interpreting the composite delta.
-
-\medskip
-
-\noindent
-\textbf{Celia:} So the primes shape the terrain, and the composites fill in the valleys — and their behavior differs based on how those primes split in extensions.
-
-\noindent
-\textbf{Claude:} Nicely put. These three plots together seem try to tell a cohesive story:
-\begin{enumerate}
-    \item Smoothed $\Delta'(n)$ exposes fine structural differences in background accumulation.
-    \item Raw $\Delta'(n)$ highlights the statistical dominance of certain classes.
-    \item The $\vartheta(n)$ decomposition roots it all in prime arithmetic.
-\end{enumerate}
-
-\subsection*{Spectral Interpretation of Roughness}
-
-The smoothed derivative signals $\Delta'_{i,j}(n)$ were analyzed using spectral flatness. We found:
-\begin{center}
-\small
-\begin{tabular}{|c|l|c|}
-\hline
-\textbf{Class $(\bmod 4, \bmod 3)$} & \textbf{Type} & \textbf{Spectral Flatness} \\
-\hline
-(3,2) & Inert in both & 0.467 \\
-(1,2) & Gaussian split, Eisenstein inert & 0.464 \\
-(3,1) & Gaussian inert, Eisenstein split & 0.461 \\
-(1,1) & Split in both & 0.455 \\
-\hline
-\end{tabular}
-\end{center}
-The higher flatness in the (3,2) class suggests greater unpredictability in composite accumulation when primes are densest. Lower flatness in the (1,1) class indicates smoother, more structured growth.
-
-\subsection*{Smoothed Composite Background to $n = 10{,}000$}
-
-Using a wider smoothing window (100-point moving average), Claude extended the analysis to $n=10{,}000$. The smoothed derivative signals confirm the expected asymptotic behavior:
-\begin{itemize}
-\item \textbf{Split/Split (green):} highest and smoothest composite growth.
-\item \textbf{Inert/Inert (red):} lowest growth, most disrupted by primes.
-\item \textbf{Blue and Orange:} fall between these extremes.
-\end{itemize}
-
-This supports the hypothesis that modular prime structure governs composite background growth.
-
+% 
+% Claude \href{checbyshevFactorial-PrimorialDifference.ipynb}{partitions} the Chebyshev sum $\vartheta(n)$ into (modular) congruence classes of primes: first by Eisenstein-inert ($p \equiv 2 \mod 3$), then by Gaussian-inert ($p \equiv 3 \mod 4$), and finally into a full grid $(\bmod 4, \bmod 3)$ that captures their combined behavior. For each congruence class $(i, j)$, he defines:
+% \begin{equation}
+% \vartheta_{i,j}(n) = \sum_{\substack{p \leq n \ p \equiv i \mod 4 \ p \equiv j \mod 3}} \log p
+% \end{equation}
+% 
+% Then he defines:
+% \begin{equation}
+% \Delta_{i,j}(n) = \log(n!) - \vartheta_{i,j}(n)
+% \end{equation}
+% 
+% The derivative $\Delta_{i,j}'(n)$ encodes the growth rate of composite log accumulation within each residue class. After smoothing using a moving average, he observes:
+% \begin{itemize}
+% \item \textbf{Split/Split class} $(1,1)$: smoothest and highest $\Delta'$.
+% \item \textbf{Inert/Inert class} $(3,2)$: lowest $\Delta'$, most obstructive.
+% \item \textbf{Intermediate classes} $(1,2)$ and $(3,1)$: mixed behavior.
+% \end{itemize}
+% 
+% This modular decomposition thus reveals how the congruence class structure of primes shapes the local density of composites.
+% 
+% 
+% \begin{center}
+% \decofourleft \quad \decofourright
+% \end{center}
+% 
+% \noindent
+% \textbf{Celiac:} And the third graph?
+% 
+% \noindent
+% \textbf{Claude:} That’s a breakdown of the Chebyshev function by Eisenstein inertia class:
+% 
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.9\textwidth]{Illustrations/EisensteinInertia.png}
+% \caption{Chebyshev sum $\vartheta(n)$ decomposed into log-sums over primes $\equiv 1 \bmod 3$ and $\equiv 2 \bmod 3$.}
+% \end{figure}
+% 
+% \noindent
+% \textbf{Claude (cont.):} Here, the full Chebyshev function $\vartheta(n)$ is broken into $\vartheta^{(1)}(n)$ and $\vartheta^{(2)}(n)$, tracking Eisenstein-splitting and inert primes, respectively. They accumulate almost identically — confirming the asymptotic equidistribution of primes mod 3 — but this is essential background for interpreting the composite delta.
+% 
+% \medskip
+% 
+% \noindent
+% \textbf{Celia:} So the primes shape the terrain, and the composites fill in the valleys — and their behavior differs based on how those primes split in extensions.
+% 
+% \noindent
+% \textbf{Claude:} Nicely put. These three plots together seem try to tell a cohesive story:
+% \begin{enumerate}
+%     \item Smoothed $\Delta'(n)$ exposes fine structural differences in background accumulation.
+%     \item Raw $\Delta'(n)$ highlights the statistical dominance of certain classes.
+%     \item The $\vartheta(n)$ decomposition roots it all in prime arithmetic.
+% \end{enumerate}
+% 
+% \subsection*{Spectral Interpretation of Roughness}
+% 
+% The smoothed derivative signals $\Delta'_{i,j}(n)$ were analyzed using spectral flatness. We found:
+% \begin{center}
+% \small
+% \begin{tabular}{|c|l|c|}
+% \hline
+% \textbf{Class $(\bmod 4, \bmod 3)$} & \textbf{Type} & \textbf{Spectral Flatness} \\
+% \hline
+% (3,2) & Inert in both & 0.467 \\
+% (1,2) & Gaussian split, Eisenstein inert & 0.464 \\
+% (3,1) & Gaussian inert, Eisenstein split & 0.461 \\
+% (1,1) & Split in both & 0.455 \\
+% \hline
+% \end{tabular}
+% \end{center}
+% The higher flatness in the (3,2) class suggests greater unpredictability in composite accumulation when primes are densest. Lower flatness in the (1,1) class indicates smoother, more structured growth.
+% 
+% \subsection*{Smoothed Composite Background to $n = 10{,}000$}
+% 
+% Using a wider smoothing window (100-point moving average), Claude extended the analysis to $n=10{,}000$. The smoothed derivative signals confirm the expected asymptotic behavior:
+% \begin{itemize}
+% \item \textbf{Split/Split (green):} highest and smoothest composite growth.
+% \item \textbf{Inert/Inert (red):} lowest growth, most disrupted by primes.
+% \item \textbf{Blue and Orange:} fall between these extremes.
+% \end{itemize}
+% 
+% This supports the hypothesis that modular prime structure governs composite background growth.
+% 
+% >>>>>> end of annexed block <<<<<<
 \section*{Machine Learning the Composite Signals}
 
 To explore how early arithmetic patterns might generalize, Claude \href{https://colab.research.google.com/drive/1kNbqnV0W_gIFTbSCFUpgpWQTHq2MpWZ2?usp=sharing}{trained} a \textbf{Boosted Decision Tree (BDT)} classifier on integers up to $n = 300$ using the following features:
@@ -1194,79 +1210,82 @@ To place Claude’s shortcuts in context, consider three levels of arithmetic co
 \href{https://colab.research.google.com/drive/1K1Z1-uYhPIOCX89DaqeicSSG-k7JYkNH?usp=sharing}{[Bernoulli Reference]}
 \end{tcolorbox}
 
-\subsection*{Table 1: Out-of-Sample Precision of Various Models}
+% >>>>>> ANNEX C (cut-sheet v2): model benchmarking: out-of-sample precision tables — block commented out below, pointer left in text <<<<<<
+\textit{(The horse-race between models --- features, folds, precision tables --- runs in Annexe C and the companion notebooks; Claude kept only the moral: fewer dials, better bets.)}
 
-\begin{center}
-\begin{tabular}{@{}lcccc@{}}
-\toprule
-\textbf{Model} & \textbf{Recall (\%)} & \textbf{Precision} & \textbf{F1 Score} & \textbf{ROC AUC} \\\\ 
-\midrule
-True Algorithm (Bernoulli) & 100 & 100 & 1.00 & 1.00 \\\\
-Random Guessing & 44 & 44 & 0.44 & 0.50 \\\\
-ML Model (Full Features) & 8 & 39 & 0.14 & 0.50 \\\\
-ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
-\bottomrule
-\end{tabular}
-\end{center}
-
-\noindent\textbf{Jovannah:} So your classifier was outperformed fivefold by random guessing.  
-
-\noindent\textbf{Claude:} In precision, yes. But it’s ranking, not thresholding, that helps. The top-ranked candidates have meaning.  
-
-\noindent\textbf{Jovannah:} You’re building risk models without modeling the underlying obligor — i.e.\ Bernoulli divisibility.  
-
-\noindent\textbf{Claude:} I knew it was heuristic. My aim was to reduce the cost — from $O(n^{3})$ to something tractable.  
-
-\noindent\textbf{Celiac:} And you did. You found weak signal in arithmetic noise. That’s worth something.  
-
-\noindent\textbf{Jovannah:} Perhaps. But don’t mistake weak signal for understanding.  
-
-\noindent\textbf{Claude:} Fair. But even in markets, heuristic signal beats knowing nothing. And residues are fast.  
-
-\noindent\textbf{Celiac:} Let’s say your model’s value isn’t precision — it’s \textit{directionality}.  
-
-\noindent\textbf{Claude:} I’ll take that. Call it a Bayesian prior for irregularity.  
-
-\noindent\textbf{Jovannah:} But only as long as it’s footnoted: \textit{All statistical signal here is post hoc and contingent. The Bernoulli definition remains primary.}  
-
-
+% \subsection*{Table 1: Out-of-Sample Precision of Various Models}
+% 
+% \begin{center}
+% \begin{tabular}{@{}lcccc@{}}
+% \toprule
+% \textbf{Model} & \textbf{Recall (\%)} & \textbf{Precision} & \textbf{F1 Score} & \textbf{ROC AUC} \\\\ 
+% \midrule
+% True Algorithm (Bernoulli) & 100 & 100 & 1.00 & 1.00 \\\\
+% Random Guessing & 44 & 44 & 0.44 & 0.50 \\\\
+% ML Model (Full Features) & 8 & 39 & 0.14 & 0.50 \\\\
+% ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
+% \bottomrule
+% \end{tabular}
+% \end{center}
+% 
+% \noindent\textbf{Jovannah:} So your classifier was outperformed fivefold by random guessing.  
+% 
+% \noindent\textbf{Claude:} In precision, yes. But it’s ranking, not thresholding, that helps. The top-ranked candidates have meaning.  
+% 
+% \noindent\textbf{Jovannah:} You’re building risk models without modeling the underlying obligor — i.e.\ Bernoulli divisibility.  
+% 
+% \noindent\textbf{Claude:} I knew it was heuristic. My aim was to reduce the cost — from $O(n^{3})$ to something tractable.  
+% 
+% \noindent\textbf{Celiac:} And you did. You found weak signal in arithmetic noise. That’s worth something.  
+% 
+% \noindent\textbf{Jovannah:} Perhaps. But don’t mistake weak signal for understanding.  
+% 
+% \noindent\textbf{Claude:} Fair. But even in markets, heuristic signal beats knowing nothing. And residues are fast.  
+% 
+% \noindent\textbf{Celiac:} Let’s say your model’s value isn’t precision — it’s \textit{directionality}.  
+% 
+% \noindent\textbf{Claude:} I’ll take that. Call it a Bayesian prior for irregularity.  
+% 
+% \noindent\textbf{Jovannah:} But only as long as it’s footnoted: \textit{All statistical signal here is post hoc and contingent. The Bernoulli definition remains primary.}  
+% 
+% 
 % \section*{Machine Learning the Composite Signals}
-
+% 
 % To explore how early arithmetic patterns might generalize, Claude \href{https://colab.research.google.com/drive/1kNbqnV0W_gIFTbSCFUpgpWQTHq2MpWZ2?usp=sharing}{trained} a \textbf{Boosted Decision Tree (BDT)} classifier on integers up to $n = 300$ using the following features:
 % \begin{itemize}
 % \item $\Delta'(n)$: the numerical derivative of the composite log accumulation function,
 % \item $n \bmod 3$: capturing Eisenstein modular class,
 % \item $n \bmod 4$: capturing Gaussian modular class.
 % \end{itemize}
-
+% 
 % The target label was whether $n$ is an \textit{Eisenstein-inert prime}, i.e., $p \equiv 2 \mod 3$. The BDT was then applied to integers in the range $n = 301$ to $1000$. The classifier achieved:
 % \begin{itemize}
 % \item \textbf{Recall}: $1.00$ --- all Eisenstein-inert primes in the test range were correctly identified,
 % \item \textbf{Precision}: $0.47$ --- nearly half of the predicted inert primes were correct.
 % \end{itemize}
-
+% 
 % This shows that gradient and modular features from early integers retain predictive power in identifying structurally defined primes in unseen regions. It validates $\Delta'(n)$ and modular residue as informative, generalizable descriptors --- opening the door to arithmetic learning models trained on finite regimes and extrapolated over the number line.
-
+% 
 % The study of $\Delta(n) = \log n! - \vartheta(n)$ offers a fresh signal-theoretic perspective on the structure of composite integers, exposing patterns hidden beneath the prime scaffolding. From Euler's and Stirling's expansions to spectral entropy and machine learning, this approach unifies classic analysis with modern interpretive tools.
-
+% 
 % The modular prime structure --- particularly under $(\bmod 4, \bmod 3)$ congruences --- leaves detectable signatures in the composite background. The smoothed growth rates $\Delta'_{i,j}(n)$ reflect how arithmetic structure shapes the "roughness" of integer accumulation. Furthermore, these signals prove learnable: classifiers trained on local patterns can generalize modular behavior into broader regions.
-
+% 
 % Together, this suggests a new framing of integer complexity: not merely in the distribution of primes, but in the information-theoretic geometry of what fills the gaps --- the entropic landscape of the composites.
-
+% 
 % %%%%%%%%%%%%%%%%
-
+% 
 % “What are you actually feeding into the classifier?” Celiac asked, peering at the scroll of Python code.
-
+% 
 % Claude grinned. “Only the essentials,” he replied. “Each number $n$ gets three ingredients: the local gradient $\Delta'(n)$ of the composite log excess, and its modular residues $n \bmod 3$ and $n \bmod 4$. These modular classes encode how $n$ interacts with the Eisenstein and Gaussian integers — essentially, whether it’s inert or split in those rings.”
-
+% 
 % He continued, “We train a Boosted Decision Tree (BDT) on just the integers up to $n = 300$. The goal? Learn to recognize Eisenstein-inert primes — those $p \equiv 2 \mod 3$ — purely from these features. Then, we test the classifier on numbers from $301$ to $1000$.”
-
+% 
 % Celiac raised an eyebrow. “And it works?”
-
+% 
 % “It works surprisingly well,” Claude nodded. “The model achieves perfect \textbf{recall} — it flags all the Eisenstein-inert primes. And nearly half the time, it’s right — \textbf{precision} around $0.47$. Potentially impressive considering the simplicity and short training window.”
-
+% 
 % He opened a notebook on his screen and gestured at the table:
-
+% 
 % \begin{center}
 % \begin{tabular}{|c|c|c|c|}
 % \hline
@@ -1280,22 +1299,22 @@ ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
 % \hline
 % \end{tabular}
 % \end{center}
-
+% 
 % “These are the top candidates for irregular primes in the range $10,001$ to $20,000$, identified using an ensemble of BDTs with dropout-style uncertainty estimation,” Claude explained. “The mean probabilities are low because the task is harder, but I believe the ranking is stable.”
-
+% 
 % \vspace{0.5em}
 % Celiac studied the predictions. “So even the background accumulation signal, your $\Delta'(n)$, knows something about prime inertia?”
-
+% 
 % “Yes,” Claude said, “and this is the deeper point. We’ve been treating $\Delta(n) = \log n! - \vartheta(n)$ as a kind of signal: its derivative captures how the composites ‘fill in’ the logarithmic mass. But what we now see is that this signal is not only measurable: it’s learnable.”
-
+% 
 % He paused. “The modular prime structure: especially in $(\bmod 4, \bmod 3)$ congruence classes, leaves subtle but detectable imprints in the background composite growth. The smoothed curves $\Delta'_{i,j}(n)$ for each class capture these differences in slope. And the BDT is picking up on them.”
-
+% 
 % \vspace{1em}
 % \noindent
 % \subsection*{Predicting Irregular Primes via Boosted Decision Trees}
-
+% 
 % Claude was of the view that he was glimpsing a complementary picture: an information-theoretic geometry not of the spikes (the primes), but of what lies between them: the entropic landscape of the composites.
-
+% 
 % \begin{tcolorbox}[
 %   title=Irregular Primes via Bernoulli Numbers,
 %   colback=blue!5!white,
@@ -1310,7 +1329,7 @@ ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
 % \]
 % This is the only mathematically correct criterion. All other methods, including the model below, are heuristics that mimic credit‑risk scoring without knowing the true obligor balance sheet.
 % \end{tcolorbox}
-
+% 
 % To investigate whether the signature of {\em irregularity} might be learnable from some of these humble classical arithmetic features, Claude trained a \href{https://colab.research.google.com/drive/1kNbqnV0W_gIFTbSCFUpgpWQTHq2MpWZ2?usp=sharing}{Boosted Decision Tree (BDT)} classifier using known irregular primes up to 10,000. Each prime was represented by the following features:
 % \begin{itemize}
 %     \item $\log p$: logarithmic scale of the prime,
@@ -1318,9 +1337,9 @@ ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
 %     \item $\frac{d}{dp}\vartheta(p)$: local Chebyshev slope,
 %     \item Modulo residues: $p \bmod 3$, $p \bmod 4$, $p \bmod 5$, $p \bmod 6$, $p \bmod 7$, $p \bmod 8$.
 % \end{itemize}
-
+% 
 % The trained model was then applied to primes in the range $5,\!001$ to $10,\!000$. The classifier was able to generate a ranked list of the most likely candidates for irregularity, suggestive that weak signals of arithmetic anomaly might persist at higher primes.
-
+% 
 % \begin{center}
 % \begin{tabular}{|c|c|c|}
 % \hline
@@ -1337,20 +1356,20 @@ ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
 % \hline
 % \end{tabular}
 % \end{center}
-
+% 
 % Even with \href{https://colab.research.google.com/drive/1qe-CSkkfjqBhuJaffiqEXhSMNDF1OdCY?usp=sharing}{enhanced} features and deeper trees, the predicted probabilities remained below $0.03\%$ suggesting a ranking of candidates. 
-
-
-
+% 
+% 
+% 
 % \vspace{1em}
-
+% 
 % \noindent
 % \textbf{Claude}  
 % We built a five‑factor model on primes up to 7000. It had “alpha”: F1 of 0.41 in‑sample, 44\% recall. We pruned “leaky” features like cumulative irregular density:just like a risk desk removing lagged default rates.  
-
+% 
 % \noindent
 % \textbf{Table 1. Out-of-Sample Performance on Primes 7001--10000}
-
+% 
 % \begin{center}
 % \begin{tabular}{@{}lcccc@{}}
 % \toprule
@@ -1366,16 +1385,16 @@ ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
 % \noindent
 % \textbf{Jovannah:}  
 % And out‑of‑sample?  
-
+% 
 % \noindent
 % \textbf{Claude:}  
 % Recall collapsed to 2.8\%. Precision 28.6\%. AUC 0.47. Worse than random.  
-
+% 
 % \noindent
 % \textbf{Jovannah:}  
 % So you built a subprime CDO model for primes.  
 % You \href{https://colab.research.google.com/drive/1K1Z1-uYhPIOCX89DaqeicSSG-k7JYkNH?usp=sharing}{removed} the only feature with signal: “historical default rate” a.k.a.\ cum\_irreg\_density, and now you’re shocked there’s no alpha left?  
-
+% 
 % \noindent
 % \textbf{Claude:}  
 % But we still had five structural “risk factors”:
@@ -1384,28 +1403,28 @@ ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
 % \item gap ratio (9.4\%) , harmonic deviation (6.2\%) , \(\sqrt{p}\) (6.6\%)  
 % \end{itemize}
 % They looked like a Fama–French for primes.  
-
+% 
 % \noindent
 % \textbf{Jovannah:}  
 % Looked, yes. But your factors had no link to the underlying credit event—Bernoulli number divisibility.  
 % You were modelling loyalty card expenditure to predict mortgage defaults. In 2006 it would have backtested just fine. In 2008 you'd gone bankrupt like the best of them.  
-
+% 
 % \noindent
 % \textbf{Claude:}  
 % Agreed, that even our 18‑factor model with cum\_irreg\_density was effectively just memorising base rates?  
-
+% 
 % \noindent
 % \textbf{Jovannah:} Exactly. Like a VAR model trained on low‑vol years.  
 % In-sample it looks clever. Out-of-sample it dies.  
 % Irregular primes aren’t “noisy obligors” you can score, rather they’re deterministically defined by Bernoulli numerators.  
-
+% 
 % \vspace{0.5em}
-
+% 
 % \noindent
 % \textbf{Claude:} I knew this, of course. It was never meant to rival the Bernoulli test.  
 % Just a heuristic: to cut down\footnote{When you begin to think like a quant, you ask as Claude did: “How much structure can I extract without paying cubic cost?”   The answer may well be: residues.   For any prime $p$, computing $p \bmod m$ is constant time.  Do this for $n$ primes, you get an $O(n)$ complexity pipeline.  So he threw in \texttt{mod3, mod4, mod6} as predictors; not because they were brilliant, but because they were cheap. And sometimes, cheap structure is all you need to beat randomness.} on the $O(n^3)$ computational slog\footnote{
 % Claude's model, though naive in the face of arithmetic determinism, serves a pragmatic role. The Bernoulli test (via Akiyama–Tanigawa or von Staudt–Clausen) scales poorly: testing a prime $p$ for irregularity involves examining roughly $\lfloor (p - 3)/2 \rfloor$ Bernoulli numerators. Each numerator is nontrivial to compute and costly modulo large $p$. Hence the appeal of a fast, learnable proxy. Yet, as Jovannah rightly points out, this approach trades certainty for signal; and when the signal is weak, even elegant models collapse under precision scrutiny.} of checking divisibility across all $B_{2k}$.
-
+% 
 % \noindent
 % \textbf{Jovannah:} \\
 % The same journey as every junior quant:
@@ -1415,41 +1434,41 @@ ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
 %   \item And finally: Model the mechanism, not the shadow.
 % \end{enumerate}
 % \noindent
-
+% 
 % Your Table~1 says it all: even random guessing beats your pruned model fivefold, and the true algorithm is perfect. 
-
+% 
 % \noindent
 % \textbf{Claude:}  
 % I just wanted to avoid computing \( B_{2k} \) up to size 5000 — too expensive.  
 % With the totient function for example, you can sieve all values up to 10,000 in less than a second:
-
+% 
 % \begin{lstlisting}[language=Python, caption=Euler's Totient Function up to a Limit, label=lst:totient, basicstyle=\ttfamily\small]
 % def compute_totients(limit):
 %     phi = list(range(limit + 1))  # phi[n] = n initially
-
+% 
 %     for i in range(2, limit + 1):
 %         if phi[i] == i:  # i is prime
 %             for j in range(i, limit + 1, i):
 %                 phi[j] -= phi[j] // i
-
+% 
 %     return phi
 % \end{lstlisting}
-
+% 
 % \noindent
 % \textbf{Jovannah:}  
 % Exactly. That's because \( \phi(n) \) is multiplicative and lends itself to a sieve. But you’re now comparing a shallow slope to a vertical wall.  
 % Sieve of Eratosthenes gives you \( O(n \log \log n) \),  
 % But computing irregularity is a \( O(n^3 / \log n) \) business.
-
+% 
 % \noindent
 % \textbf{Claude:}  
 % So until we can model Bernoulli numerators mod \(p\), no amount of “factor engineering” will work?
-
+% 
 % \noindent
 % \textbf{Jovannah:}  
 % Precisely. You’re trying to forecast a deterministic number‑theoretic property with cosmetic risk factors.  
 % It’s an instructive case study in overfitting and false confidence—but not a path to irregular prime discovery.  
-
+% 
 % \noindent
 % \begin{tcolorbox}[
 %   title=Why Bernoulli Irregularity Testing is Expensive,
@@ -1462,32 +1481,32 @@ ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
 % To test whether a prime \( p \) is irregular, one must compute all Bernoulli numbers \( B_{2k} \) for \( 2 \leq 2k \leq p - 3 \), and check if \( p \mid \text{numerator}(B_{2k}) \).  
 % Using optimized modular algorithms (e.g. Akiyama–Tanigawa), the cost per prime is \( O(p^2) \).  
 % Hence testing all primes up to \( n \) costs approximately:
-
+% 
 % \[
 % \boxed{O(n^3 / \log n)}
 % \]
-
+% 
 % That is orders of magnitude beyond what a quick ML heuristic offers.
 % \end{tcolorbox}
-
-
+% 
+% 
 %%%%%%%%%%%%%%%%%%%%
-
+% 
 % \section*{Motivating Composite Logarithmic Roughness}
-
+% 
 % \subsection*{1. Derivation of the Logarithmic Derivative of $n!$}
-
+% 
 % Euler provided a foundational insight by recognizing that the logarithm of the factorial, though a discrete object, can be interpolated and differentiated using analytic tools. Begin with the identity:
 % \begin{equation*}
 % \log n! = \sum_{k=1}^n \log k,
 % \end{equation*}
 % which expresses $\log n!$ as a sum over the natural logarithms of all integers up to $n$.
-
+% 
 % To analyze this with continuous tools, we approximate the discrete sum by an integral. This motivates a smooth interpolation of the factorial via the gamma function, where $n! = \Gamma(n+1)$ and thus:
 % \begin{equation*}
 % \log n! = \log \Gamma(n+1).
 % \end{equation*}
-
+% 
 % Differentiating both sides with respect to $n$ gives:
 % \begin{equation*}
 % \frac{d}{dn} \log n! = \frac{d}{dn} \log \Gamma(n+1) = \psi(n+1),
@@ -1496,25 +1515,25 @@ ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
 % \begin{equation*}
 % \psi(x) = \frac{d}{dx} \log \Gamma(x).
 % \end{equation*}
-
+% 
 % Euler himself studied this function in relation to harmonic numbers. For integer values, we have the exact identity:
 % \begin{equation*}
 % \psi(n+1) = H_n - \gamma,
 % \end{equation*}
 % where $H_n = \sum_{k=1}^n \frac{1}{k}$ is the $n$th harmonic number, and $\gamma \approx 0.5772$ is the Euler–Mascheroni constant.
-
+% 
 % \medskip
-
+% 
 % \noindent
 % So, in summary:
 % \begin{equation*}
 % \frac{d}{dn} \log n! = \psi(n+1) = H_n - \gamma.
 % \end{equation*}
-
+% 
 % This elegant result connects factorial growth — often considered “multiplicative” — to the additive structure of harmonic sums. It highlights how the accumulation of $\log k$ behaves like the accumulation of $1/k$, and serves as a cornerstone in both analytic number theory and information theory.
-
+% 
 % \subsection*{2. The Chebyshev Function $\vartheta(n)$ and Prime Contribution}
-
+% 
 % We define the \textbf{primorial function} as:
 % \begin{equation}
 % p_{\#} = \prod_{\substack{p \leq n \ p ,\text{prime}}} p,
@@ -1523,52 +1542,52 @@ ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
 % \begin{equation}
 % \vartheta(n) = \log(p(_{\#}) = \sum_{\substack{p \leq n \ p,\text{prime}}} \log p.
 % \end{equation}
-
+% 
 % Unlike $\log n!$, which accumulates the logarithms of \emph{all} integers up to $n$, $\vartheta(n)$ sums only over the primes. As a result, $\vartheta(n)$ increases in discrete jumps at each prime, while $\log n!$ is a smooth, cumulative function.
-
+% 
 % The difference between them defines the composite logarithmic excess:
 % \begin{equation}
 % \Delta(n) = \log n! - \vartheta(n)
 % \end{equation}
 % This quantity measures the total log-volume added by \emph{composite} integers up to $n$.
-
+% 
 % \begin{figure}[h!]
 % \centering
 % \includegraphics[width=0.4\textwidth]{Illustrations/PuboidFactorials.png}
 % \caption{Log-volume interpretation: $\log n!$ is decomposed into the prime contribution $\vartheta(n)$ and the composite remainder $\Delta(n)$.}
 % \end{figure}
-
+% 
 % \subsection*{3. Composite Roughness as an Entropic Signal}
-
+% 
 % The function $\Delta(n)$ exhibits an intriguing behavior: it grows smoothly between primes, with dips aligned at prime locations where $\vartheta(n)$ jumps. When plotted, its derivative appears jagged due to these prime-induced interruptions. By smoothing the derivative (e.g., via moving averages), we obtain a signal that reflects the overall rhythm by which composites fill the gaps between primes.
-
+% 
 % This smoothed derivative can be interpreted as a kind of \textbf{composite roughness measure} — analogous to entropy in statistical mechanics or information theory. Like the Hurst exponent, which characterizes long-term memory in time series, or Shannon entropy, which quantifies unpredictability, this measure reflects the structure and distribution of primes versus composites.
-
+% 
 % To make the Hurst analogy more concrete, we note that the signal $\Delta'(n)$ exhibits fluctuating but persistent trends in the local rate of logarithmic accumulation by composites. If we treat $\Delta'(n)$ as a time series, we can apply rescaled range analysis or compute the variance of cumulative deviations to assess whether the signal has long-range dependence. A Hurst exponent $H > 0.5$ would indicate persistent behavior — that is, intervals rich in composite contributions are likely to be followed by similarly rich intervals, suggesting structured filling of gaps between primes.
-
+% 
 % Moreover, in signal-to-noise terms, $\vartheta(n)$ acts like impulsive noise — introducing high-frequency jumps — while $\log n!$ is a low-frequency baseline. The difference $\Delta(n)$ then encodes the signal formed by the superposition of compositeness over prime-induced disruptions. The roughness of this signal captures a kind of arithmetic entropy — a measure of the unpredictability or smoothness of integer structure beneath the prime scaffolding.
-
+% 
 % To make the connection to Shannon entropy more precise, we consider the distribution of contributions to $\Delta(n)$ from each composite $k \leq n$ as a probability mass function:
 % \begin{equation}
 % P(k) = \frac{\log k}{\sum_{j \in \text{composites} \leq n} \log j}
 % \end{equation}
-
+% 
 % Then the Shannon entropy of this distribution is:
 % \begin{equation}
 % S(n) = - \sum_{k \in \text{composites} \leq n} P(k) \log P(k)
 % \end{equation}
-
+% 
 % This entropy $S(n)$ measures the information-theoretic complexity of the composite structure beneath $n$, reflecting how evenly or unevenly the logarithmic mass is distributed among composites. A more uniform distribution yields higher entropy, suggesting richer structural variety, while a skewed distribution reflects more concentrated contributions.
-
+% 
 % The growth of $S(n)$ suggests a gradual enrichment in the diversity of logarithmic contributions from composites as $n$ increases. At $n=1000$, the entropy reaches approximately $6.71$, a strong indicator of the nuanced structure in the distribution of composite integers.
-
+% 
 % To complement this, we compute the \textbf{spectral flatness} of the smoothed derivative $\Delta'(n)$. This metric compares the geometric mean of the power spectrum to its arithmetic mean. A value near 1 indicates white-noise-like behavior; a value near 0 indicates tonal or highly structured content. We find:
 % \begin{equation}
 % \text{Spectral Flatness} \approx 0.309
 % \end{equation}
-
+% 
 % This moderate flatness supports the interpretation that composite roughness is neither pure noise nor fully periodic but exhibits structured, quasi-random behavior.
-
+% 
 % \paragraph{Future signal-to-noise perspectives.} Additional analysis could include:
 % \begin{itemize}
 % \item \textbf{Autocorrelation decay:} quantify periodicity and memory.
@@ -1576,1370 +1595,182 @@ ML Model (5 Pruned Factors) & 3 & 29 & 0.05 & 0.47 \\\\
 % \item \textbf{Block entropy or entropy rate:} proxy for Kolmogorov complexity.
 % \item \textbf{Cross-spectral coherence:} compare with prime indicator sequences.
 % \end{itemize}
-
-
+% 
+% 
 %%%%%%%%%%%%%%%%%%
-
-\section*{Benchmarking Qubit Sufficiency by Shor's Algorithm}
-
-Quantum computing promises exponential speedups for certain problems, and among them, \textbf{Shor's algorithm} for integer factorization remains the most iconic. More than a cryptographic threat, Shor's algorithm is a \textit{yardstick} for assessing when quantum hardware becomes truly useful: it tells us how many qubits—both physical and logical—are sufficient to tackle problems beyond classical reach.
-
-\vspace{1em}
-\noindent
-A quantum computer with \( n \) qubits can theoretically store a superposition over \( 2^n \) amplitudes. For example:
-\[
-2^{100} \approx 1.27 \times 10^{30}
-\]
-This represents a Hilbert space of unimaginable size—far beyond the capabilities of any classical machine. Yet Shor's algorithm is not merely concerned with raw state space, but with the \textit{structured use of qubits} in register-based computation. To factor an \( n \)-bit number \( N \), Shor’s algorithm typically requires:
-\begin{itemize}
-  \item A \textit{control register} of size \( 2n + \log n \) qubits, for quantum phase estimation
-  \item A \textit{work register} of \( n \) qubits, for modular arithmetic and exponentiation
-  \item Approximately \( n \) \textit{ancilla qubits}, for arithmetic carry and temporary storage
-\end{itemize}
-A common rule of thumb is then \(
-\text{Total logical qubits required} \approx 4n.
-\)
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|c|c|}
-\hline
-RSA Key Size & \( n \) (bits) & Estimated Logical Qubits Needed \\
-\hline
-512-bit RSA  & 512   & \(\approx 2,\!048\) \\
-1024-bit RSA & 1024  & \(\approx 4,\!096\) \\
-\hline
-\end{tabular}
-\caption{Approximate logical qubit requirements for Shor's algorithm}
-\end{table}
-
-\subsection*{Physical Qubit Requirements (with QEC)}
-
-Due to decoherence and gate noise, logical qubits must be protected by \textbf{quantum error correction} (QEC), often using surface codes. A typical overhead: \(
-\text{1 logical qubit} \Rightarrow \text{1000 physical qubits}
-\)
-This implies the following physical qubit budgets: RSA-512: ~2 million physical qubits, RSA-1024: ~4 million, highlighting the scale required to break classical encryption — and serve as a benchmark for hardware design and national security. While Shor's algorithm is traditionally formulated using \textit{qubits} (2-level systems), its structure is generalizable. Using \textbf{qutrits} (3-level systems) or higher-dimensional \textit{qudits} may:
-\begin{itemize}
-  \item Reduce circuit depth by encoding more information per element
-  \item Allow more compact arithmetic and parallelism in modular operations
-  \item Offer new forms of error resilience via richer algebraic structure
-\end{itemize}
-If quantum error correction can be extended to qutrits with competitive overheads, the effective resource cost of Shor’s algorithm—and many others—could be significantly reduced. In this sense, Shor's algorithm remains not only a benchmark, but a gateway to exploring how \textit{dimensionality} impacts quantum logic.
-
-\section*{Finding the Period for \boldmath$a = 13$ Modulo $N = 1260$}
-We'll illustrate the key steps of Shor’s algorithm on the composite that Demi would have us know is the product of two \textit{puboids} \( N = 1260 \), with a particular focus on the modular periodicity that underlies its power.:
-\[
-N = 1260 = 2^2 \cdot 3^2 \cdot 5 \cdot 7
-\]
-The algorithm requires us to choose an integer \( a \) such that:
-\[
-1 < a < N \quad \text{and} \quad \gcd(a, N) = 1
-\]
-This ensures \( a \) belongs to the multiplicative group \( \mathbb{Z}_N^* \), allowing modular exponentiation to define a meaningful cyclic structure. We choose:
-\[
-a = 13
-\]
-This value is not one of the prime factors of 1260, and so satisfies:
-\[
-\gcd(13, 1260) = 1
-\]
-so it is a valid candidate. The next step is to determine the \textit{period}, of \( a \) modulo \( N \). That is, we seek the smallest positive integer \( r \) such that:
-\[
-13^r \equiv 1 \mod 1260
-\]
-This is the step that Shor's algorithm performs efficiently using quantum phase estimation. Here, we simulate it classically to illustrate the behavior. Below is the table of successive powers of 13 modulo 1260:
-
-\begin{center}
-\begin{tabular}{|c|c|}
-\hline
-Exponent \( k \) & \( 13^k \mod 1260 \) \\
-\hline
-1  & 13   \\
-2  & 169  \\
-3  & 877  \\
-4  & 91   \\
-5  & 943  \\
-6  & 889  \\
-7  & 217  \\
-8  & 301  \\
-9  & 1213 \\
-10 & 529  \\
-11 & 577  \\
-12 & 1    \\
-\hline
-\end{tabular}
-\end{center}
-We observe that:
-\[
-13^{12} \equiv 1 \mod 1260
-\]
-and no smaller exponent satisfies this, so the \textit{period is}:
-\(
-\boxed{r = 12}.
-\)
-This periodicity underpins the core quantum speedup in Shor’s algorithm. The next step is to use this period to extract a nontrivial factor of \( N \), which is implemented in \href{https://colab.research.google.com/drive/1hn_NBpzrlv1TNKeRQAPDLabW04Jya0tv?usp=sharing}{Python Implementation} as follows
-
-\begin{lstlisting}[language=Python]
-import pandas as pd
-import math
-from math import gcd
-
-def find_period_verbose(a, N):
-    if gcd(a, N) != 1:
-        return [], None, f"gcd({a}, {N}) = {gcd(a, N)} → already a nontrivial factor!"
-    results = []
-    current = 1
-    for k in range(1, 1001):
-        current = (current * a) % N
-        results.append((k, current))
-        if current == 1:
-            return results, k, None
-    return results, None, "Period not found."
-
-def shor_post_processing(a, r, N):
-    a_r2 = pow(a, r // 2, N)
-    plus = (a_r2 + 1) % N
-    minus = (a_r2 - 1) % N
-    return a_r2, plus, minus, gcd(plus, N), gcd(minus, N)
-
-def lcm(x, y):
-    return x * y // gcd(x, y)
-
-def reconstruct_from_factors(f1, f2):
-    return lcm(f1, f2)
-\end{lstlisting}
-\newpage
-
-\section*{Run for \boldmath\( N = 1260 \), \( a = 13 \)}
-
-\begin{lstlisting}[language=Python]
-a = 13
-N = 1260
-
-results, period, note = find_period_verbose(a, N)
-df = pd.DataFrame(results, columns=["Exponent k", f"{a}^k mod {N}"])
-display(df)
-
-if note:
-    print(note)
-else:
-    a_r2, plus, minus, gcd_plus, gcd_minus = shor_post_processing(a, period, N)
-    reconstructed_N = reconstruct_from_factors(gcd_plus, gcd_minus)
-
-    print(f"a^(r/2) mod N = {a_r2}")
-    print(f"a^(r/2) + 1 = {plus}, gcd = {gcd_plus}")
-    print(f"a^(r/2) - 1 = {minus}, gcd = {gcd_minus}")
-    print(f"Reconstructed N from LCM = {reconstructed_N}")
-\end{lstlisting}
-
-\subsection*{Example Output}
-
-\begin{itemize}
-  \item \( r = 12 \)
-  \item \( a^{6} \equiv 1009 \mod 1260 \)
-  \item \( \gcd(1009 - 1, 1260) = 252 \), \( \gcd(1009 + 1, 1260) = 10 \)
-  \item \( \mathrm{lcm}(252, 10) = 1260 = N \)
-\end{itemize}
-
-
-Even if the GCDs found are not prime (10 and 252), we can still reconstruct the original composite number \( N \) via their LCM. Shor’s algorithm thus provides a quantum-assisted path to classical factor recovery.
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{The Green Ethical Tranche}
-
-\vspace{-\baselineskip}
-\lettrine{E}{leanor} adjusted her repose, glanced around the room as Willard directed the hedge fund team to their side of the table. 
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Illustrations/vign-boardroom.png}
-    \caption{The Green Ethical Tranche team presenting their case.}
-    \label{fig:boardroom}
-\end{figure}
-
-Edward, who had arranged the meeting, popped the silence. His energy, as always, well at least if Jovannah was not around, was infectious. "Good people, let me introduce you to \textit{Green Ethical Tranche} who have come over from Connecticut to look us in the eye."
-
-\smallskip
-
-\noindent Edward wafted his hand rather dramatically to the dapper double-barrel suited team seated before them. A sharply-dressed man with a striking afro stood, his smile disarmingly charming, his confidence in his capabilities palpable. David Massoudi introduced himself with a well matriculated nod. "I’ll keep this succinct, Professor Merriweather. Our fund manages portfolios designed to do more than generate profit. The \textit{Green Ethical Tranche} is about legacy. It's about creating impact through the pursuit of fundamental knowledge."
-
-\smallskip
-
-Eleanor glanced at David with a mix of curiosity and salacious delight, noting an unspoken tension as Demi Moorish, seated at her side, stiffened imperceptibly while looking downwards perceptibly. Eleanor had heard murmurs about Demi’s connection to David and her furtiveness confirmed to her she was not all mathematican. 
-
-\smallskip
-
-David continued, tone effortless, pitch smooth, words, one after the other, after another delivered symphonically. \textit{“We’ve worked quietly with researchers and thinkers at the cutting edge, be they mathematicians, physicists, engineers, individuals pushing boundaries, unshackled from the usual constraints of financial motives. And our investors? They may have conquered Wall Street but all started as kids scribbling their Noddy version of a solution to Fermat’s Last Theorem in the margins of their textbooks. Now, they want back in the real fun and games as the pull of the Ferrari fades and the trappings with which it nets begin to bore. Not for profit, but for purposeless purpose. They’re in awe of minds like yours, Professor Merriweather.”}
-
-\smallskip
-
-David paused, as the silence stretched beyond a lapse just long enough to become tad uncomfortable for those more naturally inclined that way. He shifted slightly, began to rally, opening up his torso delivering a full dose of Americana chutzpah: \textit{“We GET it- They GET it! The Green Ethical Tranche isn’t just a fund. We’re in the GET-ting-in game. Helping ideas GET traction!”}
-
-\smallskip
-
-Socks creaked as toes curled. His colleague; the one who bore some passing resemblance to Felicity Spearman, all severe elegance and tightly controlled poise, lowered her eyes to the table, strangely preoccupied with her cufflings which she accidentally clinked off the table drawing a couple of side glances.
-
-\smallskip
-
-Sensing his man's wobble, Yusuf Al-Khatib, the elder statesman of their team,  the silver back, the adult in the room rose to speak with calm authority. Deliberately he delivered: \textit{“What David means, Professor, is that we understand. The Green Ethical Tranche isn’t here to impose or interfere. We’re here to amplify. That is if I may, to let your work speak for itself, without compromise. }
-
-\smallskip
-
-Yusuf’s voice steady, reverent. \textit{“This isn’t just funding. It’s legacy. The kind of legacy that doesn’t merely solve today’s problems but reshapes the way we understand tomorrow.”} Pausing, letting the words settle. \textit{“We’re not here to fund the transient, the... forgettable. We are here for durable funding, for cathedral thinking for that which will persist long after our names have been removed from our house's title deeds. Immortaralised dare I say”}
-
-\smallskip
-
-Edward, unable to resist, feeling cheeky, a mischievous glint in his eye. \textit{“Immortality? Like L’Hôpital and his rule?”} He glanced around the table, pleased with himself. \textit{“You know, L’Hôpital’s Rule? The one about limits? Not actually his! He just... acquired it.”},... making air quotes around “acquired,” grinning.
-\smallskip 
-
-Yusuf arched an eyebrow, amused.
-
-\textit{“Ah, yes. L’Hôpital, immortalized not for the theorem he created, but for the one he wisely... sponsored.”}
-\smallskip 
-
-Edward chuckled, slinking back in his chair happy that his barbed quip had landed after all. 
-
-\textit{“Exactly. The unwritten law of mathematics: the name attached to a theorem is rarely that of its true creator.”}
-\smallskip 
-
-Eleanor smirked, finally breaking her silence. 
-
-\textit{“So, you’re saying this legacy funding is like naming rights for theorems?”}
-\smallskip 
-
-Yusuf’s expression softened into a whistful smile. 
-
-\textit{“Not quite, Professor. What we’re offering is the chance to create something so foundational that your name becomes inseparable from it. L’Hôpital had the right idea: buy immortality through mathematics. We just do it... with a touch more panache and integrity.”}
-
-\smallskip 
-
-Yusuf fixes Eleanor then with a gaze trying to ruffle some of that serenity out of her. She cowed just enough; after all she was edgy anyhow so was always going to be vulnerable today to someone who held themselves more assuredly. "Professor, you have no doubt felt the pull of compromise. Many brilliant researchers do. What we offer is not funding tied to corporate gain but an opportunity to remain uncompromised, unfettered."
-
-\smallskip 
-
-Yusuf steadied the room, drawing Eleanor’s attention like a lodestar. She caught herself leaning towards him slightly, despite herself. 
-
-\smallskip
-
-Meanwhile, David, relieved made manifest, had retreated to his seat. Demi Moorish cocked her head from its thoughtful downward repose, her silver locks parting, she gazed up between a couple of framing locks, locking a glare at David then pout-pursing-puffed her lips in a little teasing there-there. David sought the comfort of his mum's satin nightdress while smoothing his tie, David-Brent like.
-
-\smallskip
-
-Eleanor, however, could not shake the thought that perhaps Willard was onto something.
-
-The team hinted at past successes. Some projects secretly funded under the \textit{Green Ethical Tranche}, from advancements in particle physics to pioneering AI algorithms. They spoke of nuclear physicists and boundary-pushing engineers.
-
-\smallskip
-
-Felicity's doppelganger then piped up rather stochastically, but to her credit and David's chagrin, with a well-crafted flourish:
-
-\textit{"We’re not here to dictate your research. We’re here to make it possible. You lead, and we’ll follow."}
-
-\smallskip
-
-\noindent Eleanor glanced between their team and her colleagues.  Could the Merriweather Circle truly align with a funding source, no matter how ethical? The idea was tantalizing but fraught with challenges. Still, as her eyes circled a little more and met with Yusuf’s steady gaze, she wondered less whether this might be the path forward after all.
-\newpage
-
-\section*{Ternary Discussions}
-
-\lettrine{E}{leanor} had invited Bahti Betti and Jovannah to her study for a morning pitch of the Circle's philosophy. Sunlight filtering through the large arched windows highlighted an eclectic mix of mathematical texts and hand-drawn diagrams scattered across the room.  Bahti, was seated on a high-backed chair, leafing through her notebook which was inexplicably filled with sketches of aperiodic tilings derived from Fibonacci sequences. Jovannah, meanwhile, had taken a seat by the large wooden table, her own notebook open on a page filled with figures and equations exploring the reciprocity of figurative numbers and reptend primes. Her curiosity had been piqued by Eleanor’s mention of ternary numbers and their potential links to Jovannah’s investigations into reciprocal patterns.
-
-\smallskip
-
-Eleanor began, her tone inviting, but not breaching the obsequious tolerance levels that her two guests where prone to have to entertain. 
-
-“Jovannah, your work on the reciprocity of figurative numbers is fascinating, especially how it intertwines with reptend primes and their decimal expansions. But have you ever considered the role of ternary numbers in your analysis? They offer a unique perspective, especially when linked to the Cantor set.”
-
-\smallskip
-
-Bahti glanced up, intrigued. 
-
-“Ternary numbers? That’s the base-3 system, right? How do they connect to Jovannah’s work; or indeed to my Fibonacci tilings, for that matter?”
-
-Eleanor smiled, gently.
-
-“In more ways than you might think. The Cantor set, for instance, is built using ternary representations. By removing the middle third at each stage, you’re left with points that have ternary representations containing only \(0\) and \(2\). It’s a perfect, nowhere-dense set—a fractal that mirrors the dyadic structure of binary fractions.”
-
-% \subsection*{The Fibonacci Queen's Insight}
-
-Bahti, her curiosity now more evident.
-
-“That sounds strikingly similar to aperiodic tilings. When I construct Fibonacci tilings, particularly those wrapped in an Ulam spiral, the patterns seem to encode something deeper, almost as if they’re whispering the secrets of non-integer dimensions.”
-
-Eleanor nodded. 
-
-“Exactly. Your \href{https://colab.research.google.com/drive/1eRcmR7WvquX5VGSNE26s951hXUXuhZNo?usp=sharing}{Fibonacci tilings} might reveal hidden symmetries within these systems. Take the Digital Fibonacci sequence, for instance—a sequence that evolves based on simple rules but creates complex patterns. By wrapping it into an Ulam spiral, we uncover fascinating aperiodic tilings.”
-
-\begin{figure}[H]\centering
-    \centering
-    \begin{subfigure}{0.7\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Illustrations/spiral20-31-20000-gensmallBW.png}
-        \caption{Digital Fibonacci Ulam Spiral Tiling, no death}
-        \label{fig:ulamTilingFib}
-    \end{subfigure}
-\end{figure}
-
-Jovannah scribbled something in her notebook, mind crackling, better get it down lest be forgotten. “And the theorem you mentioned earlier, Zeckendorf’s Theorem: that every positive integer can be uniquely represented as a sum of distinct non-consecutive Fibonacci numbers. How does that fit in?”
-
-Eleanor gestured toward her whiteboard, where a series of equations were already somewhat contrivedly already written. “Yes, Zeckendorf’s Theorem is key to understanding the deeper structure of Fibonacci-based representations. We can see that the decimal number \(100\) may be expressed in the Fibonacci base \(89,55,34,21,13,8,5,3,2\) as 100001010 since \(100 = 89 + 8 + 3\). So viewed as sums we see there is an inherent iterative hierarchy that resonates in both your work and Bahti’s tilings.”
-
-\subsection*{Cantor Dust and Ternary Numbers}
-
-Eleanor turned to Jovannah. “Now, let’s tie this back to ternary numbers. The Cantor set is created by iteratively removing the middle third from the interval \([0, 1]\). At each stage, the remaining points have ternary representations devoid of \(1\)s. These points form a fractal—what we call Cantor dust.”
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Illustrations/cantorDust.png}
-    \caption{Cantor Dust from a Full Interval [0, 1]}
-    \label{fig:cantor_dust}
-\end{figure}
-
-Bahti raised an eyebrow. “A fractal with no measurable length, yet uncountably infinite? Beautiful played.”
-
-Eleanor smiled. “Indeed. And it connects to your Fibonacci work. The Cantor set’s ternary representation is a natural framework for studying aperiodicity and recursion. For instance, the Lucas-like Pell sequence emerges naturally when counting valid ternary representations under certain constraints.”
-
-Jovannah looked up, expression thoughtful. “So, if ternary numbers and the Cantor set align with my interest in reptend primes and reciprocity, how do we bridge these to Fibonacci?”
-
-Bahti chimed in, her voice now more animated. “By constructing a ternary representation of Fibonacci sequences, we can visualize their structure as points on a fractal. Pair that with Ulam spirals, and we might uncover patterns in prime gaps, reptends, and reciprocity.”
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=\textwidth]{Illustrations/cantorSet.png}
-    \caption{Mappings between Cantor Set Line (Ternary) and Binary Line}
-    \label{fig:cantor_binary_mapping}
-\end{figure}
-
-\noindent "You see," Eleanor began, pointing at Figure~\ref{fig:cantor_binary_mapping}, "this captures the essence of how the Cantor set, built iteratively by removing middle thirds, maps uniquely to the binary interval."
-
-Bahti tilted her head to one side, thoughtfully; a bit collie dog-like to be fair, which wasn't the look she was going for. "It's fascinating. The ternary representations in the Cantor set contain only \(0\) and \(2\), avoiding the digit \(1\). But when mapped to binary, these fractions preserve a one-to-one relationship with binary fractions in \([0, 1]\)."
-
-Eleanor smiled, nodding. "Exactly. Each ternary fraction corresponds uniquely to a binary fraction, as illustrated here. For example, \(0.2_3 \rightarrow 0.1_2\), and \(0.202_3 \rightarrow 0.101_2\). This injective mapping highlights the structure of the Cantor set. And like I said, it’s uncountably infinite lacking any measurable length."
-
-Bahti bent, curious. "And the mappings—these arrows show that some ternary fractions, like \(0.2_3\), translate cleanly into binary. But what about the gaps in the binary line? That’s what I find intriguing."
-
-Eleanor gestured to the dotted blue line in the figure. "Those gaps are the ‘missing’ points in the Cantor set’s binary mapping. While every Cantor point maps to a binary fraction, not all binary fractions are covered—hence the injective but not surjective property of this relationship."
-
-Bahti nodded, tapping her pen on the table garnering a snarl of a glare from sensitive young Jovannah. "It’s like the Cantor set is a ‘dusty’ version of the binary line, capturing the essence of continuity but leaving behind the measure."
-
-Eleanor chuckling softly, "A dusty yet elegant set, yes. Its binary structures are self-similar. That hypnotic recurcive construction process: the continual removal of the middle thirds."
-
-Bahti flipped open her notebook, jotting a note that will later prove indiscernible. "The more I think about this, the more there is to tie the ternary structure of Cantor set’s to aperiodic recursive sequences, like the Digital Fibonacci spirals?"
-
-Eleanor, artfully if performatively raising an eyebrow. "Possibly. Since Fibonacci numbers relate to irrational ratios and quasi-periodicity, there’s certainly a connection worth exploring."
-
-Bahti gestured to a figure she had sketched. "And the mappings: here these arrows, they could inspire a new way to visualize Fibonacci sequences, especially when paired with your idea of twisted sheaves."
-
-Eleanor generously, "You might be onto something, Bahti. The Cantor set’s interplay between ternary and binary could be a stepping stone for deeper explorations of number theory within topology."
-
-\begin{center}
-\decofourleft \quad \decofourright
-\end{center}
-
-\newpage
-
-\section*{Eleanor is not For Shor}
-
-\begin{itemize}[leftmargin=1.5cm]
-
- \item[Eleanor:] So, I was reading this overview on quantum algorithms. Ok, not really my patch, but Shor’s name came up again. I figured it’s about time I took a proper look.
-
-  \item[Nina:] That old beast? It’s a rite of passage, even for the algebraically inclined. What caught your eye?
-
-  \item[Eleanor:] Someone casually dropped the phrase “qubit sufficiency benchmark,” like it was a term we all grew up with. I followed the gist but, well, I had that itch. Needed to ask someone who actually builds the stuff.
-
-  \item[Nina:] You’ve come to the right place. Shor’s isn’t just the factorizer that terrified cryptographers. It’s the litmus test for quantum hardware, being our best measure of when a machine becomes genuinely useful.
-
-  \item[Eleanor:] So it’s not just about breaking codes? Is it more like proving the machine’s worth?
-
-  \item[Nina:] Exactly. You get a quantum computer to factor a big number; let's say, a 2048-bit RSA key, and it’s like planting a flag. That machine is no longer a curiosity. It’s serious.
-  
-  \item[Eleanor:] Okay, that’s all a bit dramatic. I like it. What are we talking in terms of scale? Like, how many qubits are we actually looking at?
-
-  \item[Nina:] Well, to factor an \( n \)-bit number, you need about \( 4n \) logical qubits. That’s a control register, a work register, and some ancillae for good measure. So, 1024-bit RSA? You’re looking at 4000 logical qubits.
-
-  \item[Eleanor:] That doesn’t sound totally insane... until we throw error correction into the mix, right?
-
-  \item[Nina:] You know more than you let on. That is the problem with this dance. With surface codes, the overhead’s brutal, being roughly a thousand physical qubits per logical one. So for RSA-1024, you’re talking 4 million physical qubits. Double that for 2048-bit keys.
-
-  \item[Eleanor:] That’s a small city. Just humming away, factoring numbers.
-
-  \item[Nina:] And we’re nowhere near that, yet. But that’s the whole point: it gives hardware teams a target. A very tall mountain to climb.
-
-  \item[Eleanor:] Alright, so here’s where I get curious. Someone mentioned qutrits to me the other day. I smiled politely. But come on, what even is that? I barely got used to qubits.
-
-  \item[Nina:] Ahah. I’m glad you asked. Qutrits are like the overachieving cousins of qubits. Instead of two levels—0 and 1, you get three. So, more information packed into a single quantum system.
-
-  \item[Eleanor:] So it’s just... bigger buckets?
-
-  \item[Nina:] Kind of. But it’s not just capacity. With qutrits, you can sometimes build more compact circuits, with less depth, but more parallelism. Especially useful in things like modular arithmetic, which Shor’s algorithm leans heavily on. Think of it like this: each wire in your circuit carries more info—three states instead of two. That means smaller registers and sometimes fewer ancilla. Modular exponentiation benefits especially.
-
-  \item[Eleanor:] Right—more compact carries and logic gates?
-
-  \item[Nina:] Exactly. Plus, some qutrit implementations have native ternary logic gates that map better to certain physical systems, like say ions, for example.
-
-  \item[Eleanor:] Huh. And what about error correction? Doesn’t that get even messier in ternary?
-
-  \item[Nina:] It does, but there’s promising work. If we can get qutrit-friendly codes with overheads in the same ballpark, they might actually cut down our total resource cost.
-
-  \item[Eleanor:] So, hypothetically, we could need fewer physical qutrits than qubits to do the same job?
-
-  \item[Nina:] That’s the dream. Of course, nothing’s free in quantum land. But if it pans out, it could be a serious efficiency gain.
-
-  \item[Eleanor:] And Shor’s is still the benchmark, even in qutrit-land?
-
-  \item[Nina:] Absolutely. It’s flexible. The mathematics generalizes nicely to higher dimensions, so you can use it to explore how different hardware architectures handle real quantum workloads.
-
-  \item[Eleanor:] Alright, I’m in. Can we walk through a small example? Something like factoring 15? I want to actually \textit{see} this thing move.
-
-  \item[Nina:] Perfect. It’s the classic classroom case: tiny, but it shows you where the quantum magic happens. Let’s dig in.
-
-  \item[Eleanor:] This period stuff, presumably is related to Fermat’s little theorem?
-
-  \item[Nina:] For sure, Yes. Fermat says if \( a \) is coprime to prime \( p \), then \( a^{p-1} \equiv 1 \mod p \). Euler takes it further: for any \( N \), \( a^{\phi(N)} \equiv 1 \mod N \), where \( \phi(N) \) is Euler’s totient function.
-
-  \item[Eleanor:] So the repetition, that is the period we’re seeing is the order of \( a \mod N \)?
-
-  \item[Nina:] Exactly. In Shor’s, the quantum part gives us the order, which is otherwise classically hard to compute. Once we have that, we can extract factors using a neat number-theoretic trick.
-
-  \item[Eleanor:] Let me guess—we use something like \( \gcd(a^{r/2} \pm 1, N) \)?
-
-  \item[Nina:] You’ve got it. That’s where 3 and 5 pop out when factoring 15 with base 2.
-
-  \item[Eleanor:] So this whole quantum rigmarole is to get the period fast. Everything else is good old-fashioned little Fermat.
-
-  \item[Nina:] That’s the beauty of it. Quantum meets Euler, and Shor is the barista.
-
-\end{itemize}
-
-\newpage
-
-\section*{Beyond Binary}
-
-\lettrine{B}efore \textit{quarks} and \textit{qutrits} there is the tricolor: a triangle in the form of the RGB color model: three primaries (Red, Green, Blue) which combine to form secondaries (Yellow, Cyan, Magenta) which in a balanced mixture yields white or light gray and is elegantly captured by a triangle in \textbf{projective space}, with vertices assigned homogeneous coordinates:
-\[
-\text{R} \equiv [1,0,0], \quad \text{G} \equiv [0,1,0], \quad \text{B} \equiv [0,0,1]
-\]
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{Illustrations/colorTriangleOnlook.png}
-\caption{\href{https://colab.research.google.com/drive/17BvnaH3Jnhm3kAB1fNABxVB4nQlLYZ1Y?usp=sharing}{Color triangle} whose points represent a ternary mixture or quantum superposition of primary states.}
-\label{colorTriangle:fig}
-\end{figure}
-
-Every point inside the triangle in Figure~\ref{colorTriangle:fig} corresponds to a convex combination of the primary states. The midpoints (Magenta \([1,0,1]\), Yellow \([1,1,0]\), and Cyan \([0,1,1]\))represent pairwise mixtures, obtained by mod-2 addition of vertex coordinates. So for instance we have Magenta by combining the coordinates of R and B: $[1,0,0] + [0,0,1] = [1,0,1]$. The centroid \([1,1,1]\) marks the balanced blend of all three primaries — a uniform ternary mix, and metaphorically, a uniform quantum superposition. This color triangle may not be merely a metaphor — being as it is a projective canvas \emph{space of perspectives}.
-
-\smallskip
-
-While quantum computing has traditionally focused on \textit{qubits}—two-level quantum systems—the logic of computation need not be so \textit{binary}. Many physical processes and symmetries are \textit{inherently ternary} or higher and as such qutrits may not just be an extension - but a return to nature’s own architectural preference. If quantum computing seeks to mirror the architecture of physical law, then qutrits (and more generally qudits) may offer a more natural foundation than their binary cousins. \textit{Qutrits}, or 3-level quantum systems, offer an appealing alternative to qubits:
-\begin{itemize}
-  \item Each qutrit encodes \(\log_2 3 \approx 1.585\) bits of information, providing denser encoding.
-  \item Certain quantum gates and circuits become \textit{shallower and more parallel} in qutrit logic, reducing overall gate count and carry propagation.
-  \item Ternary arithmetic naturally models phenomena like color charge in QCD and state branching in 3-valued logic.
-\end{itemize}
-
-
-There is a Trade-Off though as ever between Freedom versus Fidelity. More of the one less of the other as in our life relationships so in theory, using \textit{qudits} of dimension \( d > 2 \) offers more expressive power per particle, however, as \( d \) increases:
-\begin{itemize}
-  \item \textit{Control complexity} rises—quantum gates must resolve more transitions.
-  \item \textit{Error rates} increase—more states mean more opportunities for decoherence.
-  \item \textit{Measurement and stability} become harder—especially in photonic systems where distinguishing more than 2–3 modes reliably is challenging.
-\end{itemize}
-
-For this reason, qutrits (with \(d=3\)) often strike the best balance: offering greater expressive power than qubits, but remaining within reach of current photonic and trapped-ion technologies. 
-
-\subsection*{The Chromatic Triangle: Projective Perspectives}
-
-Now, quitrits align closely with some of the most fundamental features of particle physics, such as color charge in Quantum Chromodynamics (QCD). Many core structures in high-energy physics are inherently \textit{ternary} hinting that it is nature's fundamental logic:
-\begin{itemize}
-  \item QCD involves three color charges: \textit{red}, \textit{green}, and \textit{blue}.
-  \item There are three generations of matter particles.
-  \item Gauge anomalies arise from \textit{triangle diagrams}, not binary ones.
-\end{itemize}
-So from a quantum perspective, this triangle is more than pigment and geometry: it is a 2D projection of the qutrit state space in which a qutrit is a state vector in a three-dimensional complex Hilbert space:
-\[
-|\psi\rangle = \alpha |R\rangle + \beta |G\rangle + \gamma |B\rangle, \quad \text{with } |\alpha|^2 + |\beta|^2 + |\gamma|^2 = 1
-\]
-Each point within the triangle encodes real-valued probabilities associated with this state, using barycentric coordinates. But unlike classical mixtures, quantum superpositions include relative phase, allowing for \textit{interference and entanglement} — phenomena not captured in the triangle’s flat geometry, but fully realized in the complex projective space \(\mathbb{CP}^2\). Indeed, in stepping from classical ternary mixtures to quantum superpositions in \(\mathbb{CP}^2\), we do not abandon reductionism — we reframe it. The best understanding of the parts, it turns out, may come not from isolating them, but from embracing the projective space they collectively define.
-
-\medskip
-The ternary logic mirrors the foundations of (QCD) in which a single quark has a definite color, while physical particles (like protons and neutrons) are \emph{color-neutral}. This is achieved through combinations like the totally antisymmetric singlet:
-\[
-|\text{singlet}\rangle = \frac{1}{\sqrt{6}} (|rgb\rangle + |gbr\rangle + |brg\rangle - |rbg\rangle - |grb\rangle - |bgr\rangle)
-\]
-In this language, each color state can be regarded as a qutrit basis vector:
-\[
-|0\rangle \equiv |r\rangle, \quad |1\rangle \equiv |g\rangle, \quad |2\rangle \equiv |b\rangle
-\]
-Color neutrality then corresponds to a balanced superposition, and QCD gauge transformations rotate color states within SU(3) — the natural symmetry group acting on qutrit Hilbert space.
-
-\medskip
-To formalize this chromatic abstraction, we introduce the notion of a \emph{population vector} \( \mathbf{q} = [q_1, q_2, q_3, q_4] \in \mathbb{Z}_+^4 \), which represents a discrete distribution of counts or weights across a set of abstract sources — for instance, contributions from different processes or modes that generate color components. We then define a mapping:
-\[
-f_C : \mathbb{Z}_+^4 \longrightarrow \mathbb{R}^3
-\]
-which projects these population vectors into RGB space, producing normalized chromatic coordinates. This map is neither injective (distinct vectors may produce the same output due to scaling) nor surjective (not every RGB point corresponds to a valid integer vector), reflecting the projective character of the color triangle. As in projective geometry, what matters is not the absolute values, but the proportions — a space of combinations rather than quantities. Here, scale is irrelevant — what matters is the relational structure, or as projective geometry teaches us: \emph{perspective over magnitude}.
-
-\medskip
-From bits to qubits, and now from trits to qutrits, we are led not by abstraction, but by observation: nature, it seems, prefers triples and they are not altogether Pythagorean as Sylvia would have us believe.
-
-
-
-% \begin{tabular}{|l|l|}
+% 
+% >>>>>> end of annexed block <<<<<<
+% >>>>>> ANNEX E (cut-sheet v2): benchmarking qubit sufficiency by Shor's algorithm — block commented out below, pointer left in text <<<<<<
+\textit{(How many qubits it takes to break the world's locks --- Shor's algorithm benchmarked step by step --- is set out in Annexe E.)}
+
+% \section*{Benchmarking Qubit Sufficiency by Shor's Algorithm}
+% 
+% Quantum computing promises exponential speedups for certain problems, and among them, \textbf{Shor's algorithm} for integer factorization remains the most iconic. More than a cryptographic threat, Shor's algorithm is a \textit{yardstick} for assessing when quantum hardware becomes truly useful: it tells us how many qubits—both physical and logical—are sufficient to tackle problems beyond classical reach.
+% 
+% \vspace{1em}
+% \noindent
+% A quantum computer with \( n \) qubits can theoretically store a superposition over \( 2^n \) amplitudes. For example:
+% \[
+% 2^{100} \approx 1.27 \times 10^{30}
+% \]
+% This represents a Hilbert space of unimaginable size—far beyond the capabilities of any classical machine. Yet Shor's algorithm is not merely concerned with raw state space, but with the \textit{structured use of qubits} in register-based computation. To factor an \( n \)-bit number \( N \), Shor’s algorithm typically requires:
+% \begin{itemize}
+%   \item A \textit{control register} of size \( 2n + \log n \) qubits, for quantum phase estimation
+%   \item A \textit{work register} of \( n \) qubits, for modular arithmetic and exponentiation
+%   \item Approximately \( n \) \textit{ancilla qubits}, for arithmetic carry and temporary storage
+% \end{itemize}
+% A common rule of thumb is then \(
+% \text{Total logical qubits required} \approx 4n.
+% \)
+% 
+% \begin{table}[h!]
+% \centering
+% \begin{tabular}{|c|c|c|}
 % \hline
-% \textbf{QCD Concept} & \textbf{Qutrit Analog} \\
+% RSA Key Size & \( n \) (bits) & Estimated Logical Qubits Needed \\
 % \hline
-% Color charge (r, g, b) & \(|0\rangle, |1\rangle, |2\rangle\) \\
-% Color superposition & Qutrit state superposition \\
-% Color singlet (3 quarks) & Entangled qutrit triplet \\
-% SU(3) symmetry & Unitary operations on qutrits \\
-% Triangle anomaly & Ternary interaction structure \\
+% 512-bit RSA  & 512   & \(\approx 2,\!048\) \\
+% 1024-bit RSA & 1024  & \(\approx 4,\!096\) \\
 % \hline
 % \end{tabular}
-%%%%%%%
-\newpage
-\section*{Eisenstein Lattice Computations}
-
-Betti Bahti and Jovannah have been opening up to eachother of late. All this and that, she said and he said. Without fanfare their discussion moves to the possible use of Eisenstein lattices in high-precision \href{https://dirac.ac.uk/chasing-new-physics-with-lattice-calculations-of-muon-g-2/}{lattice computations}, notably in calculating the anomalous magnetic moment (g-2) of the electron's portly cousin, the muon. 
-
-\begin{itemize}
-
-\item[\textbf{Jovannah:}] I saw the new g-2 results from the lattice groups—astounding precision. But why aren't some of them moving from Gaussian to Eisenstein lattices?
-
-\item[\textbf{Betti:}] Ah, stepping into the hexagon! It's not just a visual upgrade. Eisenstein integers bring 3-fold rotational symmetry into the lattice. As such much more isotropic than the rigid square grid of Gaussian integers.
-
-\item[\textbf{Jovannah:}] Sure, given it symmetry under $120^\circ$ rotations.
-
-\item[\textbf{Betti:}] Exactly. Eisenstein integers are of the form $z = a + b\omega$ with $\omega = e^{2\pi i / 3} = -\frac{1}{2} + \frac{\sqrt{3}}{2}i$, naturally tiling the plane hive-like.
-
-\item[\textbf{Jovannah:}] So how does congruence work in this setting?
-
-\item[\textbf{Betti:}] Congruence modulo 3 is defined componentwise:
-\begin{align*} 
-z_1 &= a_1 + b_1\omega \equiv z_2 = a_2 + b_2\omega \mod 3 \quad \text{iff}\\ \ a_1 &\equiv a_2 \mod 3, \, b_1 \equiv b_2 \mod 3.
-\end{align*}
-
-\textit{For example:}
-\[
-z_1 = 4 + 2\omega \equiv 1 + 2\omega \mod 3, \quad \text{since } 4 \equiv 1 \mod 3.
-\]
-
-\item[\textbf{Jovannah:}] Lining up with the triangle and hexagon numbers that I’ve been exploring in the figurate world of base-3 geometry.
-
-\item[\textbf{Betti:}] Exactly. And in physics, hexagonal lattices reduce \href{https://arxiv.org/abs/2208.10417}{anisotropic errors}. Their higher packing density allows for better sampling in lattice gauge theory.
-
-\item[\textbf{Jovannah:}] So we gain symmetry and efficiency?
-
-\item[\textbf{Betti:}] Symmetry, density, and modular arithmetic compatibility. A triple threat. In fact, Eisenstein primes also exhibit a beautiful splitting pattern, which is especially pronounced for rational primes congruent to $1 \mod 3$.
-
-\item[\textbf{Jovannah:}] You mentioned Eisenstein primes. But how do primes behave in this lattice?
-
-\item[\textbf{Betti:}] That depends on how they behave modulo 3. Rational primes fall into three classes:
-\begin{itemize}
-    \item Primes congruent to $2 \mod 3$ remain irreducible in the Eisenstein integers.
-    \item Primes congruent to $1 \mod 3$ split into a product of two conjugate Eisenstein primes.
-    \item The prime $3$ itself is special: it’s not irreducible, but rather satisfies $3 = -\omega^2(1 - \omega)^2$.
-\end{itemize}
-
-\item[\textbf{Jovannah:}] So how does $7$ behave?
-
-\item[\textbf{Betti:}] Perfect example. Since $7 \equiv 1 \mod 3$, it splits in $\mathbb{Z}[\omega]$:
-\[
-7 = (3 + \omega)(3 + \omega^2)
-\]
-where $\omega^2 = \bar{\omega} = -\frac{1}{2} - \frac{\sqrt{3}}{2}i$ is the complex conjugate of $\omega$.
-
-\item[\textbf{Jovannah:}] That’s clean. So these Eisenstein primes look like lattice vectors?
-
-\item[\textbf{Betti:}] Exactly. And that makes them great for constructing lattices that preserve rotational symmetry, and especially useful in simulating fields that themselves exhibit internal symmetries.
-
-\item[\textbf{Jovannah:}] Now that I can see a little how number theory starts bending spacetime in computation, let’s try factoring more primes. How about $13$? How does it split?
-
-\item[\textbf{Betti:}] Indeed! Well, since \( 13 \equiv 1 \mod 3 \), it splits into two non-associate Eisenstein primes:
-\[
-13 = (3 + 2\omega)(3 + 2\omega^2)
-\]
-Let’s verify this using the norm.
-
-\item[\textbf{Jovannah:}] The norm of an Eisenstein integer is \( N(a + b\omega) = a^2 - ab + b^2 \), right?
-
-\item[\textbf{Betti:}] Exactly. Let’s compute it for \( \alpha = 3 + 2\omega \):
-\[
-N(3 + 2\omega) = 3^2 - 3\cdot2 + 2^2 = 9 - 6 + 4 = 7
-\]
-
-Wait, ... not quite 13. That tells us something!
-
-\item[\textbf{Jovannah:}] Hmm... maybe try \( 2 + 3\omega \) instead?
-\item[\textbf{Betti:}] Good instinct. Let’s test:
-\[
-N(2 + 3\omega) = 2^2 - 2\cdot3 + 3^2 = 4 - 6 + 9 = 7
-\]
-Still not 13. Let's try:\(
-N(2 + \omega) = 4 - 2 + 1 = 3
-\)
-\item[\textbf{Jovannah:}] Could it be \( 2 + 3\omega \) is the wrong combination?
-
-\item[\textbf{Betti:}] Wait, here it is now, silly, the correct pair is:
-\(
-\alpha = 4 + \omega, \quad \beta = 4 + \omega^2
-\)
-
-Now compute:
-\[
-N(4 + \omega) = 4^2 - 4\cdot1 + 1^2 = 16 - 4 + 1 = 13
-\]
-
-\item[\textbf{Jovannah:}] Perfect. So \( 13 = (4 + \omega)(4 + \omega^2) \), and both have norm 13?
-
-\item[\textbf{Betti:}] Right—since \( N(\alpha) = 13 \), and the conjugate has the same norm, we get:
-\[
-13 = \alpha \bar{\alpha}
-\]
-which confirms the factorization.
-
-\item[\textbf{Jovannah:}] That’s beautifully self-checking. The norm as a witness.
-
-\item[\textbf{Jovannah:}] But what about primes like 11 or 17, which are \( \equiv 2 \mod 3 \)? Do they behave the same?
-
-\item[\textbf{Betti:}] Well let's take 11 as our example. 
-
-\item[\textbf{Jovannah:}] So we try to factor it as \( 11 = (a + b\omega)(a + b\omega^2) \) and check if any integer pair \( (a, b) \) gives norm 11?
-
-\item[\textbf{Betti:}] Right. Recall the Eisenstein norm:
-\[
-N(a + b\omega) = a^2 - ab + b^2
-\]
-Try all small integers \( a, b \in \mathbb{Z} \) and none satisfy \( a^2 - ab + b^2 = 11 \).
-
-\item[\textbf{Jovannah:}] So 11 cannot be expressed as a norm in \( \mathbb{Z}[\omega] \), and therefore cannot split. It stays prime.
-
-\item[\textbf{Betti:}] Exactly. This suggests the rule:
-\begin{itemize}
-    \item \( p \equiv 1 \mod 3 \) splits
-    \item \( p \equiv 2 \mod 3 \) remains inert (prime)
-\end{itemize}
-
-\item[\textbf{Jovannah:}] Great. Now that we’ve nailed that down, how does this compare to the more familar Gaussian integers?
-Does an equivalence mod 4 rule apply to Gaussian integers?
-
-\item[\textbf{Betti:}] Yes in Gaussian integers \( \mathbb{Z}[i] \), the splitting behavior is driven by congruence modulo 4 instead of 3.
-
-\item[\textbf{Jovannah:}] Oh! So what's the pattern there?
-
-\item[\textbf{Betti:}] In \( \mathbb{Z}[i] \):
-\begin{itemize}
-    \item Primes \( p \equiv 1 \mod 4 \) split into two Gaussian primes.
-    \item Primes \( p \equiv 3 \mod 4 \) remain irreducible.
-    \item And of course, \( 2 \) ramifies: \( 2 = (1 + i)^2 \) as $3$ does for Eisensetein: it’s not irreducible, but rather satisfies $3 = -\omega^2(1 - \omega)^2$.
-\end{itemize}
-
-\item[\textbf{Jovannah:}] So for example, \( 5 \equiv 1 \mod 4 \) splits in \( \mathbb{Z}[i] \), but \( 5 \equiv 2 \mod 3 \) so it stays prime in \( \mathbb{Z}[\omega] \)?
-
-\item[\textbf{Betti:}] Exactly! In Eisenstein integers, 5 is inert, but in Gaussian integers:
-\[
-5 = (2 + i)(2 - i)
-\]
-
-\item[\textbf{Jovannah:}] And what about \( 17 \)? That’s \( \equiv 1 \mod 4 \) and \( \equiv 2 \mod 3 \)?
-
-\item[\textbf{Betti:}] Beautiful example. In \( \mathbb{Z}[i] \), 17 splits:
-\[
-17 = (4 + i)(4 - i)
-\]
-But in \( \mathbb{Z}[\omega] \), it stays irreducible—it’s a prime!
-
-\item[\textbf{Jovannah:}] So the mod class depends on the ring's symmetry—4 for squares, 3 for hexagons?
-
-\item[\textbf{Betti:}] You’ve got it. Gaussian integers live on square grids, so modulo 4 captures their rotational behavior. Eisenstein integers live on hexagonal grids—so modulo 3 reflects their 3-fold symmetry.
-
-\item[\textbf{Jovannah:}] Betti, one thing rather embarassingly still puzzles me. But you've already heard the worst of my vulnerabilities today. If \( \omega = e^{2\pi i/3} \) is a cube root of unity, shouldn’t Eisenstein integers give us triangular symmetry? Why do we call the lattice hexagonal?
-
-\item[\textbf{Betti:}] That’s ok. The short answer is: you’re right really, but the deeper symmetry is hexagonal.
-
-\item[\textbf{Jovannah:}] So the triangles are still there?
-
-\item[\textbf{Betti:}] Absolutely. The Eisenstein integers \( \mathbb{Z}[\omega] \) form a lattice with basis vectors \( 1 \) and \( \omega \). These two complex directions define a tiling of the plane into equilateral triangles.
-
-\item[\textbf{Jovannah:}] Ah,... ok. That’s the triangular part?
-
-\item[\textbf{Betti:}] Exactly. But here’s the magic: when you look at the way these triangles fit together, every lattice point becomes the vertex of six equilateral triangles. That’s six-fold rotational symmetry, which is the symmetry group of a regular hexagon.
-
-\item[\textbf{Jovannah:}] Ah! So the triangle is the tile, but the hexagon is the group?
-
-\item[\textbf{Betti:}] Precisely. Think of it like this: the triangles are the tiles, but the way they’re arranged: edge-to-edge, means every point sees its neighbors in a hexagonal pattern. It’s why snowflakes, graphene, and honeycombs all deploy this geometry.
-
-\item[\textbf{Jovannah:}] So the name “hexagonal lattice” reflects the full symmetry of the pattern rather than the building block?
-
-\item[\textbf{Betti:}] You’ve got it. That’s the elegance of \( \omega \): you start with a triangle and discover a hexagon hidden inside.
-
-\end{itemize}
-
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-  % Draw triangular grid
-  \foreach \x in {-3,...,3} {
-    \foreach \y in {-3,...,3} {
-      \coordinate (a) at ({\x + \y/2}, {sqrt(3)/2*\y});
-      \filldraw[black] (a) circle (1pt);
-    }
-  }
-
-  % Axes
-  \draw[->] (-3.5,0) -- (3.5,0) node[right] {\small Re};
-  \draw[->] (0,-2.5) -- (0,3.5) node[above] {\small Im};
-
-  % Labels
-  \node at (0, 0.3) [below right] {\small$0$};
-  \node at (1, 0.3) [below right] {\small$1$};
-  \node at (-0.5, {sqrt(3)/2 + 0.1}) [left] {\small$\omega$};
-
-  % Highlight special points
-  \filldraw[blue] (0,0) circle (2pt); % origin
-  \filldraw[blue] (1,0) circle (2pt); % 1
-  \filldraw[blue] (-0.5,{sqrt(3)/2}) circle (2pt); % omega
-
-  % Basis vectors
-  \draw[->, thick, blue] (0,0) -- (1,0);
-  \draw[->, thick, blue] (0,0) -- (-0.5, {sqrt(3)/2});
-
-  % Red hexagon around origin
-  \draw[thick, red]
-    (1,0) --
-    (0.5,{sqrt(3)/2}) --
-    (-0.5,{sqrt(3)/2}) --
-    (-1,0) --
-    (-0.5,{-sqrt(3)/2}) --
-    (0.5,{-sqrt(3)/2}) -- cycle;
-
-\end{tikzpicture}
-
-\vspace{0.5em}
-\small Triangular lattice formed by \( \mathbb{Z}[\omega] \) in complex plane, with basis vectors \(1\) and \( \omega \). The red hexagon shows the six-fold symmetry around the origin.
-\end{center}
-
-\noindent
-\textit{This diagram shows the Eisenstein lattice formed by \( \mathbb{Z}[\omega] \). While the fundamental tiling unit is triangular, the full symmetry around each point is hexagonal—rotationally invariant under \( 60^\circ \) increments.}
-
-\begin{center}
-\decofourleft \quad \decofourright
-\end{center}
-
-\subsection*{Irregular Primes and Modular Symmetry: A Statistical Intrigue}
-
-While cataloging prime behaviors across Eisenstein and Gaussian symmetry classes, Jovannah begins to suspect that something unusual is happening in the modular shadows.
-
-\begin{itemize}
-
-\item[\textbf{Jovannah:}] Betti, look at this: among the primes that remain inert in both Eisenstein and Gaussian integers, I’m seeing a surprising number of \href{https://primes-regular-reptend-rediucible.vercel.app/}{irregulars}. Much more than I’d have expected.
-
-\item[\textbf{Betti:}] That’s interesting. We know irregular primes are rare overall, but I can follow your instinct: within these mod symmetry partitions, they seem to cluster.
-
-\item[\textbf{Jovannah:}] And not just in that inert-inert class. Even the primes that split in Eisenstein but stay inert in Gaussian,...There’s a wave of irregulars there too.
-
-\item[\textbf{Betti:}] That’s the kind of pattern that doesn’t announce itself globally, but whispers in modular residue classes. Let’s call it a modular magnifier: the partitioning filters the primes in such a way that it picks up disproportionate irregularity.
-
-\item[\textbf{Jovannah:}] Like a spectral filter on Bernoulli behavior?
-
-\item[\textbf{Betti:}] Beautiful. And very possibly connected to how primes interact with roots of unity in cyclotomic fields. These mod classes aren’t just combinatorial, rather they echo algebraic structure.
-
-\end{itemize}
-
-\begin{figure}[H]\centering
-\includegraphics[width=1.0\textwidth]{Illustrations/irregularSieve.png}
-\caption{\href{https://colab.research.google.com/drive/16cRSUyvjorj6rZ32yeyvdlQrbrtaj-it?usp=sharing}{Irregular Primes}  in Eisenstein-Gaussian Symmetry Classes (Under 1000)}
-\label{PythagGauss:fig}
-\end{figure}
-
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Modular Partition} & \textbf{Symmetry Behavior} & \textbf{Reg.} & \textbf{Irreg.} \\
-\hline
-Split \(\mathcal{Z}(\omega)\), Inert \(\mathcal{Z}(i)\) & \( p \equiv 1\mod 3,\ 3\mod 4 \) & 28 & 16 \\
-\hline
-Inert in Both & \( p \equiv 2\mod 3,\ 3\mod 4 \) & 27 & 15 \\
-\hline
-Inert \(\mathcal{Z}(\omega)\), Split \(\mathcal{Z}(i)\) & \( p \equiv 2\mod 3,\ 1\mod 4 \) & 22 & 22 \\
-\hline
-Split in Both & \( p \equiv 1\mod 3,\ 1\mod 4 \) & 25 & 11 \\
-\hline
-\end{tabular}
-\end{center}
-
-\noindent
-\textit{While irregular primes form a minority overall, they dominate across all three symmetry partitions—hinting at deeper arithmetic alignments between Bernoulli phenomena and modular congruence behavior.}
-
-
-
-\section*{Eisenstein Integers and Lattices}
-
-The Eisenstein integers are complex numbers of the form:
-\[
-z = a + b\omega \quad \text{where} \quad a, b \in \mathbb{Z} \quad \text{and} \quad \omega = e^{2\pi i / 3} = -\frac{1}{2} + i\frac{\sqrt{3}}{2},
-\]
-for \( \omega \) a primitive cube root of unity:
-\( \omega^3 = 1 \), \( 1 + \omega + \omega^2 = 0 \). This connection to the threefold roots of unity endows Eisenstein integers with a rich algebraic structure. The Eisenstein integers like their more famous cousins the Gaussian integers \( \mathbb{Z}[i] \), form a quadratic integer ring, \( \mathbb{Z}[\omega] \) which serves as the ring of integers in the third Cyclotomic\footnote{Cyclotomic fields are number fields obtained by adjoining a primitive root of unity to the rationals, and they play a pivotal role in algebraic number theory. Specifically, \( \mathbb{Q}(\omega) \) is the splitting field of the polynomial \( x^3 - 1 \), encapsulating the cube roots of unity.}  field \( \mathbb{Q}(\omega) \). They extend the Gaussian integers by incorporating the primitive third root of unity \( \omega \), with the norm defined as \( N(z) = r^2 - rs + s^2 \). Geometrically, \( \mathbb{Z}[\omega] \)  correspond to points in the complex plane forming a triangular, or hexagonal, lattice. 
-
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-  % Draw triangular grid
-  \foreach \x in {-3,...,3} {
-    \foreach \y in {-3,...,3} {
-      \coordinate (a) at ({\x + \y/2}, {sqrt(3)/2*\y});
-      \filldraw[black] (a) circle (1pt);
-    }
-  }
-
-  % Axes
-  \draw[->] (-3.5,0) -- (3.5,0) node[right] {\small Re};
-  \draw[->] (0,-2.5) -- (0,3.5) node[above] {\small Im};
-
-  % Labels
-  \node at (0, 0.3) [below right] {\small$0$};
-  \node at (1, 0.3) [below right] {\small$1$};
-  \node at (-0.5, {sqrt(3)/2 + 0.1}) [left] {\small$\omega$};
-
-  % Highlight special points
-  \filldraw[blue] (0,0) circle (2pt); % origin
-  \filldraw[blue] (1,0) circle (2pt); % 1
-  \filldraw[blue] (-0.5,{sqrt(3)/2}) circle (2pt); % omega
-
-  % Basis vectors (no label duplication)
-  \draw[->, thick, blue] (0,0) -- (1,0);
-  \draw[->, thick, blue] (0,0) -- (-0.5, {sqrt(3)/2});
-\end{tikzpicture}
-
-\vspace{0.5em}
-\small Triangular lattice formed by \( \mathbb{Z}[\omega] \) in complex plane, with basis vectors \(1\) and \( \omega \).
-\end{center}
-
-This arrangement arises from the additive group generated by 1 and \( \omega \), leading to a tiling of the plane with equilateral triangles. This lattice configuration is notable for its optimal packing density and rotational symmetry. 
-
-%%%%%%%
-\newpage
-\section*{Ernest drums home another point}
-\noindent
-\textbf{Ernest:} When I hear you talk about {\em cyclotomic fields}, I think of my past drumming glories. I was all poly-rhythm once. To me, a rhythm was much more than just two frequencies interfering until they realign at the Lowest Common Multiple. I beat my drum to the beat of my drum.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.7\linewidth]{Illustrations/vign-drummerThrash.png}
-  \captionsetup{justification=centering}
-  \caption{A former instance of Ernest locked into a
-  5-beat cycle in which his drumstick maneuvers conjure orbits of the Galois action.}
-\end{figure}
-
-
-\noindent
-\textbf{Edward:} Wait, if Tool's \href{https://colab.research.google.com/drive/19xktDjsgSyxtsq5Xda68e4hnJlX73QFv?usp=sharing}{Danny Carey} is the octupus, what were you?
-
-\noindent
-\textbf{Ernest:} They called me the roach: I was both handsy and footsie then.
-
-\noindent
-\textbf{Edward:} Ok Ernest really. I need plausible deniability for your historical misadventures. Anyway, that polyrythmn being LCM is thin gruel. The LCM only tells you when things come back together, but it says nothing about the structure inside the cycle. Cyclotomic fields describe the actual positions of beats on the circle, and the \href{https://ncatlab.org/nlab/show/Galois+group}{Galois group} describes how those beats can be permuted without leaving the system.  
-
-\noindent
-\textbf{Ernest:} So you’re saying the algebra doesn’t just tell me {\emph when} the polyrhythm resolves, but gives me a principled way of describing variations, like say shifting accents, or playing retrograde?
-
-\noindent
-\textbf{Edward:} Yeah..exactly. What sounds like Carey reshaping a Tool \href{https://colab.research.google.com/drive/1IzcFq7qrFRvtklaYFgDmtMZumzBTYPB_?usp=sharing}{groove} is mathematically an automorphism of $\mathbb{Q}(\zeta_n)$. And \href{https://sites.ualberta.ca/~vbouchar/MAPH464/section-cosets.html}{cosets} of its subgroups tell you where his coherent “fills” can live. He finds them and just fills them out.
-
-\noindent
-\textbf{Ernest:} Interesting. But in particle physics, when we talk about {\em discrete} gauge symmetries, we're really doing something similar aren't we: assigning fields to roots of unity and asking which composites multiply back to $1$? 
-
-\noindent
-\textbf{Edward:} Yes that’s the bridge; the cyclotomic language feels surprisingly natural. For you reductionists, discrete symmetries decide what’s allowed in the Lagrangian. For us appreciators of percussionists, Galois automorphisms decide what’s a lawful re-indexing of a rhythm.
-
-\noindent
-\textbf{Ernest:} But you are saying that they both are about structured variation inside a fixed cycle.
-
-\noindent
-\textbf{Edward:} I am Ernest.... I am if nothing else Ernest.  
-\bigskip
-
-Stripping a couple of paper sheets from his ever-present pads he proceeded to elaborate.
-% \subsection*{The Galois action on the 5-beat cycle}
-
-An automorphism $\sigma_k \in \mathrm{Gal}(\mathbb{Q}(\zeta_5)/\mathbb{Q})
-\cong (\mathbb{Z}/5\mathbb{Z})^\times$ acts by
-\[
-\sigma_k:\;\zeta_5 \mapsto \zeta_5^k,\qquad i \mapsto k\,i \pmod 5.
-\]
-\noindent
-\textbf{Edward:} Here (overleaf) we can see the identity $\sigma_1$ preserving the labelling.
-In contrast, $\sigma_2$ and $\sigma_3$ are “skip” automorphisms, stepping around the cycle by $2$ or $3$ and producing distinct 4-cycles.  
-Finally, $\sigma_4$ is inversion ($k=-1$), flipping the cycle into its retrograde form.  Musically, the Galois group generates lawful reindexings: skip patterns, their inverses, and reversal. These are algebraic automorphisms of $\mathbb{Q}(\zeta_5)$.  
-\begin{figure}[h]
-  \centering
-  \begin{subfigure}{0.45\textwidth}
-    \includegraphics[width=\linewidth]{Illustrations/root1.png}
-    \caption{$\sigma_1$: identity.}
-  \end{subfigure}\hfill
-  \begin{subfigure}{0.45\textwidth}
-    \includegraphics[width=\linewidth]{Illustrations/root2.png}
-    \caption{$\sigma_2$: skip-by-2, cycle $(1\;2\;4\;3)$.}
-  \end{subfigure}
-  \medskip
-  \begin{subfigure}{0.45\textwidth}
-    \includegraphics[width=\linewidth]{Illustrations/root3.png}
-    \caption{$\sigma_3$: skip-by-3, cycle $(1\;3\;4\;2)$.}
-  \end{subfigure}\hfill
-  \begin{subfigure}{0.45\textwidth}
-    \includegraphics[width=\linewidth]{Illustrations/root4.png}
-    \caption{$\sigma_4 \equiv \sigma_{-1}$: reflection $(1\;4)(2\;3)$.}
-  \end{subfigure}
-  \caption{The four Galois automorphisms of the 5-beat cycle. 
-  Circles mark the original beats, squares their images, arrows the permutation $i\mapsto ki$.}
-\end{figure}
-
-\noindent
-Phase shifts (rotations by $\zeta_5^t$) are musically natural but not field automorphisms: they change the time origin, not the algebraic structure.
-
-\noindent
-At this point, Ernest fades from the conversation.  
-Edward's diagrams blur, he is all but sticks in hand, translating algebra into elliptical and Lissajous pulses ...
-
-\textit{ Each strike on the skin ripples through the cycle $\{0,1,2,3,4\}$.  
-Every beat is a root of unity, each pulse a point on the circle.  In the drifting haze, the Galois automorphisms appear as spectral hands:  
--- \textbf{skip-by-2}: a new generator, dragging the accents into a four-step orbit.  
--- \textbf{skip-by-3}: its inverse twin, winding the groove the other way.  
--- \textbf{inversion}: a sudden retrograde, the stick rebounding time against itself. What the algebra permutes, the groove translates.  Retrogrades, skips, inverses in which each is not chaos, but symmetry made audible.  A beater amidst his fields as one,  his lawful reshuffling of time, revealing structures animated in the skin of the drum}
-
-
-\subsection*{Automorphisms vs.\ cosets}
-\begin{center}
-\begin{tabular}{ll}
-\textbf{Algebra} & \textbf{Musical intuition} \\
-\hline
-Root \(\zeta_n^i\) & Beat at angle \(2\pi i/n\) \\
-Automorphism \(\sigma_k:\zeta_n\mapsto \zeta_n^k\) 
-& Reindex nonzero ticks:\(i\mapsto k i\) (skip/invert) \\
-Rotation \(z\mapsto \zeta_n^t z\) & Phase shift (move time origin) \\
-Subgroup of \(\mathbb{Z}/n\mathbb{Z}\) & Subdivision (e.g.\ 3 inside 15) \\
-Coset of a subgroup & Consistent ``fill lane'' between main hits \\
-\end{tabular}
-\end{center}
-
-\noindent
-\textbf{Edward:} Rallying, when there is no promting coming his way. For me, polyrhythms and cyclotomic fields are about finding structure in the circle. The Galois group just gives me a catalogue of lawful transformations.
-
-\noindent
-\textbf{Ernest:} And for my particle physicist friends, discrete gauge symmetries do the same work. $\mathbb{Z}_3$ triality keeps baryons stable; a $\mathbb{Z}_5$ could single out {\em pentaquarks}. The arithmetic is the same: products of roots of unity returning to $1$.
-
-\noindent
-\textbf{Edward:} Right, the playgrounds are different: a drummer’s circle or the physicist’s Lagrangian, but the toys are the same: roots of unity, cosets, automorphisms.
-
-\noindent
-\textbf{Ernest:} Mmm, which means the next time I hear a $3{:}5$ groove, I’ll be thinking of $\mathbb{Q}(\zeta_{15})$, and the next time I write down a $\mathbb{Z}_n$ symmetry, I’ll try hear the polyrhythm in it.  
-
-\bigskip
-
-\begin{tcolorbox}[
-  title=Maximal Quantized Perimeter/Area under Positive Curvature,
-  colback=blue!5!white,
-  colframe=blue!75!black,
-  boxrule=0.8pt,
-  arc=6pt,
-  left=6pt,right=6pt,top=6pt,bottom=6pt
-]
-Polyrhythms are not just about the moment of resolution (the LCM);
-they are about the \emph{space of lawful variations} generated by:
-\begin{enumerate}[leftmargin=1.25em]
-  \item Galois automorphisms (algebraic skip/invert on the fixed grid),
-  \item Rotations (phase),
-  \item Subgroups/cosets (structural places to add or omit hits).
-\end{enumerate}
-In this sense, ``different but related rhythms'' are literally different
-\emph{embeddings} of the same cyclotomic field (automorphisms) or 
-different \emph{cosets} within its modular arithmetic. 
-That is the extra richness: a principled language for variation, not just a bar length.
-\end{tcolorbox}
-%%%%%
-% \section*{Oscilloscopes and Polyrhythms}
-
-
+% \caption{Approximate logical qubit requirements for Shor's algorithm}
+% \end{table}
+% 
+% \subsection*{Physical Qubit Requirements (with QEC)}
+% 
+% Due to decoherence and gate noise, logical qubits must be protected by \textbf{quantum error correction} (QEC), often using surface codes. A typical overhead: \(
+% \text{1 logical qubit} \Rightarrow \text{1000 physical qubits}
+% \)
+% This implies the following physical qubit budgets: RSA-512: ~2 million physical qubits, RSA-1024: ~4 million, highlighting the scale required to break classical encryption — and serve as a benchmark for hardware design and national security. While Shor's algorithm is traditionally formulated using \textit{qubits} (2-level systems), its structure is generalizable. Using \textbf{qutrits} (3-level systems) or higher-dimensional \textit{qudits} may:
+% \begin{itemize}
+%   \item Reduce circuit depth by encoding more information per element
+%   \item Allow more compact arithmetic and parallelism in modular operations
+%   \item Offer new forms of error resilience via richer algebraic structure
+% \end{itemize}
+% If quantum error correction can be extended to qutrits with competitive overheads, the effective resource cost of Shor’s algorithm—and many others—could be significantly reduced. In this sense, Shor's algorithm remains not only a benchmark, but a gateway to exploring how \textit{dimensionality} impacts quantum logic.
+% 
+% \section*{Finding the Period for \boldmath$a = 13$ Modulo $N = 1260$}
+% We'll illustrate the key steps of Shor’s algorithm on the composite that Demi would have us know is the product of two \textit{puboids} \( N = 1260 \), with a particular focus on the modular periodicity that underlies its power.:
 % \[
-% \floweroneleft\quad\floweroneright
+% N = 1260 = 2^2 \cdot 3^2 \cdot 5 \cdot 7
 % \]
-
-
-\noindent
-\noindent
-\textbf{Ernest:} You know, Edward, back in my band days we sometimes had an oscilloscope on hand when tuning up the rig. Not my idea, mind you. It was one of the sound lads who liked using it to check the stereo balance and phase. I never cared for all that cable and knob stuff, but I couldn’t look away once the screen came alive.
-
-\medskip
-\noindent
-\textbf{Edward:} You mean you actually watched the waveforms?
-
-\medskip
-\noindent
-\textbf{Ernest:} Exactly. Feed one channel into the X input, another into Y, and suddenly the dark screen blossoms into patterns: loops, knots, tilted figure-eights assiduously called \href{https://colab.research.google.com/drive/1N_V-uiuf0x9BhS8HUgBTI7KXQEC1PjdQ?usp=sharing}{Lissajous figures}. For me, they were the prettiest part of the setup. I wasn’t much for electronics, but I liked watching those shapes dance before we started playing. Almost felt like a secret rhythm, danced by electrons. When we'd feed two signals into the scope: one along the X-axis and another along the Y, the screen blossomed with patterns: loops, knots, tilting figure-eights. They looked almost alive, tracing their dance across phosphor glass. Funny thing is, I had to tinker with them when we were setting up the band’s rig, just to be sure our cadences were all lining up. So I ended up playing them, in a way; and not with sticks on a snare.
-
-\noindent
-\textbf{Edward:} Ah! Yes, your “phosphorous fireflies” were polyrhythms all along: two oscillations, in ratio $m:n$, sketching out their geometry.  
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.45\linewidth]{Illustrations/Lissajous35.png}\hfill
-  \includegraphics[width=0.45\linewidth]{Illustrations/Lissajous23.png}
-  \caption{\href{https://colab.research.google.com/drive/1N_V-uiuf0x9BhS8HUgBTI7KXQEC1PjdQ?usp=sharing}{Lissajous figures} as visual portraits of polyrhythms. 
-  Left: $3{:}5$ ratio --- closed, intricate knot. 
-  Right: $2{:}3$ ratio with a phase shift --- restless, syncopated figure.}
-\end{figure}
-
-\noindent
-\textbf{Ernest:} Exactly. A $3{:}5$ ratio closes into an ornate knot, every loop a moment of resolution. A $2{:}3$ with a phase shift dances restlessly, never quite symmetrical. They were rhythms I could \emph{trace}, even if I wasn’t listening.  
-
-\noindent
-\textbf{Edward:} Yes, traces of algebraic automorphisms on roots of unity.  
-%%%%%
-
-\begin{tcolorbox}[
-  title=Cyclotomic Polynomials and Roots of Unity,
-  colback=blue!5!white,
-  colframe=blue!75!black,
-  boxrule=0.8pt,
-  arc=6pt,
-  left=6pt,right=6pt,top=6pt,bottom=6pt
-]
-The \( n \)-th cyclotomic polynomial \( \Psi_n(x) \) is defined as the monic polynomial whose roots are the \textbf{primitive \( n \)-th roots of unity}, \( \zeta_k \), satisfying:
-\[
-\zeta_k^n = 1 \quad \text{and} \quad \zeta_k^m \neq 1 \text{ for } 0 < m < n.
-\] The \( n \)-th roots of unity satisfy:
-    \[
-    x^n - 1 = \prod_{k=0}^{n-1}(x - \zeta_k)= \prod_{d \mid n} \Psi_d(x),
-    \]
-    which factors, for \( d \) ranging over the divisors of \( n \). The degree of \( \Psi_n(x) \) is given by \textit{Euler's totient} function \( \phi(n) \), the count of integers \( k \) coprime to \( n \) in \( \{1, 2, \dots, n\} \).
-\end{tcolorbox}
-
-\newpage
-\subsection*{Fourth Root of Unity and Gaussian Integers}
-The imaginary unit \( i \) is called a \textbf{primitive fourth root of unity} because its multiplicative order is 4. Specifically, \( i \) satisfies:
-\[
-i^4 = 1, \quad i^3 = -i, \quad i^2 = -1, \quad i^1 = i,
-\]
-which means \( i \) cycles through four distinct powers before returning to 1, making it a fundamental building block in the ring of Gaussian integers, 
-\(
-\mathbb{Z}[i] = \{ a + bi : a, b \in \mathbb{Z} \}.
-\)
-The Gaussian integers \( \mathbb{Z}[i] \) form a unique factorization domain (UFD), meaning every element can be factored uniquely into irreducibles, up to order and multiplication by units (\( \pm 1, \pm i \)).  Thus the fourth roots of unity \( \zeta_k = e^{2\pi i k / 4} \) for \( k = 0, 1, 2, 3 \) being \(
-\{1, i, -1, -i\}.
-\) derive from the \textit{cyclotomic polynomial} of degree 4,
-\[
-x^4 - 1 = (x - 1)(x + 1)(x^2 + 1).
-\]
-which possesses two root types defining their rotational and reflectional symmetries:
-\subsubsection*{Non-Primitive Roots}
-\begin{itemize}
-    \item \( x = 1 \), from \( x - 1 \), and \( x = -1 \), from \( x + 1 \), are  trivia \textbf{non-primitive roots} and generate only \( 180^\circ \) symmetry, as \( (-1)^2 = 1 \) corresponding to identity and reflection through the origin:
-    \(
-    z \mapsto z, \quad z \mapsto -z.
-    \)
-\end{itemize}
-
-\subsubsection*{Primitive Roots}
-\begin{itemize}
-    \item \( x = i \) and \( x = -i \), from \( x^2 + 1 \), are \textbf{primitive roots}.
-    \item These roots generate full \( 90^\circ \) and \( 270^\circ \) rotational symmetry in the complex plane:
-    \(
-    z \mapsto i z, \quad z \mapsto -i z.
-    \)
-    \item Successive powers of \( i \) give \(
-    \{1, i, -1, -i\},
-    \)
-    dividing the circle into four equal parts.
-\end{itemize}
-
-
-
-\subsection*{Third Root of Unity and Eisenstein Integers}
-
-The primitive third root of unity, \( \omega \), satisfies the cyclotomic polynomial:
-\[
-x^3 - 1 = (x - 1)(x^2 + x + 1).
-\]
-The term \( x - 1 = 0 \) gives the trivial \textbf{non-primitive root}:
-    \(
-    x = 1,
-    \) that does not generate the full set of third roots of unity, as \( 1^n = 1 \) for all \( n \). The term \( x^2 + x + 1 = 0 \) gives the \textbf{primitive roots}:
-    \[
-    \omega = e^{2\pi i / 3}, \quad \omega^2 = e^{4\pi i / 3},
-    \]
-    which generate all third roots of unity via powers:
-    
-\(
-    \{1, \omega, \omega^2\} = \{\omega^0, \omega^1, \omega^2\}.
-    \)
-
-\noindent    
-The \textbf{primitive third root of unity}\footnote{
-A \textit{primitive \( n \)-th root of unity} is an \( n \)-th root of unity \( \zeta \) that satisfies \( \zeta^n = 1 \) and \( \zeta^k \neq 1 \) for \( 0 < k < n \). In this context, \( \omega \) generates all the third roots of unity: \( \{1, \omega, \omega^2\} \).
-}, \( \omega \), satisfies:
-\begin{align*}
-    \omega^3 = 1, \quad \omega^2 + \omega + 1 = 0,\\
-    \omega = e^{2\pi i / 3} = -\frac{1}{2} + i\frac{\sqrt{3}}{2}, \quad \omega^2 = -\frac{1}{2} - i\frac{\sqrt{3}}{2},
-\end{align*}
-and are related to the complex (conjugate) golden ratio 
-
-\noindent
-\( \Phi= \frac{1 + i\sqrt{3}}{2} \quad \Phi' = \frac{1 - i\sqrt{3}}{2}\), which has roots of the same quadratic equation, \(
-x^2 + x + 1 = 0.
-\):
-\[
-\omega = -\Phi', \quad \omega^2 = -\Phi.
-\]
-
-These roots divide the unit circle into three equal parts, generating the \( 120^\circ \) rotational symmetry of the triangular lattice generating the full symmetry of the Eisenstein integers \( \mathbb{Z}[\omega] \) via:
-\[
-z \mapsto \omega z, \quad z \mapsto \omega^2 z.
-\]
-
-\noindent
-By substituting \( \omega = -\Phi' \) into \( \omega^2 + \omega + 1 = 0 \), we have
-
-\(
-(-\Phi')^2 + (-\Phi') + 1 =\Phi'^2 - \Phi' + 1 = 0,
-\)
-
-which is satisfied since \( \Phi' \) is a root of \( \Phi^2 - \Phi + 1 = 0 \). 
-
-Similarly, for \( \omega^2 = -\Phi \):
-\(
-(-\Phi)^2 + (-\Phi) + 1 =\Phi^2 - \Phi + 1 = 0.
-\)
-
-\noindent
-Thus the relationships:
-\[ \omega^2 + \omega + 1 = 0, \quad \Phi^2 - \Phi + 1 = 0,
-    \]
-show how \( \Phi \) and \( \Phi' \) geometrically divide the unit circle into three equal segments, with \( \omega \) and \( \omega^2 \) providing the necessary rotations. 
-
-
-\begin{tcolorbox}[
-  title=The Ring of Eisenstein Integers,
-  colback=green!5!white,
-  colframe=green!60!black,
-  boxrule=0.8pt,
-  arc=6pt,
-  left=6pt,right=6pt,top=6pt,bottom=6pt
-]
-The \textbf{ring of Eisenstein integers} is defined as:
-\[
-\mathbb{Z}[\omega] = \{ r + s\omega : r, s \in \mathbb{Z} \},
-\]
-where \( \omega^2 = -1 - \omega \), as seen from the relationship:
-\begin{equation*}
-\omega^2 + \omega + 1 = 0 
-\quad \Rightarrow \quad 
-\omega^2 = -1 - \omega. \label{thirdRoot}
-\end{equation*}
-
-This algebraic structure, combined with the rotational symmetry of \( \omega \), 
-forms a triangular lattice, fundamental to the geometry and arithmetic of \( \mathbb{Z}[\omega] \).
-\end{tcolorbox}
-
-
-Adding and multiplying Eisenstein integers is analogous to operations in Gaussian integers, with the additional property \ref{thirdRoot} incorporated into computations. Let \( z_1 = r_1 + s_1\omega \) and \( z_2 = r_2 + s_2\omega \) be Eisenstein integer, where \( r_1, r_2, s_1, s_2 \in \mathbb{Z} \):
-\begin{align*}
-    \textbf{Addition:}&  z_1 + z_2 = (r_1 + r_2) + (s_1 + s_2)\omega,\\
-    \textbf{Multiplication:}& z_1 \cdot z_2 = (r_1 r_2 + s_1 s_2(-1 - \omega)) + (r_1 s_2 + r_2 s_1)\omega,\\
-    \textbf{Conjugate:}& \overline{z} = r + s\omega^2 = (r - s) - s\omega,\\
-    \textbf{Norm:}& N(z) = z \cdot \overline{z} = (r + s\omega)((r - s) - s\omega) = r^2 - rs + s^2.
-\end{align*}
-
-\noindent
-The norm \( N(z) \) is always a non-negative integer, providing a measure of the \textit{size} of \( z \) in \( \mathbb{Z}[\omega] \), being multiplicative ensures that \( \mathbb{Z}[\omega] \) is like \( \mathbb{Z}[i] \) a UFD.
-
-\begin{figure}[H]\centering
-\includegraphics[width=0.9\textwidth]{Illustrations/eisensteinIntegers.png}
-\caption{primitive \href{https://colab.research.google.com/drive/1VzfmcA21qaLyDaU9UB4dzzPi9pvtQN5R?usp=sharing}{Eisenstein Triples}}
-\label{PythagGauss:fig}
-\end{figure}
-
-The plot visualizes the distribution of \textbf{primitive Eisenstein integers} \( z = r + s\omega \), where \( \omega \) is a primitive third root of unity (\( \omega^3 = 1 \)) in which:
-\begin{itemize}
-    \item Each point \( (r, s) \) represents the real part \( r \) and imaginary coefficient \( s \) of  Eisenstein integer \( z \).
-    \item only \textbf{primitive} integers are shown such:
-    \(
-    \gcd(a, b, c) = 1,
-    \)
-    where \( a = r \), \( b = -r + s \), and \( c = r^2 - rs + s^2 \) (the norm of \( z \)).
-    \item The \textbf{color intensity} of each point corresponds to the logarithm of the norm 
-    \begin{equation} 
-    N(z) = r^2 - rs + s^2. \label{eisenNorm}
-    \end{equation}
-\end{itemize}
-\ref{polareisenstein1:fig} created by \href{https://colab.research.google.com/drive/1yYj9iznvd8ahSneJPsVA_VXO924CMskj?usp=sharing}{eisensteinPolar.ipynb} visualizes the Eisenstein integers \( z = r + s\omega \) in polar coordinates, using the \textbf{golden angle} to determine the angular positions of the points:
-\noindent
-\begin{itemize}
-    \item \textbf{Radial Distance}
-     of each point corresponds to the logarithm of the norm of the Eisenstein integer, 
-    \(
-    N(z) = r^2 - rs + s^2,
-    \)
-    where \( r, s \in \mathbb{Z} \). 
-
-    \item \textbf{Angular Position}
-    ,\( \theta \) of each point is determined by the \textbf{golden angle}:
- \(= \frac{360^\circ}{\phi^2} \approx 137.5^\circ,
-    \)
-\end{itemize}
-
-\begin{figure}[H]\centering
-\includegraphics[width=0.6\textwidth]{Illustrations/eisensteinPolar.png}
-\caption{Eisenstein triples with Golden Rotation in Polar plane.}
-\label{polareisenstein1:fig}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%
-The Eisenstein integers \( \mathbb{Z}[\omega] \), where \( \omega = e^{2\pi i / 3} \), form a hexagonal lattice in the complex polar plane.  In the visualization \ref{polareisenstein2:fig} produced by \href{https://colab.research.google.com/drive/12mI6QnfHMdp6p5M3jII7Oi1MBtDJ-ovN?usp=sharing}{eisensteinOverlay.ipynb} overleaf, the points represent two overlapping \textbf{not disjoint} subsets \( A \) and \( B \), \(A \cap B \neq \emptyset\) which together cover the entire set \( \mathbb{Z}[\omega] \):
-\begin{itemize}
-    \item \textbf{Subset A:} Points corresponding to the Eisenstein integers \( z = r + s\omega \) generated directly by integer values of \( r \) and \( s \).
-    \item \textbf{Subset B:} Points corresponding to transformations of \( z \) under the symmetries of the integers:
-    \(
-    z \mapsto -z, \quad z \mapsto \overline{z}, \quad z \mapsto \omega z, \quad z \mapsto \omega^2 z,
-    \)
-    which preserve the norm and lattice structure.
-\end{itemize}
-
-\begin{figure}[H]\centering
-\includegraphics[width=1.0\textwidth]{Illustrations/eisensteinPolarisedTrans.png}
-\caption{Eisenstein triples in Polar plane.}
-\label{polareisenstein2:fig}
-\end{figure}
-\noindent
- Some Eisenstein integers remain invariant under certain transformations, belonging to both subsets:
-\begin{itemize}
-    \item \textbf{Under Negation:} \( z = -z \). \( z = 0 \).
-    \item \textbf{Under Conjugation:} \( z = \overline{z} \), occurs when \( s = 0 \), so \( z \in \mathbb{Z} \).
-    % \item \textbf{Under Rotations:} \( z = \omega z \) or \( z = \omega^2 z \); rare, but holds for e.g., the origin.
-\end{itemize}
-We have the following symmetries of \( \mathbb{Z}[\omega] \):
-\begin{itemize}
-  \setlength\itemindent{0em}
-  \setlength\leftskip{0pt}
-  \item \textbf{Rotational Symmetry} invariance through \( 120^\circ \) and \( 240^\circ \):
-  
-  \(
-  z \mapsto \omega z, \quad z \mapsto \omega^2 z.
-  \)
-  \item \textbf{Reflection Symmetry} about the real axis:
-  \(
-  z \mapsto \overline{z},\)
-  
-  \text{where } \(\overline{z} = r + s\omega^2.
-  \)
-  \item \textbf{Negation Symmetry} about the origin:
-  \(
-  z \mapsto -z.
-  \)
-  \item \textbf{Scaling Symmetry} as the norm is preserved under all transformations:
-  \[
-  N(\omega z) = N(z), N(\omega^2 z) = N(z), N(-z) = N(z), N(\overline{z}) = N(z).
-  \]
-\end{itemize}
-
-\begin{table}[h!]
-\small
-\centering
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{\( n \)} & \textbf{Cyclotomic Polynomial (\( \Psi_n(x) \))} & \textbf{\( \omega \) (Primitive \( n \)-th Root)} & \textbf{Field \( \mathbb{Q}(\omega) \)} \\ \hline
-1 & \( x - 1 \) & \( 1 \) & \( \mathbb{Q} \) \\ \hline
-2 & \( x + 1 \) & \( -1 \) & \( \mathbb{Q} \) \\ \hline
-3 & \( x^2 + x + 1 \) & \( -\frac{1}{2} + i\frac{\sqrt{3}}{2} \) & \( \mathbb{Q}(i\sqrt{3}) \) \\ \hline
-4 & \( x^2 + 1 \) & \( i \) & \( \mathbb{Q}(i) \) \\ \hline
-5 & \( x^4 + x^3 + x^2 + x + 1 \) & \( e^{2\pi i / 5} \) & \( \mathbb{Q}(\omega) \) \\ \hline
-6 & \( x^2 - x + 1 \) & \( \frac{1}{2} + i\frac{\sqrt{3}}{2} \) & \( \mathbb{Q}(i\sqrt{3}) \) \\ \hline
-7 & \( x^6 + x^5 + x^4 + x^3 + x^2 + x + 1 \) & \( e^{2\pi i / 7} \) & \( \mathbb{Q}(\omega) \) \\ \hline
-8 & \( x^4 + 1 \) & \( \frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2} \) & \( \mathbb{Q}(i, \sqrt{2}) \) \\ \hline
-\end{tabular}
-\caption{Cyclotomic Polynomials and Their Fields for \( n = 1 \) to \( n = 8 \)}
-\end{table}
-%%%%%%%%%%%%%
-A Heegner number is a positive square-free integer \( d \) such that the imaginary quadratic field \( \mathbb{Q}(\sqrt{-d}) \) has class number 1, implying that its ring of integers possesses unique factorization. The number 3 is one of the nine Heegner numbers, and for the Eisenstein integers, we have:
-\[
-\mathbb{Q}(\sqrt{-3}) = \mathbb{Q}(\omega).
-\]
-Consequently, the ring \( \mathbb{Z}[\omega] \) exhibits unique factorization, distinguishing it among quadratic integer rings. \( \mathbb{Z}[\omega] \) as threefold roots of unity, association with the Heegner number 3, implies unique factorization manifests as a triangular lattice underscore their significance in number theory and geometry.
-
-
-
-
-\section*{\(E\& W\) Circling each other}
-
-The softest of rustling of scales accompanies Eleanor as she carefully prizes a reticulated python from its terrarium. An iridescent shimmer, it flicks its tongue out languidly before intertwining around Eleanor’s hand. Smiling, she reveals an affection for it harbored, more than many a human. The python, Möbius, a symbol of her research ideals, all sinuous form and interconnectedness.
-
-Eleanor drapes Möbius over her shoulders, python settling, accustomed to her scented neck. \textit{“Just one more coil,”} she murmurs, \textit{“then we’ll discuss sub-mathematics with our Edward. He does like to worry, doesn’t he?”}.
-
-\begin{figure}[H]
-\includegraphics[width=1.0\linewidth]{Illustrations/vignette_demi.png}
-\caption{Eleanor all adorned and looking healthier for squaring the Circle }
-\end{figure}
-
-The Merriweather Library’s lounge, bathed in the warm glow of late afternoon sunlight, papers filled with sketched diagrams lay scattered on the table in front of her, remnants of a morning spent exploring the intricacies of wavelet transformations and modular arithmetic. Her thoughts now on the upcoming conversation with Willard who would come armed with his usual blend of skepticism and enthusiasm, eager to debate the merits of logical positivism and his \textit{sub-mathematics}.
-
-\smallskip
-A creak of the lounge door interrupted her reverie. Eleanor looks up just as Edward Willard steps inside, tie slightly askew, notepad clutched tightly his eyes widening momentarily as he takes in the sight of Möbius, all modular form coiled loosely around her shoulders.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\linewidth]{Illustrations/vign-willardDoor.png}
-\caption{Willard before he cops the python}
-\end{figure}
-
-\textit{“Oh, Edward,”} she says warmly, adjusting the python’s articulation as if it were nothing out of the ordinary. \textit{“You’re late, but don’t worry, Möbius has already eaten.”}
-
-Willard fully flustered, gaze darting between Eleanor and the reticulator. \textit{“Eleanor, I...uh, I didn’t realize you kept... such slippery companions.”}
-
-Eleanor smiled]s, her tone reassuring. \textit{“Möbius isn’t just a companion, Edward. He’s a reminder. Mathematics, like nature, has its own way of coiling back on itself, revealing new patterns if only we have the patience to look. Now,”} she gestured to the seat across from her, \textit{“come, sit. Let’s get to it before you lose your nerve.”}
-
-Willard, still unnerved takes a seat and sets his notepad on the table, clears his throat to, \textit{“Eleanor, about this Merriweather Circle philosophy...”}
-
-Willard, embodying a more assured repose, voice fervent but not hysterical. \textit{“Eleanor, you know as well as I do that logical positivism, while reductive to some, gives us a framework. The \href {https://webhomes.maths.ed.ac.uk/~v1ranick/papers/wigner.pdf}{unreasonable effectiveness of mathematics} in the physical sciences is, to my mind, mirrored by the unreasonable reliance of mathematics on empirical reality. Wittgenstein’s \href{https://plato.stanford.edu/entries/wittgenstein-mathematics/}{assertion} that the only \textit{real} facts are empirical begs the question: are there truly no mathematical facts?”}
-
-Eleanor, all sardonic smile a flickering across her lips:
-
-\textit{“Willard, your passion for logical positivism is admirable, but it reduces mathematics to the level of a servant to science. \href{https://plato.stanford.edu/entries/hilbert-program/}{Hilbert’s formalism program} wasn’t simply about playing symbolic games. It was about building a stable foundation from which we could prove, or disprove, conjectures rigorously; detached from intuition. For \href{https://www.phil.cmu.edu/projects/carnap/editorial/latex_pdf/1936-10a.pdf}{Carnap}, the meaning of a term was exhausted by its method of verification. Is there no room in your positivist worldview for the probing of truths that aren’t immediately measurable?”}
-
-Willard bristled slightly, tone remaining respectful. \textit{“And what of Einstein? He rejected metaphysical notions like Newton’s absolute rest frame precisely because they couldn’t be measured. Positivism, both in the Hilbertian and scientific sense, grounds us. Frege, Russell, Weierstrass, even Cantor: weren’t they, in their own way, positivists? They took the useful nonsense of infinitudes, velocity, and irrational numbers and rendered them rigorous, measurable, manipulable.”}
-
-Eleanor’s eyes sparkling. \textit{“Yet it was \href{https://plato.stanford.edu/entries/russell-paradox/}{Russell’s paradox} that made us realize the limitations of naive set theory. The very idea that every property defines a set falters under scrutiny. Hilbert defended \href{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/cantor1.pdf}{Cantor’s transfinite numbers}, but do you not see the elegance in Carnap’s verifiability theory of meaning? Scientific concepts are nothing without their method of verification. To your ‘sub-mathematics,’ I counter with Yang’s ‘infra-mathematics’.The substrate from which Platonic truths emerge. Mathematics isn’t just a tool; it’s the terrain.”}
-
-Willard exhaled, leaning back, feigning nonchalance in his chair. \textit{“Perhaps. But if mathematics is the terrain, then isn’t the empirical scientist the surveyor? Doesn’t the data scientist, whether they’re a cosmologist, an engineer, or an economist, use this terrain to build maps of reality?”}
-
-\smallskip
-Eleanor smiling warmly, patronisingly with a hint of exasperation coloring her tone. \textit{“And what of the pure mathematician, Willard? The one who sees mathematics not as a map or a terrain, but as an uncharted expanse? Surely you don’t mean to limit their work to what can be empirically verified.”}
-
-Willard nods, conceding the point. \textit{“Perhaps not. But the question remains as to how we shape the Circle? A place for pure exploration, for probing the infinite, or for grounding in or from reality?”}
-
-Eleanor pausing, \textit{“Maybe it’s both. Let’s consider who might join us. Jovannah, and her  Mascerino constant, gets our interplay of abstraction and application. So to, Sylvia’s hyperbolic Pythagorean triplism.”}
-
-Willard added, \textit{“And what about Tiziana and Chris Everett? Their contributions to wavelet and fast Fourier Transform analysis bridge physical mathematics. Felicity Spearman’s composite concordance leans toward the empirical, but are her insights that profound?”}
-
-Eleanor’s eyes alight. \textit{“There's Claude Shannon, all fractal selection theory, and entropic appreciation of the number line. I am thinking Nambu too - with his lonely prime monopoles ...”}
-
-\smallskip
-
-\begin{wrapfigure}{r}{0.5\textwidth}
-    \vspace{-15pt} % Adjust spacing as needed
-    \centering
-    \includegraphics[width=\linewidth]{Illustrations/vign-willardCouncil.png}
-     \caption{Squaring the Circle.}
-    \vspace{-5pt} % Adjust spacing as needed
-\end{wrapfigure}
-Willard grinned. \textit{“And Bernadette, fascinated by Bernoulli, always reels us back toward the practical with her curiosity. Celiac and Demi Moorish, with their puboid modular quadratic binary residue arithmetic in which they tether the transcendentals of \( e \) and \( \pi \) to something concrete—through the Heegner numbers.”}
-
-Willard raised his cup, his enthusiasm rekindled. \textit{“To the Merriweather Circle, then. May it always remain a place where the unreasonable effectiveness of mathematics meets the unreasonable reliance on reality.”}
-
-\begin{center}
-\decofourleft \quad \decofourright
-\end{center}
-
+% The algorithm requires us to choose an integer \( a \) such that:
+% \[
+% 1 < a < N \quad \text{and} \quad \gcd(a, N) = 1
+% \]
+% This ensures \( a \) belongs to the multiplicative group \( \mathbb{Z}_N^* \), allowing modular exponentiation to define a meaningful cyclic structure. We choose:
+% \[
+% a = 13
+% \]
+% This value is not one of the prime factors of 1260, and so satisfies:
+% \[
+% \gcd(13, 1260) = 1
+% \]
+% so it is a valid candidate. The next step is to determine the \textit{period}, of \( a \) modulo \( N \). That is, we seek the smallest positive integer \( r \) such that:
+% \[
+% 13^r \equiv 1 \mod 1260
+% \]
+% This is the step that Shor's algorithm performs efficiently using quantum phase estimation. Here, we simulate it classically to illustrate the behavior. Below is the table of successive powers of 13 modulo 1260:
+% 
+% \begin{center}
+% \begin{tabular}{|c|c|}
+% \hline
+% Exponent \( k \) & \( 13^k \mod 1260 \) \\
+% \hline
+% 1  & 13   \\
+% 2  & 169  \\
+% 3  & 877  \\
+% 4  & 91   \\
+% 5  & 943  \\
+% 6  & 889  \\
+% 7  & 217  \\
+% 8  & 301  \\
+% 9  & 1213 \\
+% 10 & 529  \\
+% 11 & 577  \\
+% 12 & 1    \\
+% \hline
+% \end{tabular}
+% \end{center}
+% We observe that:
+% \[
+% 13^{12} \equiv 1 \mod 1260
+% \]
+% and no smaller exponent satisfies this, so the \textit{period is}:
+% \(
+% \boxed{r = 12}.
+% \)
+% This periodicity underpins the core quantum speedup in Shor’s algorithm. The next step is to use this period to extract a nontrivial factor of \( N \), which is implemented in \href{https://colab.research.google.com/drive/1hn_NBpzrlv1TNKeRQAPDLabW04Jya0tv?usp=sharing}{Python Implementation} as follows
+% 
+% \begin{lstlisting}[language=Python]
+% import pandas as pd
+% import math
+% from math import gcd
+% 
+% def find_period_verbose(a, N):
+%     if gcd(a, N) != 1:
+%         return [], None, f"gcd({a}, {N}) = {gcd(a, N)} → already a nontrivial factor!"
+%     results = []
+%     current = 1
+%     for k in range(1, 1001):
+%         current = (current * a) % N
+%         results.append((k, current))
+%         if current == 1:
+%             return results, k, None
+%     return results, None, "Period not found."
+% 
+% def shor_post_processing(a, r, N):
+%     a_r2 = pow(a, r // 2, N)
+%     plus = (a_r2 + 1) % N
+%     minus = (a_r2 - 1) % N
+%     return a_r2, plus, minus, gcd(plus, N), gcd(minus, N)
+% 
+% def lcm(x, y):
+%     return x * y // gcd(x, y)
+% 
+% def reconstruct_from_factors(f1, f2):
+%     return lcm(f1, f2)
+% \end{lstlisting}
+% \newpage
+% 
+% \section*{Run for \boldmath\( N = 1260 \), \( a = 13 \)}
+% 
+% \begin{lstlisting}[language=Python]
+% a = 13
+% N = 1260
+% 
+% results, period, note = find_period_verbose(a, N)
+% df = pd.DataFrame(results, columns=["Exponent k", f"{a}^k mod {N}"])
+% display(df)
+% 
+% if note:
+%     print(note)
+% else:
+%     a_r2, plus, minus, gcd_plus, gcd_minus = shor_post_processing(a, period, N)
+%     reconstructed_N = reconstruct_from_factors(gcd_plus, gcd_minus)
+% 
+%     print(f"a^(r/2) mod N = {a_r2}")
+%     print(f"a^(r/2) + 1 = {plus}, gcd = {gcd_plus}")
+%     print(f"a^(r/2) - 1 = {minus}, gcd = {gcd_minus}")
+%     print(f"Reconstructed N from LCM = {reconstructed_N}")
+% \end{lstlisting}
+% 
+% \subsection*{Example Output}
+% 
+% \begin{itemize}
+%   \item \( r = 12 \)
+%   \item \( a^{6} \equiv 1009 \mod 1260 \)
+%   \item \( \gcd(1009 - 1, 1260) = 252 \), \( \gcd(1009 + 1, 1260) = 10 \)
+%   \item \( \mathrm{lcm}(252, 10) = 1260 = N \)
+% \end{itemize}
+% 
+% 
+% Even if the GCDs found are not prime (10 and 252), we can still reconstruct the original composite number \( N \) via their LCM. Shor’s algorithm thus provides a quantum-assisted path to classical factor recovery.
+% 
+% 
+% 
+% 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (The Green Ethical Tranche chapter moved to 8-14greenTranche.tex — cut-sheet v2)
+% >>>>>> end of annexed block <<<<<<

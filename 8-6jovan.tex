@@ -91,76 +91,79 @@ When taking out common factor of \(1/n\) we have a \textbf{Riemann sum} for the 
 &= 2 \int_0^1 \frac{1}{1+x} \, dx \\
 &= 2 \left[\ln(1+x)\right]_0^1=\boxed{2\ln 2}.
 \end{align*}
-\section*{Figuratively speaking Generating Reciprocals}
+% >>>>>> ANNEX D (cut-sheet v2): generating reciprocals, sums of powers, inverse-square reciprocity — block commented out below, pointer left in text <<<<<<
+\textit{(Generating reciprocals, sums of powers, inverse-square reciprocity --- the full working is set out in Annexe D.)}
 
-\lettrine{C}{arl} Friedrich Gauss laid the foundation for the representation of sequence of numbers that can be represented as dots arranged in the shape of regular polygons.  
-
-\begin{figure}[H]\centering
-\includegraphics[width=\textwidth]{Illustrations/vign-figurative.png}
-\caption{Polygon Numbers.}
-\label{PolygonNumbers:fig}
-\end{figure}
-
-Triangular numbers, \(T_n\) are 3-gon numbers whose dot representation form a triangular pattern with formula :
-\(P_3(n)\equiv T(n) = \frac{n \cdot (n+1)}{2}. \)
-
-A pattern emerges when adapting the formula for square numbers, \( P_n = n^2 +0.\) to higher a-gon forms:
-\vspace{0.1cm}
-
-\noindent
-\begin{minipage}{0.4\textwidth}
-\begin{itemize}
-    \item Square (r=4): 
-    \[ P_4(n) = \frac{n(2n+0)}{2} = n^2 \]
-    \item Pentagonal (r=5): 
-    \[ P_5(n) = \frac{n(3n-1)}{2} \]
-\end{itemize}
-\end{minipage}%
-\begin{minipage}{0.4\textwidth}
-\begin{itemize}
-    \item Hexagonal (r=6): 
-    \[ P_6(n) = \frac{n(4n-2)}{2} = n(2n-1) \]
-    \item Octagonal (r=8): 
-    \[ P(n) = \frac{n(6n-4)}{2} = n(3n-2) \]
-\end{itemize}
-\end{minipage}
-
-We have thus the generator function:
-\begin{align*}
-P_n(a) = \frac{n}{2} \cdot ((a-2)n + (4-a))=\frac{n}{2}[(a-2)n-(a-4)n] 
-\end{align*}
-
- Following the article, \href{https://www.researchgate.net/publication/251831626_Beyond_the_Basel_Problem_Sums_of_Reciprocals_of_Figurate_Numbers}{Beyond the Basel Problem: Sums of Reciprocals of Figurate Numbers}, Jovannah proceeds to derive a general formula for the sum of the reciprocals of figurate numbers, starting from the infinite series for a given polygonal number with side $a$. Consider the sum of the reciprocals of the figurate numbers defined by:
-\[
-S_a := \sum_{n=1}^{\infty} \frac{1}{P_n(a)}= \sum_{n=1}^{\infty} \frac{2}{(a - 2)n^2 - (a - 4)n}.
-\]
-\noindent
-For even values of $a \geq 6$, she considers this as twice the \textbf{generating function}, G(x) evaluated at \( x=1 \):
-\[
-G(1)=\sum_{n=1}^{\infty} \frac{1}{n\left((a - 2)n - (a - 4)\right)}x^{(a-2)n-(a-4)}\bigg|_{x=1}.
-\]
-Generating functions as such encode a sequence of numbers into a single mathematical object. A more familiar example perhaps is:
-
-\subsection*{Sum of Powers (Geometric Series)}
-For \( |x| < 1 \), we compute the partial sum of the series as:
-\[
-S_N = 1 + x + x^2 + \cdots + x^N.
-\]
-This is a finite geometric series, so its sum is given by:
-\[
-S_N = \frac{1 - x^{N+1}}{1 - x}.
-\]
-Taking the limit as \( N \to \infty \), and noting that \( x^{N+1} \to 0 \) for \( |x| < 1 \) we have the generating function:
-\[
-G(x) =\sum_{n=0}^\infty x^n = \frac{1}{1-x}.
-\]
-
+% \section*{Figuratively speaking Generating Reciprocals}
+% 
+% \lettrine{C}{arl} Friedrich Gauss laid the foundation for the representation of sequence of numbers that can be represented as dots arranged in the shape of regular polygons.  
+% 
+% \begin{figure}[H]\centering
+% \includegraphics[width=\textwidth]{Illustrations/vign-figurative.png}
+% \caption{Polygon Numbers.}
+% \label{PolygonNumbers:fig}
+% \end{figure}
+% 
+% Triangular numbers, \(T_n\) are 3-gon numbers whose dot representation form a triangular pattern with formula :
+% \(P_3(n)\equiv T(n) = \frac{n \cdot (n+1)}{2}. \)
+% 
+% A pattern emerges when adapting the formula for square numbers, \( P_n = n^2 +0.\) to higher a-gon forms:
+% \vspace{0.1cm}
+% 
+% \noindent
+% \begin{minipage}{0.4\textwidth}
+% \begin{itemize}
+%     \item Square (r=4): 
+%     \[ P_4(n) = \frac{n(2n+0)}{2} = n^2 \]
+%     \item Pentagonal (r=5): 
+%     \[ P_5(n) = \frac{n(3n-1)}{2} \]
+% \end{itemize}
+% \end{minipage}%
+% \begin{minipage}{0.4\textwidth}
+% \begin{itemize}
+%     \item Hexagonal (r=6): 
+%     \[ P_6(n) = \frac{n(4n-2)}{2} = n(2n-1) \]
+%     \item Octagonal (r=8): 
+%     \[ P(n) = \frac{n(6n-4)}{2} = n(3n-2) \]
+% \end{itemize}
+% \end{minipage}
+% 
+% We have thus the generator function:
+% \begin{align*}
+% P_n(a) = \frac{n}{2} \cdot ((a-2)n + (4-a))=\frac{n}{2}[(a-2)n-(a-4)n] 
+% \end{align*}
+% 
+%  Following the article, \href{https://www.researchgate.net/publication/251831626_Beyond_the_Basel_Problem_Sums_of_Reciprocals_of_Figurate_Numbers}{Beyond the Basel Problem: Sums of Reciprocals of Figurate Numbers}, Jovannah proceeds to derive a general formula for the sum of the reciprocals of figurate numbers, starting from the infinite series for a given polygonal number with side $a$. Consider the sum of the reciprocals of the figurate numbers defined by:
+% \[
+% S_a := \sum_{n=1}^{\infty} \frac{1}{P_n(a)}= \sum_{n=1}^{\infty} \frac{2}{(a - 2)n^2 - (a - 4)n}.
+% \]
+% \noindent
+% For even values of $a \geq 6$, she considers this as twice the \textbf{generating function}, G(x) evaluated at \( x=1 \):
+% \[
+% G(1)=\sum_{n=1}^{\infty} \frac{1}{n\left((a - 2)n - (a - 4)\right)}x^{(a-2)n-(a-4)}\bigg|_{x=1}.
+% \]
+% Generating functions as such encode a sequence of numbers into a single mathematical object. A more familiar example perhaps is:
+% 
+% \subsection*{Sum of Powers (Geometric Series)}
+% For \( |x| < 1 \), we compute the partial sum of the series as:
+% \[
+% S_N = 1 + x + x^2 + \cdots + x^N.
+% \]
+% This is a finite geometric series, so its sum is given by:
+% \[
+% S_N = \frac{1 - x^{N+1}}{1 - x}.
+% \]
+% Taking the limit as \( N \to \infty \), and noting that \( x^{N+1} \to 0 \) for \( |x| < 1 \) we have the generating function:
+% \[
+% G(x) =\sum_{n=0}^\infty x^n = \frac{1}{1-x}.
+% \]
+% 
 % \subsection*{Binomial Coefficients}
 % The generating function for the binomial coefficients  \( \binom{n}{k} \) encodes the combinatorial sequence in a compact form:
 % \[
 % \sum_{n=0}^\infty \binom{n}{k} x^n = \frac{x^k}{(1-x)^{k+1}}.
 % \]
-
+% 
 % \subsection*{Fibonacci Sequence}
 % The Fibonacci sequence \( \{F_n\} \) satisfies the recurrence relation:
 % \[
@@ -170,119 +173,120 @@ G(x) =\sum_{n=0}^\infty x^n = \frac{1}{1-x}.
 % \[
 % G(x) = \sum_{n=0}^\infty F_n x^n = \frac{x}{1 - x - x^2}.
 % \]
-\noindent
+% \noindent
 % The generating function for the reciprocals of figurate numbers given by:
 % \[
 % G(x) = \sum_{n=1}^\infty \frac{1}{n \cdot ((a-2)n - (a-4))} x^{(a-2)n - (a-4)},
 % \]
 % reduces to the figurate form, when we evaluate \( G(x) \) at \( x=1 \). 
-Utilizing the Maclaurin series for \( \ln(1 - t) = -\sum_{n=1}^{\infty} \frac{1}{n} t^n \), performing integration by parts and using l'Hôpital's rule the sum of the reciprocals of even sided $2k + 2$ figurate numbers is:
-\begin{align*}   
-S_{2k+2} &= \frac{\ln(k)}{k - 1} - \frac{1}{k - 1} \sum_{j=1}^{k-1} \cos\left(\frac{2j\pi}{k}\right) \ln\left(2 - 2 \cos\left(\frac{j\pi}{k}\right)\right)\\
-&+ \frac{2}{k - 1} \sum_{j=1}^{k-1} \sin\left(\frac{2j\pi}{k}\right) \tan^{-1}\left(\frac{1 - \cos\left(\frac{j\pi}{k}\right)}{\sin\left(\frac{j\pi}{k}\right)}\right)\\
-&- \frac{2}{k - 1} \sum_{j=1}^{k-1} \sin\left(\frac{2j\pi}{k}\right) \tan^{-1}\left(\frac{-\cos\left(\frac{j\pi}{k}\right)}{\sin\left(\frac{j\pi}{k}\right)}\right).
-\end{align*}
-Setting \( k = 2 \) yields the sum of reciprocals of hexagonal numbers:
-\begin{align*}
-S_6 &= \ln(2) - \frac{1}{1} \left[ \cos(\pi) \ln (2 - 2\cos(\frac{\pi}{2})) \right] + \ldots\\
-&= \ln(2) - (-\ln(2)) + \ldots=2\ln(2).
-\end{align*}
-since \( \cos(\pi) = -1 \) and \( \cos(\frac{\pi}{2}) = 0 \) and the sums involving sine terms vanish because \( \sin(\frac{2j\pi}{2}) = \sin(j\pi) \) is zero for integer \( j \). 
-
+% Utilizing the Maclaurin series for \( \ln(1 - t) = -\sum_{n=1}^{\infty} \frac{1}{n} t^n \), performing integration by parts and using l'Hôpital's rule the sum of the reciprocals of even sided $2k + 2$ figurate numbers is:
+% \begin{align*}   
+% S_{2k+2} &= \frac{\ln(k)}{k - 1} - \frac{1}{k - 1} \sum_{j=1}^{k-1} \cos\left(\frac{2j\pi}{k}\right) \ln\left(2 - 2 \cos\left(\frac{j\pi}{k}\right)\right)\\
+% &+ \frac{2}{k - 1} \sum_{j=1}^{k-1} \sin\left(\frac{2j\pi}{k}\right) \tan^{-1}\left(\frac{1 - \cos\left(\frac{j\pi}{k}\right)}{\sin\left(\frac{j\pi}{k}\right)}\right)\\
+% &- \frac{2}{k - 1} \sum_{j=1}^{k-1} \sin\left(\frac{2j\pi}{k}\right) \tan^{-1}\left(\frac{-\cos\left(\frac{j\pi}{k}\right)}{\sin\left(\frac{j\pi}{k}\right)}\right).
+% \end{align*}
+% Setting \( k = 2 \) yields the sum of reciprocals of hexagonal numbers:
+% \begin{align*}
+% S_6 &= \ln(2) - \frac{1}{1} \left[ \cos(\pi) \ln (2 - 2\cos(\frac{\pi}{2})) \right] + \ldots\\
+% &= \ln(2) - (-\ln(2)) + \ldots=2\ln(2).
+% \end{align*}
+% since \( \cos(\pi) = -1 \) and \( \cos(\frac{\pi}{2}) = 0 \) and the sums involving sine terms vanish because \( \sin(\frac{2j\pi}{2}) = \sin(j\pi) \) is zero for integer \( j \). 
+% 
 % For even values of \( a \), this sum can be expressed using a formula involving logarithms and trigonometric functions, which in the case of \( a = 2n \) for \( n \geq 2 \), is given by:
 % \begin{align*}
 % S_{2k+2} &= \frac{\ln(k)}{k - 1} - \frac{1}{k - 1} \sum_{j=1}^{k-1} \cos \left( \frac{2j\pi}{k} \right) \ln \left( 2 - 2\cos \left( \frac{j\pi}{k} \right) \right) \\
 % &+ \frac{2}{k - 1} \sum_{j=1}^{k-1} \sin \left( \frac{2j\pi}{k} \right) \tan^{-1} \left( \frac{1 - \cos \left( \frac{j\pi}{k} \right)}{\sin \left( \frac{j\pi}{k} \right)} \right)\\
 % &- \frac{2}{k - 1} \sum_{j=1}^{k-1} \sin \left( \frac{2j\pi}{k} \right) \tan^{-1} \left( \frac{-\cos \left( \frac{j\pi}{k} \right)}{\sin \left( \frac{j\pi}{k} \right)} \right)
 % \end{align*}
-
-\begin{table}[H]
-\centering
-\begin{tabular}{ccc}
-\toprule
-Number of Sides & Name of Polygons & Sum of Series \\
-\midrule
-3 & Triangular & $2$ \\
-4 & Square (Basel Problem) & $\frac{\pi^2}{6}$ \\
-6 & Hexagonal & $2\ln(2)$ \\
-8 & Octagonal & $3\ln(3) - \frac{\sqrt{3}\pi}{4} + \frac{\sqrt{3}\pi}{12}$ \\
-10 & Decagonal & $\ln(2) + \frac{\pi}{6}$ \\
-14 & Tetraikaidecagonal & $\frac{2}{5}\ln(2) + \frac{3}{10}\ln(3) + \frac{\sqrt{3}\pi}{10}$ \\
-\bottomrule
-\end{tabular}
-\caption{Values of Sums of Reciprocals of Figurate Numbers}
-\label{tab:figurate_numbers}
-\end{table}
-\noindent
-Jovannah saw the desiccation of higher order figures into absurdities as a vindication of the special place of hexagonals. 
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{ccc}
-\toprule
-\textbf{Number of Sides} & \textbf{Name of Polygon} & \textbf{Sum of Series (Numeric)} \\
-\midrule
-3  & \textbf{Triangle}              & 2.000000000 \\
-4  & \textit{Square (Basel Problem)} & 1.6449340668 \\
-6  & \textbf{Hexagonal}              & 1.3862943611 \\
-8  & Octagonal                   & 1.2774090576 \\
-10 & Decagonal                   & 1.2167459562 \\
-12 & Dodecagonal                 & 1.1779560579 \\
-14 & Tetrakaidecagonal           & 1.1509823681 \\
+% 
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{ccc}
+% \toprule
+% Number of Sides & Name of Polygons & Sum of Series \\
+% \midrule
+% 3 & Triangular & $2$ \\
+% 4 & Square (Basel Problem) & $\frac{\pi^2}{6}$ \\
+% 6 & Hexagonal & $2\ln(2)$ \\
+% 8 & Octagonal & $3\ln(3) - \frac{\sqrt{3}\pi}{4} + \frac{\sqrt{3}\pi}{12}$ \\
+% 10 & Decagonal & $\ln(2) + \frac{\pi}{6}$ \\
+% 14 & Tetraikaidecagonal & $\frac{2}{5}\ln(2) + \frac{3}{10}\ln(3) + \frac{\sqrt{3}\pi}{10}$ \\
+% \bottomrule
+% \end{tabular}
+% \caption{Values of Sums of Reciprocals of Figurate Numbers}
+% \label{tab:figurate_numbers}
+% \end{table}
+% \noindent
+% Jovannah saw the desiccation of higher order figures into absurdities as a vindication of the special place of hexagonals. 
+% 
+% \begin{table}[ht]
+% \centering
+% \begin{tabular}{ccc}
+% \toprule
+% \textbf{Number of Sides} & \textbf{Name of Polygon} & \textbf{Sum of Series (Numeric)} \\
+% \midrule
+% 3  & \textbf{Triangle}              & 2.000000000 \\
+% 4  & \textit{Square (Basel Problem)} & 1.6449340668 \\
+% 6  & \textbf{Hexagonal}              & 1.3862943611 \\
+% 8  & Octagonal                   & 1.2774090576 \\
+% 10 & Decagonal                   & 1.2167459562 \\
+% 12 & Dodecagonal                 & 1.1779560579 \\
+% 14 & Tetrakaidecagonal           & 1.1509823681 \\
 % 16 & Hexakaidecagonal            & 1.1311274296 \\
 % 18 & Octakaidecagonal            & 1.1158967141 \\
 % 20 & Icosagonal                  & 1.1038409515 \\
 % 22 & Icositetragonal             & 1.0940599195 \\
-\bottomrule
-\end{tabular}
-\caption{Sum of Series for Polygons with Increasing Number of Sides}
-\label{tab:sum_series}
-\end{table}
-
-That triangles and hexagons bookend the squares suggests that determining a measure of the increased attenuation is a worthy point of focus.
-
-The python code, \href{https://colab.research.google.com/drive/1qfUdPZu9310uN9DOMnwN7WNPR3gL8RnZ?usp=sharing}{reciprocalFiguresRegression.ipynb} delivers a best fit log regression model for the sequence which give our generator is wholly inadequate in the long run.
-
-\begin{figure}[H]\centering
-\includegraphics[width=1.0\textwidth]{Illustrations/expRegression20.png}
-\caption{Figurative Number regression model}
-\label{PolygonNumbers:fig}
-\end{figure}
-
-
-\section*{The Meaning of Inverse Square Reciprocity}
-
-The \textbf{harmonic mean} of two numbers \((a,b)\) balances their reciprocals:
-\[
-HM(a, b) = \frac{2ab}{a + b}, \quad HM(3,6) = 4,
-\]
-while their \textbf{root mean square} better captures their quadratic scaling:
-\[
-RMS(a, b) = \sqrt{\frac{a^2 + b^2}{2}}, \quad RMS(1/3,1/6) = \sqrt{\frac{5}{72}} \approx 0.264.
-\]
-Jovannah, using \(GM(a,b)=\sqrt{ab}\), poly-amorously intertwines many a mean in her \textbf{Ternary Mean (TM)} amalgamation:
-\[
-HQM(a, b) = \sqrt{ab} \cdot \sqrt{\frac{a^2 + 6ab + b^2}{2(a+b)^2}}.
-\]
-For the mean of triangular and hexagonal reciprocal sums, which we suspect is that of the inverse square, 
-\[
-a = S_3 = 2, \quad b = S_6 = 2\ln 2,
-\]
-Jovannah's amalgam captures inverse-square reciprocation as a best first guess that Bernoulli would be proud of:
-\[
-TM(S_{\text{3}}, S_{\text{6}}) \approx 1.65138 \approx \frac{\pi^2}{6} \approx 1.64493.
-\]
-At first blush, her polymean, like her demeanor, may seem a little contrived, but there is pragmatism to this polymath as HQM arises naturally from the composition:
-\begin{align*} 
-TM &= RMS \circ (GM, HM),\\
-&= RMS(GM(a, b), HM(a, b)),\\
-&= \sqrt{\frac{GM(a, b)^2 + HM(a, b)^2}{2}}.
-\end{align*}
-
-But these course statistical measures are indeed course measures. Jovannah like many a mathematician before bows to Euler for a more refined is just as brazen approach.
-
-\newpage
-
+% \bottomrule
+% \end{tabular}
+% \caption{Sum of Series for Polygons with Increasing Number of Sides}
+% \label{tab:sum_series}
+% \end{table}
+% 
+% That triangles and hexagons bookend the squares suggests that determining a measure of the increased attenuation is a worthy point of focus.
+% 
+% The python code, \href{https://colab.research.google.com/drive/1qfUdPZu9310uN9DOMnwN7WNPR3gL8RnZ?usp=sharing}{reciprocalFiguresRegression.ipynb} delivers a best fit log regression model for the sequence which give our generator is wholly inadequate in the long run.
+% 
+% \begin{figure}[H]\centering
+% \includegraphics[width=1.0\textwidth]{Illustrations/expRegression20.png}
+% \caption{Figurative Number regression model}
+% \label{PolygonNumbers:fig}
+% \end{figure}
+% 
+% 
+% \section*{The Meaning of Inverse Square Reciprocity}
+% 
+% The \textbf{harmonic mean} of two numbers \((a,b)\) balances their reciprocals:
+% \[
+% HM(a, b) = \frac{2ab}{a + b}, \quad HM(3,6) = 4,
+% \]
+% while their \textbf{root mean square} better captures their quadratic scaling:
+% \[
+% RMS(a, b) = \sqrt{\frac{a^2 + b^2}{2}}, \quad RMS(1/3,1/6) = \sqrt{\frac{5}{72}} \approx 0.264.
+% \]
+% Jovannah, using \(GM(a,b)=\sqrt{ab}\), poly-amorously intertwines many a mean in her \textbf{Ternary Mean (TM)} amalgamation:
+% \[
+% HQM(a, b) = \sqrt{ab} \cdot \sqrt{\frac{a^2 + 6ab + b^2}{2(a+b)^2}}.
+% \]
+% For the mean of triangular and hexagonal reciprocal sums, which we suspect is that of the inverse square, 
+% \[
+% a = S_3 = 2, \quad b = S_6 = 2\ln 2,
+% \]
+% Jovannah's amalgam captures inverse-square reciprocation as a best first guess that Bernoulli would be proud of:
+% \[
+% TM(S_{\text{3}}, S_{\text{6}}) \approx 1.65138 \approx \frac{\pi^2}{6} \approx 1.64493.
+% \]
+% At first blush, her polymean, like her demeanor, may seem a little contrived, but there is pragmatism to this polymath as HQM arises naturally from the composition:
+% \begin{align*} 
+% TM &= RMS \circ (GM, HM),\\
+% &= RMS(GM(a, b), HM(a, b)),\\
+% &= \sqrt{\frac{GM(a, b)^2 + HM(a, b)^2}{2}}.
+% \end{align*}
+% 
+% But these course statistical measures are indeed course measures. Jovannah like many a mathematician before bows to Euler for a more refined is just as brazen approach.
+% 
+% \newpage
+% 
+% >>>>>> end of annexed block <<<<<<
 \section*{Celiac and Jovannah Discuss Power Laws}
 
 \smallskip \noindent
@@ -381,83 +385,87 @@ Celiac smiled. "And deprive you of the joy of discovering it yourself? Where’s
 
 
 \newpage
-\section*{Euler's Integral Approach to the Basel Problem}
-Leonard Euler provided a novel decomposition of the sum of reciprocals of squares, \(\zeta(2)\), by evaluating the integral:
-\[
-I = \int_0^{1/2} \frac{-\ln(1 - t)}{t} dt,
-\]
-in two distinct ways. First, again using the \textbf{Taylor series expansion} for \(\ln(1 - t)\):
+% >>>>>> ANNEX D (cut-sheet v2): Euler's integral approach to the Basel problem — block commented out below, pointer left in text <<<<<<
+\textit{(Euler's integral approach to the Basel problem --- the full working is set out in Annexe D.)}
 
-\[
-\ln(1 - t) = -\sum_{k=1}^{\infty} \frac{t^k}{k}, \quad \text{for } |t| < 1,
-\]
-and substituting into the integral and rearranging:
-
-\begin{align*}
-I &= \int_0^{1/2} \frac{-\sum_{k=1}^{\infty} \frac{t^k}{k}}{t} dt, \\
-&= \sum_{k=1}^{\infty} \frac{1}{k} \int_0^{1/2} t^{k-1} dt= \sum_{k=1}^{\infty} \frac{1}{k^2} \left( \frac{1}{2} \right)^k.
-\end{align*}
-Next, solving the integral instead by \textbf{Integration by Parts}, setting:
-\[
-u = \ln(1 - t), \quad dv = \frac{dt}{t},
-\]
-so that \( du = \frac{dt}{1 - t} \) and integrating \( dv \) gives \( v = \ln t \), Euler obtains:
-
-\begin{align*}
-I &= -\left[ \ln t \ln(1 - t) \Big|_0^{1/2} - \int_0^{1/2} \frac{\ln t}{1 - t} dt \right], \\
-&= -\left[ \left( \ln \frac{1}{2} \right) \ln \frac{1}{2} - \int_0^{1/2} \frac{\ln t}{1 - t} dt \right], \\
-&= 2 \ln 2 - \int_0^{1/2} \frac{\ln t}{1 - t} dt.
-\end{align*}
-To evaluate the remaining integral, we expand \( \frac{1}{1-t} \) as a geometric series:
-\[
-\frac{1}{1 - t} = \sum_{k=0}^{\infty} t^k, \quad \text{for } |t| < 1,
-\]
-substituting:
-\[
-\int_0^{1/2} \frac{\ln t}{1 - t} dt = \sum_{k=0}^{\infty} \int_0^{1/2} \ln t \cdot t^k dt.
-\]
-Applying integration by parts to \( \int_0^{1/2} t^k \ln t \, dt \) with:
-\[
-u = \ln t, \quad dv = t^k dt, \quad du = \frac{dt}{t}, \quad v = \frac{t^{k+1}}{k+1},
-\]
-Euler obtains:
-\[
-\int_0^{1/2} t^k \ln t \, dt = \frac{1}{(k+1)^2} \left( \frac{1}{2} \right)^{k+1}.
-\]
-Summing over \( k \), using the hexagonal reciprocal sum
-\[
-H_2 = \sum_{n=1}^{\infty} \frac{1}{n(2n-1)} = 2\ln 2,
-\]
-Euler’s decomposition follows:
-\[
-\zeta(2) = H_2 + \sum_{k=1}^{\infty} \frac{2^{1-k}}{k^2}.
-\]
-The correction term,
-\[
-A_k = \frac{2^{1-k}}{k^2},
-\]
-exhibits geometric decay, acting as a weighting function that suppresses higher-order terms exponentially—akin to wavelet modulation. For densities, square and hexagonal numbers satisfy:
-\[
-\rho_{\text{sq}} \sim \frac{1}{\sqrt{k}}, \quad \rho_{\text{hex}} \sim \frac{1}{\sqrt{2k}} = \frac{1}{\sqrt{2}} \rho_{\text{sq}},
-\]
-suggesting:
-\[
-\frac{H_n}{\sum 1/k^2} \approx \frac{1}{\sqrt{2}} 
-\]
-Since
-\[
-\text{or} \quad \frac{\xi(2)}{H} \approx \frac{\sqrt{2} + 1}{2} = \sigma_s\approx 1.207 ,
-\]
-we note:
-\[
-\frac{\xi(2)}{H}  \approx 1.186<\sigma_s.
-\]
-This differs from the silver ratio \( \sigma_s \) by:
-\[
-\sigma_s - R \approx 0.021.
-\]
-
-
+% \section*{Euler's Integral Approach to the Basel Problem}
+% Leonard Euler provided a novel decomposition of the sum of reciprocals of squares, \(\zeta(2)\), by evaluating the integral:
+% \[
+% I = \int_0^{1/2} \frac{-\ln(1 - t)}{t} dt,
+% \]
+% in two distinct ways. First, again using the \textbf{Taylor series expansion} for \(\ln(1 - t)\):
+% 
+% \[
+% \ln(1 - t) = -\sum_{k=1}^{\infty} \frac{t^k}{k}, \quad \text{for } |t| < 1,
+% \]
+% and substituting into the integral and rearranging:
+% 
+% \begin{align*}
+% I &= \int_0^{1/2} \frac{-\sum_{k=1}^{\infty} \frac{t^k}{k}}{t} dt, \\
+% &= \sum_{k=1}^{\infty} \frac{1}{k} \int_0^{1/2} t^{k-1} dt= \sum_{k=1}^{\infty} \frac{1}{k^2} \left( \frac{1}{2} \right)^k.
+% \end{align*}
+% Next, solving the integral instead by \textbf{Integration by Parts}, setting:
+% \[
+% u = \ln(1 - t), \quad dv = \frac{dt}{t},
+% \]
+% so that \( du = \frac{dt}{1 - t} \) and integrating \( dv \) gives \( v = \ln t \), Euler obtains:
+% 
+% \begin{align*}
+% I &= -\left[ \ln t \ln(1 - t) \Big|_0^{1/2} - \int_0^{1/2} \frac{\ln t}{1 - t} dt \right], \\
+% &= -\left[ \left( \ln \frac{1}{2} \right) \ln \frac{1}{2} - \int_0^{1/2} \frac{\ln t}{1 - t} dt \right], \\
+% &= 2 \ln 2 - \int_0^{1/2} \frac{\ln t}{1 - t} dt.
+% \end{align*}
+% To evaluate the remaining integral, we expand \( \frac{1}{1-t} \) as a geometric series:
+% \[
+% \frac{1}{1 - t} = \sum_{k=0}^{\infty} t^k, \quad \text{for } |t| < 1,
+% \]
+% substituting:
+% \[
+% \int_0^{1/2} \frac{\ln t}{1 - t} dt = \sum_{k=0}^{\infty} \int_0^{1/2} \ln t \cdot t^k dt.
+% \]
+% Applying integration by parts to \( \int_0^{1/2} t^k \ln t \, dt \) with:
+% \[
+% u = \ln t, \quad dv = t^k dt, \quad du = \frac{dt}{t}, \quad v = \frac{t^{k+1}}{k+1},
+% \]
+% Euler obtains:
+% \[
+% \int_0^{1/2} t^k \ln t \, dt = \frac{1}{(k+1)^2} \left( \frac{1}{2} \right)^{k+1}.
+% \]
+% Summing over \( k \), using the hexagonal reciprocal sum
+% \[
+% H_2 = \sum_{n=1}^{\infty} \frac{1}{n(2n-1)} = 2\ln 2,
+% \]
+% Euler’s decomposition follows:
+% \[
+% \zeta(2) = H_2 + \sum_{k=1}^{\infty} \frac{2^{1-k}}{k^2}.
+% \]
+% The correction term,
+% \[
+% A_k = \frac{2^{1-k}}{k^2},
+% \]
+% exhibits geometric decay, acting as a weighting function that suppresses higher-order terms exponentially—akin to wavelet modulation. For densities, square and hexagonal numbers satisfy:
+% \[
+% \rho_{\text{sq}} \sim \frac{1}{\sqrt{k}}, \quad \rho_{\text{hex}} \sim \frac{1}{\sqrt{2k}} = \frac{1}{\sqrt{2}} \rho_{\text{sq}},
+% \]
+% suggesting:
+% \[
+% \frac{H_n}{\sum 1/k^2} \approx \frac{1}{\sqrt{2}} 
+% \]
+% Since
+% \[
+% \text{or} \quad \frac{\xi(2)}{H} \approx \frac{\sqrt{2} + 1}{2} = \sigma_s\approx 1.207 ,
+% \]
+% we note:
+% \[
+% \frac{\xi(2)}{H}  \approx 1.186<\sigma_s.
+% \]
+% This differs from the silver ratio \( \sigma_s \) by:
+% \[
+% \sigma_s - R \approx 0.021.
+% \]
+% 
+% 
+% >>>>>> end of annexed block <<<<<<
 \subsection*{Dispersion Analogy of Attenuation Factor}
 The attenuation factor in the sum of reciprocal squares, given by:
 \begin{equation*}
@@ -684,200 +692,208 @@ Ernest’s smile faltered for a split second before he quickly recovered, chuckl
 
 As the Zoom call ended, Ernest sat back in his chair, his expression unreadable. “Maybe I should have started with him,” he muttered to himself. “If that’s all the gratitude I get…”
 
-\subsection*{Exponential Hierarchies and Figurative Numbers}
+% >>>>>> ANNEX D (cut-sheet v2): exponential hierarchies and the 3D multipole optimization — block commented out below, pointer left in text <<<<<<
+\textit{(Exponential hierarchies and the 3D multipole optimization --- the full working is set out in Annexe D.)}
 
-The goal of the code, \href{https://colab.research.google.com/drive/1t3KP4GyRs7G5EsQaATvUkQDnSaoIM2Mt?usp=sharing}{MultipoleexpfigurativeRamanunjan.ipynb} is to construct a generalized Ramanujan-style exponential expression:
-\[
-e^{\sqrt{d}},
-\]
-where \( d \) is derived from the cumulative contributions of different figurative numbers drawing inspiration from the \textbf{multipole expansion} in physics, where the monopole, dipole, quadrupole, and higher-order terms describe increasingly finer distributions:
+% \subsection*{Exponential Hierarchies and Figurative Numbers}
+% 
+% The goal of the code, \href{https://colab.research.google.com/drive/1t3KP4GyRs7G5EsQaATvUkQDnSaoIM2Mt?usp=sharing}{MultipoleexpfigurativeRamanunjan.ipynb} is to construct a generalized Ramanujan-style exponential expression:
+% \[
+% e^{\sqrt{d}},
+% \]
+% where \( d \) is derived from the cumulative contributions of different figurative numbers drawing inspiration from the \textbf{multipole expansion} in physics, where the monopole, dipole, quadrupole, and higher-order terms describe increasingly finer distributions:
+% 
+% \begin{itemize}
+%     \item \textbf{2D Monopole Term} corresponds to triangular numbers (\( S_3 = 2 \)).
+%     \item \textbf{2D Dipole Term} corresponds to square numbers (\( S_4 = \frac{\pi^2}{6} \)).
+%     \item \textbf{2D Quadrupole Term} corresponds to hexagonal numbers (\( S_6 = 2\ln(2) \)).
+%     \item Higher-order terms (\( S_8, S_{10}, S_{14} \)) represent octagonal, decagonal, and tetraikaidecagonal numbers, respectively.
+% \end{itemize}
+% 
+% The parameter \( d \) is constructed as:
+% \[
+% d = h \cdot \left( a_1 S_3 + a_2 S_4 + a_3 S_6 + a_4 S_8 + a_5 S_{10} + a_6 S_{14} \right),
+% \]
+% where \( h = 163 \) is the Heegner number, and \( a_1, \dots, a_6 \) are rational weights optimized to minimize the fractional part of \( e^{\sqrt{d}} \).
+% 
+% \subsection*{3D Multipole Expansion}
+% 
+% The concept implemented in \href{https://colab.research.google.com/drive/1NPjy63xEltz3hDoQNo9ERpdWKnRDqyoQ?usp=sharing}{3dMultipoleexpfigurativeRamanunjan.ipynb} extends naturally to 3D figurative numbers, where contributions from 3D pyramid numbers, cuboid numbers, hexagonal prism numbers, and higher-order 3D figures are analogous to higher-order terms in the multipole expansion. In this case:
+% 
+% \begin{itemize}
+%     \item The \textbf{3D Monopole Term} corresponds to pyramid numbers (\( S_{\text{pyramid}} = \sum_{n=1}^\infty \frac{1}{n(n+1)(n+2)/6} \)).
+%     \item The \textbf{3D Dipole Term} corresponds to cuboid numbers (\( S_{\text{cuboid}} = \sum_{n=1}^\infty \frac{1}{n(n+1)(2n+1)/6} \)).
+%     \item The \textbf{3D Quadrupole Term} corresponds to hexagonal prism numbers (\( S_{\text{hexagonal-prism}} \)).
+%     \item Higher-order terms include octagonal prism numbers, decagonal prism numbers, and icosahedral numbers.
+% \end{itemize}
+% 
+% The parameter \( d \) for 3D figurate numbers is constructed as:
+% \begin{align*}   
+% d &= h \cdot \bigg( a_1 S_{\text{pyramid}} + a_2 S_{\text{cuboid}} + a_3 S_{\text{hexagonal-prism}} \\
+% &\quad + a_4 S_{\text{octagonal-prism}} + a_5 S_{\text{decagonal-prism}} + a_6 S_{\text{icosahedral}} \bigg).
+% \end{align*}
+% 
+% \subsection*{Optimization Results for 3D Expansion}
+% 
+% Using rational weights in increments of \( 0.2 \) (i.e., \( a_i \in \{0.0, 0.2, \dots, 1.0\} \)), the optimal weights for the 3D figurate numbers were found to be:
+% \[
+% (a_1, a_2, a_3, a_4, a_5, a_6) = (0.3, 0.6, 0.9, 0.2, 0.5, 0.2).
+% \]
+% 
+% With these weights, the computed values are:
+% \begin{align*}
+% d &= 163 \cdot \bigg( 0.3 \cdot S_{\text{pyramid}} + 0.6 \cdot S_{\text{cuboid}} + 0.9 \cdot S_{\text{hexagonal-prism}} \\
+% &\quad + 0.2 \cdot S_{\text{octagonal-prism}} + 0.5 \cdot S_{\text{decagonal-prism}} + 0.2 \cdot S_{\text{icosahedral}} \bigg), \\
+% e^{\sqrt{d}} &\approx 435,145,124.9999982134.
+% \end{align*}
+% 
+% 
+% The fractional part of \( e^{\sqrt{d}} \) is:
+% \[
+% \text{Fractional Part} = 0.9999982134,
+% \]
+% and the difference from \( 1 \) is minimized to:
+% \[
+% \text{Difference from 1} = 0.0000017866.
+% \]
+% 
+% The optimization demonstrates the effectiveness of using a multipole-inspired weighted sum of 3D figurative numbers to approximate \( e^{\sqrt{d}} \) as an integer. The near-integer behavior of this formula, with a fractional difference of approximately \( 10^{-6} \), highlights the potential for exploring geometric generalizations in both 2D and 3D figurate expansions.
+% 
+% \newpage
+% >>>>>> end of annexed block <<<<<<
+% >>>>>> ANNEX D (cut-sheet v2): hyperbolic manifolds, Waring's problem and reciprocal polygonal numbers — block commented out below, pointer left in text <<<<<<
+\textit{(Hyperbolic manifolds, Waring's problem and reciprocal polygonal numbers --- the full working is set out in Annexe D.)}
 
-\begin{itemize}
-    \item \textbf{2D Monopole Term} corresponds to triangular numbers (\( S_3 = 2 \)).
-    \item \textbf{2D Dipole Term} corresponds to square numbers (\( S_4 = \frac{\pi^2}{6} \)).
-    \item \textbf{2D Quadrupole Term} corresponds to hexagonal numbers (\( S_6 = 2\ln(2) \)).
-    \item Higher-order terms (\( S_8, S_{10}, S_{14} \)) represent octagonal, decagonal, and tetraikaidecagonal numbers, respectively.
-\end{itemize}
-
-The parameter \( d \) is constructed as:
-\[
-d = h \cdot \left( a_1 S_3 + a_2 S_4 + a_3 S_6 + a_4 S_8 + a_5 S_{10} + a_6 S_{14} \right),
-\]
-where \( h = 163 \) is the Heegner number, and \( a_1, \dots, a_6 \) are rational weights optimized to minimize the fractional part of \( e^{\sqrt{d}} \).
-
-\subsection*{3D Multipole Expansion}
-
-The concept implemented in \href{https://colab.research.google.com/drive/1NPjy63xEltz3hDoQNo9ERpdWKnRDqyoQ?usp=sharing}{3dMultipoleexpfigurativeRamanunjan.ipynb} extends naturally to 3D figurative numbers, where contributions from 3D pyramid numbers, cuboid numbers, hexagonal prism numbers, and higher-order 3D figures are analogous to higher-order terms in the multipole expansion. In this case:
-
-\begin{itemize}
-    \item The \textbf{3D Monopole Term} corresponds to pyramid numbers (\( S_{\text{pyramid}} = \sum_{n=1}^\infty \frac{1}{n(n+1)(n+2)/6} \)).
-    \item The \textbf{3D Dipole Term} corresponds to cuboid numbers (\( S_{\text{cuboid}} = \sum_{n=1}^\infty \frac{1}{n(n+1)(2n+1)/6} \)).
-    \item The \textbf{3D Quadrupole Term} corresponds to hexagonal prism numbers (\( S_{\text{hexagonal-prism}} \)).
-    \item Higher-order terms include octagonal prism numbers, decagonal prism numbers, and icosahedral numbers.
-\end{itemize}
-
-The parameter \( d \) for 3D figurate numbers is constructed as:
-\begin{align*}   
-d &= h \cdot \bigg( a_1 S_{\text{pyramid}} + a_2 S_{\text{cuboid}} + a_3 S_{\text{hexagonal-prism}} \\
-&\quad + a_4 S_{\text{octagonal-prism}} + a_5 S_{\text{decagonal-prism}} + a_6 S_{\text{icosahedral}} \bigg).
-\end{align*}
-
-\subsection*{Optimization Results for 3D Expansion}
-
-Using rational weights in increments of \( 0.2 \) (i.e., \( a_i \in \{0.0, 0.2, \dots, 1.0\} \)), the optimal weights for the 3D figurate numbers were found to be:
-\[
-(a_1, a_2, a_3, a_4, a_5, a_6) = (0.3, 0.6, 0.9, 0.2, 0.5, 0.2).
-\]
-
-With these weights, the computed values are:
-\begin{align*}
-d &= 163 \cdot \bigg( 0.3 \cdot S_{\text{pyramid}} + 0.6 \cdot S_{\text{cuboid}} + 0.9 \cdot S_{\text{hexagonal-prism}} \\
-&\quad + 0.2 \cdot S_{\text{octagonal-prism}} + 0.5 \cdot S_{\text{decagonal-prism}} + 0.2 \cdot S_{\text{icosahedral}} \bigg), \\
-e^{\sqrt{d}} &\approx 435,145,124.9999982134.
-\end{align*}
-
-
-The fractional part of \( e^{\sqrt{d}} \) is:
-\[
-\text{Fractional Part} = 0.9999982134,
-\]
-and the difference from \( 1 \) is minimized to:
-\[
-\text{Difference from 1} = 0.0000017866.
-\]
-
-The optimization demonstrates the effectiveness of using a multipole-inspired weighted sum of 3D figurative numbers to approximate \( e^{\sqrt{d}} \) as an integer. The near-integer behavior of this formula, with a fractional difference of approximately \( 10^{-6} \), highlights the potential for exploring geometric generalizations in both 2D and 3D figurate expansions.
-
-\newpage
-\section*{Hyperbolic Manifolds with \(\text{SA}/V \approx 163\)}
-The SnapPy database provides a comprehensive collection of compact and cusped hyperbolic 3-manifolds derived from gluing ideal tetrahedra in hyperbolic space. Each manifold is characterized by its hyperbolic volume, triangulation, and cusp structure. The analysis of \href{https://colab.research.google.com/drive/1lfIjYMFVFGLkrps-XJ_kNTdz2WR4F8JX?usp=sharing}{ipynb} and \href{https://colab.research.google.com/drive/1RYbbCvlkSTGEXqdzLO1mZNREHIPEYRAA?usp=sharing}{snappy163SAV.ipynb} finds two specific manifolds, \( v1534 \) and \( v1520 \), whose surface area to volume (\(\text{SA}/V\)) ratios are very close to the Heegner number value of 163. The two manifolds of interest are as follows:
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{@{}lccc@{}}
-\toprule
-\textbf{Name} & \textbf{Volume} & \(\mathbf{\text{SA}/V}\) & \textbf{Triangulation (Tetrahedra)} \\ \midrule
-\( v1534 \)   & \( 4.83094655 \) & \( 162.9946746 \) & 7 \\
-\( v1520 \)   & \( 4.830979615 \) & \( 162.9989491 \) & 7 \\ \bottomrule
-\end{tabular}
-\caption{Key properties of manifolds \( v1534 \) and \( v1520 \).}
-\end{table}
-
-Both manifolds share nearly identical volumes, indicating a close relationship, likely resulting from variations in their triangulations or cusp structures. The surface area to volume ratio for a hyperbolic 3-manifold is approximated by:
-\[
-\frac{\text{SA}}{V} \approx \frac{4\pi \sinh(\text{Volume})}{\text{Volume}},
-\]
-where \(\sinh(\text{Volume})\) reflects the exponential growth of the hyperbolic metric. The value \( \text{SA}/V \approx 163 \) is intriguing due to its proximity to well-known mathematical constants, particularly those related to Heegner numbers and Ramanujan's near-integer approximations. The near coincidence of \(\text{SA}/V\) with 163 suggests an interplay between hyperbolic geometry and number theory.
-
-Both \( v1534 \) and \( v1520 \):
-\begin{itemize}
-    \item Are triangulated using 7 ideal tetrahedra, representing a relatively simple geometric structure.
-    \item Have a cusp count of 1, indicating a single toroidal cusp, a common feature in non-compact hyperbolic 3-manifolds.
-\end{itemize}
-The single cusp suggests these manifolds could arise from hyperbolic Dehn surgeries on a small knot or link complement, such as the figure-eight knot complement, which is a well-known base manifold in hyperbolic geometry.
-
-The SnapPy database catalogues hyperbolic 3-manifolds using various construction techniques:
-\begin{itemize}
-    \item \textbf{Compact Manifolds}: These are closed manifolds without cusps, formed by gluing the faces of ideal tetrahedra.
-    \item \textbf{Cusped Manifolds}: These have one or more cusps, often derived from knot or link complements.
-    \item \textbf{Construction and Triangulation}: Manifolds in the database are indexed by their volume and the number of tetrahedra used in their triangulation.
-\end{itemize}
-
-SnapPy enables in-depth analysis of these manifolds, including their cusp geometry, isometry groups, and relationships to other manifolds via commensurability.
-
-The discovery of hyperbolic manifolds with \(\text{SA}/V \approx 163\) highlights an intriguing connection between hyperbolic geometry and number theory. While the manifolds \( v1534 \) and \( v1520 \) exhibit simple triangulations and a single cusp, their proximity in \(\text{SA}/V\) to a Heegner number suggests deeper mathematical structures worth exploring. Further analysis using SnapPy, particularly through commensurability and Dehn surgery relationships, could shed light on their origins and significance.
+% \section*{Hyperbolic Manifolds with \(\text{SA}/V \approx 163\)}
+% The SnapPy database provides a comprehensive collection of compact and cusped hyperbolic 3-manifolds derived from gluing ideal tetrahedra in hyperbolic space. Each manifold is characterized by its hyperbolic volume, triangulation, and cusp structure. The analysis of \href{https://colab.research.google.com/drive/1lfIjYMFVFGLkrps-XJ_kNTdz2WR4F8JX?usp=sharing}{ipynb} and \href{https://colab.research.google.com/drive/1RYbbCvlkSTGEXqdzLO1mZNREHIPEYRAA?usp=sharing}{snappy163SAV.ipynb} finds two specific manifolds, \( v1534 \) and \( v1520 \), whose surface area to volume (\(\text{SA}/V\)) ratios are very close to the Heegner number value of 163. The two manifolds of interest are as follows:
+% 
+% \begin{table}[h!]
+% \centering
+% \begin{tabular}{@{}lccc@{}}
+% \toprule
+% \textbf{Name} & \textbf{Volume} & \(\mathbf{\text{SA}/V}\) & \textbf{Triangulation (Tetrahedra)} \\ \midrule
+% \( v1534 \)   & \( 4.83094655 \) & \( 162.9946746 \) & 7 \\
+% \( v1520 \)   & \( 4.830979615 \) & \( 162.9989491 \) & 7 \\ \bottomrule
+% \end{tabular}
+% \caption{Key properties of manifolds \( v1534 \) and \( v1520 \).}
+% \end{table}
+% 
+% Both manifolds share nearly identical volumes, indicating a close relationship, likely resulting from variations in their triangulations or cusp structures. The surface area to volume ratio for a hyperbolic 3-manifold is approximated by:
+% \[
+% \frac{\text{SA}}{V} \approx \frac{4\pi \sinh(\text{Volume})}{\text{Volume}},
+% \]
+% where \(\sinh(\text{Volume})\) reflects the exponential growth of the hyperbolic metric. The value \( \text{SA}/V \approx 163 \) is intriguing due to its proximity to well-known mathematical constants, particularly those related to Heegner numbers and Ramanujan's near-integer approximations. The near coincidence of \(\text{SA}/V\) with 163 suggests an interplay between hyperbolic geometry and number theory.
+% 
+% Both \( v1534 \) and \( v1520 \):
+% \begin{itemize}
+%     \item Are triangulated using 7 ideal tetrahedra, representing a relatively simple geometric structure.
+%     \item Have a cusp count of 1, indicating a single toroidal cusp, a common feature in non-compact hyperbolic 3-manifolds.
+% \end{itemize}
+% The single cusp suggests these manifolds could arise from hyperbolic Dehn surgeries on a small knot or link complement, such as the figure-eight knot complement, which is a well-known base manifold in hyperbolic geometry.
+% 
+% The SnapPy database catalogues hyperbolic 3-manifolds using various construction techniques:
+% \begin{itemize}
+%     \item \textbf{Compact Manifolds}: These are closed manifolds without cusps, formed by gluing the faces of ideal tetrahedra.
+%     \item \textbf{Cusped Manifolds}: These have one or more cusps, often derived from knot or link complements.
+%     \item \textbf{Construction and Triangulation}: Manifolds in the database are indexed by their volume and the number of tetrahedra used in their triangulation.
+% \end{itemize}
+% 
+% SnapPy enables in-depth analysis of these manifolds, including their cusp geometry, isometry groups, and relationships to other manifolds via commensurability.
+% 
+% The discovery of hyperbolic manifolds with \(\text{SA}/V \approx 163\) highlights an intriguing connection between hyperbolic geometry and number theory. While the manifolds \( v1534 \) and \( v1520 \) exhibit simple triangulations and a single cusp, their proximity in \(\text{SA}/V\) to a Heegner number suggests deeper mathematical structures worth exploring. Further analysis using SnapPy, particularly through commensurability and Dehn surgery relationships, could shed light on their origins and significance.
 %%%%%%%%%%%%%%%%%%%
-\label{eq:numbP}
-
-
-
+% \label{eq:numbP}
+% 
+% 
+% 
 %%%%%%%%%%%%%
-
-\section*{Waring's problem and Reciprocal Polygonal Numbers}
-
-Edward Waring (1736–1798) was an English mathematician known for Waring's problem, which concerns representations of natural numbers as sums of powers. This paper explores a related idea: the behavior of power means applied to the reciprocals of certain polygonal number sequences, particularly \textit{triangular} and \textit{hexagonal} numbers.
-
-The power mean of a sequence \( a_1, a_2, \dots, a_n \) is defined as:
-
-\begin{equation*}
-M_p(a_1, a_2, \dots, a_n) = \left( \frac{1}{n} \sum_{i=1}^{n} a_i^p \right)^{\frac{1}{p}}.
-\end{equation*}
-
-For our purposes, we define the function \( \xi(x) \) as the power mean of the reciprocals of triangular and hexagonal numbers:
-
-\begin{equation*}
-\xi(x) = M_x\left( \frac{1}{T_n}, \frac{1}{H_n} \right),
-\end{equation*}
-
-where:
-\begin{itemize}
-    \item \( T_n = \frac{n(n+1)}{2} \) is the \( n \)th \textit{triangular number}.
-    \item \( H_n = n(2n-1) \) is the \( n \)th \textit{hexagonal number}.
-\end{itemize}
-
-We now analyze the properties of \( \xi(x) \):
-
-\subsection{Small \( x \): Arithmetic and Harmonic Contributions}
-
-For small values of \( x \), the power mean approximates the harmonic mean:
-
-\begin{equation*}
-\xi(0) \approx \frac{2}{\frac{1}{T_n} + \frac{1}{H_n}}.
-\end{equation*}
-
-Since both \( T_n \) and \( H_n \) grow quadratically, the sum of their reciprocals behaves as \( O(n^{-2}) \), leading to:
-
-\begin{equation*}
-\xi(0) \sim \frac{2}{\frac{2}{n^2} + \frac{1}{2n^2}} = O(n^2).
-\end{equation*}
-
-For large \( x \), the power mean is dominated by the larger terms, leading to:
-
-\begin{equation*}
-\xi(x) \approx \left( \frac{1}{2} \left( \frac{1}{T_n}^x + \frac{1}{H_n}^x \right) \right)^{\frac{1}{x}}.
-\end{equation*}
-
-Approximating \( T_n \) and \( H_n \) for large \( n \), we get:
-
-\begin{equation*}
-\xi(x) \sim \left( \frac{1}{2} \left( \frac{2}{n^2}^x + \frac{1}{2n^2}^x \right) \right)^{\frac{1}{x}}.
-\end{equation*}
-
-Since \( \frac{1}{H_n}^x \) grows smaller than \( \frac{1}{T_n}^x \), the function \( \xi(x) \) is asymptotically governed by the triangular number term. Waring's problem asks whether every natural number can be written as a sum of powers of integers:
-
-\begin{equation*}
-N = x_1^k + x_2^k + \dots + x_m^k.
-\end{equation*}
-
-For large \( x \), \( \xi(x) \) represents the \textit{dominant scaling} of reciprocals of polygonal numbers. If we define an additive Waring-type decomposition using polygonal numbers, we conjecture:
-
-\begin{equation*}
-\sum_{i=1}^{m} P_{i,n}^{-x} \sim \sum_{j=1}^{k} x_j^{-x}.
-\end{equation*}
-
-This suggests that sums of inverse polygonal numbers might exhibit number-theoretic structure related to Waring’s problem.
-
+% 
+% \section*{Waring's problem and Reciprocal Polygonal Numbers}
+% 
+% Willard Waring (1736–1798) was an English mathematician known for Waring's problem, which concerns representations of natural numbers as sums of powers. This paper explores a related idea: the behavior of power means applied to the reciprocals of certain polygonal number sequences, particularly \textit{triangular} and \textit{hexagonal} numbers.
+% 
+% The power mean of a sequence \( a_1, a_2, \dots, a_n \) is defined as:
+% 
+% \begin{equation*}
+% M_p(a_1, a_2, \dots, a_n) = \left( \frac{1}{n} \sum_{i=1}^{n} a_i^p \right)^{\frac{1}{p}}.
+% \end{equation*}
+% 
+% For our purposes, we define the function \( \xi(x) \) as the power mean of the reciprocals of triangular and hexagonal numbers:
+% 
+% \begin{equation*}
+% \xi(x) = M_x\left( \frac{1}{T_n}, \frac{1}{H_n} \right),
+% \end{equation*}
+% 
+% where:
+% \begin{itemize}
+%     \item \( T_n = \frac{n(n+1)}{2} \) is the \( n \)th \textit{triangular number}.
+%     \item \( H_n = n(2n-1) \) is the \( n \)th \textit{hexagonal number}.
+% \end{itemize}
+% 
+% We now analyze the properties of \( \xi(x) \):
+% 
+% \subsection{Small \( x \): Arithmetic and Harmonic Contributions}
+% 
+% For small values of \( x \), the power mean approximates the harmonic mean:
+% 
+% \begin{equation*}
+% \xi(0) \approx \frac{2}{\frac{1}{T_n} + \frac{1}{H_n}}.
+% \end{equation*}
+% 
+% Since both \( T_n \) and \( H_n \) grow quadratically, the sum of their reciprocals behaves as \( O(n^{-2}) \), leading to:
+% 
+% \begin{equation*}
+% \xi(0) \sim \frac{2}{\frac{2}{n^2} + \frac{1}{2n^2}} = O(n^2).
+% \end{equation*}
+% 
+% For large \( x \), the power mean is dominated by the larger terms, leading to:
+% 
+% \begin{equation*}
+% \xi(x) \approx \left( \frac{1}{2} \left( \frac{1}{T_n}^x + \frac{1}{H_n}^x \right) \right)^{\frac{1}{x}}.
+% \end{equation*}
+% 
+% Approximating \( T_n \) and \( H_n \) for large \( n \), we get:
+% 
+% \begin{equation*}
+% \xi(x) \sim \left( \frac{1}{2} \left( \frac{2}{n^2}^x + \frac{1}{2n^2}^x \right) \right)^{\frac{1}{x}}.
+% \end{equation*}
+% 
+% Since \( \frac{1}{H_n}^x \) grows smaller than \( \frac{1}{T_n}^x \), the function \( \xi(x) \) is asymptotically governed by the triangular number term. Waring's problem asks whether every natural number can be written as a sum of powers of integers:
+% 
+% \begin{equation*}
+% N = x_1^k + x_2^k + \dots + x_m^k.
+% \end{equation*}
+% 
+% For large \( x \), \( \xi(x) \) represents the \textit{dominant scaling} of reciprocals of polygonal numbers. If we define an additive Waring-type decomposition using polygonal numbers, we conjecture:
+% 
+% \begin{equation*}
+% \sum_{i=1}^{m} P_{i,n}^{-x} \sim \sum_{j=1}^{k} x_j^{-x}.
+% \end{equation*}
+% 
+% This suggests that sums of inverse polygonal numbers might exhibit number-theoretic structure related to Waring’s problem.
+% 
 %%%%%%%%
-\newpage
-
+% \newpage
+% 
+% >>>>>> end of annexed block <<<<<<
 \section*{Bessel Functions, Spherical Harmonics, and Egos}
-A well-worn study filled with chalkboards scrawled with equations, a half-empty bottle of scotch, and an air thick with intellectual rivalry. Edward Willard and Ernest Olber sit across from each other, while Jovannah lounges between them, feigning casual disinterest but secretly enjoying the sparring.
+A well-worn study filled with chalkboards scrawled with equations, a half-empty bottle of scotch, and an air thick with intellectual rivalry. Willard Jones and Ernest Olber sit across from each other, while Jovannah lounges between them, feigning casual disinterest but secretly enjoying the sparring.
 
 Jovannah, stretching lazily, glancing at the notes sprawled over the table: \textit{"Alright, boys, enlighten me—Bessel functions or spherical harmonics? Which one wins in the grand hierarchy of mathematical beauty?"}
 
 \bigskip
 
-Edward Willard, adjusting his glasses with an air of quiet authority: \textit{"It’s hardly a contest, Jovannah. Spherical harmonics are the cornerstone of so many fundamental fields—quantum mechanics, electromagnetism, even the cosmic microwave background."} \newline
+Willard Jones, adjusting his glasses with an air of quiet authority: \textit{"It’s hardly a contest, Jovannah. Spherical harmonics are the cornerstone of so many fundamental fields—quantum mechanics, electromagnetism, even the cosmic microwave background."} \newline
 \textit{"They naturally arise from solving Laplace’s equation in spherical coordinates. The multipole expansion, the elegance of their orthogonality—these are the real building blocks of physics."}
 
 \bigskip
 
-Ernest Olber, smirking, pouring himself another drink: \textit{"Oh, come now, Edward. Always the formalist. But tell me—how do you solve wave propagation in a circular membrane? Bessel functions. How do you handle cylindrical waveguides, optical resonators? Bessel functions."} \newline
+Ernest Olber, smirking, pouring himself another drink: \textit{"Oh, come now, Willard. Always the formalist. But tell me—how do you solve wave propagation in a circular membrane? Bessel functions. How do you handle cylindrical waveguides, optical resonators? Bessel functions."} \newline
 \textit{"Unlike your precious spherical harmonics, Bessel functions emerge from real-world constraints. They govern how vibrations actually behave, not just idealized models of the universe."}
 
 \bigskip
 
-Edward, scoffing, leaning forward: \textit{"Idealized models? Ernest, tell me—when was the last time you tried modeling atomic orbitals using Bessel functions? Or predicting large-scale cosmic anisotropies? Spherical harmonics describe the very structure of the universe."}
+Willard, scoffing, leaning forward: \textit{"Idealized models? Ernest, tell me—when was the last time you tried modeling atomic orbitals using Bessel functions? Or predicting large-scale cosmic anisotropies? Spherical harmonics describe the very structure of the universe."}
 
 \bigskip
 
@@ -890,11 +906,11 @@ Jovannah, finally looking up, amusement playing at her lips: \textit{"You two ar
 
 \bigskip
 
-Edward, narrowing his eyes, muttering: \textit{"That’s beside the point…"}
+Willard, narrowing his eyes, muttering: \textit{"That’s beside the point…"}
 
 \bigskip
 
-Ernest, grinning: \textit{"No, it’s exactly the point. And admit it, Edward—you don’t actually hate Bessel functions. You just can’t stand that they’re just as important as your precious harmonics."}
+Ernest, grinning: \textit{"No, it’s exactly the point. And admit it, Willard—you don’t actually hate Bessel functions. You just can’t stand that they’re just as important as your precious harmonics."}
 
 \bigskip
 
@@ -903,13 +919,13 @@ Jovannah, crossing her arms, feigning contemplation: \textit{"Well, personally, 
 
 \bigskip
 
-Edward sighs, Ernest chuckles, and Jovannah leans back, satisfied. The debate will never end, but that’s exactly why it’s worth having.
+Willard sighs, Ernest chuckles, and Jovannah leans back, satisfied. The debate will never end, but that’s exactly why it’s worth having.
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{On Cosmic Multipoles and Charge Moments}
 
-Edward Willard: 
-"Alright, Ernest, I understand that the CMB power spectrum represents temperature fluctuations across the sky, but I keep thinking about multipoles in the context of electrostatics—dipoles, quadrupoles, and so on. Can we think of these CMB multipoles in the same way?"
+Willard Jones: 
+"Alright, Ernest, I understand that the CMB power spectrum represents temperature fluctuations across the sky, but I keep thinking about multipoles in the context of electrostatics: those dipoles, quadrupoles, and so on. Can we think of these CMB multipoles in the same way?"
 
 Ernest:
 "Ah, now you are thinking like a true physicist! Yes, indeed, the multipoles in the CMB power spectrum are much like the multipole moments of a charge distribution. Let me explain."
@@ -928,7 +944,7 @@ Ernest:
 
 "Just as a charge dipole introduces a directional variation in an electric field, the CMB dipole introduces a directional variation in temperature due to our motion."
 
-Edward nods. "So the dipole is just a shift due to motion. What about the first real structure in the fluctuations?"
+Willard nods. "So the dipole is just a shift due to motion. What about the first real structure in the fluctuations?"
 
 "That," Ernest says, "is the quadrupole. In electrostatics, a quadrupole consists of two dipoles arranged oppositely. The resulting field is more complex—it has a characteristic ‘two-axis’ structure rather than a simple directional shift."
 
@@ -942,7 +958,7 @@ Edward nods. "So the dipole is just a shift due to motion. What about the first 
 
 "Thus, just as a charge quadrupole introduces a more structured variation in an electric field, the CMB quadrupole describes the first hints of the universe’s large-scale structure."
 
-Edward ponders. "So just like how a dipole in a charge system represents a charge separation, the CMB dipole represents motion? And just like how a quadrupole represents opposite dipoles, the CMB quadrupole represents the largest real temperature fluctuations?"
+Willard ponders. "So just like how a dipole in a charge system represents a charge separation, the CMB dipole represents motion? And just like how a quadrupole represents opposite dipoles, the CMB quadrupole represents the largest real temperature fluctuations?"
 
 "Precisely!" Ernest exclaims. "And this pattern continues to higher multipoles. Just as higher-order charge moments describe increasingly fine details of a charge distribution, higher-order CMB multipoles describe increasingly small-scale temperature variations in the early universe."
 
@@ -962,7 +978,7 @@ Edward ponders. "So just like how a dipole in a charge system represents a charg
     \item Higher multipoles (\(\ell > 2\)) describe small-scale temperature fluctuations.
 \end{itemize}
 
-"But why multipoles?" Edward asks. "How do they emerge mathematically?"
+"But why multipoles?" Willard asks. "How do they emerge mathematically?"
 
 "Multipoles come from spherical harmonics \( Y_{\ell m}(\theta, \phi) \), which are the spherical analog of Fourier modes. The wave number \( k \) in flat space corresponds to \( \ell \) in spherical space, with \( k \sim 1/\lambda \) and \( \ell \sim 1/\theta \)."
 
@@ -989,7 +1005,7 @@ Edward ponders. "So just like how a dipole in a charge system represents a charg
 
 "So, Willard," Ernest concludes, "do you see the deeper connection? The CMB multipoles are not just Fourier-like wavenumbers—they are the charge moment decomposition of the entire cosmos! The same mathematical structures that describe charge distributions also describe the temperature distribution of the early universe."
 
-Edward's eyes widen. "The universe itself is like an electric field, carrying an imprint of its earliest fluctuations!"
+Willard's eyes widen. "The universe itself is like an electric field, carrying an imprint of its earliest fluctuations!"
 
 "Precisely!" Ernest grins. "Just as charge multipoles encode the structure of an electrostatic field, the CMB multipoles encode the primordial ripples that shaped the entire cosmos."
 
@@ -1002,39 +1018,39 @@ We are in a dimly lit private club in Vienna. A blackboard stands between them, 
 
 \bigskip
 
-Jovannah, swirling her drink lazily: \textit{"So tell me, gentlemen—who exactly owns the truth in mathematics? The one who discovers it first, or the one who understands it best?"}
+Jovannah, swirling her drink lazily: \textit{"So tell me, gentlemen: who is it exactly that owns the truth in mathematics? The one who discovers it first, or the one who understands it best?"}
 
 \bigskip
 
-Edward, without hesitation: \textit{"Truth is not owned. It is grasped. By those willing to chase it with absolute clarity."} He gestures toward the board, eyes narrowed. \textit{"Rigor, derivation, proof—that is the only measure of understanding."}
+Willard, without hesitation: \textit{"Truth is not owned, but grasped. By those willing to chase it with absolute clarity."} He gestures toward the board, eyes narrowed. \textit{"Rigor, derivation, and proof is the only measure of true understanding."}
 
 \bigskip
 
-Ernest, leaning back, smirking: \textit{"Ah, but clarity is an illusion, Edward. Mathematics is as much about intuition as it is about proof. You can’t sit around proving every step when the world moves at the speed of light. Sometimes you leap. Sometimes you trust your instincts."}
+Ernest, smirking: \textit{"Ah, but clarity is an illusion, Willard. Mathematics is as much about intuition as it is about proof. You can’t sit around proving every step when the world moves at the speed of light. Sometimes you leap. Sometimes you trust your instincts."}
 
 \bigskip
 
-Edward, scoffing: \textit{"Ah, ‘intuition.’ A fine excuse for sloppiness. That’s how we get half-baked physics papers masquerading as mathematics. That’s how errors creep in, how rigor is abandoned for convenience."}
+Willard, scoffing: \textit{"Ah, ‘intuition.’ A fine excuse for sloppiness. That’s how we get your half-baked physics papers masquerading as mathematics. That’s how errors creep in, how rigor is abandoned for convenience."}
 
 \bigskip
 
-Ernest, amused: \textit{"Yes, yes. And yet, whose work has applications beyond pure abstraction? Yours, trapped in a world of ideals? Or mine, where the equations breathe in reality, shaping actual phenomena?"} He taps the board. \textit{"These harmonics? They aren’t just pretty functions. They dictate how sound waves move, how galaxies form. They \textbf{do} something, Edward."}
+Ernest, riled and amused in equal portions: \textit{"Yes, yes. And yet, whose work has applications beyond pure abstraction? Yours, trapped in a world of ideals? Or mine, where the equations breathe in reality, shaping actual phenomena?"} He taps the board. \textit{"These harmonics? They aren’t just pretty functions. They dictate how sound waves move, how galaxies form. They \textbf{do} something, Willard."}
 
 \bigskip
 
-Edward, coolly: \textit{"And you think that justifies sloppy thinking? That the mere presence of applicability validates any loose approximation you see fit to take?"}
+Willard, feigning coolness: \textit{"And you think that justifies sloppy thinking? That the mere presence of applicability validates any loose approximation you see fit to take?"}
 
 \bigskip
 
-Ernest, grinning: \textit{"It justifies the fact that I don’t waste my time chasing ghosts. You hide in the ivory tower because you fear being wrong. I build models because I know we must be."}
+Ernest, feigning grinning: \textit{"It justifies the fact that I don’t waste my time chasing ghosts. You hide in the ivory tower because you fear being wrong. I build models because I know we must be."}
 
 \bigskip
 
-Jovannah, leaning forward, eyes glinting: \textit{"So what we have here is the eternal struggle. Das Ein and Das Man."} She gestures grandly. \textit{"Edward, the idealist, the one who seeks truth without compromise, without shortcuts, who would rather be alone with his principles than risk contamination by the crowd."}
+Jovannah, eyes a glinting: \textit{"So what we have here is the eternal struggle. Das Ein and Das Man."} She gestures grandly. \textit{"Willard, the idealist, the one who seeks truth without compromise, without shortcuts, who would rather be alone with his principles than risk contamination by the crowd."}
 
 \bigskip
 
-Edward, blinking, uncertain: \textit{"That’s not—"}
+Willard, blinking, uncertain: \textit{"That’s not—"}
 
 \bigskip
 
@@ -1050,7 +1066,7 @@ Jovannah, slyly: \textit{"But tell me, gentlemen. Who is freer? The man who hold
 
 \bigskip
 
-Silence. Edward stares at the board. Ernest swirls his glass.
+Silence. Willard stares at the board. Ernest swirls his glass.
 
 \bigskip
 
@@ -1058,311 +1074,330 @@ Jovannah, with a triumphant little smile: \textit{"What’s the matter? You both
 
 \bigskip
 
-Edward tightens his grip on the chalk. Ernest takes another sip of whiskey. Neither speaks.
+Willard tightens his grip on the chalk. Ernest takes another sip of whiskey. Neither speaks.
 
 \bigskip
 
-\textit{And Jovannah, knowing she has won a far greater game than mathematics, sits back and enjoys the moment.}
+\textit{And Jovannah, knowing she has won a far greater game than mathematics, sits back drinking in her moment.} Ernest takes his leave.
 
-Ernest takes his leave.
+\smallskip
 
+% >>>>>> ANNEX D (cut-sheet v2): spherical harmonics, isoperimetric multipoles and the power mean of the CMB — block commented out below, pointer left in text <<<<<<
+\textit{(Spherical harmonics, isoperimetric multipoles and the power mean of the CMB --- the full working is set out in Annexe D.)}
 
-
-\section*{postscript}
-
-In mathematical physics, wave-like phenomena arise in different coordinate systems. Spherical harmonics describe angular oscillations on a sphere, while Bessel functions describe wave behavior in a circular domain and are essential in cosmology, acoustics, and quantum mechanics. The computational notebook \texttt{sphericalHarmonicsBessel.ipynb}, generates a direct comparison between these two types of wave solutions.
-
-\subsection*{Spherical Harmonics: Waves on a Sphere}
-
-Spherical harmonics solve Laplace’s equation in spherical coordinates:
-
-\begin{equation*}
-\nabla^2 Y_{\ell m}(\theta, \phi) + \lambda Y_{\ell m}(\theta, \phi) = 0.
-\end{equation*}
-
-where:
-\begin{itemize}
-    \item \( Y_{\ell m}(\theta, \phi) \) is the \textit{angular wave function}.
-    \item \( \ell \) is the \textit{multipole order} (controlling the number of oscillations).
-    \item \( m \) defines \textit{azimuthal variation}.
-\end{itemize}
-
-Spherical harmonics appear in:
-\begin{itemize}
-    \item \textit{Cosmology}: Decomposing CMB fluctuations into multipoles.
-    \item \textit{Quantum mechanics}: Hydrogen atom wavefunctions.
-    \item \textit{Electromagnetism}: Antenna radiation patterns.
-\end{itemize}
-
-\noindent
-The Python notebook \href{https://colab.research.google.com/drive/1HfLGmZaRxY35ensuy9kB1iPafmy6Qd7R?usp=sharing}{sphericalHamrmonicsBessel.ipynb} implements the following code to generate a visualization of the quadrupole spherical harmonic \( Y_2^0 \):
-
-\begin{lstlisting}
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.special import sph_harm
-
-# Generate grid for spherical harmonics
-theta = np.linspace(0, np.pi, 100)  # Polar angle
-phi = np.linspace(0, 2 * np.pi, 100)  # Azimuthal angle
-theta, phi = np.meshgrid(theta, phi)
-
-# Compute spherical harmonics Y_2^0 (quadrupole mode)
-Y20 = np.abs(sph_harm(0, 2, phi, theta))
-\end{lstlisting}
-
-This creates a 2D projection of the spherical harmonic function. The quadrupole mode (\(\ell = 2\)) represents the large-scale anisotropies seen in the cosmic microwave background.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\textwidth]{Illustrations/sphericalHarmonics.png}
-    \caption{\textbf{Spherical Harmonics} versus \textbf{Circular Harmonics (Bessel Functions)}}.    
-    \label{fig:spherical_circular_harmonics}
-\end{figure}
-
-The left plot shows the \textbf{spherical harmonic} \( Y_2^0 \) (quadrupole mode), which describes wave-like oscillations on a \textbf{sphere}. These harmonics are used in \textbf{CMB temperature fluctuations} and \textbf{quantum wavefunctions}.
-The right plot shows the \textbf{circular harmonic} based on the \textbf{Bessel function} \( J_2 \), representing standing waves in a \textbf{circular boundary} (e.g., vibrating drum modes).
-Both illustrate how \textbf{harmonic structures emerge in different coordinate systems}—spherical for full 3D waves and circular for confined radial systems.
+% \section*{postscript}
+% 
+% In mathematical physics, wave-like phenomena arise in different coordinate systems. Spherical harmonics describe angular oscillations on a sphere, while Bessel functions describe wave behavior in a circular domain and are essential in cosmology, acoustics, and quantum mechanics. The computational notebook \texttt{sphericalHarmonicsBessel.ipynb}, generates a direct comparison between these two types of wave solutions.
+% 
+% \subsection*{Spherical Harmonics: Waves on a Sphere}
+% 
+% Spherical harmonics solve Laplace’s equation in spherical coordinates:
+% 
+% \begin{equation*}
+% \nabla^2 Y_{\ell m}(\theta, \phi) + \lambda Y_{\ell m}(\theta, \phi) = 0.
+% \end{equation*}
+% 
+% where:
+% \begin{itemize}
+%     \item \( Y_{\ell m}(\theta, \phi) \) is the \textit{angular wave function}.
+%     \item \( \ell \) is the \textit{multipole order} (controlling the number of oscillations).
+%     \item \( m \) defines \textit{azimuthal variation}.
+% \end{itemize}
+% 
+% Spherical harmonics appear in:
+% \begin{itemize}
+%     \item \textit{Cosmology}: Decomposing CMB fluctuations into multipoles.
+%     \item \textit{Quantum mechanics}: Hydrogen atom wavefunctions.
+%     \item \textit{Electromagnetism}: Antenna radiation patterns.
+% \end{itemize}
+% 
+% \noindent
+% The Python notebook \href{https://colab.research.google.com/drive/1HfLGmZaRxY35ensuy9kB1iPafmy6Qd7R?usp=sharing}{sphericalHamrmonicsBessel.ipynb} implements the following code to generate a visualization of the quadrupole spherical harmonic \( Y_2^0 \):
+% 
+% \begin{lstlisting}
+% import numpy as np
+% import matplotlib.pyplot as plt
+% from scipy.special import sph_harm
+% 
+% # Generate grid for spherical harmonics
+% theta = np.linspace(0, np.pi, 100)  # Polar angle
+% phi = np.linspace(0, 2 * np.pi, 100)  # Azimuthal angle
+% theta, phi = np.meshgrid(theta, phi)
+% 
+% # Compute spherical harmonics Y_2^0 (quadrupole mode)
+% Y20 = np.abs(sph_harm(0, 2, phi, theta))
+% \end{lstlisting}
+% 
+% This creates a 2D projection of the spherical harmonic function. The quadrupole mode (\(\ell = 2\)) represents the large-scale anisotropies seen in the cosmic microwave background.
+% 
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=1.0\textwidth]{Illustrations/sphericalHarmonics.png}
+%     \caption{\textbf{Spherical Harmonics} versus \textbf{Circular Harmonics (Bessel Functions)}}.    
+%     \label{fig:spherical_circular_harmonics}
+% \end{figure}
+% 
+% The left plot shows the \textbf{spherical harmonic} \( Y_2^0 \) (quadrupole mode), which describes wave-like oscillations on a \textbf{sphere}. These harmonics are used in \textbf{CMB temperature fluctuations} and \textbf{quantum wavefunctions}.
+% The right plot shows the \textbf{circular harmonic} based on the \textbf{Bessel function} \( J_2 \), representing standing waves in a \textbf{circular boundary} (e.g., vibrating drum modes).
+% Both illustrate how \textbf{harmonic structures emerge in different coordinate systems}—spherical for full 3D waves and circular for confined radial systems.
 % \section{Bessel Functions: Waves in a Circular Domain}
-
-Bessel functions \( J_n(r) \) satisfy the differential equation:
-
-\begin{equation*}
-r^2 \frac{d^2 J_n}{dr^2} + r \frac{d J_n}{dr} + (r^2 - n^2) J_n = 0.
-\end{equation*}
-
-They describe standing wave solutions in circular systems, such as:
-\begin{itemize}
-    \item Vibrations of a drum membrane.
-    \item Modes in optical waveguides.
-    \item Radial solutions of the Schrödinger equation in cylindrical symmetry.
-\end{itemize}
-
-The Python notebook \href{https://colab.research.google.com/drive/1HfLGmZaRxY35ensuy9kB1iPafmy6Qd7R?usp=sharing}{sphericalHamrmonicsBessel.ipynb} also generates circular harmonics using Bessel functions:
-
-\begin{lstlisting}
-from scipy.special import jn
-
-# Generate grid for circular harmonics (Bessel functions)
-r = np.linspace(0, 1, 100)  # Radial coordinate
-theta_circ = np.linspace(0, 2 * np.pi, 100)  # Angular coordinate
-r, theta_circ = np.meshgrid(r, theta_circ)
-
-# Compute circular harmonic using Bessel function J_2
-J2 = jn(2, 5 * r) * np.cos(2 * theta_circ)
-\end{lstlisting}
-
-Here, \( J_2(kr) \) describes the **radial wave structure**, while \( \cos(2\theta) \) captures the **angular variation**. The result resembles standing wave patterns on a circular drum.
-
-\subsection*{The Analogy: Spherical vs. Circular Harmonics}
-
-Comparing spherical harmonics (waves on a sphere) and Bessel functions (waves on a disk) we have:
-
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{Feature} & \textbf{Spherical Harmonics} & \textbf{Circular Harmonics} \\
-\hline
-\textbf{Domain} & Sphere & Circular disk \\
-\hline
-\textbf{Equation} & Laplace's equation in 3D & Helmholtz equation in 2D \\
-\hline
-\textbf{Radial Part} & Spherical Bessel function \( j_\ell(r) \) & Bessel function \( J_n(r) \) \\
-\hline
-\textbf{Angular Part} & \( Y_{\ell m}(\theta, \phi) \) & \( e^{i n \theta} \) or \( \cos(n \theta) \) \\
-\hline
-\textbf{Examples} & CMB multipoles, orbitals & drum, optical waveguides \\
-\hline
-\end{tabular}
-\end{center}
-
-In cosmology, spherical harmonics are used to describe the temperature fluctuations in the cosmic microwave background (CMB). These fluctuations are decomposed into multipoles \( \ell \), much like how musical tones can be decomposed into harmonics.
-
-Similarly, circular harmonics describe standing waves in a vibrating drum, governed by Bessel functions. If we replace the perfect circular boundary with a polygonal inscribed shape, we can approximate how different wave modes behave in more constrained geometries.
-
-\section*{Isoperimetric Problem and CMB Multipoles}
-
-The \textit{isoperimetric problem} determines the shape that maximizes area for a given perimeter for which the circle is the optimal solution, as it encloses the maximum area for a given boundary length. Consider a sequence of regular polygons (triangle, square, pentagon, etc.) inscribed inside a circle.
-\begin{itemize}
-    \item As the number of sides increases, the polygon approaches a perfect circle, just as higher-order Fourier expansions approximate a function more precisely.
-    \item If we impose a \textit{wave equation} (analogous to drum vibrations) inside these polygons, we get a set of \textit{eigenmodes}.
-    \item The vibrational patterns of these polygons start behaving more and more like those of a circular drum as the number of sides increases.
-\end{itemize}
-
-Thus, wave solutions inside an inscribed polygon approximate Bessel function solutions of a circular drum, which in turn relate to spherical harmonics. A visualization of this concept, is realised in the following Python code, \texttt{polygonHarmonics.ipynb}:
-
-\begin{lstlisting}
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.special import jn
-
-# Function to generate polygon boundary points
-def polygon_boundary(sides, radius=1, num_points=100):
-    angles = np.linspace(0, 2 * np.pi, sides + 1)
-    x = radius * np.cos(angles)
-    y = radius * np.sin(angles)
-    return x, y
-
-polygon_sides = [3, 5, 7, 10]  # Triangle, pentagon, heptagon, decagon
-
-# Create figure for visualization
-fig, axes = plt.subplots(1, len(polygon_sides), figsize=(12, 4))
-
-# Generate polar grid
-r = np.linspace(0, 1, 100)
-theta = np.linspace(0, 2 * np.pi, 100)
-r, theta = np.meshgrid(r, theta)
-
-# Generate circular wave pattern using Bessel function
-wave_pattern = jn(0, 5 * r) * np.cos(2 * theta)  # A simple standing wave pattern
-\end{lstlisting}
-
-\subsection*{Connection to CMB Multipoles}
-
-In the \textit{CMB power spectrum}, multipoles (\(\ell\)) describe temperature fluctuations on a sphere.
-\begin{itemize}
-    \item The higher the multipole (\(\ell\)), the smaller the structures being resolved—just like how inscribed polygons better approximate a circle as more sides are added.
-    \item If we model wave harmonics inside inscribed polygons, the mode structure becomes more complex with increasing sides.
-    \item This is analogous to higher \(\ell\) values in the CMB power spectrum, which represent finer fluctuations.
-\end{itemize}
-
+% 
+% Bessel functions \( J_n(r) \) satisfy the differential equation:
+% 
+% \begin{equation*}
+% r^2 \frac{d^2 J_n}{dr^2} + r \frac{d J_n}{dr} + (r^2 - n^2) J_n = 0.
+% \end{equation*}
+% 
+% They describe standing wave solutions in circular systems, such as:
+% \begin{itemize}
+%     \item Vibrations of a drum membrane.
+%     \item Modes in optical waveguides.
+%     \item Radial solutions of the Schrödinger equation in cylindrical symmetry.
+% \end{itemize}
+% 
+% The Python notebook \href{https://colab.research.google.com/drive/1HfLGmZaRxY35ensuy9kB1iPafmy6Qd7R?usp=sharing}{sphericalHamrmonicsBessel.ipynb} also generates circular harmonics using Bessel functions:
+% 
+% \begin{lstlisting}
+% from scipy.special import jn
+% 
+% # Generate grid for circular harmonics (Bessel functions)
+% r = np.linspace(0, 1, 100)  # Radial coordinate
+% theta_circ = np.linspace(0, 2 * np.pi, 100)  # Angular coordinate
+% r, theta_circ = np.meshgrid(r, theta_circ)
+% 
+% # Compute circular harmonic using Bessel function J_2
+% J2 = jn(2, 5 * r) * np.cos(2 * theta_circ)
+% \end{lstlisting}
+% 
+% Here, \( J_2(kr) \) describes the **radial wave structure**, while \( \cos(2\theta) \) captures the **angular variation**. The result resembles standing wave patterns on a circular drum.
+% 
+% \subsection*{The Analogy: Spherical vs. Circular Harmonics}
+% 
+% Comparing spherical harmonics (waves on a sphere) and Bessel functions (waves on a disk) we have:
+% 
+% \begin{center}
+% \begin{tabular}{|c|c|c|}
+% \hline
+% \textbf{Feature} & \textbf{Spherical Harmonics} & \textbf{Circular Harmonics} \\
+% \hline
+% \textbf{Domain} & Sphere & Circular disk \\
+% \hline
+% \textbf{Equation} & Laplace's equation in 3D & Helmholtz equation in 2D \\
+% \hline
+% \textbf{Radial Part} & Spherical Bessel function \( j_\ell(r) \) & Bessel function \( J_n(r) \) \\
+% \hline
+% \textbf{Angular Part} & \( Y_{\ell m}(\theta, \phi) \) & \( e^{i n \theta} \) or \( \cos(n \theta) \) \\
+% \hline
+% \textbf{Examples} & CMB multipoles, orbitals & drum, optical waveguides \\
+% \hline
+% \end{tabular}
+% \end{center}
+% 
+% In cosmology, spherical harmonics are used to describe the temperature fluctuations in the cosmic microwave background (CMB). These fluctuations are decomposed into multipoles \( \ell \), much like how musical tones can be decomposed into harmonics.
+% 
+% Similarly, circular harmonics describe standing waves in a vibrating drum, governed by Bessel functions. If we replace the perfect circular boundary with a polygonal inscribed shape, we can approximate how different wave modes behave in more constrained geometries.
+% 
+% \section*{Isoperimetric Problem and CMB Multipoles}
+% 
+% The \textit{isoperimetric problem} determines the shape that maximizes area for a given perimeter for which the circle is the optimal solution, as it encloses the maximum area for a given boundary length. Consider a sequence of regular polygons (triangle, square, pentagon, etc.) inscribed inside a circle.
+% \begin{itemize}
+%     \item As the number of sides increases, the polygon approaches a perfect circle, just as higher-order Fourier expansions approximate a function more precisely.
+%     \item If we impose a \textit{wave equation} (analogous to drum vibrations) inside these polygons, we get a set of \textit{eigenmodes}.
+%     \item The vibrational patterns of these polygons start behaving more and more like those of a circular drum as the number of sides increases.
+% \end{itemize}
+% 
+% Thus, wave solutions inside an inscribed polygon approximate Bessel function solutions of a circular drum, which in turn relate to spherical harmonics. A visualization of this concept, is realised in the following Python code, \texttt{polygonHarmonics.ipynb}:
+% 
+% \begin{lstlisting}
+% import numpy as np
+% import matplotlib.pyplot as plt
+% from scipy.special import jn
+% 
+% # Function to generate polygon boundary points
+% def polygon_boundary(sides, radius=1, num_points=100):
+%     angles = np.linspace(0, 2 * np.pi, sides + 1)
+%     x = radius * np.cos(angles)
+%     y = radius * np.sin(angles)
+%     return x, y
+% 
+% polygon_sides = [3, 5, 7, 10]  # Triangle, pentagon, heptagon, decagon
+% 
+% # Create figure for visualization
+% fig, axes = plt.subplots(1, len(polygon_sides), figsize=(12, 4))
+% 
+% # Generate polar grid
+% r = np.linspace(0, 1, 100)
+% theta = np.linspace(0, 2 * np.pi, 100)
+% r, theta = np.meshgrid(r, theta)
+% 
+% # Generate circular wave pattern using Bessel function
+% wave_pattern = jn(0, 5 * r) * np.cos(2 * theta)  # A simple standing wave pattern
+% \end{lstlisting}
+% 
+% \subsection*{Connection to CMB Multipoles}
+% 
+% In the \textit{CMB power spectrum}, multipoles (\(\ell\)) describe temperature fluctuations on a sphere.
+% \begin{itemize}
+%     \item The higher the multipole (\(\ell\)), the smaller the structures being resolved—just like how inscribed polygons better approximate a circle as more sides are added.
+%     \item If we model wave harmonics inside inscribed polygons, the mode structure becomes more complex with increasing sides.
+%     \item This is analogous to higher \(\ell\) values in the CMB power spectrum, which represent finer fluctuations.
+% \end{itemize}
+% 
 % \subsection{Analogy Table: Polygon Model vs. CMB Multipoles}
-
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{Concept} & \textbf{Polygon boundary} & \textbf{CMB Spherical Harmonics} \\
-\hline
-\textbf{Low resolution} & Triangle/Square & Low-\(\ell\) modes (large-scale fluct.) \\
-\hline
-\textbf{medium detail} & Pentagons, hexagons & Mid-range \(\ell\) (1st \& 2nd acoustic peaks) \\
-\hline
-\textbf{High precision} & Near-circular polygon & High-\(\ell\) modes (small-scale fluct.) \\
-\hline
-\end{tabular}
-\end{center}
-
-Just as higher multipoles refine the resolution of CMB fluctuations**, polygons with increasing sides refine the approximation of circular wave harmonics.
-
-\subsection*{Physical Interpretation: Finite vs. Continuous Symmetry}
-
-\begin{itemize}
-    \item Spherical harmonics assume perfect isotropy (a continuous circular/spherical boundary).
-    \item Inscribed polygons introduce discrete symmetry, meaning they approximate isotropy but impose boundary constraints.
-    \item In cosmology, something similar occurs: the early universe is scale invariant but not perfectly isotropic, but we approximate it as a smooth sphere.
-    \item Deviations from a perfect sphere in the early universe (caused by cosmic topology, defects, or anisotropies) could behave analogously to wave solutions inside inscribed polygons.
-\end{itemize}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\textwidth]{Illustrations/isoperimetric.png}
-    \caption{Harmonics of isoperimetric variations of circumscribed polygons }.    
-    \label{fig:isoperim_circular_harmonics}
-\end{figure}
-
-Using \href{https://colab.research.google.com/drive/117vRkBuC6_I1LXmIg_1VPUvSmp7X5zjV?usp=sharing}{polygonBessel.ipynb}, we generate wave solutions for different polygon boundaries:
-
-\begin{lstlisting}
-for i, sides in enumerate(polygon_sides):
-    # Get polygon boundary
-    x_poly, y_poly = polygon_boundary(sides)
-    
-    # Plot wave pattern
-    ax = axes[i]
-    contour = ax.contourf(r * np.cos(theta), r * np.sin(theta), wave_pattern, cmap="viridis", alpha=0.7)
-    
-    # Overlay polygon boundary
-    ax.plot(x_poly, y_poly, color='white', linewidth=2)
-    
-    ax.set_xticks([])
-    ax.set_yticks([])
-    ax.set_aspect('equal')
-    ax.set_title(f"{sides}-Sided Polygon")
-\end{lstlisting}
-
-This produces a set of vibrational modes, showing the transition from discrete symmetry (polygon) to continuous symmetry (circle).
-
+% 
+% \begin{center}
+% \begin{tabular}{|c|c|c|}
+% \hline
+% \textbf{Concept} & \textbf{Polygon boundary} & \textbf{CMB Spherical Harmonics} \\
+% \hline
+% \textbf{Low resolution} & Triangle/Square & Low-\(\ell\) modes (large-scale fluct.) \\
+% \hline
+% \textbf{medium detail} & Pentagons, hexagons & Mid-range \(\ell\) (1st \& 2nd acoustic peaks) \\
+% \hline
+% \textbf{High precision} & Near-circular polygon & High-\(\ell\) modes (small-scale fluct.) \\
+% \hline
+% \end{tabular}
+% \end{center}
+% 
+% Just as higher multipoles refine the resolution of CMB fluctuations**, polygons with increasing sides refine the approximation of circular wave harmonics.
+% 
+% \subsection*{Physical Interpretation: Finite vs. Continuous Symmetry}
+% 
+% \begin{itemize}
+%     \item Spherical harmonics assume perfect isotropy (a continuous circular/spherical boundary).
+%     \item Inscribed polygons introduce discrete symmetry, meaning they approximate isotropy but impose boundary constraints.
+%     \item In cosmology, something similar occurs: the early universe is scale invariant but not perfectly isotropic, but we approximate it as a smooth sphere.
+%     \item Deviations from a perfect sphere in the early universe (caused by cosmic topology, defects, or anisotropies) could behave analogously to wave solutions inside inscribed polygons.
+% \end{itemize}
+% 
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=1.0\textwidth]{Illustrations/isoperimetric.png}
+%     \caption{Harmonics of isoperimetric variations of circumscribed polygons }.    
+%     \label{fig:isoperim_circular_harmonics}
+% \end{figure}
+% 
+% Using \href{https://colab.research.google.com/drive/117vRkBuC6_I1LXmIg_1VPUvSmp7X5zjV?usp=sharing}{polygonBessel.ipynb}, we generate wave solutions for different polygon boundaries:
+% 
+% \begin{lstlisting}
+% for i, sides in enumerate(polygon_sides):
+%     # Get polygon boundary
+%     x_poly, y_poly = polygon_boundary(sides)
+%     
+%     # Plot wave pattern
+%     ax = axes[i]
+%     contour = ax.contourf(r * np.cos(theta), r * np.sin(theta), wave_pattern, cmap="viridis", alpha=0.7)
+%     
+%     # Overlay polygon boundary
+%     ax.plot(x_poly, y_poly, color='white', linewidth=2)
+%     
+%     ax.set_xticks([])
+%     ax.set_yticks([])
+%     ax.set_aspect('equal')
+%     ax.set_title(f"{sides}-Sided Polygon")
+% \end{lstlisting}
+% 
+% This produces a set of vibrational modes, showing the transition from discrete symmetry (polygon) to continuous symmetry (circle).
+% 
 %%%%%%%%%%%%%%%%%
-\section{The Power Mean of the CMB and \(\zeta(3)\)}
-
-The CMB power spectrum describes how temperature fluctuations vary across different angular scales, typically expressed as:
-
-\begin{equation}
-C_\ell \propto \left\langle |a_{\ell m}|^2 \right\rangle,
-\end{equation}
-
-where:
-\begin{itemize}
-    \item \( C_\ell \) is the power at angular scale \( \ell \).
-    \item \( a_{\ell m} \) are spherical harmonic coefficients that encode temperature fluctuations.
-\end{itemize}
-
-The power spectrum is typically plotted as \( \ell(\ell+1)C_\ell \) vs. \( \ell \), highlighting features such as the \textit{acoustic peaks}.
-
-\subsection*{Power Mean of CMB Frequencies}
-
-The CMB consists of radiation at different frequencies \( \nu \), with each frequency contributing a different amount of power. A useful way to summarize this is via the \textit{power mean}:
-
-\begin{equation*}
-P_p (\nu_1, \nu_2, \dots, \nu_n) =
-\left( \frac{1}{n} \sum_{i=1}^{n} P(\nu_i)^p \right)^{\frac{1}{p}}.
-\end{equation*}
-
-Here:
-\begin{itemize}
-    \item \( P(\nu) \) is the spectral power density at frequency \( \nu \).
-    \item The exponent \( p \) controls the weighting of different frequencies:
-    \begin{itemize}
-        \item \( p=1 \) gives the \textit{arithmetic mean} (linear power averaging).
-        \item \( p=2 \) gives the \textit{quadratic mean} (RMS power).
-        \item \( p \to -\infty \) emphasizes low-frequency contributions.
-        \item \( p \to \infty \) emphasizes high-frequency contributions.
-    \end{itemize}
-\end{itemize}
-
-The power at each frequency follows the Planck intensity spectrum:
-
-\begin{equation*}
-I_\nu = \frac{2h\nu^3}{c^2} \frac{1}{e^{h\nu / k_B T} - 1},
-\end{equation*}
-
-which governs how radiation is distributed across frequencies.For a blackbody radiation field, the photon number density is given by:
-
-\begin{equation*}
-n_\gamma = \frac{16 \pi \zeta(3) (k_B T)^3}{(hc)^3}.
-\end{equation*}
-
-This result emerged from the integral:
-
-\begin{equation*}
-\int_0^\infty \frac{x^2}{e^x - 1} \, dx = 2 \zeta(3).
-\end{equation*}
-
-Since \(\zeta(3)\) arises from the integral of the Bose-Einstein distribution, we see that it encodes how photon number density scales with temperature. Similarly, the \textit{energy density} is:
-
-\begin{equation*}
-\rho_\gamma = \mathcal{A} T^4, \quad \text{where} \quad \mathcal{A} = \frac{4 \sigma}{c}.
-\end{equation*}
-
-Here, \(\zeta(4)\) (which appears in the Stefan-Boltzmann law) arises from:
-
-\begin{equation*}
-\int_0^\infty \frac{x^3}{e^x - 1} \, dx = 6 \zeta(4).
-\end{equation*}
-
-We see that the \textit{mean photon energy} is given by:
-
-\begin{equation*}
-\langle E_\gamma \rangle = \frac{\rho_\gamma}{n_\gamma} = \frac{\zeta(4)}{\zeta(3)} k_B T.
-\end{equation*}
-
-Since \(\zeta(4)/\zeta(3)\) behaves as a ratio of two integrals, it suggests an effective power mean weighting over photon energies. To generalize, if we define a power mean for \textit{photon energy densities}, we obtain:
-
-\begin{equation*}
-\mathcal{P}_p = \left( \frac{1}{n} \sum_{\nu} I_\nu^p \right)^{\frac{1}{p}}.
-\end{equation*}
-
-For certain choices of \( p \), this leads naturally to expressions involving \(\zeta(n)\) values, meaning that the statistical structure of the photon distribution already encodes the power mean structure implicitly.
+% \section{The Power Mean of the CMB and \(\zeta(3)\)}
+% 
+% The CMB power spectrum describes how temperature fluctuations vary across different angular scales, typically expressed as:
+% 
+% \begin{equation}
+% C_\ell \propto \left\langle |a_{\ell m}|^2 \right\rangle,
+% \end{equation}
+% 
+% where:
+% \begin{itemize}
+%     \item \( C_\ell \) is the power at angular scale \( \ell \).
+%     \item \( a_{\ell m} \) are spherical harmonic coefficients that encode temperature fluctuations.
+% \end{itemize}
+% 
+% The power spectrum is typically plotted as \( \ell(\ell+1)C_\ell \) vs. \( \ell \), highlighting features such as the \textit{acoustic peaks}.
+% 
+% \subsection*{Power Mean of CMB Frequencies}
+% 
+% The CMB consists of radiation at different frequencies \( \nu \), with each frequency contributing a different amount of power. A useful way to summarize this is via the \textit{power mean}:
+% 
+% \begin{equation*}
+% P_p (\nu_1, \nu_2, \dots, \nu_n) =
+% \left( \frac{1}{n} \sum_{i=1}^{n} P(\nu_i)^p \right)^{\frac{1}{p}}.
+% \end{equation*}
+% 
+% Here:
+% \begin{itemize}
+%     \item \( P(\nu) \) is the spectral power density at frequency \( \nu \).
+%     \item The exponent \( p \) controls the weighting of different frequencies:
+%     \begin{itemize}
+%         \item \( p=1 \) gives the \textit{arithmetic mean} (linear power averaging).
+%         \item \( p=2 \) gives the \textit{quadratic mean} (RMS power).
+%         \item \( p \to -\infty \) emphasizes low-frequency contributions.
+%         \item \( p \to \infty \) emphasizes high-frequency contributions.
+%     \end{itemize}
+% \end{itemize}
+% 
+% The power at each frequency follows the Planck intensity spectrum:
+% 
+% \begin{equation*}
+% I_\nu = \frac{2h\nu^3}{c^2} \frac{1}{e^{h\nu / k_B T} - 1},
+% \end{equation*}
+% 
+% which governs how radiation is distributed across frequencies.For a blackbody radiation field, the photon number density is given by:
+% 
+% \begin{equation*}
+% n_\gamma = \frac{16 \pi \zeta(3) (k_B T)^3}{(hc)^3}.
+% \end{equation*}
+% 
+% This result emerged from the integral:
+% 
+% \begin{equation*}
+% \int_0^\infty \frac{x^2}{e^x - 1} \, dx = 2 \zeta(3).
+% \end{equation*}
+% 
+% Since \(\zeta(3)\) arises from the integral of the Bose-Einstein distribution, we see that it encodes how photon number density scales with temperature. Similarly, the \textit{energy density} is:
+% 
+% \begin{equation*}
+% \rho_\gamma = \mathcal{A} T^4, \quad \text{where} \quad \mathcal{A} = \frac{4 \sigma}{c}.
+% \end{equation*}
+% 
+% Here, \(\zeta(4)\) (which appears in the Stefan-Boltzmann law) arises from:
+% 
+% \begin{equation*}
+% \int_0^\infty \frac{x^3}{e^x - 1} \, dx = 6 \zeta(4).
+% \end{equation*}
+% 
+% We see that the \textit{mean photon energy} is given by:
+% 
+% \begin{equation*}
+% \langle E_\gamma \rangle = \frac{\rho_\gamma}{n_\gamma} = \frac{\zeta(4)}{\zeta(3)} k_B T.
+% \end{equation*}
+% 
+% Since \(\zeta(4)/\zeta(3)\) behaves as a ratio of two integrals, it suggests an effective power mean weighting over photon energies. To generalize, if we define a power mean for \textit{photon energy densities}, we obtain:
+% 
+% \begin{equation*}
+% \mathcal{P}_p = \left( \frac{1}{n} \sum_{\nu} I_\nu^p \right)^{\frac{1}{p}}.
+% \end{equation*}
+% 
+% For certain choices of \( p \), this leads naturally to expressions involving \(\zeta(n)\) values, meaning that the statistical structure of the photon distribution already encodes the power mean structure implicitly.
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% >>>>>> end of annexed block <<<<<<
 
 
 

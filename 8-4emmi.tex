@@ -24,90 +24,94 @@ Amalie imagined particles hopping between points on the Gaussian lattice, their 
 This meant that the structure of the lattice itself encoded the laws of motion and change. The homogeneity of higher differences and how they remained invariant under shifts was analogous to the conservation laws of classical physics. Differences didn’t just describe the geometry of the lattice; they encoded its symmetry.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Pascal’s Triangle and its Worpitsky Extension}
+% >>>>>> ANNEX A (cut-sheet v2): Pascal's triangle and its Worpitsky extension (duplicate of the canonical Annexe A treatment) — block commented out below, pointer left in text <<<<<<
+\textit{(Pascal's triangle and its Worpitsky extension (duplicate of the canonical Annexe A treatment) --- the full working is set out in Annexe A.)}
 
-Amalie's thoughts turned to Pascal’s Triangle, a simple structure that embodies both the discrete and the infinite:
-\[
-\begin{array}{ccccccc}
- & & & 1 & & & \\
- & & 1 & & 1 & & \\
- & 1 & & 2 & & 1 & \\
-1 & & 3 & & 3 & & 1 \\
-\end{array}
-\]
-But what if, Amalie wondered, it could be extended to encode row numbers and sum products? She vaguely recalled an idea attributed to Worpitsky: each number in Pascal’s Triangle could be weighted by its row number, creating a richer lattice of sums and products.
-
-\begin{figure}[H]
-\includegraphics[width=1.0\linewidth]{Illustrations/pyramid.png}
-\caption{All pyramids crumble in the end}
-\end{figure}
-
-Finding such an extension of Pascal’s Triangle wasn’t just an exercise in Combinatorics. For Amalie, it represented a way to encode physical laws into the discrete framework of her focus. Each number in the triangle would become a building block for finite difference equations, while the row weights introduced an additional dimension of scaling and symmetry.
-
-\lettrine{I}{t} was Amalie who first resurrected the Worpitsky Triangle into focus, where the triangle’s subscripted entries carried an added layer of organization and meaning, providing a framework for solving simultaneous linear equations and understanding polynomial sequences: 
-
-\begin{itemize}
-    \item Start with the first row: \( 1_1 \).
-    \item The second row: \( 1_1 + 1_1 = 1\times1 +1\times1= 2_2 \).
-    \item The third row: \( 1_1 + 1_2 = 1\times 1+1\times 2=3_2 \).
-    \item The fourth row: \( 3_2 + 2_3 = 3\times 2+2\times 3= 12_3 \).
-\end{itemize}
-The entry \(W(k, j)\) in row \(k\) and column \(j\) of the triangle is determined by the sum-product rule applied to adjacent entries from the row above. The triangle up to the 5th row is thus:
-\[
-\begin{array}{ccccccccccc}
-& & & & & 1_1 & & & & &\\
-& & & & 1_1 & & 1_2 & & & &\\
-& & & 1_1 & & 3_2 & & 2_3 & & &\\
-& & 1_1 & & 7_2 & & 12_3 & & 6_4 & &\\
-& 1_1 & & 15_2 & & 50_3 & & 60_4 & & 24_5 &\\
-1_1 & & 31_2 & & 180_3 & & 390_4 & & 360_5 & & 120_6 \\
-& & \vdots & & & \vdots & & & \vdots & & \\
-\end{array}
-\]
-
-\noindent\
-Once you have the row \( W(k, j) \), the sum of \(k^{\text{th}}\) powers up to \(n\) is:
-
-\[
-\sum_{i=1}^{n} i^k = \sum_{j=0}^{k} W(k, j) \cdot \binom{n}{j+1}.
-\]
-
-\noindent\textbf{Example for \(k = 4\):} From the Worpitzky triangle:
-\[
-W(4, 0) = 1, \quad W(4,1) = 15, \quad W(4,2) = 50, \quad W(4,3) = 60, ...
-\]
-\begin{align*}
-\sum_{i=1}^8 i^4 &= 1\binom{8}{1} + 15\binom{8}{2} + 50\binom{8}{3} + 60\binom{8}{4} + 24\binom{8}{5} \\
-&= 8 + 420 + 1400 + 1575 + 672 = 4075.
-\end{align*}
-Analogous to Newton's interpolation on Pascal's triangle, Worpitzky provided an explicit formula for powers:
-
-\[
-n^k = \sum_{j=0}^{k-1} W(k-1, j) \binom{n + j}{k}
-\]
-where \(W(k-1, j)\) are the Worpitzky numbers paralleling Newton's binomial-based forward difference expansion:
-
-\[
-f(n) = \sum_{j=0}^k \Delta^j f(0) \binom{n}{j}
-\]
-but adapted specifically for polynomial sequences of powers, with \(W(k-1, j)\) replacing the role of finite differences, and with binomials shifted to \(\binom{n + j}{k}\).
-
-\subsubsection*{Physical Reality on a Grid}
-
-Amalie saw how finite differences could describe any polynomial law. For example, a quadratic relationship like \(y_k = k^2\) would yield a constant second difference:
-\[
-\Delta^2 y_k = 2.
-\]
-This made the infinite behavior of polynomials manageable within the finite structure of the lattice. She imagined discretized versions of physical laws: Maxwell’s, Einstein’s field equations in the spirit of Regge's Calculus. Each could be reformulated in terms of finite differences and lattice symmetries, removing the infinities of the continuum.
-
-\smallskip
-
-From the Gaussian integers to Pascal’s Triangle, Amalie saw a world where discrete structures could model the complexities of reality, constrained yet profound.
-
-\begin{quote}
-"Mathematics," she thought, "must be rooted in the physical. And the physical, in turn, must encode mathematics."
-\end{quote}
-
+% \subsection*{Pascal’s Triangle and its Worpitsky Extension}
+% 
+% Amalie's thoughts turned to Pascal’s Triangle, a simple structure that embodies both the discrete and the infinite:
+% \[
+% \begin{array}{ccccccc}
+%  & & & 1 & & & \\
+%  & & 1 & & 1 & & \\
+%  & 1 & & 2 & & 1 & \\
+% 1 & & 3 & & 3 & & 1 \\
+% \end{array}
+% \]
+% But what if, Amalie wondered, it could be extended to encode row numbers and sum products? She vaguely recalled an idea attributed to Worpitsky: each number in Pascal’s Triangle could be weighted by its row number, creating a richer lattice of sums and products.
+% 
+% \begin{figure}[H]
+% \includegraphics[width=1.0\linewidth]{Illustrations/pyramid.png}
+% \caption{All pyramids crumble in the end}
+% \end{figure}
+% 
+% Finding such an extension of Pascal’s Triangle wasn’t just an exercise in Combinatorics. For Amalie, it represented a way to encode physical laws into the discrete framework of her focus. Each number in the triangle would become a building block for finite difference equations, while the row weights introduced an additional dimension of scaling and symmetry.
+% 
+% \lettrine{I}{t} was Amalie who first resurrected the Worpitsky Triangle into focus, where the triangle’s subscripted entries carried an added layer of organization and meaning, providing a framework for solving simultaneous linear equations and understanding polynomial sequences: 
+% 
+% \begin{itemize}
+%     \item Start with the first row: \( 1_1 \).
+%     \item The second row: \( 1_1 + 1_1 = 1\times1 +1\times1= 2_2 \).
+%     \item The third row: \( 1_1 + 1_2 = 1\times 1+1\times 2=3_2 \).
+%     \item The fourth row: \( 3_2 + 2_3 = 3\times 2+2\times 3= 12_3 \).
+% \end{itemize}
+% The entry \(W(k, j)\) in row \(k\) and column \(j\) of the triangle is determined by the sum-product rule applied to adjacent entries from the row above. The triangle up to the 5th row is thus:
+% \[
+% \begin{array}{ccccccccccc}
+% & & & & & 1_1 & & & & &\\
+% & & & & 1_1 & & 1_2 & & & &\\
+% & & & 1_1 & & 3_2 & & 2_3 & & &\\
+% & & 1_1 & & 7_2 & & 12_3 & & 6_4 & &\\
+% & 1_1 & & 15_2 & & 50_3 & & 60_4 & & 24_5 &\\
+% 1_1 & & 31_2 & & 180_3 & & 390_4 & & 360_5 & & 120_6 \\
+% & & \vdots & & & \vdots & & & \vdots & & \\
+% \end{array}
+% \]
+% 
+% \noindent\
+% Once you have the row \( W(k, j) \), the sum of \(k^{\text{th}}\) powers up to \(n\) is:
+% 
+% \[
+% \sum_{i=1}^{n} i^k = \sum_{j=0}^{k} W(k, j) \cdot \binom{n}{j+1}.
+% \]
+% 
+% \noindent\textbf{Example for \(k = 4\):} From the Worpitzky triangle:
+% \[
+% W(4, 0) = 1, \quad W(4,1) = 15, \quad W(4,2) = 50, \quad W(4,3) = 60, ...
+% \]
+% \begin{align*}
+% \sum_{i=1}^8 i^4 &= 1\binom{8}{1} + 15\binom{8}{2} + 50\binom{8}{3} + 60\binom{8}{4} + 24\binom{8}{5} \\
+% &= 8 + 420 + 1400 + 1575 + 672 = 4075.
+% \end{align*}
+% Analogous to Newton's interpolation on Pascal's triangle, Worpitzky provided an explicit formula for powers:
+% 
+% \[
+% n^k = \sum_{j=0}^{k-1} W(k-1, j) \binom{n + j}{k}
+% \]
+% where \(W(k-1, j)\) are the Worpitzky numbers paralleling Newton's binomial-based forward difference expansion:
+% 
+% \[
+% f(n) = \sum_{j=0}^k \Delta^j f(0) \binom{n}{j}
+% \]
+% but adapted specifically for polynomial sequences of powers, with \(W(k-1, j)\) replacing the role of finite differences, and with binomials shifted to \(\binom{n + j}{k}\).
+% 
+% \subsubsection*{Physical Reality on a Grid}
+% 
+% Amalie saw how finite differences could describe any polynomial law. For example, a quadratic relationship like \(y_k = k^2\) would yield a constant second difference:
+% \[
+% \Delta^2 y_k = 2.
+% \]
+% This made the infinite behavior of polynomials manageable within the finite structure of the lattice. She imagined discretized versions of physical laws: Maxwell’s, Einstein’s field equations in the spirit of Regge's Calculus. Each could be reformulated in terms of finite differences and lattice symmetries, removing the infinities of the continuum.
+% 
+% \smallskip
+% 
+% From the Gaussian integers to Pascal’s Triangle, Amalie saw a world where discrete structures could model the complexities of reality, constrained yet profound.
+% 
+% \begin{quote}
+% "Mathematics," she thought, "must be rooted in the physical. And the physical, in turn, must encode mathematics."
+% \end{quote}
+% 
+% >>>>>> end of annexed block <<<<<<
 \section*{Emily being Discrete}
 
 Eleanor leans back in her chair, studying Emily over the rim of her coffee cup. The café is murmuring, laden with sufficient incidentals to invite a confession or two. 
@@ -198,11 +202,7 @@ A body is made up of cells, each specialized, each following its own local rules
 
 \textit{But was it really necessity? Or was it self-preservation?}
 
-With the quiet echo of her \href{https://kingsoakacademy.clf.uk/our-academy/kingswood-old-scholars-association/}{school motto}: \textit{esse non videri}, to be, not to be seen, still etched in her mind, it had become a cipher for a deeper paradox.
-
-\smallskip
-
-We are chemical soups, endochrinal symphonies, orchestrated not by a single conductor but by a multitude of semi-autonomous instruments. Our glands whisper instructions into our bloodstreams, invisible and persistent, shaping desire, fear, hunger, and memory. These signals don’t ask permission; they just fire, they compel, they fade. And now, with tensor silicon chips (human's synthetic neurons) we attempt to simulate this distributed intelligence. To clone the subtlety of the biochemical ballet that is us in lines of machine code on tapestries of transistors. We chase the illusion of selfhood in our creations, believing intelligence arises from centrality. Not likely.
+With the quiet echo of her \href{https://kingsoakacademy.clf.uk/our-academy/kingswood-old-scholars-association/}{school motto}: \textit{esse non videri}, to be, not to be seen, still etched in her mind, it had become a cipher for a deeper paradox. We are chemical soups, endochrinal symphonies, orchestrated not by a single conductor but by a multitude of semi-autonomous instruments. Our glands whisper instructions into our bloodstreams, invisible and persistent, shaping desire, fear, hunger, and memory. These signals don’t ask permission; they just fire, they compel, they fade. And now, with tensor silicon chips (human's synthetic neurons) we attempt to simulate this distributed intelligence. To clone the subtlety of the biochemical ballet that is us in lines of machine code on tapestries of transistors. We chase the illusion of selfhood in our creations, believing intelligence arises from centrality. Not likely.
 
 \smallskip
 
@@ -236,7 +236,9 @@ She thinks of the Circle, not as a club, not a cabal, but a quiet \textit{quorum
 
 \smallskip
 
-The Circle of mathematicians, logicians, theorists, each a node in an intricate web of thought, has never been about any singular ambition. For Eleanor, it is a bastion of uncorrupted intellectualism. For Edward, a monument to pure mathematics, untouched by vulgar concerns of money. For others, it is a means to personal relevance, to securing the resources that keep their research afloat. They do not have a single purpose. They never did.
+% ============ COMMENTED OUT (cut-sheet v2): paragraph duplicated in 9_7meetings.tex ('The Circle—mathematicians, logicians…') ============
+% The Circle of mathematicians, logicians, theorists, each a node in an intricate web of thought, has never been about any singular ambition. For Eleanor, it is a bastion of uncorrupted intellectualism. For Willard, a monument to pure mathematics, untouched by vulgar concerns of money. For others, it is a means to personal relevance, to securing the resources that keep their research afloat. They do not have a single purpose. They never did.
+% ============ end commented block ============
 
 \smallskip
 
@@ -246,9 +248,7 @@ But what if that was the illusion? A human being is little more than the sum of 
 
 Is that what is happening now? Is the Circle experiencing its own kind of neural collapse?
 
-She recalls a fragment of Heidegger, or maybe just the impression of it: that humans are always seeking a purposeless purpose, a striving without a clear telos, just to keep being\footnote{Heidegger explores this in Being and Time, where Dasein is characterized by an ever-unfolding projection of possibilities—Sein-zum-Ende, being-towards-death—without ultimate closure. See Martin Heidegger, Being and Time, trans. John Macquarrie and Edward Robinson (Harper \& Row, 1962), p. 294.}. This drive is not imposed from above but emerges from the bottom up just like a society whose purpose is not ordained but arises simply because coordinated survival requires it.
-
-But when coordination fails, when some parts defect or malfunction, the system turns on itself.
+She recalls a fragment of Heidegger, or maybe just the impression of it: that humans are always seeking a purposeless purpose, a striving without a clear telos, just to keep being\footnote{Heidegger explores this in Being and Time, where Dasein is characterized by an ever-unfolding projection of possibilities—Sein-zum-Ende, being-towards-death—without ultimate closure. See Martin Heidegger, Being and Time, trans. John Macquarrie and Edward Robinson (Harper \& Row, 1962), p. 294.}. This drive is not imposed from above but emerges from the bottom up just like a society whose purpose is not ordained but arises simply because coordinated survival requires it. But when coordination fails, when some parts defect or malfunction, the system turns on itself.
 
 Maybe that’s what the Circle is now. A seizure in slow motion. An organism convulsing on the edge of its own limits, generating movements that look like intention but are, in fact, just spasms. And if Emily is honest, she no longer knows whether she is the signal or the noise.
 
@@ -259,46 +259,51 @@ She thinks of her sister, of Eleanor’s tireless efforts to preserve the Circle
 Surely the Circle will endure ieven if the fund doesn't in some form, but Emily wonders what will be left of herself inside it. 
 
 
-\subsection*{Emily’s Realization: The Circle Was Never Pure}
-
-As Emily returns home she catches herself leaning against the heavy oak table, fingers pressed into the grain, trying to anchor herself to something real. She had always known the Circle was a loose network—a construct of alliances and ambitions. But she had convinced herself it had true purpose—something more ideal than even her own idealism.
-
-She sees now that she had been kidding herself.
-
-\smallskip
-
-The others had already formed a thesis of pragmatism. Somewhere, away from Eleanor’s principles, the group had quietly acknowledged the unspoken truth: mathematics alone would never be enough.They had acted on that knowledge by creating an investment fund with purpose—an attempt to wield their insights upon the world of finance. Not merely for wealth, but to demonstrate: that the abstract could move the real.
-
-\smallskip
-
-And yet, it had failed. Chris and Edward’s theories of order within chaos had cracked. The Invariant Arbitrage system, for all its mathematical elegance, collapsed under the weight of the uncontrollable. Chris’s models treated price movements as lattice structures — probabilistic near-certainties woven into a seemingly inevitable profit engine. But the markets weren’t a purely endogenous emergent order, waiting to be reverse-engineered in real time. They were shaped—intervened upon—by exogenous forces. Social. Political. Intentional.
-
-\smallskip
-
-Bond vigilantes. Investment banks. Central banks and their unspoken alignments behind closed doors.
-
-\subsection*{The Unresolvable Paradox: Bottom-Up vs. Top-Down}
-
-The failure of the fund had exposed their naïve assumption: that markets, like physical systems, would resolve into knowable structures. But finance was not governed by natural law. It was not an emergent phenomenon of impartial agents—it was a game, and those with power wrote the rules.
-
-\smallskip
-
-If the Circle had truly been a sanctuary for pure mathematics, the fund would never have existed. The moment they sought to monetize mathematics, they forfeited their autonomy. They had already bent the knee to pragmatism.
-
-\smallskip
-
-Eleanor, with her unwavering belief in the purity of research, had remained blissfully unaware. Or perhaps they had only convinced themselves she was. How much longer could that last? Would she still believe in the collective dream, knowing it had already splintered?
-
-\smallskip
-
-Emily exhales, trying to silence the churn of her (owned) mind. She sees the contradiction clearly now:
-
-\begin{quote} If she tells Eleanor, the Circle shatters.
-If she stays silent, it rots from within. \end{quote}
-
-But the rot, she realizes, had begun long ago—the moment they dabbled in finance. Maybe Eleanor had always known. Maybe they all had, and chose not to see it.
-
-For now, Emily will say nothing. Not out of cowardice, no, but because—for the first time—she’s no longer certain who she is loyal to.
+% ============ COMMENTED OUT (cut-sheet v2): verbatim duplicate of 'Emily's Realization' — kept version lives in 9_7meetings.tex ============
+% \subsection*{Emily’s Realization: The Circle Was Never Pure}
+% 
+% As Emily returns home she catches herself leaning against the heavy oak table, fingers pressed into the grain, trying to anchor herself to something real. She had always known the Circle was a loose network—a construct of alliances and ambitions. But she had convinced herself it had true purpose—something more ideal than even her own idealism.
+% 
+% She sees now that she had been kidding herself.
+% 
+% \smallskip
+% 
+% The others had already formed a thesis of pragmatism. Somewhere, away from Eleanor’s principles, the group had quietly acknowledged the unspoken truth: mathematics alone would never be enough.They had acted on that knowledge by creating an investment fund with purpose—an attempt to wield their insights upon the world of finance. Not merely for wealth, but to demonstrate: that the abstract could move the real.
+% 
+% \smallskip
+% 
+% And yet, it had failed. Chris and Willard’s theories of order within chaos had cracked. The Invariant Arbitrage system, for all its mathematical elegance, collapsed under the weight of the uncontrollable. Chris’s models treated price movements as lattice structures — probabilistic near-certainties woven into a seemingly inevitable profit engine. But the markets weren’t a purely endogenous emergent order, waiting to be reverse-engineered in real time. They were shaped—intervened upon—by exogenous forces. Social. Political. Intentional.
+% 
+% \smallskip
+% 
+% Bond vigilantes. Investment banks. Central banks and their unspoken alignments behind closed doors.
+% 
+% \subsection*{The Unresolvable Paradox: Bottom-Up vs. Top-Down}
+% 
+% The failure of the fund had exposed their naïve assumption: that markets, like physical systems, would resolve into knowable structures. But finance was not governed by natural law. It was not an emergent phenomenon of impartial agents—it was a game, and those with power wrote the rules.
+% 
+% \smallskip
+% 
+% If the Circle had truly been a sanctuary for pure mathematics, the fund would never have existed. The moment they sought to monetize mathematics, they forfeited their autonomy. They had already bent the knee to pragmatism.
+% 
+% \smallskip
+% 
+% Eleanor, with her unwavering belief in the purity of research, had remained blissfully unaware. Or perhaps they had only convinced themselves she was. How much longer could that last? Would she still believe in the collective dream, knowing it had already splintered?
+% 
+% \smallskip
+% 
+% Emily exhales, trying to silence the churn of her (owned) mind. She sees the contradiction clearly now:
+% 
+% \begin{quote} If she tells Eleanor, the Circle shatters.
+% If she stays silent, it rots from within. \end{quote}
+% 
+% But the rot, she realizes, had begun long ago—the moment they dabbled in finance. Maybe Eleanor had always known. Maybe they all had, and chose not to see it.
+% 
+% For now, Emily will say nothing. Not out of cowardice, no, but because—for the first time—she’s no longer certain who she is loyal to.
+% 
+% 
+% 
+% ============ end commented block ============
 
 
 

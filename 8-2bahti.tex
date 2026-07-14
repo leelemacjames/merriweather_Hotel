@@ -113,225 +113,229 @@ In Ricci-curved space, the determinant of \(g\) defined the volume form, driving
 
 Bahti sat back, satisfied with her progress. The Fibonacci matrix, the Ricci curvature of the sphere, and the structure of exact sequences had all come together in a coherent narrative. The interplay between curvature, integrability, and growth must be more than a mathematical curiosity—it was a reflection of the deeper harmony that underpinned the universe.
 
-\subsection*{Modular Symmetry and Prime Splitting in \(\mathbb{Z}[i]\) and \(\mathbb{Z}[\omega]\)}
-\textit{Jovannah:} I've been re-reading the standard lattice QCD formulations. Everything’s built on the square grid—\( \mathbb{Z} \times \mathbb{Z} \). It’s tidy, but it feels... rigid.
+% >>>>>> ANNEX B (cut-sheet v2): modular symmetry, prime splitting and the Dedekind zeta of Q(omega) — block commented out below, pointer left in text <<<<<<
+\textit{(Modular symmetry, prime splitting and the Dedekind zeta of Q(omega) --- the full working is set out in Annexe B.)}
 
-\medskip
-
-\noindent
-\textit{Bahti:} Precisely! The square grid imposes artificial anisotropies — directional biases that aren't present in the physical theory. That’s why we’ve been exploring hexagonalisation.
-
-\medskip
-
-\noindent
-\textit{Jovannah:} As in... tessellating spacetime with hexagons?
-
-\medskip
-
-\noindent
-\textit{Bahti:} Exactly. The Eisenstein integers, \( \mathbb{Z}[\omega] \) with \( \omega = e^{2\pi i/3} \), naturally generate a hexagonal lattice. Think of them as the complex analogues of \( \mathbb{Z} \times \mathbb{Z} \), but with a symmetry group that includes 120° rotations.
-
-\medskip
-
-\noindent
-\textit{Jovannah:} So the fundamental directions are \( 1 \) and \( \omega \), rather than \( 1 \) and \( i \)?
-
-\medskip
-
-\noindent
-\textit{Bahti:} Yes—and that changes everything. You get a lattice that's more isotropic, especially for scalar fields or gauge loops. Instead of axis-aligned squares, you build with equilateral triangles, which reduces discretization artifacts.
-
-\medskip
-
-\noindent
-\textit{Jovannah:} How does this play out in quantum calculations, say, in something like the \( g{-}2 \) anomaly work?
-
-\medskip
-
-\noindent
-\textit{Bahti:} In those high-precision muon \( g{-}2 \) computations, every bias matters. A hexagonal lattice reduces edge effects and directional artifacts in the loop integrals. Plus, when we quotient the Eisenstein integers modulo a fixed ideal, we get a toroidal lattice—perfect for simulations with periodic boundary conditions.
-
-\medskip
-
-\noindent
-\textit{Jovannah:} So the Eisenstein torus encodes the global topology while preserving local isotropy?
-
-\medskip
-
-\noindent
-\textit{Bahti:} Beautifully put. It’s more than just mathematical elegance—it’s numerical efficiency with physical fidelity. You tile the plane with symmetry that echoes the theory itself.
-
-\medskip
-
-\noindent
-\textit{Jovannah:} You’re making a strong case for hexagonalisation. Might be time we revisited our lattices...
-
-We consider the behavior of rational primes under extension to two key quadratic integer rings:
-
-\begin{itemize}
-  \item \textbf{Gaussian integers} \(\mathbb{Z}[i]\), where \(i = \sqrt{-1}\)
-  \item \textbf{Eisenstein integers} \(\mathbb{Z}[\omega]\), where \(\omega = e^{2\pi i / 3} = -\frac{1}{2} + \frac{\sqrt{3}}{2}i\)
-\end{itemize}
-
-The splitting of a rational prime \(p\) in these rings is governed by congruence conditions:
-
-\begin{itemize}
-  \item In \(\mathbb{Z}[i]\):
-    \begin{itemize}
-      \item \(p \equiv 1 \mod 4\): splits
-      \item \(p \equiv 3 \mod 4\): remains inert
-      \item \(p = 2\): ramifies
-    \end{itemize}
-    
-  \item In \(\mathbb{Z}[\omega]\):
-    \begin{itemize}
-      \item \(p \equiv 1 \mod 3\): splits
-      \item \(p \equiv 2 \mod 3\): remains inert
-      \item \(p = 3\): ramifies
-    \end{itemize}
-\end{itemize}
-
-\vspace{1em}
-\noindent
-We use these facts to classify primes into four modular symmetry types:
-
-\begin{enumerate}
-  \item \textbf{Split in \(\mathbb{Z}[\omega]\), Inert in \(\mathbb{Z}[i]\)}:
-  \(p \equiv 1 \mod 3,\ p \equiv 3 \mod 4\). \\
-  \textit{Example: } \(p = 7\). It factors in \(\mathbb{Z}[\omega]\) as \(7 = (3 + \omega)(3 + \omega^2)\), but remains prime in \(\mathbb{Z}[i]\).
-
-  \item \textbf{Inert in both}: \(p \equiv 2 \mod 3,\ p \equiv 3 \mod 4\). \\
-  \textit{Example: } \(p = 11\). It does not factor in either ring.
-
-  \item \textbf{Inert in \(\mathbb{Z}[\omega]\), Split in \(\mathbb{Z}[i]\)}:
-  \(p \equiv 2 \mod 3,\ p \equiv 1 \mod 4\). \\
-  \textit{Example: } \(p = 5\). In \(\mathbb{Z}[i]\), \(5 = (2 + i)(2 - i)\), but it remains inert in \(\mathbb{Z}[\omega]\).
-
-  \item \textbf{Split in both}: \(p \equiv 1 \mod 3,\ p \equiv 1 \mod 4\). \\
-  \textit{Example: } \(p = 13\). It splits in both \(\mathbb{Z}[i]\) and \(\mathbb{Z}[\omega]\).
-\end{enumerate}
-
-\vspace{1em}
-\noindent
-This classification forms the basis for visualizing the modular distribution of irregular primes across symmetry partitions.
-
-
-\subsection*{Dedekind Zeta Function of \( \mathbb{Q}(\omega) \) and Hexagonal Reciprocity}
-
-The Eisenstein zeta function \( \zeta_{\mathbb{Z}[\omega]}(s) \) is a special case of the \textbf{Dedekind zeta function} \( \zeta_K(s) \), where \( K = \mathbb{Q}(\omega) \) is the imaginary quadratic field generated by a primitive cube root of unity:
-\[
-\zeta_{\mathbb{Q}(\omega)}(s) = \sum_{\mathfrak{a} \subset \mathcal{O}_K} \frac{1}{\mathrm{Norm}(\mathfrak{a})^s}
-\]
-Here, the sum runs over nonzero ideals \( \mathfrak{a} \) in the ring of Eisenstein integers \( \mathcal{O}_K = \mathbb{Z}[\omega] \), and \( \mathrm{Norm}(\mathfrak{a}) \) corresponds to the hexagonal norm \( a^2 - ab + b^2 \).
-
-This Dedekind zeta function factors as:
-\[
-\zeta_{\mathbb{Q}(\omega)}(s) = \zeta(s) \cdot L(s, \chi_{-3})
-\]
-where \( \zeta(s) \) is the Riemann zeta function, and \( L(s, \chi_{-3}) \) is a Dirichlet \( L \)-function with character modulo 3:
-\[
-\chi_{-3}(n) =
-\begin{cases}
-0 & \text{if } 3 \mid n \\
-1 & \text{if } n \equiv 1 \mod 3 \\
--1 & \text{if } n \equiv 2 \mod 3
-\end{cases}
-\]
-
-\paragraph{Exact Example:}
-For \( s = 2 \), this yields:
-\[
-\zeta_{\mathbb{Q}(\omega)}(2) = \zeta(2) \cdot L(2, \chi_{-3}) = \frac{\pi^2}{6} \cdot \left(1 - \frac{1}{2^2} + \frac{1}{4^2} - \cdots \right)
-\]
-and more generally,
-\[
-L(s, \chi_{-3}) = \sum_{n=1}^\infty \frac{\chi_{-3}(n)}{n^s}
-\]
-The function \( \zeta_{\mathbb{Q}(\omega)}(s) \) encodes the full hexagonal symmetry of the Eisenstein lattice and governs many **lattice spectral sums**, particularly in quantum geometry and modular compactification contexts.
-
-\paragraph{Connection to Modular Forms:}
-This Dedekind zeta function is also intimately linked to modular forms of weight \( s \), as the Mellin transform of certain Eisenstein series gives rise to \( L(s, \chi_{-3}) \). These functions appear naturally in:
-\begin{itemize}
-  \item Spectral traces on the hexagonal torus,
-  \item Partition functions of 2D CFTs with triangular symmetry,
-  \item Quantum lattice models such as those used in precision \( g-2 \) calculations.
-\end{itemize}
-
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{Function} & \textbf{Value (Approx.)} & \textbf{Exact/Reference Form} \\
-\hline
-\( \zeta_{\mathbb{Z}[\omega]}(2) \) & \( \approx 7.7101 \) & -- \\
-\( \zeta(2) \) & \( \approx 1.6449 \) & \( \frac{\pi^2}{6} \) \\
-\hline
-\( \zeta_{\mathbb{Z}[\omega]}(3) \) & \( \approx 6.3759 \) & -- \\
-\( \zeta(3) \) & \( \approx 1.2021 \) & Apery’s Constant \\
-\hline
-\end{tabular}
-\end{center}
-
-
-
-\subsection*{On the Dedekind Zeta and the Hexagonal Spectrum}
-
-\textit{Bahti:} So, here’s where things get beautiful. When we compute the Eisenstein zeta function at \( s = 2 \), what we’re really doing is evaluating the Dedekind zeta function of the field \( \mathbb{Q}(\omega) \), where \( \omega = e^{2\pi i/3} \).
-
-\medskip
-
-\noindent
-\textit{Jovannah:} That’s the field generated by a cube root of unity, right? With those triangular symmetries you were so excited about?
-
-\medskip
-
-\noindent
-
-\textit{Bahti:} Exactly. Now watch this—let’s write down the identity:
-\[
-\zeta_{\mathbb{Q}(\omega)}(s) = \zeta(s) \cdot L(s, \chi_{-3})
-\]
-where \( \chi_{-3} \) is the Dirichlet character mod 3. For \( s = 2 \), we know:
-\[
-\zeta(2) = \frac{\pi^2}{6} \approx 1.6449
-\]
-\[
-L(2, \chi_{-3}) \approx \sum_{n=1}^\infty \frac{\chi_{-3}(n)}{n^2} \approx 0.7813
-\]
-Multiplying them gives:
-\[
-\zeta_{\mathbb{Q}(\omega)}(2) \approx 1.2852
-\]
-
-\medskip
-
-\noindent
-\textit{Jovannah:} So this value is summing over all the hexagonal norms—like the inverse square of hexagon radii?
-
-\medskip
-
-\noindent
-\textit{Bahti:} Precisely. You’re not just summing \( 1/n^2 \) like in \( \zeta(2) \), but summing over the lattice points in \( \mathbb{Z}[\omega] \), i.e., over all hexagonal shells. It encodes the geometry.
-
-\medskip
-
-\noindent
-\textit{Jovannah:} And the Dirichlet \( L \)-function is filtering it by mod 3 congruence?
-
-\medskip
-
-\noindent
-\textit{Bahti:} Yes—it's like applying a character-based weight to each layer. So this isn't just a number-theoretic curiosity. It has physical implications in spectral theory, thermal fields, even quantum lattices like in the g–2 Moon project.
-
-\medskip
-
-\noindent
-\textit{Jovannah:} That’s incredible. A pure function from arithmetic number theory telling you about hexagonal frequency densities in a physical field.
-
-\medskip
-
-\noindent
-\textit{Bahti:} That’s the power of Dedekind zeta. And we haven’t even touched the modular forms side yet...
-
+% \subsection*{Modular Symmetry and Prime Splitting in \(\mathbb{Z}[i]\) and \(\mathbb{Z}[\omega]\)}
+% \textit{Jovannah:} I've been re-reading the standard lattice QCD formulations. Everything’s built on the square grid—\( \mathbb{Z} \times \mathbb{Z} \). It’s tidy, but it feels... rigid.
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Bahti:} Precisely! The square grid imposes artificial anisotropies — directional biases that aren't present in the physical theory. That’s why we’ve been exploring hexagonalisation.
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Jovannah:} As in... tessellating spacetime with hexagons?
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Bahti:} Exactly. The Eisenstein integers, \( \mathbb{Z}[\omega] \) with \( \omega = e^{2\pi i/3} \), naturally generate a hexagonal lattice. Think of them as the complex analogues of \( \mathbb{Z} \times \mathbb{Z} \), but with a symmetry group that includes 120° rotations.
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Jovannah:} So the fundamental directions are \( 1 \) and \( \omega \), rather than \( 1 \) and \( i \)?
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Bahti:} Yes—and that changes everything. You get a lattice that's more isotropic, especially for scalar fields or gauge loops. Instead of axis-aligned squares, you build with equilateral triangles, which reduces discretization artifacts.
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Jovannah:} How does this play out in quantum calculations, say, in something like the \( g{-}2 \) anomaly work?
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Bahti:} In those high-precision muon \( g{-}2 \) computations, every bias matters. A hexagonal lattice reduces edge effects and directional artifacts in the loop integrals. Plus, when we quotient the Eisenstein integers modulo a fixed ideal, we get a toroidal lattice—perfect for simulations with periodic boundary conditions.
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Jovannah:} So the Eisenstein torus encodes the global topology while preserving local isotropy?
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Bahti:} Beautifully put. It’s more than just mathematical elegance—it’s numerical efficiency with physical fidelity. You tile the plane with symmetry that echoes the theory itself.
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Jovannah:} You’re making a strong case for hexagonalisation. Might be time we revisited our lattices...
+% 
+% We consider the behavior of rational primes under extension to two key quadratic integer rings:
+% 
+% \begin{itemize}
+%   \item \textbf{Gaussian integers} \(\mathbb{Z}[i]\), where \(i = \sqrt{-1}\)
+%   \item \textbf{Eisenstein integers} \(\mathbb{Z}[\omega]\), where \(\omega = e^{2\pi i / 3} = -\frac{1}{2} + \frac{\sqrt{3}}{2}i\)
+% \end{itemize}
+% 
+% The splitting of a rational prime \(p\) in these rings is governed by congruence conditions:
+% 
+% \begin{itemize}
+%   \item In \(\mathbb{Z}[i]\):
+%     \begin{itemize}
+%       \item \(p \equiv 1 \mod 4\): splits
+%       \item \(p \equiv 3 \mod 4\): remains inert
+%       \item \(p = 2\): ramifies
+%     \end{itemize}
+%     
+%   \item In \(\mathbb{Z}[\omega]\):
+%     \begin{itemize}
+%       \item \(p \equiv 1 \mod 3\): splits
+%       \item \(p \equiv 2 \mod 3\): remains inert
+%       \item \(p = 3\): ramifies
+%     \end{itemize}
+% \end{itemize}
+% 
+% \vspace{1em}
+% \noindent
+% We use these facts to classify primes into four modular symmetry types:
+% 
+% \begin{enumerate}
+%   \item \textbf{Split in \(\mathbb{Z}[\omega]\), Inert in \(\mathbb{Z}[i]\)}:
+%   \(p \equiv 1 \mod 3,\ p \equiv 3 \mod 4\). \\
+%   \textit{Example: } \(p = 7\). It factors in \(\mathbb{Z}[\omega]\) as \(7 = (3 + \omega)(3 + \omega^2)\), but remains prime in \(\mathbb{Z}[i]\).
+% 
+%   \item \textbf{Inert in both}: \(p \equiv 2 \mod 3,\ p \equiv 3 \mod 4\). \\
+%   \textit{Example: } \(p = 11\). It does not factor in either ring.
+% 
+%   \item \textbf{Inert in \(\mathbb{Z}[\omega]\), Split in \(\mathbb{Z}[i]\)}:
+%   \(p \equiv 2 \mod 3,\ p \equiv 1 \mod 4\). \\
+%   \textit{Example: } \(p = 5\). In \(\mathbb{Z}[i]\), \(5 = (2 + i)(2 - i)\), but it remains inert in \(\mathbb{Z}[\omega]\).
+% 
+%   \item \textbf{Split in both}: \(p \equiv 1 \mod 3,\ p \equiv 1 \mod 4\). \\
+%   \textit{Example: } \(p = 13\). It splits in both \(\mathbb{Z}[i]\) and \(\mathbb{Z}[\omega]\).
+% \end{enumerate}
+% 
+% \vspace{1em}
+% \noindent
+% This classification forms the basis for visualizing the modular distribution of irregular primes across symmetry partitions.
+% 
+% 
+% \subsection*{Dedekind Zeta Function of \( \mathbb{Q}(\omega) \) and Hexagonal Reciprocity}
+% 
+% The Eisenstein zeta function \( \zeta_{\mathbb{Z}[\omega]}(s) \) is a special case of the \textbf{Dedekind zeta function} \( \zeta_K(s) \), where \( K = \mathbb{Q}(\omega) \) is the imaginary quadratic field generated by a primitive cube root of unity:
+% \[
+% \zeta_{\mathbb{Q}(\omega)}(s) = \sum_{\mathfrak{a} \subset \mathcal{O}_K} \frac{1}{\mathrm{Norm}(\mathfrak{a})^s}
+% \]
+% Here, the sum runs over nonzero ideals \( \mathfrak{a} \) in the ring of Eisenstein integers \( \mathcal{O}_K = \mathbb{Z}[\omega] \), and \( \mathrm{Norm}(\mathfrak{a}) \) corresponds to the hexagonal norm \( a^2 - ab + b^2 \).
+% 
+% This Dedekind zeta function factors as:
+% \[
+% \zeta_{\mathbb{Q}(\omega)}(s) = \zeta(s) \cdot L(s, \chi_{-3})
+% \]
+% where \( \zeta(s) \) is the Riemann zeta function, and \( L(s, \chi_{-3}) \) is a Dirichlet \( L \)-function with character modulo 3:
+% \[
+% \chi_{-3}(n) =
+% \begin{cases}
+% 0 & \text{if } 3 \mid n \\
+% 1 & \text{if } n \equiv 1 \mod 3 \\
+% -1 & \text{if } n \equiv 2 \mod 3
+% \end{cases}
+% \]
+% 
+% \paragraph{Exact Example:}
+% For \( s = 2 \), this yields:
+% \[
+% \zeta_{\mathbb{Q}(\omega)}(2) = \zeta(2) \cdot L(2, \chi_{-3}) = \frac{\pi^2}{6} \cdot \left(1 - \frac{1}{2^2} + \frac{1}{4^2} - \cdots \right)
+% \]
+% and more generally,
+% \[
+% L(s, \chi_{-3}) = \sum_{n=1}^\infty \frac{\chi_{-3}(n)}{n^s}
+% \]
+% The function \( \zeta_{\mathbb{Q}(\omega)}(s) \) encodes the full hexagonal symmetry of the Eisenstein lattice and governs many **lattice spectral sums**, particularly in quantum geometry and modular compactification contexts.
+% 
+% \paragraph{Connection to Modular Forms:}
+% This Dedekind zeta function is also intimately linked to modular forms of weight \( s \), as the Mellin transform of certain Eisenstein series gives rise to \( L(s, \chi_{-3}) \). These functions appear naturally in:
+% \begin{itemize}
+%   \item Spectral traces on the hexagonal torus,
+%   \item Partition functions of 2D CFTs with triangular symmetry,
+%   \item Quantum lattice models such as those used in precision \( g-2 \) calculations.
+% \end{itemize}
+% 
+% \begin{center}
+% \begin{tabular}{|c|c|c|}
+% \hline
+% \textbf{Function} & \textbf{Value (Approx.)} & \textbf{Exact/Reference Form} \\
+% \hline
+% \( \zeta_{\mathbb{Z}[\omega]}(2) \) & \( \approx 7.7101 \) & -- \\
+% \( \zeta(2) \) & \( \approx 1.6449 \) & \( \frac{\pi^2}{6} \) \\
+% \hline
+% \( \zeta_{\mathbb{Z}[\omega]}(3) \) & \( \approx 6.3759 \) & -- \\
+% \( \zeta(3) \) & \( \approx 1.2021 \) & Apery’s Constant \\
+% \hline
+% \end{tabular}
+% \end{center}
+% 
+% 
+% 
+% \subsection*{On the Dedekind Zeta and the Hexagonal Spectrum}
+% 
+% \textit{Bahti:} So, here’s where things get beautiful. When we compute the Eisenstein zeta function at \( s = 2 \), what we’re really doing is evaluating the Dedekind zeta function of the field \( \mathbb{Q}(\omega) \), where \( \omega = e^{2\pi i/3} \).
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Jovannah:} That’s the field generated by a cube root of unity, right? With those triangular symmetries you were so excited about?
+% 
+% \medskip
+% 
+% \noindent
+% 
+% \textit{Bahti:} Exactly. Now watch this—let’s write down the identity:
+% \[
+% \zeta_{\mathbb{Q}(\omega)}(s) = \zeta(s) \cdot L(s, \chi_{-3})
+% \]
+% where \( \chi_{-3} \) is the Dirichlet character mod 3. For \( s = 2 \), we know:
+% \[
+% \zeta(2) = \frac{\pi^2}{6} \approx 1.6449
+% \]
+% \[
+% L(2, \chi_{-3}) \approx \sum_{n=1}^\infty \frac{\chi_{-3}(n)}{n^2} \approx 0.7813
+% \]
+% Multiplying them gives:
+% \[
+% \zeta_{\mathbb{Q}(\omega)}(2) \approx 1.2852
+% \]
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Jovannah:} So this value is summing over all the hexagonal norms—like the inverse square of hexagon radii?
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Bahti:} Precisely. You’re not just summing \( 1/n^2 \) like in \( \zeta(2) \), but summing over the lattice points in \( \mathbb{Z}[\omega] \), i.e., over all hexagonal shells. It encodes the geometry.
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Jovannah:} And the Dirichlet \( L \)-function is filtering it by mod 3 congruence?
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Bahti:} Yes—it's like applying a character-based weight to each layer. So this isn't just a number-theoretic curiosity. It has physical implications in spectral theory, thermal fields, even quantum lattices like in the g–2 Moon project.
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Jovannah:} That’s incredible. A pure function from arithmetic number theory telling you about hexagonal frequency densities in a physical field.
+% 
+% \medskip
+% 
+% \noindent
+% \textit{Bahti:} That’s the power of Dedekind zeta. And we haven’t even touched the modular forms side yet...
+% 
+% >>>>>> end of annexed block <<<<<<
 \subsection*{Modular Forms: A Gentle Descent}
 \textit{Jovannah:} Alright Bahti, that Dedekind zeta detour was smooth. But listen—when it comes to modular forms... you'll have to tread gently. I know they're important, I know they’re beautiful, but every time someone says “Mellin transform of an Eisenstein series,” my brain locks up in reverence.
 
@@ -420,5 +424,8 @@ Multiplying them gives:
 
 \noindent
 \textit{Bahti:} That’s the idea. Whether you're computing heat flow, Casimir energy, or eigenmode structures on quantum lattices—the modular form encodes the symmetry. And on a hexagonal drum, it sings with Eisenstein harmony.
+
+
+
 
 

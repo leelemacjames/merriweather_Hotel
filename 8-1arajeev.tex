@@ -16,17 +16,17 @@ Each was a node in a web of transcendence and regularity, their properties spira
 e^{\pi \sqrt{163}}.
 \]
 
-He paused, staring at the equation. Why \(\pi\)? Why \(e\)? Why this particular arrangement? These questions had haunted him for days. The answers, he knew, lay somewhere after mathematics and before metaphysics where there is a delicate interplay between structure and transcendence.
+He paused, still haunted by the equation. Why this particular arrangement with \(\pi\) and \(e\)? The answers, he knew, lay somewhere just a after mathematics and before metaphysics.
 
 \subsection*{Why \(\pi\) Multiplies \(e\)?}
 
 Rajeev began with the heart of the question. The Ramanujan number, \(e^{\pi \sqrt{163}}\), was built from two transcendental numbers: \(e\) and \(\pi\), paired with the square root of a quadratic number. But why should \(\pi\) serve as the multiplier while \(e\) acted as the base?
 
 \begin{quote}
-"It’s the geometry," she thought. \(\pi\) governs circles, periodicity, and symmetry. It’s the constant that ties the circumference of a circle to its diameter, the multiplier that embeds periodicity into the fabric of space. Meanwhile, \(e\) governs exponential growth and decay, the natural rhythm of change and continuity.
+"It’s the geometry," he thought. \(\pi\) governs circles, periodicity, and symmetry. It’s the constant that ties the circumference of a circle to its diameter, the multiplier that embeds periodicity into the fabric of space. Meanwhile, \(e\) governs exponential growth and decay, the natural rhythm of change and continuity.
 \end{quote}
 
-Together, they described a world that was at once cyclical and expansive—a dance between repetition and transcendence. In the Ramanujan number, \(\pi\) as the multiplier brought periodicity to the exponential growth of \(e\), anchoring it within the modular structure of the quadratic field. Without \(\pi\), the connection to modular forms—the symmetries that arise from the lattice structure of elliptic curves—would unravel. The result would no longer reflect the profound near-integer property that makes \(e^{\pi \sqrt{163}}\) so extraordinary.
+Together, they described a world that was at once cyclical and expansive. No less a dance between repetition and transcendence. In the Ramanujan number, \(\pi\) as the multiplier brought periodicity to the exponential growth of \(e\), anchoring it within the modular structure of the quadratic field. Without \(\pi\), the connection to modular forms, which are the symmetries that arise from the lattice structure of elliptic curves, would unravel. The result would no longer reflect the profound near-integer property that makes \(e^{\pi \sqrt{163}}\) so extraordinary.
 
 \begin{quote}
 "The multiplier must be \(\pi\)," he wrote, "because it embeds circularity into the exponential, weaving periodicity into the infinite."
@@ -59,9 +59,7 @@ The Heegner primes, through their innate regularity, encoded the most harmonious
 \(e, \pi, \text{ and } \sqrt{d}.\)"
 \end{quote}
 
-He returned to the equation. The near-integrality of \(e^{\pi \sqrt{163}}\) was no accident. It arose because 163 was the crown jewel of quadratic fields. The exponential and circular properties of \(e\) and \(\pi\) aligned perfectly with the modular symmetries of the field, creating a number that hovered on the edge of discreteness.
-
-Rajeev leaned back, considering the Heegner primes:
+The near-integrality of \(e^{\pi \sqrt{163}}\) arises because 163 was the crown jewel of quadratic fields. The exponential and circular properties of \(e\) and \(\pi\) aligned perfectly with the modular symmetries of the field, creating a number that hovered on the edge of discreteness. Rajeev pondered:
 
 \begin{quote}
 "Without primality, the modular forms would lose their anchor," he wrote. "The unique factorization of the quadratic fields depends on the purity of primes. Only primes can stabilize the infinite expansions of \(e^{\pi \sqrt{d}}\)."
@@ -72,131 +70,133 @@ Rajeev leaned back, considering the Heegner primes:
 \caption{Rajeev still pondering Heegner Numbers}
 \end{figure}
 
-Primality, regularity, modularity—these were not separate properties but aspects of the same phenomenon. 
-Rajeev stared at his notebook, the numbers. The Heegner primes, the near-integer \(e^{\pi \sqrt{163}}\), the necessity of \(\pi\) and \(e\)—all of it wove together into a tapestry that spoke to the unity of mathematics.
+Primality, regularity, modularity: these were all aspects of the same phenomenon. Rajeev staring at his notebook, 
 
 \begin{quote}
 "The infinite reaches of \(e\), the symmetry of \(\pi\), and the stability of primes—they remind us that the infinite and the finite are not so distinct."
 \end{quote}
 
 With that, he closed his notebook and pondered the expansion forms for e and \(pi\) that would suffice to code for in order to deliver essentially an integer Ramanujan number.
-\newpage
 
-\section*{Euler's Totient Function $\phi(n)$}
+% >>>>>> ANNEX E (cut-sheet v2): Euler's totient, the group U_n and the RSA key algorithm — block commented out below, pointer left in text <<<<<<
+\textit{(The machinery itself --- totients, the group $U_n$, and the RSA recipe built on them --- is laid out in Annexe E.)}
 
-Since $n = 12 = 2^2 \times 3$, we count numbers less than 12 that are coprime to it. Thus, given greatest common divisor (gcd):
-\begin{align*}
-\gcd(1,12)&=1, \quad \gcd(5,12)=1, \quad \gcd(7,12)=1, \quad \gcd(11,12)=1.
-\end{align*}
-\noindent
-More generally, for a prime number $p$, we have $\phi(p) = p-1$, as all numbers below it are coprime and for composite $n$ with distinct prime factors:
-\[
-\phi(n) = n\prod_{p \mid n} \left(1 - \frac{1}{p}\right).
-\]
-Applying this to $\phi(12)$:
-\[
-\phi(12) = 12 \left(1 - \frac{1}{2}\right)\left(1 - \frac{1}{3}\right) = 12 \times \frac{1}{2} \times \frac{2}{3} = 4.
-\]
-The Inclusion-Exclusion principle corrects for overcounting in sets. Given two sets $A$ and $B$:
-\(
-|A \cup B| = |A| + |B| - |A \cap B|.
-\) Applying this to $\phi(54)$, where $54 = 2 \times 3^3$:
-\[
-\phi(54) = 54 \left(1 - \frac{1}{2} - \frac{1}{3} + \frac{1}{6}\right) = 54 \times \frac{1}{3} = 18.
-\]
-For a prime power $p^j$ as multiples of $p$ up to $p^j$ are not coprime:
-\(
-\phi(p^j) = p^j - p^{j-1}.
-\)
-The dot plot generated via \href{https://colab.research.google.com/drive/1-TYYGCmru1JCt1gVpfZrCToPLPpUNtTV?usp=sharing}{GraphEulerTotient6n+1.ipynb} displays coprimes as dots and $\phi(n)$ as a line graph.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Illustrations/totient-function.png}
-    \caption{Euler's totient function with coprime dot plot.}
-    \label{totientFunction:fig}
-\end{figure}
-\newpage
-\section*{$U_n$: The Group of Invertible Integers Modulo $n$}
-
-Euler's totient function, $\phi(n)$ helps define the group of invertible integers modulo $n$, denoted as $U_n$. The set $U_n$ consists of integers less than $n$ that are coprime to $n$, and it forms a multiplicative group under modulo $n$ multiplication:
-\begin{equation}
-U_n = { a \in \mathbb{Z} \mid 1 \leq a < n, \gcd(a, n) = 1 }.
-\end{equation}
-The number of elements in $U_n$ is exactly $\phi(n)$. If $n$ is prime, then every integer from 1 to $n-1$ is coprime to $n$, so $\phi(n) = n - 1$. An element $a \in U_n$ is called a unit involution if:
-\begin{equation}
-a^2 \equiv 1 \pmod{n}.
-\end{equation}
-That is, each element is its own inverse. For example, in $U_8 = {1, 3, 5, 7}$:
-\begin{itemize}
-\item $1^2 \equiv 1 \mod 8 \quad 3^2 \equiv 9 \equiv 1 \mod 8$
-\item $5^2 \equiv 25 \equiv 1 \mod 8$ \quad $7^2 \equiv 49 \equiv 1 \mod 8$
-\end{itemize}
-Thus, all elements of $U_8$ are unit involutions.
-
-The {\em order} of the group $U_n$ is given by $\phi(n)$, the {\em totient} function of $n$, because the number of elements in $U_n$ is exactly the count of numbers less than $n$ that are coprime to $n$. When \(n\) is a prime number \(p\), the order of the group \(U_p\) is given as \( \phi(p) = p-1 \) since for a prime number \(p\), every integer from 1 to \(p-1\) is relatively prime\footnote{since none of those integers share any common factors with \(p\) other than 1. For a prime number \(p\), we simply count all numbers from 1 up to \(p-1\), as all of these numbers do not share any divisors with \(p\).} to \(p\).  
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.6\textwidth]{Illustrations/invertibles.png}
-\caption{Group of Invertibles }
-\end{figure}
-
-\subsection*{Role of $U_n$ in RSA}
-The RSA cryptosystem relies on the structure of $U_n$, where $n = pq$ is a product of two large prime numbers $p$ and $q$. Euler's totient function is crucial in RSA as:
-\begin{equation}
-\phi(n) = (p-1)(q-1).
-\end{equation}
-The public key exponent $e$ is chosen such that:
-\begin{equation}
-e \in U_{\phi(n)},
-\end{equation}
-meaning that $e$ is coprime to $\phi(n)$ and has a modular inverse. The private key exponent $d$ is the modular inverse of $e$ modulo $\phi(n)$:
-\begin{equation}
-ed \equiv 1 \mod \phi(n).
-\end{equation}
-RSA encryption follows three steps:
-\begin{enumerate}
-\item \textbf{Key Generation} - recipient generates public $(n, e)$ and private key $(d, n)$.
-\item \textbf{Encryption} - sender encrypts a message using the public key.
-\item \textbf{Decryption} - recipient decrypts the message using the private key.
-\end{enumerate}
-
-\subsection*{Key Generation Algorithm}
-\small
-\begin{lstlisting}[language=Python, basicstyle=\ttfamily\small, frame=single]
-def generate_keys():
-p = randprime(103, 104)
-while q == p:
-q = randprime(103, 104)
-n = p * q
-phi_n = (p - 1) * (q - 1)
-e = random.randrange(2, phi_n)
-while gcd(e, phi_n) != 1:
-e = random.randrange(2, phi_n)
-d = mod_inverse(e, phi_n)
-return (n, e), (d, n)
-\end{lstlisting}
-
-\subsection*{RSA Encryption}
-\small
-\begin{lstlisting}[language=Python, basicstyle=\ttfamily\small, frame=single]
-def encrypt(public_key, plaintext):
-    n, e = public_key
-    ciphertext = [pow(ord(char) - ord('A') + 1, e, n) 
-                  for char in plaintext.upper() if 'A' <= char <= 'Z']
-    return ciphertext
-\end{lstlisting}
-
-\subsection*{RSA Decryption}
-\small
-\begin{lstlisting}[language=Python, basicstyle=\ttfamily\small, frame=single]
-def decrypt(private_key, ciphertext):
-    d, n = private_key
-    plaintext = [chr((pow(char, d, n) - 1) % 26 + ord('A')) for char in ciphertext]
-    return ''.join(plaintext)
-\end{lstlisting}
-
-\newpage
+% \section*{Euler's Totient Function $\phi(n)$}
+% 
+% Since $n = 12 = 2^2 \times 3$, we count numbers less than 12 that are coprime to it. Thus, given greatest common divisor (gcd):
+% \begin{align*}
+% \gcd(1,12)&=1, \quad \gcd(5,12)=1, \quad \gcd(7,12)=1, \quad \gcd(11,12)=1.
+% \end{align*}
+% \noindent
+% More generally, for a prime number $p$, we have $\phi(p) = p-1$, as all numbers below it are coprime and for composite $n$ with distinct prime factors:
+% \[
+% \phi(n) = n\prod_{p \mid n} \left(1 - \frac{1}{p}\right).
+% \]
+% Applying this to $\phi(12)$:
+% \[
+% \phi(12) = 12 \left(1 - \frac{1}{2}\right)\left(1 - \frac{1}{3}\right) = 12 \times \frac{1}{2} \times \frac{2}{3} = 4.
+% \]
+% The Inclusion-Exclusion principle corrects for overcounting in sets. Given two sets $A$ and $B$:
+% \(
+% |A \cup B| = |A| + |B| - |A \cap B|.
+% \) Applying this to $\phi(54)$, where $54 = 2 \times 3^3$:
+% \[
+% \phi(54) = 54 \left(1 - \frac{1}{2} - \frac{1}{3} + \frac{1}{6}\right) = 54 \times \frac{1}{3} = 18.
+% \]
+% For a prime power $p^j$ as multiples of $p$ up to $p^j$ are not coprime:
+% \(
+% \phi(p^j) = p^j - p^{j-1}.
+% \)
+% The dot plot generated via \href{https://colab.research.google.com/drive/1-TYYGCmru1JCt1gVpfZrCToPLPpUNtTV?usp=sharing}{GraphEulerTotient6n+1.ipynb} displays coprimes as dots and $\phi(n)$ as a line graph.
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{Illustrations/totient-function.png}
+%     \caption{Euler's totient function with coprime dot plot.}
+%     \label{totientFunction:fig}
+% \end{figure}
+% \newpage
+% \section*{$U_n$: The Group of Invertible Integers Modulo $n$}
+% 
+% Euler's totient function, $\phi(n)$ helps define the group of invertible integers modulo $n$, denoted as $U_n$. The set $U_n$ consists of integers less than $n$ that are coprime to $n$, and it forms a multiplicative group under modulo $n$ multiplication:
+% \begin{equation}
+% U_n = { a \in \mathbb{Z} \mid 1 \leq a < n, \gcd(a, n) = 1 }.
+% \end{equation}
+% The number of elements in $U_n$ is exactly $\phi(n)$. If $n$ is prime, then every integer from 1 to $n-1$ is coprime to $n$, so $\phi(n) = n - 1$. An element $a \in U_n$ is called a unit involution if:
+% \begin{equation}
+% a^2 \equiv 1 \pmod{n}.
+% \end{equation}
+% That is, each element is its own inverse. For example, in $U_8 = {1, 3, 5, 7}$:
+% \begin{itemize}
+% \item $1^2 \equiv 1 \mod 8 \quad 3^2 \equiv 9 \equiv 1 \mod 8$
+% \item $5^2 \equiv 25 \equiv 1 \mod 8$ \quad $7^2 \equiv 49 \equiv 1 \mod 8$
+% \end{itemize}
+% Thus, all elements of $U_8$ are unit involutions.
+% 
+% The {\em order} of the group $U_n$ is given by $\phi(n)$, the {\em totient} function of $n$, because the number of elements in $U_n$ is exactly the count of numbers less than $n$ that are coprime to $n$. When \(n\) is a prime number \(p\), the order of the group \(U_p\) is given as \( \phi(p) = p-1 \) since for a prime number \(p\), every integer from 1 to \(p-1\) is relatively prime\footnote{since none of those integers share any common factors with \(p\) other than 1. For a prime number \(p\), we simply count all numbers from 1 up to \(p-1\), as all of these numbers do not share any divisors with \(p\).} to \(p\).  
+% 
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.6\textwidth]{Illustrations/invertibles.png}
+% \caption{Group of Invertibles }
+% \end{figure}
+% 
+% \subsection*{Role of $U_n$ in RSA}
+% The RSA cryptosystem relies on the structure of $U_n$, where $n = pq$ is a product of two large prime numbers $p$ and $q$. Euler's totient function is crucial in RSA as:
+% \begin{equation}
+% \phi(n) = (p-1)(q-1).
+% \end{equation}
+% The public key exponent $e$ is chosen such that:
+% \begin{equation}
+% e \in U_{\phi(n)},
+% \end{equation}
+% meaning that $e$ is coprime to $\phi(n)$ and has a modular inverse. The private key exponent $d$ is the modular inverse of $e$ modulo $\phi(n)$:
+% \begin{equation}
+% ed \equiv 1 \mod \phi(n).
+% \end{equation}
+% RSA encryption follows three steps:
+% \begin{enumerate}
+% \item \textbf{Key Generation} - recipient generates public $(n, e)$ and private key $(d, n)$.
+% \item \textbf{Encryption} - sender encrypts a message using the public key.
+% \item \textbf{Decryption} - recipient decrypts the message using the private key.
+% \end{enumerate}
+% 
+% \subsection*{Key Generation Algorithm}
+% \small
+% \begin{lstlisting}[language=Python, basicstyle=\ttfamily\small, frame=single]
+% def generate_keys():
+% p = randprime(103, 104)
+% while q == p:
+% q = randprime(103, 104)
+% n = p * q
+% phi_n = (p - 1) * (q - 1)
+% e = random.randrange(2, phi_n)
+% while gcd(e, phi_n) != 1:
+% e = random.randrange(2, phi_n)
+% d = mod_inverse(e, phi_n)
+% return (n, e), (d, n)
+% \end{lstlisting}
+% 
+% \subsection*{RSA Encryption}
+% \small
+% \begin{lstlisting}[language=Python, basicstyle=\ttfamily\small, frame=single]
+% def encrypt(public_key, plaintext):
+%     n, e = public_key
+%     ciphertext = [pow(ord(char) - ord('A') + 1, e, n) 
+%                   for char in plaintext.upper() if 'A' <= char <= 'Z']
+%     return ciphertext
+% \end{lstlisting}
+% 
+% \subsection*{RSA Decryption}
+% \small
+% \begin{lstlisting}[language=Python, basicstyle=\ttfamily\small, frame=single]
+% def decrypt(private_key, ciphertext):
+%     d, n = private_key
+%     plaintext = [chr((pow(char, d, n) - 1) % 26 + ord('A')) for char in ciphertext]
+%     return ''.join(plaintext)
+% \end{lstlisting}
+% 
+% \newpage
+% >>>>>> end of annexed block <<<<<<
 \section*{A Conversation on Injective Yet Obscure Mappings: \newline Rajeev and Eleanor Discuss Cryptography}
 
 Rajeev leaned back in his chair, fingers tracing the rim of his coffee cup, eyes glinting with amusement. \textit{“You ever wonder,”} he mused, \textit{“how to build a function that looks friendly but hides its teeth?”}
@@ -235,15 +235,15 @@ Rajeev grinned, as though she had walked straight into his trap. \textit{“Exac
 Eleanor’s eyes flickered with interest. \textit{“You’re disrupting monotonicity. Nice. Now inversion requires knowing both \( H(n) \) and the sequence \( m_n \).”}
 \bigskip
 
-Rajeev leaned forward. \textit{“Better yet, \( m_n \) isn’t random—it’s structured. Something like \( p_{f(n)} \), where \( f(n) \) is a non-trivial mapping of \( n \).”}
+Rajeev on it now. \textit{“Better yet, \( m_n \) isn’t random—it’s structured. Something like \( p_{f(n)} \), where \( f(n) \) is a non-trivial mapping of \( n \).”}
 
-Eleanor tapped her chin. \textit{“So to invert \( M(n) \), you’d need to untangle both the prime distribution and the modular sequence. That’s a serious roadblock.”}
+Eleanor tapped her chin affectedly. \textit{“So to invert \( M(n) \), you’d need to untangle both the prime distribution and the modular sequence. That’s a serious roadblock.”}
 
 \bigskip
 
 Rajeev chuckled. \textit{“And yet, it’s not enough. True trapdoor functions need inversion to be infeasible even if you know the structure.”}
 
-Eleanor leaned back, watching the afternoon light filter through the window. \textit{“You sound like someone who’s had a revelation.”}
+Eleanor, pretending to idly watch the afternoon light filter through the window. \textit{“You sound like someone who’s had a revelation.”}
 \bigskip
 
 Rajeev shrugged. \textit{“Let’s just say I have a renewed appreciation for randomness. But if we can crack this problem, Eleanor, we might just change the landscape of cryptography.”}
@@ -252,176 +252,178 @@ Eleanor smirked. \textit{“Then let’s see how far we can push it.”}
 
 \bigskip
 
-A trapdoor function is a function that is easy to compute in one direction but difficult to invert without some secret knowledge. In this paper, we explore the difficulty of finding such functions by considering the structure of amicable numbers, the Euler totient function, and its cumulative sum.
-
-\bigskip
-
 \section*{Number Amicability}
 
 The concept of amicable numbers has evolved through historical definitions.
 
-\subsection*{Euclid's Definition}
-Euclid defined amicable numbers in terms of the sum of their 	extbf{proper divisors} (excluding the number itself). Two numbers $m$ and $n$ are amicable if:
-\begin{equation*}
-s(m) = n, \quad s(n) = m
-\end{equation*}
-where $s(x)$ is the sum of proper divisors of $x$.
+A trapdoor function is a function that is easy to compute in one direction but difficult to invert without some secret knowledge. In the annex we explore the difficulty of finding such functions by considering the structure of amicable numbers, the Euler totient function, and its cumulative sum.
 
-\subsection*{Euler's Extension}
-Euler extended Euclid’s definition by introducing the function $\sigma(n)$, which sums 	extbf{all} divisors of $n$, including $n$ itself:
-\begin{equation*}
-s(n) = \sigma(n) - n.
-\end{equation*}
-Rewriting Euclid's definition in terms of $\sigma(n)$, we obtain:
-\begin{align*}
-\sigma(m) - m &= n, \quad \sigma(n) - n = m.
-\end{align*}
-Adding these equations and rearranging, we get:
-\begin{equation*}
-\sigma(m) + \sigma(n) = 2(m + n).
-\end{equation*}
-Since both $m$ and $n$ contribute equally to the sum, the necessary and sufficient condition for $m$ and $n$ to be amicable numbers is:
-\begin{equation}
-\sigma(m) = m + n = \sigma(n).
-\end{equation}
+% >>>>>> ANNEX E (cut-sheet v2): Euclid's and Euler's perfect-number extensions and why inversion is hard — block commented out below, pointer left in text <<<<<<
+\textit{(Euclid's and Euler's perfect-number extensions and why inversion is hard --- the full working is set out in Annexe E.)}
 
-This extension highlights the broader implications of including all divisors, such as its role in divisor product identities and multiplicative number theory.
-
-The smallest amicable pairs are:
-\begin{itemize}
-\item \textbf{(220, 284)}
-\begin{align*}
-\sigma(220) &= 1+2+4+5+10+11+20+22+44\\ &+55+110+220 = 284 \\
-\sigma(284) &= 1+2+4+71+142+284 = 220.
-\end{align*}
-\end{itemize}
-
-Since $\sigma(n)$ encodes divisor structure, one might consider whether a related function such as the \textbf{Euler totient cumulative sum} could exhibit similar \href{https://colab.research.google.com/drive/1GAwbrSXMH0O-KXmb3OMSJwsRj7uwMqg5?usp=sharing}{properties}.
-The fundamental requirement for Amicable numbers $(m, n)$ to satisfy can be rewritten in terms of the Euler totient function $\phi(n)$, which counts the number of integers coprime to $n$:
-
-\begin{equation*}
-    \sum_{d \mid m} d - m = n, \quad \sum_{d \mid n} d - n = m.
-\end{equation*}
-
-Define the cumulative totient sum:
-\begin{equation}
-    T(n) = \sum_{k=1}^{n} \phi(k).
-\end{equation}
-
-This function forms a strictly increasing sequence, creating a lattice structure in the integer domain. Unlike amicable numbers, where a relationship between two numbers is established through divisor sums, $T(n)$ provides a direct summation-based growth pattern.
-
-\bigskip
-
-Despite its nontrivial structure, the function $T(n)$ is still \textbf{efficiently invertible}. Given a random number $T_r$ in the sequence, we can determine the corresponding $n$ using binary search in $O(\log n)$ time. Since $T(n)$ is strictly increasing, the mapping $n \to T(n)$ is one-to-one, ensuring that an inverse exists and can be computed efficiently.
-
-\bigskip
-
-For a function to be a valid cryptographic trapdoor function, its inverse must be **computationally infeasible** to compute without special knowledge. The totient cumulative sum provides an example of a function that might appear difficult to invert, but in reality, is efficiently computable due to its monotonicity and the ability to apply binary search.
-\bigskip
-
-This raises the challenge in designing true trapdoor functions: while many number-theoretic functions grow nonlinearly, their invertibility is often easier than expected due to structured behavior or monotonicity.
-\bigskip
-
-While the sum-of-divisors function used in defining amicable numbers suggests a complex structure, and the cumulative totient sum creates an interesting integer lattice, neither function possesses the necessary computational asymmetry required for a genuine trapdoor function. The difficulty in finding such functions lies in ensuring that inversion remains intractable **even with precomputed knowledge**, an ongoing challenge in cryptographic function design.
-
+% \subsection*{Euclid's Definition}
+% Euclid defined amicable numbers in terms of the sum of their 	extbf{proper divisors} (excluding the number itself). Two numbers $m$ and $n$ are amicable if:
+% \begin{equation*}
+% s(m) = n, \quad s(n) = m
+% \end{equation*}
+% where $s(x)$ is the sum of proper divisors of $x$.
+% 
+% \subsection*{Euler's Extension}
+% Euler extended Euclid’s definition by introducing the function $\sigma(n)$, which sums 	extbf{all} divisors of $n$, including $n$ itself:
+% \begin{equation*}
+% s(n) = \sigma(n) - n.
+% \end{equation*}
+% Rewriting Euclid's definition in terms of $\sigma(n)$, we obtain:
+% \begin{align*}
+% \sigma(m) - m &= n, \quad \sigma(n) - n = m.
+% \end{align*}
+% Adding these equations and rearranging, we get:
+% \begin{equation*}
+% \sigma(m) + \sigma(n) = 2(m + n).
+% \end{equation*}
+% Since both $m$ and $n$ contribute equally to the sum, the necessary and sufficient condition for $m$ and $n$ to be amicable numbers is:
+% \begin{equation}
+% \sigma(m) = m + n = \sigma(n).
+% \end{equation}
+% 
+% This extension highlights the broader implications of including all divisors, such as its role in divisor product identities and multiplicative number theory.
+% 
+% The smallest amicable pairs are:
+% \begin{itemize}
+% \item \textbf{(220, 284)}
+% \begin{align*}
+% \sigma(220) &= 1+2+4+5+10+11+20+22+44\\ &+55+110+220 = 284 \\
+% \sigma(284) &= 1+2+4+71+142+284 = 220.
+% \end{align*}
+% \end{itemize}
+% 
+% Since $\sigma(n)$ encodes divisor structure, one might consider whether a related function such as the \textbf{Euler totient cumulative sum} could exhibit similar \href{https://colab.research.google.com/drive/1GAwbrSXMH0O-KXmb3OMSJwsRj7uwMqg5?usp=sharing}{properties}.
+% The fundamental requirement for Amicable numbers $(m, n)$ to satisfy can be rewritten in terms of the Euler totient function $\phi(n)$, which counts the number of integers coprime to $n$:
+% 
+% \begin{equation*}
+%     \sum_{d \mid m} d - m = n, \quad \sum_{d \mid n} d - n = m.
+% \end{equation*}
+% 
+% Define the cumulative totient sum:
+% \begin{equation}
+%     T(n) = \sum_{k=1}^{n} \phi(k).
+% \end{equation}
+% 
+% This function forms a strictly increasing sequence, creating a lattice structure in the integer domain. Unlike amicable numbers, where a relationship between two numbers is established through divisor sums, $T(n)$ provides a direct summation-based growth pattern.
+% 
+% \bigskip
+% 
+% Despite its nontrivial structure, the function $T(n)$ is still \textbf{efficiently invertible}. Given a random number $T_r$ in the sequence, we can determine the corresponding $n$ using binary search in $O(\log n)$ time. Since $T(n)$ is strictly increasing, the mapping $n \to T(n)$ is one-to-one, ensuring that an inverse exists and can be computed efficiently.
+% 
+% \bigskip
+% 
+% For a function to be a valid cryptographic trapdoor function, its inverse must be **computationally infeasible** to compute without special knowledge. The totient cumulative sum provides an example of a function that might appear difficult to invert, but in reality, is efficiently computable due to its monotonicity and the ability to apply binary search.
+% \bigskip
+% 
+% This raises the challenge in designing true trapdoor functions: while many number-theoretic functions grow nonlinearly, their invertibility is often easier than expected due to structured behavior or monotonicity.
+% \bigskip
+% 
+% While the sum-of-divisors function used in defining amicable numbers suggests a complex structure, and the cumulative totient sum creates an interesting integer lattice, neither function possesses the necessary computational asymmetry required for a genuine trapdoor function. The difficulty in finding such functions lies in ensuring that inversion remains intractable **even with precomputed knowledge**, an ongoing challenge in cryptographic function design.
+% 
 %%%%%%%%%%%%
 % \section*{Constructing Injective Yet Obscure Mappings: A Pedagogical Path to Trapdoor Functions}
-
-A cryptographic trapdoor function must be:
-\begin{itemize}
-    \item \textbf{Injective} (one-to-one): Each input must map uniquely to an output.
-    \item \textbf{Computationally asymmetric}: The forward computation should be efficient, while inversion should be infeasible.
-\end{itemize}
-
-Constructing such a function is difficult without introducing pseudo-random elements. Rajeev was exploring the stepwise evolution of a mapping, moving from simple cumulative sums to prime-based transformations and finally to modular obfuscation, demonstrating the increasing complexity in preventing easy inversion.
-
-A natural starting point is the cumulative sum of a number-theoretic function. Consider the Euler totient function:
-
-\begin{equation}
-    T(n) = \sum_{k=1}^{n} \phi(k).
-\end{equation}
-
-Since \( \phi(k) \) is always positive, \( T(n) \) is **strictly increasing**, making it:
-\begin{itemize}
-    \item \textbf{Injective}: No two distinct \( n \) values share the same \( T(n) \).
-    \item \textbf{Easily Invertible}: Given \( T_r \), we can recover \( n \) via binary search in \( O(\log n) \).
-\end{itemize}
-
-Thus, \( T(n) \) fails as a trapdoor function because **its bijectivity is immediately obvious**.
-
+% 
+% A cryptographic trapdoor function must be:
+% \begin{itemize}
+%     \item \textbf{Injective} (one-to-one): Each input must map uniquely to an output.
+%     \item \textbf{Computationally asymmetric}: The forward computation should be efficient, while inversion should be infeasible.
+% \end{itemize}
+% 
+% Constructing such a function is difficult without introducing pseudo-random elements. Rajeev was exploring the stepwise evolution of a mapping, moving from simple cumulative sums to prime-based transformations and finally to modular obfuscation, demonstrating the increasing complexity in preventing easy inversion.
+% 
+% A natural starting point is the cumulative sum of a number-theoretic function. Consider the Euler totient function:
+% 
+% \begin{equation}
+%     T(n) = \sum_{k=1}^{n} \phi(k).
+% \end{equation}
+% 
+% Since \( \phi(k) \) is always positive, \( T(n) \) is **strictly increasing**, making it:
+% \begin{itemize}
+%     \item \textbf{Injective}: No two distinct \( n \) values share the same \( T(n) \).
+%     \item \textbf{Easily Invertible}: Given \( T_r \), we can recover \( n \) via binary search in \( O(\log n) \).
+% \end{itemize}
+% 
+% Thus, \( T(n) \) fails as a trapdoor function because **its bijectivity is immediately obvious**.
+% 
 % \section{Step 2: Prime-Indexed Totient Encoding (PITE)}
-
-To disrupt simple inversion, we replace the cumulative sum over natural numbers with one based on \textbf{prime indices}:
-
-\begin{equation}
-    H(n) = \sum_{p_k \leq P_n} \phi(p_k),
-\end{equation}
-
-where \( p_k \) is the \( k \)-th prime and \( P_n \) is the \( n \)-th prime.
-
-\subsection{Why This is Harder to Invert}
-Unlike \( T(n) \), which follows a smooth curve, \( H(n) \) is shaped by:
-\begin{itemize}
-    \item \textbf{Irregular Prime Gaps}: Primes do not follow an arithmetic progression.
-    \item \textbf{Prime-Counting Difficulty}: Estimating \( n \) from \( H(n) \) links inversion to the **prime counting function** \( \pi(x) \), a non-trivial number-theoretic function.
-\end{itemize}
-
-While \( H(n) \) is still injective, its bijectivity is not immediately apparent, making inversion substantially harder. However, **given enough precomputed data, binary search still works**, so we need an additional layer of obfuscation.
-
+% 
+% To disrupt simple inversion, we replace the cumulative sum over natural numbers with one based on \textbf{prime indices}:
+% 
+% \begin{equation}
+%     H(n) = \sum_{p_k \leq P_n} \phi(p_k),
+% \end{equation}
+% 
+% where \( p_k \) is the \( k \)-th prime and \( P_n \) is the \( n \)-th prime.
+% 
+% \subsection{Why This is Harder to Invert}
+% Unlike \( T(n) \), which follows a smooth curve, \( H(n) \) is shaped by:
+% \begin{itemize}
+%     \item \textbf{Irregular Prime Gaps}: Primes do not follow an arithmetic progression.
+%     \item \textbf{Prime-Counting Difficulty}: Estimating \( n \) from \( H(n) \) links inversion to the **prime counting function** \( \pi(x) \), a non-trivial number-theoretic function.
+% \end{itemize}
+% 
+% While \( H(n) \) is still injective, its bijectivity is not immediately apparent, making inversion substantially harder. However, **given enough precomputed data, binary search still works**, so we need an additional layer of obfuscation.
+% 
 % \section{Step 3: Modular Transformations to Disrupt Bijectivity}
-
-To further obscure inversion, we introduce a modular transformation:
-
-\begin{equation}
-    M(n) = H(n) \mod m_n,
-\end{equation}
-
-where \( m_n \) is a sequence of moduli derived from **structured** rather than random elements, such as:
-
-\begin{equation}
-    m_n = p_{f(n)},
-\end{equation}
-
-where \( f(n) \) is a deterministic function mapping \( n \) to an index in the prime sequence.
-
-\subsection{Why This Further Obscures Inversion}
-\begin{itemize}
-    \item \textbf{Breaks Monotonicity}: Since modulo operations fold values into a bounded range, binary search no longer applies.
-    \item \textbf{Hides Input Structure}: The prime gaps make direct reconstruction of \( n \) from \( M(n) \) infeasible without knowing the transformation sequence.
-    \item \textbf{Remains Injective in a Controlled Domain}: Unlike true randomization, every transformation follows a **deterministic** but **non-trivial** pattern.
-\end{itemize}
-
-Now, inversion requires **both the original mapping and knowledge of the prime-moduli structure**, making \( M(n) \) a much stronger candidate for a trapdoor function.
-
+% 
+% To further obscure inversion, we introduce a modular transformation:
+% 
+% \begin{equation}
+%     M(n) = H(n) \mod m_n,
+% \end{equation}
+% 
+% where \( m_n \) is a sequence of moduli derived from **structured** rather than random elements, such as:
+% 
+% \begin{equation}
+%     m_n = p_{f(n)},
+% \end{equation}
+% 
+% where \( f(n) \) is a deterministic function mapping \( n \) to an index in the prime sequence.
+% 
+% \subsection{Why This Further Obscures Inversion}
+% \begin{itemize}
+%     \item \textbf{Breaks Monotonicity}: Since modulo operations fold values into a bounded range, binary search no longer applies.
+%     \item \textbf{Hides Input Structure}: The prime gaps make direct reconstruction of \( n \) from \( M(n) \) infeasible without knowing the transformation sequence.
+%     \item \textbf{Remains Injective in a Controlled Domain}: Unlike true randomization, every transformation follows a **deterministic** but **non-trivial** pattern.
+% \end{itemize}
+% 
+% Now, inversion requires **both the original mapping and knowledge of the prime-moduli structure**, making \( M(n) \) a much stronger candidate for a trapdoor function.
+% 
 % \section{Conclusion: The Challenge of Constructing Trapdoor Functions Without Randomization}
-
-This progression highlights the difficulty of designing trapdoor functions without relying on pseudo-random elements:
-\begin{enumerate}
-    \item \textbf{Cumulative sums} are **too predictable**, allowing trivial inversion.
-    \item \textbf{Prime-based encodings} disrupt uniform growth, linking inversion to prime distributions.
-    \item \textbf{Modular obfuscation} breaks simple search strategies while preserving injectivity.
-\end{enumerate}
-
-However, **true trapdoor functions require inversion to remain infeasible even with all known mathematical tools**. Without randomness, ensuring this remains a major open problem.
-
+% 
+% This progression highlights the difficulty of designing trapdoor functions without relying on pseudo-random elements:
+% \begin{enumerate}
+%     \item \textbf{Cumulative sums} are **too predictable**, allowing trivial inversion.
+%     \item \textbf{Prime-based encodings} disrupt uniform growth, linking inversion to prime distributions.
+%     \item \textbf{Modular obfuscation} breaks simple search strategies while preserving injectivity.
+% \end{enumerate}
+% 
+% However, **true trapdoor functions require inversion to remain infeasible even with all known mathematical tools**. Without randomness, ensuring this remains a major open problem.
+% 
 % \section{The Trade-Off Between Pseudo-Random Elements and Public-Key Protocol Complexity}
-
-In cryptographic protocols, there is a fundamental trade-off between using pseudo-random elements and maintaining protocol simplicity. While pseudo-randomness strengthens security by introducing unpredictability, it also adds computational overhead and implementation complexity. Avoiding randomness might seem cleaner, but it often exposes the system to structural vulnerabilities.
-
-To illustrate this trade-off, we examine the Sony PlayStation 3 cryptographic failure, where a deterministic choice in a signature scheme led to the exposure of private keys.
-
+% 
+% In cryptographic protocols, there is a fundamental trade-off between using pseudo-random elements and maintaining protocol simplicity. While pseudo-randomness strengthens security by introducing unpredictability, it also adds computational overhead and implementation complexity. Avoiding randomness might seem cleaner, but it often exposes the system to structural vulnerabilities.
+% 
+% To illustrate this trade-off, we examine the Sony PlayStation 3 cryptographic failure, where a deterministic choice in a signature scheme led to the exposure of private keys.
+% 
 % \section{Case Study: The Sony PlayStation ECDSA Failure}
-
-Sony's PlayStation 3 used the **Elliptic Curve Digital Signature Algorithm (ECDSA)** for software authentication and encryption. A valid ECDSA signature for a message \( m \) consists of two values \( (r, s) \) computed as follows:
-
-\begin{enumerate}
-    \item Choose a random integer \( k \) (per signature).
-    \item Compute \( r = (g^k \mod p) \).
-    \item Compute \( s = k^{-1} (H(m) + xr) \mod q \), where \( x \) is the private key.
-\end{enumerate}
-
-Sony, however, made a crucial mistake: instead of selecting a fresh random \( k \) for each signature, they used a **fixed deterministic value**.
-
+% 
+% Sony's PlayStation 3 used the **Elliptic Curve Digital Signature Algorithm (ECDSA)** for software authentication and encryption. A valid ECDSA signature for a message \( m \) consists of two values \( (r, s) \) computed as follows:
+% 
+% \begin{enumerate}
+%     \item Choose a random integer \( k \) (per signature).
+%     \item Compute \( r = (g^k \mod p) \).
+%     \item Compute \( s = k^{-1} (H(m) + xr) \mod q \), where \( x \) is the private key.
+% \end{enumerate}
+% 
+% Sony, however, made a crucial mistake: instead of selecting a fresh random \( k \) for each signature, they used a **fixed deterministic value**.
+% 
+% >>>>>> end of annexed block <<<<<<
 \subsection{How This Led to a Security Breach}
 Since \( k \) was the same across multiple signatures, an attacker could solve for the private key \( x \) using two signatures \( (r_1, s_1) \) and \( (r_2, s_2) \) on different messages:
 
@@ -476,7 +478,7 @@ While pseudo-randomness increases computational complexity, it significantly imp
 
 \subsection{Can Trapdoor Functions Work Without Randomness?}
 
-If one wishes to avoid randomness, cryptographic security must be **derived from inherently hard mathematical problems** such as:
+If one wishes to avoid randomness, cryptographic security must be derived from inherently hard mathematical problems such as:
 
 \begin{itemize}
     \item \textbf{Integer Factorization (RSA)}
@@ -491,7 +493,7 @@ However, even these protocols benefit from randomness:
     \item Quantum-resistant cryptography often introduces random noise to increase computational hardness.
 \end{enumerate}
 
-While **avoiding randomness simplifies protocol design**, it often introduces **structural vulnerabilities**. As demonstrated by the Sony ECDSA failure, **deterministic implementations expose cryptographic keys to attacks**.
+While avoiding randomness simplifies protocol design, it often introduces structural vulnerabilities. As demonstrated by the Sony ECDSA failure, deterministic implementations expose cryptographic keys to attacks.
 
 Thus, randomness is a necessary trade-off:
 \begin{itemize}
@@ -499,11 +501,9 @@ Thus, randomness is a necessary trade-off:
     \item \textbf{Less randomness → Simpler, but vulnerable to structured attacks.}
 \end{itemize}
 
-A truly **randomness-free** trapdoor function would require an alternative complexity source—such as structured obfuscation or modular transformations—but these methods introduce their own challenges.
+A truly randomness-free trapdoor function would require an alternative complexity source such as structured obfuscation or modular transformations, but these methods introduce their own challenges.
 
-Ultimately, **the safest cryptographic systems balance randomness with structured security**, ensuring that the function remains computationally asymmetric while preventing predictable vulnerabilities.
-
-
+Ultimately, the safest cryptographic systems balance randomness with structured security, ensuring that the function remains computationally asymmetric while preventing predictable vulnerabilities.
 
 \newpage
 
@@ -570,6 +570,10 @@ Rajeev raised his coffee cup. “To pangolins, hyperbolic geometry, and Heegner 
 Celiac laughed, clinking her cup against his. “To curiosity—and the strange beauty of negative curvature.”
 
 % Hyperbolic geometry continues to reveal new insights into the structure of space and the constraints on Platonic solids. By finding a curvature \( K \approx -0.478 \), we uncovered a unique space that hosts exactly nine Platonic solids—a remarkable expansion beyond the familiar five of Euclidean space.
+
+
+
+
 
 
 

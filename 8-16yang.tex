@@ -33,50 +33,54 @@ F_{\text{obs}} = \frac{L}{d^2} \cdot \left(\frac{\nu_{\text{obs}}}{\nu_{\text{em
 \]
 where \( L \) is the intrinsic luminosity of the source.
 
-\section*{The Total Flux on a Unit Grid}
-Assuming the light sources are located on a unit lattice grid in \( \mathbb{Z}^3 \), the distance to a source at \( (x, y, z) \) is:
-\[
-d = \sqrt{x^2 + y^2 + z^2}.
-\]
+% >>>>>> ANNEX D (cut-sheet v2): the total redshifted flux on a unit grid — block commented out below, pointer left in text <<<<<<
+\textit{(The total redshifted flux on a unit grid --- the full working is set out in Annexe D.)}
 
-The flux from a single source, incorporating Hubble’s Law, becomes:
-\[
-F_{\text{obs}}(x, y, z) = \frac{L}{(x^2 + y^2 + z^2)} \cdot \left(\frac{c}{c + H_0 \sqrt{x^2 + y^2 + z^2}}\right)^2.
-\]
-
-The total flux observed at the grid point is the sum over all lattice points, excluding the origin:
-\[
-F_{\text{total}} = \sum_{(x, y, z) \in \mathbb{Z}^3 \setminus \{(0, 0, 0)\}} \frac{L}{(x^2 + y^2 + z^2)} \cdot \left(\frac{c}{c + H_0 \sqrt{x^2 + y^2 + z^2}}\right)^2.
-\]
-
+% \section*{The Total Flux on a Unit Grid}
+% Assuming the light sources are located on a unit lattice grid in \( \mathbb{Z}^3 \), the distance to a source at \( (x, y, z) \) is:
+% \[
+% d = \sqrt{x^2 + y^2 + z^2}.
+% \]
 % 
-\begin{figure}[H]
-\includegraphics[width=1.0\linewidth]{Illustrations/vign-yang2.png}
-\caption{Yang pondering the glare from an infinitude of candles}
-\end{figure}
-
-Lee noted two competing effects in the flux sum:
-\begin{enumerate}
-    \item \textbf{Distance Diminishes Brightness:} The inverse square law ensures that more distant sources contribute less to the total flux.
-    \item \textbf{Redshift Reduces Flux:} Hubble’s Law implies that the observed flux from distant sources diminishes further due to redshift, with the term \( \left(\frac{c}{c + H_0 d}\right)^2 \) becoming smaller as \( d \) increases.
-\end{enumerate}
-
-To analyze the behavior of the flux, Lee approximated the redshift term for large distances:
-\[
-\frac{c}{c + H_0 d} \approx \frac{1}{H_0 d},
-\]
-leading to an approximate flux contribution:
-\[
-F_{\text{obs}}(x, y, z) \sim \frac{L}{(x^2 + y^2 + z^2)^3}.
-\]
-
-The total flux then becomes:
-\[
-F_{\text{total}} \sim \sum_{(x, y, z) \in \mathbb{Z}^3 \setminus \{(0, 0, 0)\}} \frac{L}{(x^2 + y^2 + z^2)^3}.
-\]
-
-This sum converges for \( s > 3/2 \), suggesting that the total flux observed is finite and dominated by contributions from nearby sources.
-
+% The flux from a single source, incorporating Hubble’s Law, becomes:
+% \[
+% F_{\text{obs}}(x, y, z) = \frac{L}{(x^2 + y^2 + z^2)} \cdot \left(\frac{c}{c + H_0 \sqrt{x^2 + y^2 + z^2}}\right)^2.
+% \]
+% 
+% The total flux observed at the grid point is the sum over all lattice points, excluding the origin:
+% \[
+% F_{\text{total}} = \sum_{(x, y, z) \in \mathbb{Z}^3 \setminus \{(0, 0, 0)\}} \frac{L}{(x^2 + y^2 + z^2)} \cdot \left(\frac{c}{c + H_0 \sqrt{x^2 + y^2 + z^2}}\right)^2.
+% \]
+% 
+% 
+% \begin{figure}[H]
+% \includegraphics[width=1.0\linewidth]{Illustrations/vign-yang2.png}
+% \caption{Yang pondering the glare from an infinitude of candles}
+% \end{figure}
+% 
+% Lee noted two competing effects in the flux sum:
+% \begin{enumerate}
+%     \item \textbf{Distance Diminishes Brightness:} The inverse square law ensures that more distant sources contribute less to the total flux.
+%     \item \textbf{Redshift Reduces Flux:} Hubble’s Law implies that the observed flux from distant sources diminishes further due to redshift, with the term \( \left(\frac{c}{c + H_0 d}\right)^2 \) becoming smaller as \( d \) increases.
+% \end{enumerate}
+% 
+% To analyze the behavior of the flux, Lee approximated the redshift term for large distances:
+% \[
+% \frac{c}{c + H_0 d} \approx \frac{1}{H_0 d},
+% \]
+% leading to an approximate flux contribution:
+% \[
+% F_{\text{obs}}(x, y, z) \sim \frac{L}{(x^2 + y^2 + z^2)^3}.
+% \]
+% 
+% The total flux then becomes:
+% \[
+% F_{\text{total}} \sim \sum_{(x, y, z) \in \mathbb{Z}^3 \setminus \{(0, 0, 0)\}} \frac{L}{(x^2 + y^2 + z^2)^3}.
+% \]
+% 
+% This sum converges for \( s > 3/2 \), suggesting that the total flux observed is finite and dominated by contributions from nearby sources.
+% 
+% >>>>>> end of annexed block <<<<<<
 \section*{Interpreting the Redshifted Flux}
 Lee was struck by the philosophical implications of his calculations:
 \begin{itemize}
@@ -176,74 +180,78 @@ Lee nodded slowly. "I can see that. \textbf{Sub-} has a clarity the others lack.
 
 For him, composites were not merely the products of primes but dynamic entities shaped by the flux of their prime factors. Viewing each composite as an "accumulated flux" of contributions from its nearest prime factors, Yoshiro sought to explore how these contributions diminished as composites grew larger. His ideas began to echo those of Willard Jones, who had previously explored the flux of light reaching an observer from lattice-based sources.
 
-\subsection*{Composites as Accumulated Flux}
-Yoshiro envisioned a composite number $C$ as the result of flux contributions from its prime factors $p_1, p_2, \ldots, p_k$. Each prime $p_i$ contributed a share to $C$, inversely proportional to the size of $p_i$ and modulated by the thinning density of primes as $C$ increased and was modeled as:
-\[
-F(p_i, C) = \frac{1}{p_i \cdot \ln(C)},
-\]
-where:
-\begin{itemize}
-    \item $F(p_i, C)$ represents the flux contribution of $p_i$ to $C$,
-    \item $p_i$ is a prime factor of $C$,
-    \item $\ln(C)$ reflects the density of primes thinning as $C$ increases.
-\end{itemize}
+% >>>>>> ANNEX D (cut-sheet v2): composites as accumulated flux (merge with the Jinyoung material) — block commented out below, pointer left in text <<<<<<
+\textit{(Composites as accumulated flux (merge with the Jinyoung material) --- the full working is set out in Annexe D.)}
 
-The total flux $F(C)$ for a composite $C$ was then given by:
-\[
-F(C) = \sum_{p_i \mid C} \frac{1}{p_i \cdot \ln(C)}.
-\]
-
+% \subsection*{Composites as Accumulated Flux}
+% Yoshiro envisioned a composite number $C$ as the result of flux contributions from its prime factors $p_1, p_2, \ldots, p_k$. Each prime $p_i$ contributed a share to $C$, inversely proportional to the size of $p_i$ and modulated by the thinning density of primes as $C$ increased and was modeled as:
+% \[
+% F(p_i, C) = \frac{1}{p_i \cdot \ln(C)},
+% \]
+% where:
+% \begin{itemize}
+%     \item $F(p_i, C)$ represents the flux contribution of $p_i$ to $C$,
+%     \item $p_i$ is a prime factor of $C$,
+%     \item $\ln(C)$ reflects the density of primes thinning as $C$ increases.
+% \end{itemize}
+% 
+% The total flux $F(C)$ for a composite $C$ was then given by:
+% \[
+% F(C) = \sum_{p_i \mid C} \frac{1}{p_i \cdot \ln(C)}.
+% \]
+% 
 % \section*{Connecting to Willard Jones' Lattice Flux}
-Willard’s exploration of light flux from lattice sources had emphasized the diminishing contribution of distant sources due to the inverse square law. Yoshiro extended this idea to the prime shadows, viewing primes as "sources of arithmetic light" whose flux contributions diminished both due to their increasing magnitude and their thinning density.
-
-Instead of spatial attenuation, Yoshiro's primes experienced "numerical attenuation" governed by the inverse relationship with $\ln(C)$, paralleling the cosmological dimming of Willard’s distant light sources under Hubble’s law.
-
+% Willard’s exploration of light flux from lattice sources had emphasized the diminishing contribution of distant sources due to the inverse square law. Yoshiro extended this idea to the prime shadows, viewing primes as "sources of arithmetic light" whose flux contributions diminished both due to their increasing magnitude and their thinning density.
+% 
+% Instead of spatial attenuation, Yoshiro's primes experienced "numerical attenuation" governed by the inverse relationship with $\ln(C)$, paralleling the cosmological dimming of Willard’s distant light sources under Hubble’s law.
+% 
 % \section*{Prime Multipliers and Composite Growth}
-Yoshiro noted that composites, while products of primes, grew at a slower rate relative to the accumulation of all primes. Unlike the factorial $n!$, which grows explosively and leaves no integers untouched in its interval, the composites had gaps determined by their prime structure. He had in mind the classic proof of the infinitude of primes, which relies on factorials:
-\[
-n! + 1 \quad \text{is either prime or divisible by a prime not in } \{2, 3, \ldots, n\}.
-\]
-In contrast, the composite numbers in Yoshiro’s framework were defined by their "prime multipliers," or the set of primes contributing to their formation. If $C$ is a composite formed by primes $p_1, p_2, \ldots, p_k$, the prime multiplier factorial $P(C)$ is their \textbf{radical}:
-\[
-P(C) = p_1 \cdot p_2 \cdot \ldots \cdot p_k.
-\]
-For example:
-\begin{itemize}
-    \item For $C = 60 = 2^2 \cdot 3 \cdot 5$, $P(C) = 2 \cdot 3 \cdot 5 = 30$ (ignoring multiplicity).
-\end{itemize}
-
+% Yoshiro noted that composites, while products of primes, grew at a slower rate relative to the accumulation of all primes. Unlike the factorial $n!$, which grows explosively and leaves no integers untouched in its interval, the composites had gaps determined by their prime structure. He had in mind the classic proof of the infinitude of primes, which relies on factorials:
+% \[
+% n! + 1 \quad \text{is either prime or divisible by a prime not in } \{2, 3, \ldots, n\}.
+% \]
+% In contrast, the composite numbers in Yoshiro’s framework were defined by their "prime multipliers," or the set of primes contributing to their formation. If $C$ is a composite formed by primes $p_1, p_2, \ldots, p_k$, the prime multiplier factorial $P(C)$ is their \textbf{radical}:
+% \[
+% P(C) = p_1 \cdot p_2 \cdot \ldots \cdot p_k.
+% \]
+% For example:
+% \begin{itemize}
+%     \item For $C = 60 = 2^2 \cdot 3 \cdot 5$, $P(C) = 2 \cdot 3 \cdot 5 = 30$ (ignoring multiplicity).
+% \end{itemize}
+% 
 % \subsection*{The Diminishing Flux of Primes}
-Yoshiro was fascinated by the interplay of diminishing contributions from larger primes as composites grew larger. The flux contributions $F(p_i, C)$ weakened not only because of the inverse proportionality to $p_i$ but also because the density of primes thinned as $C$ increased.
-
-To quantify this, he explored the Prime Number Theorem:
-\[
-\pi(x) \sim \frac{x}{\ln(x)},
-\]
-where $\pi(x)$ counts the number of primes less than or equal to $x$. For a composite $C$, the density of contributing primes was proportional to:
-\[
-\frac{\pi(C)}{C} \sim \frac{1}{\ln(C)}.
-\]
-Thus, the thinning of primes introduced an additional decay factor to the total flux:
-\[
-F(C) \sim \frac{1}{\ln(C)} \sum_{p_i \mid C} \frac{1}{p_i}.
-\]
-Yoshiro referred to the flux contributions from prime factors as "prime shadows" cast on the composite number. These shadows dimmed as:
-\begin{enumerate}
-    \item The composite grew larger, increasing \(\ln(C)\),
-    \item The contributing primes became sparser, reducing \(\sum_{p_i \mid C} \frac{1}{p_i}\).
-\end{enumerate}
-
+% Yoshiro was fascinated by the interplay of diminishing contributions from larger primes as composites grew larger. The flux contributions $F(p_i, C)$ weakened not only because of the inverse proportionality to $p_i$ but also because the density of primes thinned as $C$ increased.
+% 
+% To quantify this, he explored the Prime Number Theorem:
+% \[
+% \pi(x) \sim \frac{x}{\ln(x)},
+% \]
+% where $\pi(x)$ counts the number of primes less than or equal to $x$. For a composite $C$, the density of contributing primes was proportional to:
+% \[
+% \frac{\pi(C)}{C} \sim \frac{1}{\ln(C)}.
+% \]
+% Thus, the thinning of primes introduced an additional decay factor to the total flux:
+% \[
+% F(C) \sim \frac{1}{\ln(C)} \sum_{p_i \mid C} \frac{1}{p_i}.
+% \]
+% Yoshiro referred to the flux contributions from prime factors as "prime shadows" cast on the composite number. These shadows dimmed as:
+% \begin{enumerate}
+%     \item The composite grew larger, increasing \(\ln(C)\),
+%     \item The contributing primes became sparser, reducing \(\sum_{p_i \mid C} \frac{1}{p_i}\).
+% \end{enumerate}
+% 
 % The metaphor of prime shadows highlighted the hidden influence of primes on composites, shaping their structure while diminishing their individual presence in the total flux. 
-
-Yoshiro often reflected on the philosophical connections between her prime shadows and Willard’s light flux:
-\begin{itemize}
-    \item Both frameworks explored how individual sources—whether primes or lattice-based light emitters—contributed to a cumulative entity.
-    \item The diminishing flux, governed by $\ln(C)$ or the inverse square law, revealed the hidden structures underlying apparent randomness.
-    \item The composite numbers, much like Willard’s observer’s lattice, served as a canvas for the interplay of diminishing contributions.
-\end{itemize}
-
+% 
+% Yoshiro often reflected on the philosophical connections between her prime shadows and Willard’s light flux:
+% \begin{itemize}
+%     \item Both frameworks explored how individual sources—whether primes or lattice-based light emitters—contributed to a cumulative entity.
+%     \item The diminishing flux, governed by $\ln(C)$ or the inverse square law, revealed the hidden structures underlying apparent randomness.
+%     \item The composite numbers, much like Willard’s observer’s lattice, served as a canvas for the interplay of diminishing contributions.
+% \end{itemize}
+% 
 % As Yoshiro closed his notebook, he thought about the beauty of numbers: how primes, the building blocks of arithmetic, shaped composites through their diminishing flux. For him, the study of composites was not just about numbers but about uncovering the hidden patterns and connections that defined the mathematical universe.
-
+% 
+% >>>>>> end of annexed block <<<<<<
 \section*{Nambu \& Yang on Multipole Expansions}
 
 Koshiro Nambu adjusted his glasses, his gaze fixed on the notebook in front of him. The handwritten equations—his own—seemed out of place in the polished, orderly realm of pure mathematics. Across from him, Lee Yang sat with a reserved expression, his arms folded, as if waiting for Nambu to justify this foray into unfamiliar territory.
@@ -389,9 +397,9 @@ Nambu returned to his office, the weight of the day’s reflections pressing dow
 
 The phone on his desk buzzed, breaking his reverie. He hesitated, then picked it up. \textit{``Nambu here.''}
 
-\textit{``Koshiro, it’s Edward Willard. I hope I’m not catching you at a bad time,''} Willard said, his tone light but with a hint of concern.
+\textit{``Koshiro, it’s Willard Jones. I hope I’m not catching you at a bad time,''} Willard said, his tone light but with a hint of concern.
 
-\textit{``Edward,''} Nambu replied, trying to inject some energy into his voice. \textit{``What can I do for you?''}
+\textit{``Willard,''} Nambu replied, trying to inject some energy into his voice. \textit{``What can I do for you?''}
 
 \textit{``Actually, it’s more about what I can do for you,''} Willard said. \textit{``I heard you’ve been grappling with the lonely primes.''}
 
@@ -459,7 +467,7 @@ Willard nodded. \textit{``And as with monopoles, their rarity doesn’t diminish
 
 Willard leaned in closer to the screen as Nambu shared his findings.
 
-Nambu adjusted his glasses and began, his tone deliberate. "Edward, what you’re looking at here are the lonely primes—primes that are not part of any pairs within a specified gap."
+Nambu adjusted his glasses and began, his tone deliberate. "Willard, what you’re looking at here are the lonely primes—primes that are not part of any pairs within a specified gap."
 
 % \subsection*{Table of First 100 Lonely Primes (up to $n=2$)}
 \begin{longtable}{|c|c|c|c|c|}
@@ -611,7 +619,7 @@ Willard, still digesting this, glanced at his plot again. “It is probably wort
 Willard cleared his throat as he sat. “But Nambu’s work on lonely primes, it is a little vacuous perhaps?”
 \bigskip
 
-Jovannah raised an eyebrow. “Well, Edward, if we’re serious about understanding lonely primes, we should really be framing it probabilistically. Let’s start with the basics.”
+Jovannah raised an eyebrow. “Well, Willard, if we’re serious about understanding lonely primes, we should really be framing it probabilistically. Let’s start with the basics.”
 
 % \subsection{Prior: Probability that a Number is Prime}
 \bigskip
@@ -623,36 +631,40 @@ P(\text{prime}) \approx \frac{1}{\ln p}.
 This captures how primes become sparser as \( p \) increases.”
 \bigskip
 
-Willard nodded, still the tone of her <<Edward>> resonating. “Right. So that’s the baseline. What about the probability that a prime is lonely?”
+Willard nodded, still the tone of her <<Willard>> resonating. “Right. So that’s the baseline. What about the probability that a prime is lonely?”
 
-\subsection{Likelihood: Probability \( p \) has no neighboring prime in its orbit}
+% >>>>>> ANNEX C (cut-sheet v2): the likelihood computation for lonely primes — block commented out below, pointer left in text <<<<<<
+\textit{(The likelihood computation for lonely primes --- the full working is set out in Annexe C.)}
 
-Jovannah smiled. “That’s where it gets interesting. To be lonely, a prime \( p \) must not have any prime neighbors within a fixed range. For example, the probability that \( p+2 \) is \emph{not} prime is given by:
-\[
-P(\neg \text{twin} \mid p) = 1 - \frac{1}{\ln p \cdot \ln(p+2)}.
-\]
-Similarly, for cousin primes (\( p+4 \)) and sexy primes (\( p+6 \)):
-\[
-P(\neg \text{cousin} \mid p) = 1 - \frac{1}{\ln p \cdot \ln(p+4)},
-\]
-\[
-P(\neg \text{sexy} \mid p) = 1 - \frac{1}{\ln p \cdot \ln(p+6)}.
-\]”
-Willard interjected, “So to enforce loneliness, we extend this reasoning to all potential neighbors within a local range, say up to 64?”
-\bigskip
-
-Jovannah nodded. “Exactly. The probability that \( p \) has no partners within 64 is:
-\[
-P(\neg \text{any partner} \mid p) = \prod_{k \in \{2,4,6,\dots,64\}} \left(1 - \frac{1}{\ln p \cdot \ln(p+k)}\right).
-\]
-This product assumes local independence and ensures all these neighbors are composite.”
-
-:
-\[
-P(\text{lonely} \mid \text{prime}) \approx P(\neg \text{any partner} \mid p).
-\]
-Numerical evaluation of this product provides insight into the expected frequency of lonely primes.”
-
+% \subsection{Likelihood: Probability \( p \) has no neighboring prime in its orbit}
+% 
+% Jovannah smiled. “That’s where it gets interesting. To be lonely, a prime \( p \) must not have any prime neighbors within a fixed range. For example, the probability that \( p+2 \) is \emph{not} prime is given by:
+% \[
+% P(\neg \text{twin} \mid p) = 1 - \frac{1}{\ln p \cdot \ln(p+2)}.
+% \]
+% Similarly, for cousin primes (\( p+4 \)) and sexy primes (\( p+6 \)):
+% \[
+% P(\neg \text{cousin} \mid p) = 1 - \frac{1}{\ln p \cdot \ln(p+4)},
+% \]
+% \[
+% P(\neg \text{sexy} \mid p) = 1 - \frac{1}{\ln p \cdot \ln(p+6)}.
+% \]”
+% Willard interjected, “So to enforce loneliness, we extend this reasoning to all potential neighbors within a local range, say up to 64?”
+% \bigskip
+% 
+% Jovannah nodded. “Exactly. The probability that \( p \) has no partners within 64 is:
+% \[
+% P(\neg \text{any partner} \mid p) = \prod_{k \in \{2,4,6,\dots,64\}} \left(1 - \frac{1}{\ln p \cdot \ln(p+k)}\right).
+% \]
+% This product assumes local independence and ensures all these neighbors are composite.”
+% 
+% :
+% \[
+% P(\text{lonely} \mid \text{prime}) \approx P(\neg \text{any partner} \mid p).
+% \]
+% Numerical evaluation of this product provides insight into the expected frequency of lonely primes.”
+% 
+% >>>>>> end of annexed block <<<<<<
 \subsection{Posterior: The Probability That a Given Prime is Lonely}
 
 “Now,” Jovannah continued, “using Bayes’ theorem, we can write the posterior probability that \( p \) is lonely as:
@@ -666,13 +678,13 @@ P(\text{lonely} \mid \text{prime}) \approx P(\neg \text{any partner} \mid p).”
 % This provides a concrete framework for estimating loneliness numerically.”
 \bigskip
 
-Edward, keeping up, muttered, “And this… this quantifies a prime's loneliness?”
+Willard, keeping up, muttered, “And this… this quantifies a prime's loneliness?”
 \bigskip
 
 “Yes,” Jovannah replied. “Bayes’ theorem ties it together
 \bigskip
 
-Willard leaned forward, eager to contribute. “So, lonely primes could be analogous to \textbf{rough primes}—numbers that avoid divisibility by smaller primes. A lonely prime avoids coupling within its local range, just as a \( P \)-rough prime avoids divisibility by elements of a small prime set \( P \).”
+Willard gathering himself eager to contribute. “So, lonely primes could be analogous to \textbf{rough primes}—numbers that avoid divisibility by smaller primes. A lonely prime avoids coupling within its local range, just as a \( P \)-rough prime avoids divisibility by elements of a small prime set \( P \).”
 \bigskip
 
 Jovannah nodded. “Ah nice. And if we factor in modular biases, such as primes of the form \( 4n+1 \) and \( 4n+3 \), we could refine our model further. Do \( 4n+1 \) primes have a higher likelihood of loneliness? That’s a question worth exploring.”
@@ -684,13 +696,13 @@ Willard jotted down notes as Jovannah outlined possible extensions:
     \item Investigate modular biases, especially \( 4n+1 \) versus \( 4n+3 \), to understand how neighborhood structures influence loneliness.
 \end{itemize}
 
-As Jovannah finished her tea, she glanced at Willard. “It’s not just about the primes themselves, Edward. It’s about the structure they inhabit—the gaps, the densities, the biases. Edward, you’re onto something. Primes, whether clustered as twins or isolated as lones, reveal deeper truths. The patterns are fundamental.”
+As Jovannah finished her tea, she glanced at Willard. “It’s not just about the primes themselves, Willard. It’s about the structure they inhabit—the gaps, the densities, the biases. Willard, you’re onto something. Primes, whether clustered as twins or isolated as lones, reveal deeper truths. The patterns are fundamental.”
 \bigskip
 
 Willard smiled awkwardly, still awed by her self-assurance. “Thanks, Jovannah. I’ll... think about all this.”
 \bigskip
 
-Jovannah stood, her confidence unwavering. “Don’t think too hard, Edward. Sometimes, the numbers speak for themselves.”
+Jovannah stood, her confidence unwavering. “Don’t think too hard, Willard. Sometimes, the numbers speak for themselves.”
 
 %%%%%%%%%%%%%
 
@@ -704,33 +716,33 @@ Jovannah stood, her confidence unwavering. “Don’t think too hard, Edward. So
 % \]
 
 
-\subsection*{Edward just about Takes His Leave}
+\subsection*{Willard just about Takes His Leave}
 
-Edward, still clutching his notepad tightly, glanced down at his half-empty cup of coffee, then back at Jovannah. 
+Willard, still clutching his notepad tightly, glanced down at his half-empty cup of coffee, then back at Jovannah. 
 
 \textit{“Well, this has been... illuminating,”} he said, his voice carrying an odd mixture of sincerity and discomfort. \textit{“I’ll... uh, let you get back to whatever you were doing.”}
 \bigskip
 
-Jovannah with the faintest coquettish of head tilts, the hint of a smile playing on her lips, \textit{“You mean solving the mysteries of the universe while having tea? Don’t worry, Edward, I’ll manage.”}
+Jovannah with the faintest coquettish of head tilts, the hint of a smile playing on her lips, \textit{“You mean solving the mysteries of the universe while having tea? Don’t worry, Willard, I’ll manage.”}
 \bigskip
 
 He chuckled nervously, nearly spilling his coffee as he stood. \textit{“Right. Well, thanks again for your insights. I’ll just... mull this over. Maybe revisit the spirals. Or, you know, do something practical with all this.”}
 \bigskip
 
-Jovannah gave him a knowing nod. \textit{“Good idea. And Edward, don’t forget—you’ve got good instincts.”}
+Jovannah gave him a knowing nod. \textit{“Good idea. And Willard, don’t forget—you’ve got good instincts.”}
 \bigskip
 
-\textit{“Sure,”} Edward replied, backing away awkwardly, nearly bumping into a chair. \textit{“Instincts. Got it. Thanks again!”}
+\textit{“Sure,”} Willard replied, backing away awkwardly, nearly bumping into a chair. \textit{“Instincts. Got it. Thanks again!”}
 \bigskip
 
-As he turned to leave, Jovannah called after him. \textit{“Oh, and Edward?”}
+As he turned to leave, Jovannah called after him. \textit{“Oh, and Willard?”}
 \bigskip
 
 \textit{“Yes?”} he responded, spinning around too quickly, nearly colliding with another table, and quietly berating himself for his clumsiness.
 
 She smirked. \textit{“Oh, never mind.”} 
 
-Edward sighed, shaking his head with a nervous grin, and continued towards the exit. 
+Willard sighed, shaking his head with a nervous grin, and continued towards the exit. 
 
 Just as he was nearly out of earshot, Jovannah added, almost offhandedly, “Oh, and if you’re really keen on making sense of it, compute the Bayesian posterior, 
 \(
@@ -739,114 +751,113 @@ P(\text{lonely} \mid \text{prime}.)
 Numerically estimate it for primes up to a range. Compare against rough primes—identify biases and gaps in prime spacing. Simulate distributions, maybe a Monte Carlo experiment, and see how often primes are left without a close neighbor.”
 \bigskip
 
-Edward hesitated mid-step, brow furrowing. He opened his mouth, as if to respond, but then thought better of it. Instead, he simply muttered, \textit{“Monte Carlo... sure... that’s exactly what I was thinking.”} 
+Willard hesitated mid-step, brow furrowing. He opened his mouth, as if to respond, but then thought better of it. Instead, he simply muttered, \textit{“Monte Carlo... sure... that’s exactly what I was thinking.”} 
 
-% Jovannah shook her head, amused, as Edward disappeared down the corridor, still scribbling in his notebook.
+% Jovannah shook her head, amused, as Willard disappeared down the corridor, still scribbling in his notebook.
 \bigskip
 
-Jovannah keen to have the last word, \textit{“Don’t overthink it Edward. Sometimes, clarity finds you when you’re not looking.”}
+Jovannah keen to have the last word, \textit{“Don’t overthink it Willard. Sometimes, clarity finds you when you’re not looking.”}
 \bigskip
 
 Willard smiled sheepishly, nodded, and made his way out of the cafeteria, .
 %%%%%%%%%%%
-\section*{Das Ein vs. Das Man: A Duel of Minds}
-A dimly lit private club in Vienna. The air is thick with the scent of aged wood and burning cigars. A blackboard stands between them, half-covered in an intricate derivation on spherical harmonics and Bessel functions. A bottle of whiskey sits on the table, half-empty, the amber liquid catching the light of the low-hanging lamps. 
-
-Jovannah swirls her drink lazily, watching the way the liquid folds and unfolds upon itself. "So tell me, gentlemen—who exactly owns the truth in mathematics? The one who discovers it first, or the one who understands it best?"  
-
-Edward straightens slightly, his grip tightening around his glass. "Truth is not owned. It is grasped. By those willing to chase it with absolute clarity." He gestures toward the board, eyes sharp. "Rigor, derivation, proof—that is the only measure of understanding."  
-
-Ernest leans back, smirking. "Ah, but clarity is an illusion, Edward. Mathematics is as much about intuition as it is about proof. You can’t sit around proving every step when the world moves at the speed of light. Sometimes you leap. Sometimes you trust your instincts."  
-
-"Ah, ‘intuition.’" Edward scoffs, shaking his head. "A fine excuse for sloppiness. That’s how we get half-baked physics papers masquerading as mathematics. That’s how errors creep in, how rigor is abandoned for convenience."  
-
-"Yes, yes," Ernest waves a hand dismissively, the whiskey in his glass sloshing slightly. "And yet, whose work has applications beyond pure abstraction? Yours, trapped in a world of ideals? Or mine, where the equations breathe in reality, shaping actual phenomena?" He taps the board. "These harmonics? They aren’t just pretty functions. They dictate how sound waves move, how galaxies form. They do something, Edward."  
-
-Edward exhales, slow, measured. "And you think that justifies sloppy thinking? That the mere presence of applicability validates any loose approximation you see fit to take?"  
-
-"It justifies the fact that I don’t waste my time chasing ghosts." Ernest grins. "You hide in the ivory tower because you fear being wrong. I build models because I know we must be."  
-
-Jovannah, having watched the exchange with something between amusement and calculation, finally leans forward, her eyes glinting. "So what we have here is the eternal struggle. Das Ein and Das Man."  
-
-Edward blinks, caught slightly off guard. "That’s not—"  
-
-She cuts him off with a grand gesture toward him. "Edward, the idealist, the one who seeks truth without compromise, without shortcuts, who would rather be alone with his principles than risk contamination by the crowd."  
-
-She turns to Ernest, voice lowering slightly, playful but edged. "And you, dear Ernest, the pragmatist, the man of the world, bending the rules because everyone else does, because you know truth is not some shining beacon, but something negotiated, something malleable."  
-
-Ernest chuckles, tilting his head. "Well, when you put it like that—"  
-
-"But tell me, gentlemen." Jovannah sets her glass down, fingers idly tracing the rim. "Who is freer? The man who holds fast to his principles and watches the world move without him? Or the man who moves with the world but no longer knows where he stands?"  
-
-Silence.  
-
-Edward stares at the board. Ernest swirls his glass.  
-
-Jovannah waits a beat, then lets a triumphant little smile slip through. "What’s the matter? You both seemed so certain a moment ago."  
-
-Edward tightens his grip on the chalk. Ernest takes another sip of whiskey.  
-
-Neither speaks.  
-
+% ============ COMMENTED OUT (cut-sheet v2): duplicate of 'Das Ein vs. Das Man' — kept version lives in 8-6jovan.tex ============
+% \section*{Das Ein vs. Das Man: A Duel of Minds}
+% A dimly lit private club in Vienna. The air is thick with the scent of aged wood and burning cigars. A blackboard stands between them, half-covered in an intricate derivation on spherical harmonics and Bessel functions. A bottle of whiskey sits on the table, half-empty, the amber liquid catching the light of the low-hanging lamps. 
 % 
-\newpage
-\section*{Jovannah raises the Energy Levels of Attraction}
+% Jovannah swirls her drink lazily, watching the way the liquid folds and unfolds upon itself. "So tell me, gentlemen—who exactly owns the truth in mathematics? The one who discovers it first, or the one who understands it best?"  
+% 
+% Willard straightens slightly, his grip tightening around his glass. "Truth is not owned. It is grasped. By those willing to chase it with absolute clarity." He gestures toward the board, eyes sharp. "Rigor, derivation, proof—that is the only measure of understanding."  
+% 
+% Ernest leans back, smirking. "Ah, but clarity is an illusion, Willard. Mathematics is as much about intuition as it is about proof. You can’t sit around proving every step when the world moves at the speed of light. Sometimes you leap. Sometimes you trust your instincts."  
+% 
+% "Ah, ‘intuition.’" Willard scoffs, shaking his head. "A fine excuse for sloppiness. That’s how we get half-baked physics papers masquerading as mathematics. That’s how errors creep in, how rigor is abandoned for convenience."  
+% 
+% "Yes, yes," Ernest waves a hand dismissively, the whiskey in his glass sloshing slightly. "And yet, whose work has applications beyond pure abstraction? Yours, trapped in a world of ideals? Or mine, where the equations breathe in reality, shaping actual phenomena?" He taps the board. "These harmonics? They aren’t just pretty functions. They dictate how sound waves move, how galaxies form. They do something, Willard."  
+% 
+% Willard exhales, slow, measured. "And you think that justifies sloppy thinking? That the mere presence of applicability validates any loose approximation you see fit to take?"  
+% 
+% "It justifies the fact that I don’t waste my time chasing ghosts." Ernest grins. "You hide in the ivory tower because you fear being wrong. I build models because I know we must be."  
+% 
+% Jovannah, having watched the exchange with something between amusement and calculation, finally leans forward, her eyes glinting. "So what we have here is the eternal struggle. Das Ein and Das Man."  
+% 
+% Willard blinks, caught slightly off guard. "That’s not—"  
+% 
+% She cuts him off with a grand gesture toward him. "Willard, the idealist, the one who seeks truth without compromise, without shortcuts, who would rather be alone with his principles than risk contamination by the crowd."  
+% 
+% She turns to Ernest, voice lowering slightly, playful but edged. "And you, dear Ernest, the pragmatist, the man of the world, bending the rules because everyone else does, because you know truth is not some shining beacon, but something negotiated, something malleable."  
+% 
+% Ernest chuckles, tilting his head. "Well, when you put it like that—"  
+% 
+% "But tell me, gentlemen." Jovannah sets her glass down, fingers idly tracing the rim. "Who is freer? The man who holds fast to his principles and watches the world move without him? Or the man who moves with the world but no longer knows where he stands?"  
+% 
+% Silence.  
+% 
+% Willard stares at the board. Ernest swirls his glass.  
+% 
+% Jovannah waits a beat, then lets a triumphant little smile slip through. "What’s the matter? You both seemed so certain a moment ago."  
+% 
+% Willard tightens his grip on the chalk. Ernest takes another sip of whiskey.  
+% 
+% Neither speaks.  
+% 
+% 
+% \newpage
+% ============ end commented block ============
+% >>>>>> ANNEX D (cut-sheet v2): the energy-levels-of-attraction formalism — block commented out below, pointer left in text <<<<<<
+\textit{(The energy-levels-of-attraction formalism --- the full working is set out in Annexe D.)}
 
-The energy levels of the hydrogen atom are determined by solving the Schrödinger equation for the Coulomb potential:
-
-\begin{equation*}
-V(r) = -\frac{e^2}{4\pi \epsilon_0 r}.
-\end{equation*}
-
-For a single-electron atom, the time-independent Schrödinger equation in spherical coordinates is:
-
-\begin{equation*}
-\left[-\frac{\hbar^2}{2m} \nabla^2 - \frac{e^2}{4\pi \epsilon_0 r} \right] \psi = E \psi.
-\end{equation*}
-
-Solving this equation with appropriate boundary conditions for bound states yields the Bohr energy levels:
-
-\begin{equation*}
-E_n = -\frac{13.6 \text{ eV}}{n^2}, \quad n = 1,2,3, \dots
-\end{equation*}
-
-where: \( E_n \) represents the energy of the electron in the \( n \)th energy level and \( 13.6 \) eV is the Rydberg energy, the ionization energy of hydrogen.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Illustrations/vign-whistfulWillard.png}
-    \caption{Willard unspoken}
-    \label{fig:pirallingprimes}
-\end{figure}
-
-
-Thus, the energy levels scale as \( 1/n^2 \), meaning successive levels get closer together as \( n \to \infty \). Helium (\(^4\text{He}\)) has two protons and two electrons. Since helium has two electrons, it is not strictly hydrogenic and does not account for electron-electron interactions., and electron-electron interactions modify the energy levels. To first order it's energy levels are modified as:
-
-\begin{equation*}
-E_n = -\frac{Z^2 \cdot 13.6 \text{ eV}}{n^2}, \quad Z=2 \text{ for helium}.
-\end{equation*}
-A more accurate model involves multipole expansion with an electric dipole moment shifting energy levels due to charge asymmetry and quadrupole moment refining the potential shape. For helium, the dipole moment of the nucleus is zero (due to symmetric proton arrangement), but the quadrupole moment of the electron cloud contributes to fine structure shifts. Jovannah considered the reciprocals of figurate numbers:
-
-\begin{equation*}
-E_n \propto -\frac{1}{T_n}, \quad E_n \propto -\frac{1}{S_n}, \quad E_n \propto -\frac{1}{P_n}.
-\end{equation*}
-
-As helium’s levels deviate from strict \( 1/n^2 \) hydrogenic scaling, the corrections might follow a reciprocal figurate sequence.
-
-
-\begin{figure}[H]
-\includegraphics[width=1.0\linewidth]{Illustrations/residuals figurative.png}
-\caption{Elemental figurative modelling}
-\end{figure}
-
-\newpage
+% \section*{Jovannah raises the Energy Levels of Attraction}
+% 
+% The energy levels of the hydrogen atom are determined by solving the Schrödinger equation for the Coulomb potential:
+% 
+% \begin{equation*}
+% V(r) = -\frac{e^2}{4\pi \epsilon_0 r}.
+% \end{equation*}
+% 
+% For a single-electron atom, the time-independent Schrödinger equation in spherical coordinates is:
+% 
+% \begin{equation*}
+% \left[-\frac{\hbar^2}{2m} \nabla^2 - \frac{e^2}{4\pi \epsilon_0 r} \right] \psi = E \psi.
+% \end{equation*}
+% 
+% Solving this equation with appropriate boundary conditions for bound states yields the Bohr energy levels:
+% 
+% \begin{equation*}
+% E_n = -\frac{13.6 \text{ eV}}{n^2}, \quad n = 1,2,3, \dots
+% \end{equation*}
+% 
+% where: \( E_n \) represents the energy of the electron in the \( n \)th energy level and \( 13.6 \) eV is the Rydberg energy, the ionization energy of hydrogen.
+% 
+% 
+% Thus, the energy levels scale as \( 1/n^2 \), meaning successive levels get closer together as \( n \to \infty \). Helium (\(^4\text{He}\)) has two protons and two electrons. Since helium has two electrons, it is not strictly hydrogenic and does not account for electron-electron interactions., and electron-electron interactions modify the energy levels. To first order it's energy levels are modified as:
+% 
+% \begin{equation*}
+% E_n = -\frac{Z^2 \cdot 13.6 \text{ eV}}{n^2}, \quad Z=2 \text{ for helium}.
+% \end{equation*}
+% A more accurate model involves multipole expansion with an electric dipole moment shifting energy levels due to charge asymmetry and quadrupole moment refining the potential shape. For helium, the dipole moment of the nucleus is zero (due to symmetric proton arrangement), but the quadrupole moment of the electron cloud contributes to fine structure shifts. Jovannah considered the reciprocals of figurate numbers:
+% 
+% \begin{equation*}
+% E_n \propto -\frac{1}{T_n}, \quad E_n \propto -\frac{1}{S_n}, \quad E_n \propto -\frac{1}{P_n}.
+% \end{equation*}
+% 
+% As helium’s levels deviate from strict \( 1/n^2 \) hydrogenic scaling, the corrections might follow a reciprocal figurate sequence.
+% 
+% 
+% \begin{figure}[H]
+% \includegraphics[width=1.0\linewidth]{Illustrations/residuals figurative.png}
+% \caption{Elemental figurative modelling}
+% \end{figure}
+% 
+% \newpage
+% >>>>>> end of annexed block <<<<<<
 \section*{An Oscillating Conversation}
 
-A quiet café. The low hum of conversation dissolves into the background, a gentle counterpoint to Edward’s restless fidgeting. Across from him, Jovannah watches, fingers idly tracing the rim of her coffee cup, her expression unreadable but undeniably amused.
+A quiet café. The low hum of conversation dissolves into the background, a gentle counterpoint to Willard’s restless fidgeting. Across from him, Jovannah watches, fingers idly tracing the rim of her coffee cup, her expression unreadable but undeniably amused.
 
 "You do realize I don’t actually need you to explain quantum mechanics to me, right?" she says, breaking the silence.
 
-Edward blinks, clearly caught mid-thought. "I—what? No, I wasn’t—"
+Willard blinks, clearly caught mid-thought. "I—what? No, I wasn’t—"
 
 "Weren’t you?" She tilts her head, a slow, knowing smirk forming. "Because it sure sounded like you were about to tell me all about energy levels and wavefunctions, as if I hadn’t been staring at equations my whole life."
 
@@ -862,7 +873,7 @@ E_n = - \frac{h c R}{n^2}
 
 "Bohr’s formula," she says, tapping the equation. "Electron energy levels. Energy drops in proportion to the inverse square of \(n\)."
 
-Edward exhales, running a hand through his hair, unsure whether to feel impressed or outmaneuvered. "That’s... correct."
+Willard exhales, running a hand through his hair, unsure whether to feel impressed or outmaneuvered. "That’s... correct."
 
 "And what does that remind you of?" she prompts, lifting a brow.
 
@@ -876,7 +887,7 @@ Then, still holding his pen, she adds below:
 \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} = \xi(2)
 \end{equation}
 
-"Bohr’s model is just Basel’s sum in disguise," she continues, tapping the paper lightly. "The universe sings, Edward. You don’t have to tell a musician about harmonics."
+"Bohr’s model is just Basel’s sum in disguise," she continues, tapping the paper lightly. "The universe sings, Willard. You don’t have to tell a musician about harmonics."
 
 He studies the page, then looks at her, caught between admiration and something else he can’t quite place. "That’s... elegant."
 
@@ -886,7 +897,7 @@ He smirks despite himself. "Well, I wouldn’t go that far."
 
 "You wound me," she says, placing a dramatic hand over her chest. Then, voice softer now, conspiratorial, "Schrödinger just took Bohr’s intuition and turned it into standing waves. Harmonics in probability space. And you know what that means?"
 
-Edward, still slightly wary of where she’s leading him, tries, "That... everything is a wave?"
+Willard, still slightly wary of where she’s leading him, tries, "That... everything is a wave?"
 
 "That everything oscillates." She lifts her coffee, takes a slow sip, eyes twinkling. "Energy, probability, ideas..." A pause, deliberate. "Even you, right now."
 
@@ -898,7 +909,7 @@ He exhales, shaking his head, but he can’t help the amused chuckle that escape
 
 "Must be an eigenmode of some kind," she adds, lips curling into a smirk.
 
-And for the first time in hours, Edward is not thinking about finance, or failure, or the ruin that looms over him.  
+And for the first time in hours, Willard is not thinking about finance, or failure, or the ruin that looms over him.  
 
 Only the teasing glint in Jovannah’s eyes, and the way, in this moment, she is undeniably winning.
 
@@ -913,19 +924,19 @@ Only the teasing glint in Jovannah’s eyes, and the way, in this moment, she is
 %%%%%%%%%%%%%%%
 \
 \section*{An Isoperimetric Discussion}
-Willard knew he was prone to over-explaining concepts when unsettled. He was all too soon going to be performing that routine in the company of Jovannah, as she was sacheting through the door to a quiet cafe. Edward, visibly anxious, seeing her coming a little way off, not so idly pretends to doodle something akin to a spherical harmonic on a napkin while Jovannah, dressed in an off-shoulder blouse, catches his little routine with mild amusement as she flounces in beside him with not a word or a nod. A pause opens up as Jovannah lifts her eyebrows and purses her in an oh-so-slightly imperceptible fashion. 
+Willard knew he was prone to over-explaining concepts when unsettled. He was all too soon going to be performing that routine in the company of Jovannah, as she was sacheting through the door to a quiet cafe. Willard, visibly anxious, seeing her coming a little way off, not so idly pretends to doodle something akin to a spherical harmonic on a napkin while Jovannah, dressed in an off-shoulder blouse, catches his little routine with mild amusement as she flounces in beside him with not a word or a nod. A pause opens up as Jovannah lifts her eyebrows and purses her in an oh-so-slightly imperceptible fashion. 
 
-Jovannah, then tilting her head breaks the pregnancy: \textit{"Edward, you've been staring at my blouse for the last twenty seconds. If you're solving an isoperimetric problem in your head, I'd love to hear about it."}
+Jovannah, then tilting her head breaks the pregnancy: \textit{"Willard, you've been staring at my blouse for the last twenty seconds. If you're solving an isoperimetric problem in your head, I'd love to hear about it."}
 
-Edward, jostling for his coffee as if they were in the dark: \textit{"I—what? I mean, well, it's just—the way fabric folds over a curved surface—it's, uh, quite like a minimal surface problem in differential geometry..."}
+Willard, jostling for his coffee as if they were in the dark: \textit{"I—what? I mean, well, it's just—the way fabric folds over a curved surface—it's, uh, quite like a minimal surface problem in differential geometry..."}
 
 Jovannah, smirking: \textit{"Ah, so you're saying I’m an optimization problem or a problem to be solved?"}
 
-Edward, thinking we are only a minute in and I am losing control; clearing his throat, scrambling for a footing: \textit{"I was merely thinking about how the tension distributes along the contours. It’s reminiscent of how spherical harmonics describe standing wave solutions on a sphere."}
+Willard, thinking we are only a minute in and I am losing control; clearing his throat, scrambling for a footing: \textit{"I was merely thinking about how the tension distributes along the contours. It’s reminiscent of how spherical harmonics describe standing wave solutions on a sphere."}
 
 Jovannah, leaning forward: \textit{"Spherical harmonics? Please, go on. I love it when you talk all eigenfunctions."}
 
-Edward, not aware he is being led a merry dance feels he's on familiar ground now: \textit{"Well, the spherical harmonics $Y_{\ell m}$ are solutions to Laplace’s equation in spherical coordinates:"}
+Willard, not aware he is being led a merry dance feels he's on familiar ground now: \textit{"Well, the spherical harmonics $Y_{\ell m}$ are solutions to Laplace’s equation in spherical coordinates:"}
 \begin{equation*}
 \nabla^2 Y_{\ell m}(\theta, \phi) + \lambda Y_{\ell m}(\theta, \phi) = 0.
 \end{equation*}
@@ -935,11 +946,11 @@ Edward, not aware he is being led a merry dance feels he's on familiar ground no
 
 Jovannah, raising an eyebrow: \textit{"So now my fashion choices are an eigenvalue problem?"}
 
-Edward, back to being flustered: \textit{"No, no! That’s not what I meant. It’s just—take a vibrating drum. The way it resonates is governed by Bessel functions, much like spherical harmonics but in two dimensions."}
+Willard, back to being flustered: \textit{"No, no! That’s not what I meant. It’s just—take a vibrating drum. The way it resonates is governed by Bessel functions, much like spherical harmonics but in two dimensions."}
 
 Jovannah, feigning deep thought: \textit{"So if my outfit were a drum, you'd be solving for the nodes of vibration?"}
 
-Edward, now more thoroughly losing composure: \textit{"In a purely mathematical sense, yes, the modes of oscillation could be approximated - back of the nap-kinning - by Bessel functions, given by:"}
+Willard, now more thoroughly losing composure: \textit{"In a purely mathematical sense, yes, the modes of oscillation could be approximated - back of the nap-kinning - by Bessel functions, given by:"}
 \begin{equation*}
  r^2 \frac{d^2 J_n}{dr^2} + r \frac{d J_n}{dr} + (r^2 - n^2) J_n = 0.
 \end{equation*}
@@ -947,11 +958,11 @@ Edward, now more thoroughly losing composure: \textit{"In a purely mathematical 
 
 Jovannah, resting her chin on her hand, watching him squirm: \textit{"So, according to you, my blouse is a vibrating drum, my curves are dictated by eigenfunctions, and I’m basically a walking wave equation."}
 
-Edward, realizing he's been backed into a corner: \textit{"That is... not entirely inaccurate?"}
+Willard, realizing he's been backed into a corner: \textit{"That is... not entirely inaccurate?"}
 
-Jovannah, laughing, placing a hand on his arm: \textit{"Relax, Edward. You’re adorable when you try to explain things without realizing where you're going with them. Pausing so he can misguidedly gather himself. Now, tell me—if I were a perfect sphere, what would my fundamental mode of vibration be?"}
+Jovannah, laughing, placing a hand on his arm: \textit{"Relax, Willard. You’re adorable when you try to explain things without realizing where you're going with them. Pausing so he can misguidedly gather himself. Now, tell me ... if I were a perfect sphere, what would my fundamental mode of vibration be?"}
 
-Edward, now finally getting the game and sighing in defeat, but taking on a formal tone despite himself: \textit{"$\ell = 0$, the monopole mode. Just a simple, uniform oscillation."}
+Willard, now finally getting the game and sighing in defeat, but taking on a formal tone despite himself: \textit{"$\ell = 0$, the monopole mode. Just a simple, uniform oscillation."}
 
 Jovannah, winking, yes winking he was sure: \textit{"How disappointingly simple. Lucky for you, I have much more interesting oscillations."}
 %%%%%%%%%%%%%
@@ -959,7 +970,7 @@ Jovannah, winking, yes winking he was sure: \textit{"How disappointingly simple.
 
 \textit{And then in came Ernest.}  Ernest Olber had a knack for appearing at precisely such moments. He strode in with his usual self-assurance, nodded to the waiter in a knowing manner for a coffee. As a man who had never met a mortal he couldn't lecture into submission every waiter he confronted was suitably responsive to his will.
 
-Jovannah, never letting an opportunity pass, sidles towards Edward inviting Ernest to sit the other side, and a little unguarded for her, but grinning asks: \textit{"You know, you physicists always love a good harmonic. Go on Ernest, what’s so special about them?"}
+Jovannah, never letting an opportunity pass, sidles towards Willard inviting Ernest to sit the other side, and a little unguarded for her, but grinning asks: \textit{"You know, you physicists always love a good harmonic. Go on Ernest, what’s so special about them?"}
 
 \bigskip
 
@@ -971,7 +982,7 @@ Jovannah, feigning deep thought: \textit{"Harmonics... so the universe is just a
 
 \bigskip
 
-Ernest, chuckling: \textit{"Not far off! The cosmic microwave background—the afterglow of the Big Bang—is actually analyzed in terms of spherical harmonics. We decompose its temperature fluctuations just like you decompose sound into different frequencies."}
+Ernest, chuckling: \textit{"Not far off! The cosmic microwave background, ... the afterglow of the Big Bang, is actually analyzed in terms of spherical harmonics. We decompose its temperature fluctuations just like you decompose sound into different frequencies."}
 
 \bigskip
 
@@ -983,7 +994,7 @@ Ernest, nodding approvingly: \textit{"Yes. That’s where Bessel functions come 
 
 \bigskip
 
-Jovannah, leaning in while looking back in Edward's direction, voice playful: \textit{"So you're saying Ernest that my hemline behaves like a Bessel function?"}
+Jovannah, leaning in while looking back in Willard's direction, voice playful: \textit{"So you're saying Ernest that my hemline behaves like a Bessel function?"}
 
 \bigskip
 
@@ -991,9 +1002,9 @@ Ernest, a little forlornly, seeing that he is being played: \textit{"Yes, Jovann
 
 \bigskip
 
-Jovannah, sitting back, satisfied, looking at Edward but addressing Ernest: \textit{"I caught Edward staring at my blouse earlier he claimed he was just solving an isoperimetric problem."}
+Jovannah, sitting back, satisfied, looking at Willard but addressing Ernest: \textit{"I caught Willard staring at my blouse earlier he claimed he was just solving an isoperimetric problem."}
 
-Before Edward can summon a defence, Ernest, eager to reassert control offers derivatively: \textit{"Ah, Jovannah, what you’re really embodying is the isoperimetric inequality. It’s fundamental to physics. Soap bubbles form spheres because they minimize surface area for a given volume—"}  
+Before Willard can summon a defence, Ernest, eager to reassert control offers derivatively: \textit{"Ah, Jovannah, what you’re really embodying is the isoperimetric inequality. It’s fundamental to physics. Soap bubbles form spheres because they minimize surface area for a given volume ..."}  
 
 \bigskip
 
@@ -1002,7 +1013,7 @@ Jovannah, cutting him off, eyes glinting:
 
 \bigskip
 
-Edward, for once, finds his voice before Ernest can reclaim the floor.  \textit{"Not quite. It’s not just about minimization—it’s about harmonic distributions of tension. Which, actually, would bring us more pertinently to spherical harmonics."}  
+Willard, for once, finds his voice before Ernest can reclaim the floor.  \textit{"Not quite. It’s not just about minimization, ... it’s about harmonic distributions of tension. Which, actually, would bring us more pertinently to spherical harmonics."}  
 
 \bigskip
 
@@ -1010,11 +1021,11 @@ Ernest, momentarily caught off guard, raises an eyebrow.
 
 \bigskip
 
-Jovannah, feigning innocent curiosity to the extent that all parties know so: \textit{"Those spherical harmonics? Go on, Edward, you have my full attention."}
+Jovannah, feigning innocent curiosity to the extent that all parties know so: \textit{"Those spherical harmonics? Go on, Willard, you have my full attention."}
 
 \bigskip
 
-Edward, a little emboldened,  \textit{"Spherical harmonics $Y_{\ell m}$ describe standing wave patterns on a sphere so the way tension distributes in fabric over a curved surface is mathematically similar to how sound resonates in an enclosed space. As with a vibrating drum, but wrapped around a sphere."}  
+Willard, a little emboldened,  \textit{"Spherical harmonics $Y_{\ell m}$ describe standing wave patterns on a sphere so the way tension distributes in fabric over a curved surface is mathematically similar to how sound resonates in an enclosed space. As with a vibrating drum, but wrapped around a sphere."}  
 
 \bigskip
 
@@ -1031,33 +1042,61 @@ Ernest, uncharacteristically hesitating, sensing the trap:  \textit{"W-well, I..
 
 \bigskip
 
-Jovannah turns back to Edward, her smile widening.  \textit{"And what do you think, Edward? Am I a drum, or a sphere?"}
+Jovannah turns back to Willard, her smile widening.  \textit{"And what do you think, Willard? Am I a drum, or a sphere?"}
 
 \bigskip
 
-Edward, regaining his composure as Ernest begins to wilt:  \textit{"Neither. You’re far too dynamic to be captured by a single eigenfunction. But if I had to choose, I’d say you’re an evolving system—nonlinear, higher order, beautifully unsolved."}  
+Willard, regaining his composure as Ernest begins to wilt:  \textit{"Neither. You’re far too dynamic to be captured by a single eigenfunction... but if I had to choose, I’d say you’re an evolving system, wholly nonlinear, of higher order, beautifully unresolved."}  
 
 \bigskip
 
-Jovannah blinks, momentarily caught off guard herself.  
+Jovannah blinks, momentarily caught off guard.  
 
 \bigskip
 
-Ernest frowns. He can see it—see the way Jovannah’s attention has shifted, the way she is no longer looking at him.  
+Ernest frowns. He' seen it, see the angular momentum of their system has  shifted.  
 
 \bigskip
 
-Jovannah, after a pause, eyes twinkling: \textit{"Edward, that might be the most charming thing anyone’s ever said to me."}  
+Jovannah, after a pause, eyes now a twinkling: \textit{"Willard, that might be the most charming thing anyone’s ever said to me."}  
 
 \bigskip
 
-Ernest, realizing—against all odds—that he has somehow lost this joust, finally relaxes, lips pressing into a thin line, sips his espresso that had been just dispatched by the waiter in solemn silence.
+Ernest, resigned that he has somehow lost this joust, relaxes, lips pressing into a thin line, sips his espresso that had been just dispatched by a waiter in knowing solemn silence.
 
 \bigskip
 
 \textit{(Somewhere, unseen, a Bessel function oscillates in quiet approval.)}
 
 \bigskip
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Illustrations/vign-whistfulWillard.png}
+    \caption{Willard unspoken}
+    \label{fig:pirallingprimes}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

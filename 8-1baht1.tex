@@ -140,7 +140,7 @@ replaces the metric. Orientation and volume are imposed through constraints:
 
 
 \noindent The sequence from spinorial field content to gravitational constraint is a layered morphism of jet bundles.
-\begin{equation}
+\begin{equation*}
 \begin{tikzcd}[column sep=huge, row sep=large]
 \text{Weyl Spinor } \psi \in \Gamma(S)
 \arrow[r, "\text{covariant deriv. } D_\mu"]
@@ -156,101 +156,105 @@ J^2(S)
 \arrow[r, "\text{Bianchi Identity}"] &
 0
 \end{tikzcd}
-\end{equation}
+\end{equation*}
 
  The Bianchi identity ensures closure of the Einstein tensor as a derived object.\footnote{L.~McCulloch and D.~C.~Robinson, \emph{Einstein's Equations and Associated Linear Systems}, Gen. Relativ. Gravit. \textbf{29} (1997), no. 11, 1445--1461.}
 
 
-\subsection*{The Fibonacci Matrix and Curvature}
-Bahti’s thoughts then turned to a more prosaic curiosity: to the \textit{Fibonacci matrix}, a $2 \times 2$ matrix often used to generate Fibonacci numbers. It is defined as:
-\[
-A = 
-\begin{bmatrix}
-1 & 1 \\
-1 & 0
-\end{bmatrix}.
-\]
+% >>>>>> ANNEX B (cut-sheet v2): the Fibonacci matrix, curvature and its spectral properties — block commented out below, pointer left in text <<<<<<
+\textit{(The Fibonacci matrix, curvature and its spectral properties --- the full working is set out in Annexe B.)}
 
-The matrix \( A \) has deep connections to recursion and growth, both of which were mirrored in the repeating coils of the springs. The recursive property of Fibonacci numbers is embedded in the matrix multiplication:
-\[
-\begin{bmatrix}
-F_{n+1} \\
-F_n
-\end{bmatrix}
-=
-A \cdot 
-\begin{bmatrix}
-F_n \\
-F_{n-1}
-\end{bmatrix},
-\]
-where \( F_n \) is the \(n\)-th Fibonacci number. Each application of the matrix \( A \) transforms the vector of consecutive Fibonacci numbers into the next in the sequence. This process, she realized, was akin to the compressions and expansions of the springs—a recursive transformation, unending and infinite.
-
-Bahti’s then shifted : the Fibonacci matrix, a simple yet profound construct that echoed the growth patterns seen in nature. She wrote:
-\[
-F = \begin{pmatrix} 1 & i \\ i & 1 \end{pmatrix}.
-\]
-
-This matrix, when iterated, generated higher-order Fibonacci numbers, much like the growth of a sequence. Bahti was interested in its geometric meaning. What kind of curvature, \(K\), could arise from such a structure? She imagined the matrix defining an oriented parallelepiped in a complex vector space, where its determinant—real or complex 
-
-—described the oriented "volume" of the shape:
-\[
-\det(F) = 1^2 - i^2 = 2.
-\]
-
- 
-
-\begin{figure}[H]
-\includegraphics[width=0.8\linewidth]{Illustrations/vign-bahtVision.png}
-\caption{Complex Fibonacci in Context}
-\end{figure}
-
-\section*{Oriented Parallelepipeds and Determinants}
-
-Bahti visualized the matrix \( A \) as defining an \textit{oriented parallelepiped} in a complex vector space. In this context:
-\begin{itemize}
-    \item The \textbf{columns of the matrix} define the edges of the parallelepiped.
-    \item The \textbf{determinant} of the matrix represents the signed volume of the parallelepiped.
-\end{itemize}
-
-For \( A \), the determinant is:
-\[
-\text{det}(A) = (1)(0) - (1)(1) = -1.
-\]
-
-The negative sign indicates an orientation (a "handedness") in the space, while the magnitude—unity—speaks to the preservation of the unit structure, despite the transformations. Bahti was struck by the simplicity and elegance of this result: the springs, too, had an orientation, their compression and tension embodying a physical analog to the mathematical abstraction.
-
-\section*{Extending to Complex Space}
-
-As Bahti’s thoughts deepened, she imagined the Fibonacci matrix extended to \textit{complex space}, where the entries could include imaginary numbers. In this setting, the matrix \( A \) might take the form:
-\[
-A_{\mathbb{C}} = 
-\begin{bmatrix}
-1 & i \\
-1 & 0
-\end{bmatrix}.
-\]
-
-Here, \( i \) represents the imaginary unit (\( i^2 = -1 \)), and the determinant becomes:
-\[
-\text{det}(A_{\mathbb{C}}) = (1)(0) - (1)(i) = -i.
-\]
-
-The determinant now encodes both the orientation and the complex "volume" of the parallelepiped in this extended space. Bahti envisioned this as a dynamic structure—rotating, expanding, and contracting within the imaginary dimensions. The springs of the bed, in their static form, seemed to hint at this dynamic potential, whispering of oscillations and waves in higher-dimensional spaces.
-
-\section*{Fibonacci and Spectral Properties}
-
-Bahti also recalled that the Fibonacci matrix has spectral properties that connect it to exponential growth and golden ratios. The \textbf{eigenvalues} of \( A \) are given by the roots of its characteristic polynomial:
-\[
-\lambda^2 - \lambda - 1 = 0.
-\]
-
-The solutions are:
-\[
-\lambda_1 = \frac{1 + \sqrt{5}}{2}, \quad \lambda_2 = \frac{1 - \sqrt{5}}{2},
-\]
-where \( \lambda_1 \) is the golden ratio (\( \phi \)) and \( \lambda_2 \) is its conjugate. These eigenvalues describe the scaling factors of the Fibonacci sequence as it grows. Bahti imagined these scaling factors reflected in the rhythmic compression of the springs, each oscillation expanding or contracting in proportion to the golden ratio—a cosmic rhythm encoded in the bedframe.
-
+% \subsection*{The Fibonacci Matrix and Curvature}
+% Bahti’s thoughts then turned to a more prosaic curiosity: to the \textit{Fibonacci matrix}, a $2 \times 2$ matrix often used to generate Fibonacci numbers. It is defined as:
+% \[
+% A = 
+% \begin{bmatrix}
+% 1 & 1 \\
+% 1 & 0
+% \end{bmatrix}.
+% \]
+% 
+% The matrix \( A \) has deep connections to recursion and growth, both of which were mirrored in the repeating coils of the springs. The recursive property of Fibonacci numbers is embedded in the matrix multiplication:
+% \[
+% \begin{bmatrix}
+% F_{n+1} \\
+% F_n
+% \end{bmatrix}
+% =
+% A \cdot 
+% \begin{bmatrix}
+% F_n \\
+% F_{n-1}
+% \end{bmatrix},
+% \]
+% where \( F_n \) is the \(n\)-th Fibonacci number. Each application of the matrix \( A \) transforms the vector of consecutive Fibonacci numbers into the next in the sequence. This process, she realized, was akin to the compressions and expansions of the springs—a recursive transformation, unending and infinite.
+% 
+% Bahti’s then shifted : the Fibonacci matrix, a simple yet profound construct that echoed the growth patterns seen in nature. She wrote:
+% \[
+% F = \begin{pmatrix} 1 & i \\ i & 1 \end{pmatrix}.
+% \]
+% 
+% This matrix, when iterated, generated higher-order Fibonacci numbers, much like the growth of a sequence. Bahti was interested in its geometric meaning. What kind of curvature, \(K\), could arise from such a structure? She imagined the matrix defining an oriented parallelepiped in a complex vector space, where its determinant—real or complex 
+% 
+% —described the oriented "volume" of the shape:
+% \[
+% \det(F) = 1^2 - i^2 = 2.
+% \]
+% 
+%  
+% 
+% \begin{figure}[H]
+% \includegraphics[width=0.8\linewidth]{Illustrations/vign-bahtVision.png}
+% \caption{Complex Fibonacci in Context}
+% \end{figure}
+% 
+% \section*{Oriented Parallelepipeds and Determinants}
+% 
+% Bahti visualized the matrix \( A \) as defining an \textit{oriented parallelepiped} in a complex vector space. In this context:
+% \begin{itemize}
+%     \item The \textbf{columns of the matrix} define the edges of the parallelepiped.
+%     \item The \textbf{determinant} of the matrix represents the signed volume of the parallelepiped.
+% \end{itemize}
+% 
+% For \( A \), the determinant is:
+% \[
+% \text{det}(A) = (1)(0) - (1)(1) = -1.
+% \]
+% 
+% The negative sign indicates an orientation (a "handedness") in the space, while the magnitude—unity—speaks to the preservation of the unit structure, despite the transformations. Bahti was struck by the simplicity and elegance of this result: the springs, too, had an orientation, their compression and tension embodying a physical analog to the mathematical abstraction.
+% 
+% \section*{Extending to Complex Space}
+% 
+% As Bahti’s thoughts deepened, she imagined the Fibonacci matrix extended to \textit{complex space}, where the entries could include imaginary numbers. In this setting, the matrix \( A \) might take the form:
+% \[
+% A_{\mathbb{C}} = 
+% \begin{bmatrix}
+% 1 & i \\
+% 1 & 0
+% \end{bmatrix}.
+% \]
+% 
+% Here, \( i \) represents the imaginary unit (\( i^2 = -1 \)), and the determinant becomes:
+% \[
+% \text{det}(A_{\mathbb{C}}) = (1)(0) - (1)(i) = -i.
+% \]
+% 
+% The determinant now encodes both the orientation and the complex "volume" of the parallelepiped in this extended space. Bahti envisioned this as a dynamic structure—rotating, expanding, and contracting within the imaginary dimensions. The springs of the bed, in their static form, seemed to hint at this dynamic potential, whispering of oscillations and waves in higher-dimensional spaces.
+% 
+% \section*{Fibonacci and Spectral Properties}
+% 
+% Bahti also recalled that the Fibonacci matrix has spectral properties that connect it to exponential growth and golden ratios. The \textbf{eigenvalues} of \( A \) are given by the roots of its characteristic polynomial:
+% \[
+% \lambda^2 - \lambda - 1 = 0.
+% \]
+% 
+% The solutions are:
+% \[
+% \lambda_1 = \frac{1 + \sqrt{5}}{2}, \quad \lambda_2 = \frac{1 - \sqrt{5}}{2},
+% \]
+% where \( \lambda_1 \) is the golden ratio (\( \phi \)) and \( \lambda_2 \) is its conjugate. These eigenvalues describe the scaling factors of the Fibonacci sequence as it grows. Bahti imagined these scaling factors reflected in the rhythmic compression of the springs, each oscillation expanding or contracting in proportion to the golden ratio—a cosmic rhythm encoded in the bedframe.
+% 
+% >>>>>> end of annexed block <<<<<<
 \section*{The Springs as a Lattice of Ideas}
 
 Bahti’s reverie deepened as she thought of the bedframe springs as forming a \textit{lattice} in space. Each coil represented a discrete point, a node in a grid defined by the Fibonacci sequence or its extensions. The \textbf{harmonic relationships} between the springs echoed the interconnectedness of Fibonacci numbers, while the lattice itself symbolized the structured framework of mathematics—rigid yet infinitely adaptable.
@@ -285,9 +289,12 @@ She returned again to the Fibonacci matrix, imagining it as an oriented parallel
 
 Betti suspected the answer lay in combining the tools of differential forms with the algebraic richness of complex geometry. The volume forms described by \(-g\) or \(\det(F)\) were not just passive measures—they were active participants in the geometry of the universe.
 
-As Betti packed up her notebooks for the day, she pondered a question that had been nagging at her: What is the end goal of all this growth? Determinants, curvature, integrability—they all pointed to a universe driven by expansion, but to what end? Perhaps, she thought, the growth encoded in these mathematical structures wasn’t just about geometry or physics. It was about understanding how the infinite complexity of the universe could arise from such simple, elegant rules.
+As Betti packed up her notebooks for the day, she pondered a question that had been nagging at her: What is the end goal of all this growth? Determinants, curvature, integrability... they all pointed to a universe driven by expansion, but to what end? Perhaps, she thought, the growth encoded in these mathematical structures wasn’t just about geometry or physics. It was about understanding how the infinite complexity of the universe could arise from such simple, elegant rules.
 
-With a sigh, she slung her bag over her shoulder. Tomorrow, maybe she would delve deeper into the connections between curvature, growth, and determinants. 
+% With a sigh, she slung her bag over her shoulder. Tomorrow, maybe she would delve deeper into the connections between curvature, growth, and determinants. 
+
+% 
+
 
 % 
 

@@ -1,4 +1,5 @@
 
+
 \chapter{The Almost Integer}
 \begin{minipage}[t]{\textwidth}
 \lettrine{N}{ina} Ashtekar leaned back in her chair, the sunlight of a Rajastani hotel streaming through carved lattice windows.  
@@ -244,7 +245,7 @@ Two transcendentals—\(e\) and \(\pi\)—and a quadratic irrational \(\sqrt{163
 
 Almost conspiratorial, but mostly incoherently so "And here’s a detail almost nobody talks about—this number is absurdly close to:
 \[
-\mathcal{R}\p\approx M = 640320^3 + 744= 262537412640768744.
+\mathcal{R}_p\approx M = 640320^3 + 744= 262537412640768744.
 \]
 Through iterative \href{https://colab.research.google.com/drive/1hn_NBpzrlv1TNKeRQAPDLabW04Jya0tv?usp=sharing}{Shor}-style analysis and \href{https://colab.research.google.com/drive/1Io6trNJBcgsMHd2it5qg-_ZYuJLJOb8p?usp=sharing}{classical factorization}, we find:
 \[
@@ -368,378 +369,382 @@ lands squarely in the Planckish neighbourhood — \(\hbar = h/2\pi \approx 1.054
 
 Abu, Abhay would have said, “Of course it does as all roads in the zoo of dimensional analysis lead back to the same cages. But look there at those Joule Seconds ... so \href{https://www.researchgate.net/publication/390318980_Redefining_Planck's_Constant_via_Cosmological_Time_Ramanujan_Time_and_the_Wien_Displacement_Field}{anthropic}.” 
 
-\subsection*{Syntaxology of Natural Mass Scales}
+% >>>>>> ANNEX C (cut-sheet v2): the syntaxology of mass scales and Planck--Einstein symbolic regression — block commented out below, pointer left in text <<<<<<
+\textit{(Nina's game of deriving Planck and Einstein by symbolic regression is played out in full in Annexe C.)}
 
-Physics often advances by staging a duel between competing metaphors: waves vs.\ particles, geometry vs.\ inertia, localisation vs.\ collapse.  
-Sometimes these duels produce balances that are “pre-Einstein compatible”: simple, physically motivated constructions that already echo later theory.  
-
-Here is one such duel, in which the Quantum that is Nina says: “this is how small you can get,” and gravity replies: “this is how big you must be.” Behold the Compton wavelength,
-\[
-\lambda_C=\frac{h}{mc},
-\]
-capturing how tightly a particle of mass \(m\) can be pinned down before quantum fuzziness sets in while the Schwarzschild radius,
-\[
-r_s=\frac{2Gm}{c^2},
-\]
-measures how much mass bends spacetime before it becomes a black hole. 
-Now if we must insist that they speak to each other,
-\(
-\lambda_C=r_s,
-\)
-the solution is the \emph{Planck mass}:
-\[
-m_P=\sqrt{\frac{hc}{G}} \;\;\sim 5.456\times10^{-8}\,\mathrm{kg},
-\]
-marking the point where quantum localisation and gravitational collapse \emph{agree on the rules}.  
-In the same spirit, as we will see in a minute, a Newtonian universe mass,
-\[
-M_U\sim \frac{c^3}{GH},
-\]
-can fall out from nothing more than binding energy plus a cosmic clock.
-
-Nina's dad had once shown her a longer list of “natural masses” \href{https://mcmurmerings.wordpress.com/2021/08/03/a-complete-set-of-fundamental-mass-combinations/}{cooked up} from the constants \(c, h, G, H\) by nothing more exotic than unit juggling.
-
-\href{https://weinberg-mass-hierarchy.vercel.app/}{Dimensional analysis} asks us to combine these constants so that the units cancel into kilograms,  
-\[
-m \sim c^\alpha h^\beta H^\gamma G^\delta,
-\]
-with the exponents fixed by three unit equations \([M],[L],[T]\).  
-There are four independent solutions:  
-\[
-\begin{aligned}
-m_1 &= \frac{c^3}{GH} \;\;\sim 1.8\times10^{53}\ \mathrm{kg}, & &\text{mass of the Hubble sphere},\\[6pt]
-m_2 &= \frac{hH}{c^2} \;\;\sim 1.6\times10^{-68}\ \mathrm{kg}, & &\text{a graviton/self–gravity scale},\\[6pt]
-m_3 &= \Big(\tfrac{h^3 H}{G^2}\Big)^{1/5} \;\;\sim 4.3\times10^{-20}\ \mathrm{kg}, & &\text{an intermediate curiosity},\\[6pt]
-m_4 &= \Big(\tfrac{hc}{G}\Big)^{1/2} \;\;\sim 5.456\times10^{-8}\ \mathrm{kg}, & &\text{the Planck mass}.
-\end{aligned}
-\]
-
-These seeds already span more than \(10^{121}\) in magnitude: the same vast gulf between quantum field theory’s vacuum energy and the observed dark-energy density.  
-It was this kind of gap Eleanor and Jovannah hoped to bridge by trading the infinities of a continuous manifold for the cleaner bookkeeping of a lattice, so sidestepping the arbitrary ansätze of \href{https://www.researchgate.net/publication/23671110_Regularization_Renormalization_and_Dimensional_Analysis_DimensionalRegularization_meets_Freshman_EM}{\emph{regularisation} and \emph{renormalisation}}
-
-, those conjuring acts where, if you allow water to turn into wine, anything else, even the charge on an electron, is possible on the menu.  
-
-Once we have the seeds \(\{m_1,m_2,m_3,m_4\}\), we can generate further scales by taking geometric means:
-\[
-m_{ij}=\sqrt{m_i m_j}, \qquad m_{ijk}=(m_i m_j m_k)^{1/3}, \ldots
-\]
-This combinatorics produces some intriguing echoes:  
-the Planck mass itself reappears as \(m_{12}\);  
-\(m_{24}\sim 3\times10^{-38}\,\mathrm{kg}\), suggestive of neutrino bounds;  
-\(m_{234}\sim 3.4\times10^{-32}\,\mathrm{kg}\), in neighbourhood of electron mass.  
-
-It was this proliferation that inspired Weinberg’s image of a “dial”: spin it one way, the crossings fall near mesons; turn it another, and they brush past neutrinos or electrons.  
-The pattern is seductive: real particles seem to lurk near these geometric means.  
-It looks elegant. But elegance is not explanation. Unless some principle fixes the dial at a definite setting, most of these constructions remain suggestive curiosities rather than physics. When formulas from different corners of physics suddenly rhyme we might call that \emph{syntaxology}.
-
-\subsection*{Symbolic Regression Without a Map}
-In the spirit of an unguided machine we can \href{https://colab.research.google.com/drive/1Jc4zmPlcXqZImYC3wqJJT7Ry__WeUmSY?usp=sharing}{treat} each mass expression as a \emph{syntactic object} and quantify its \emph{structural complexity}.  
-A simple industry-standard proxy is the \emph{functional form depth} which comprises the maximum nesting level of operators and functions in the expression tree.\footnote{This is essentially the tree-depth measure used in symbolic regression fitness functions.  
-For example, $\sqrt{a\,b}$ has depth $2$ (multiply, then root), whereas $\log\!\sqrt{a\,b}$ has depth $3$.  
-This is a coarse but widely-used measure of algebraic complexity.}
-
-\begin{center}
-\begin{tabular}{lcc}
-\hline
-Expression & log$_{10}$ mass (kg) & Complexity depth \\
-\hline
-$hH/c^2$ & $-68.4$ & 2 \\
-$h/(c\,R_U)$ & $-67.6$ & 3 \\
-$\sqrt{hH/G}$ & $-59.9$ & 2 \\
-$h/(m_p c)$ & $-27.3$ & 3 \\
-$m_P=\sqrt{h c/G}$ & $-7.6$ & 2 \\
-$c^3/(GH)$ & $52.0$ & 2 \\
-$\sqrt{m_P M_U}$ & $22.2$ & 3 \\
-\hline
-\end{tabular}
-\end{center}
-
-Here the $y$-axis is $\log_{10}(\mathrm{mass/kg})$, and the $x$-axis is \emph{syntactic complexity depth}.  
-Even without a physical story, the low-complexity forms cluster at physically meaningful scales (Planck, baryonic universe, proton scale), while arbitrary composites wander.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.9\textwidth]{Illustrations/mass_vs_complexity.png}
-\caption{Mass scales (log$_{10}$ kg) vs.\ syntactic complexity depth.  
-Lower complexity often aligns with physically motivated scales; higher complexity contrived numerology.}
-\end{figure}
-
-This “complexity spectrum” offers a crude visual heuristic:  
-\emph{physics lives where syntax is simple and the constants are there for a reason}. The space of \emph{allowable} forms is infinite; physical reality occupies a vanishingly small subset.
-
-
-
-To move from rhyme to reason, one must press these coincidences into \href{https://symbolic-regression.vercel.app/}{models}. Only then can we see whether they carry explanatory weight once embedded in dynamics. 
-
-The best way to see the difference is to build the simplest garden-variety model and watch where it succeeds and where it slips. 
-
-Let that garden be Newton’s.  Picture the universe as he sees it, as nothing more than a sphere of dust: matter with no pressure, expanding or contracting with time. 
-Give it a radius \(R(t)\), a density \(\rho(t)\), and an expansion rate given by a "Hubble parameter":
-\[
-H(t)=\frac{\dot R}{R}.
-\]
-
-Now imagine standing on the boundary and placing a test particle there.  
-Newton tells us to balance its kinetic energy against the pull of the whole sphere inside. 
-That energy statement is
-\[
-\frac{1}{2}\dot R^2 - \frac{GM}{R} = \frac{k c^2}{2},
-\qquad
-M=\frac{4\pi}{3}\rho R^3,
-\]
-where the extra term \(k c^2/2\) encodes whether the geometry is open, flat, or closed.  With a little algebra\footnote{By multiply both sides by \(\displaystyle \frac{2}{R^2}\) and substituting for \(M\):
-\[
-\frac{\dot R^2}{R^2}-\frac{2G}{R^3}\!\left(\frac{4\pi}{3}\rho R^3\right)+\frac{k c^2}{R^2}=0
-\;\;\Longrightarrow\;\;
-H^2-\frac{8\pi G}{3}\rho+\frac{k c^2}{R^2}=0,
-\]}, the Newtonian energy balance reshuffles into
-\[
-H^2=\frac{8\pi G}{3}\rho-\frac{k c^2}{R^2}.
-\]
-The left-hand side is simply the square of the expansion rate. 
-On the right, we have a term proportional to the density and a term that looks like a curvature correction, with \(k\) playing the role of spatial geometry: positive for closed, zero for flat, negative for open. In other words, by juggling Newton’s kinetic and potential energies for a dust sphere, we stumble onto a formula that already carries the skeleton of Einstein’s cosmology. 
-
-From our Newtonian form choose the spatially \emph{flat} case \(k=0\). In this limit the expansion is
-balanced by a specific density, the \emph{critical density},
-\[
-\rho_c \;\equiv\; \frac{3H^2}{8\pi G}.
-\]
-\noindent
-If we now take a Hubble-sized patch with radius \(R\sim c/H\), its mass is
-\[
-M_U \;\sim\; \rho_c\,\frac{4\pi}{3}R^3
-\;\sim\; \Big(\frac{3H^2}{8\pi G}\Big)\,\frac{4\pi}{3}\,\Big(\frac{c}{H}\Big)^3
-\;\sim\; \frac{c^3}{2G H}.
-\]
-This gives us a compact estimate for the mass within a Hubble volume. 
-It has the right shape, even the right order of magnitude. 
-But notice a hitch. If instead we try the different Newtonian shortcut of equating the Hubble recession speed $HR$ to the Newtonian escape velocity $\sqrt{2GM/R}$, we find:
-\[
-\rho \sim \frac{3H^2}{4\pi G},
-\]
-which is a factor of two larger than the correct critical density.  So even in Newton’s tidy garden, syntax needs a steady hand. The forms look familiar, but without Einstein’s pruning, the details slip.
- 
-
-\newpage
+% \subsection*{Syntaxology of Natural Mass Scales}
+% 
+% Physics often advances by staging a duel between competing metaphors: waves vs.\ particles, geometry vs.\ inertia, localisation vs.\ collapse.  
+% Sometimes these duels produce balances that are “pre-Einstein compatible”: simple, physically motivated constructions that already echo later theory.  
+% 
+% Here is one such duel, in which the Quantum that is Nina says: “this is how small you can get,” and gravity replies: “this is how big you must be.” Behold the Compton wavelength,
+% \[
+% \lambda_C=\frac{h}{mc},
+% \]
+% capturing how tightly a particle of mass \(m\) can be pinned down before quantum fuzziness sets in while the Schwarzschild radius,
+% \[
+% r_s=\frac{2Gm}{c^2},
+% \]
+% measures how much mass bends spacetime before it becomes a black hole. 
+% Now if we must insist that they speak to each other,
+% \(
+% \lambda_C=r_s,
+% \)
+% the solution is the \emph{Planck mass}:
+% \[
+% m_P=\sqrt{\frac{hc}{G}} \;\;\sim 5.456\times10^{-8}\,\mathrm{kg},
+% \]
+% marking the point where quantum localisation and gravitational collapse \emph{agree on the rules}.  
+% In the same spirit, as we will see in a minute, a Newtonian universe mass,
+% \[
+% M_U\sim \frac{c^3}{GH},
+% \]
+% can fall out from nothing more than binding energy plus a cosmic clock.
+% 
+% Nina's dad had once shown her a longer list of “natural masses” \href{https://mcmurmerings.wordpress.com/2021/08/03/a-complete-set-of-fundamental-mass-combinations/}{cooked up} from the constants \(c, h, G, H\) by nothing more exotic than unit juggling.
+% 
+% \href{https://weinberg-mass-hierarchy.vercel.app/}{Dimensional analysis} asks us to combine these constants so that the units cancel into kilograms,  
+% \[
+% m \sim c^\alpha h^\beta H^\gamma G^\delta,
+% \]
+% with the exponents fixed by three unit equations \([M],[L],[T]\).  
+% There are four independent solutions:  
+% \[
+% \begin{aligned}
+% m_1 &= \frac{c^3}{GH} \;\;\sim 1.8\times10^{53}\ \mathrm{kg}, & &\text{mass of the Hubble sphere},\\[6pt]
+% m_2 &= \frac{hH}{c^2} \;\;\sim 1.6\times10^{-68}\ \mathrm{kg}, & &\text{a graviton/self–gravity scale},\\[6pt]
+% m_3 &= \Big(\tfrac{h^3 H}{G^2}\Big)^{1/5} \;\;\sim 4.3\times10^{-20}\ \mathrm{kg}, & &\text{an intermediate curiosity},\\[6pt]
+% m_4 &= \Big(\tfrac{hc}{G}\Big)^{1/2} \;\;\sim 5.456\times10^{-8}\ \mathrm{kg}, & &\text{the Planck mass}.
+% \end{aligned}
+% \]
+% 
+% These seeds already span more than \(10^{121}\) in magnitude: the same vast gulf between quantum field theory’s vacuum energy and the observed dark-energy density.  
+% It was this kind of gap Eleanor and Jovannah hoped to bridge by trading the infinities of a continuous manifold for the cleaner bookkeeping of a lattice, so sidestepping the arbitrary ansätze of \href{https://www.researchgate.net/publication/23671110_Regularization_Renormalization_and_Dimensional_Analysis_DimensionalRegularization_meets_Freshman_EM}{\emph{regularisation} and \emph{renormalisation}}
+% 
+% , those conjuring acts where, if you allow water to turn into wine, anything else, even the charge on an electron, is possible on the menu.  
+% 
+% Once we have the seeds \(\{m_1,m_2,m_3,m_4\}\), we can generate further scales by taking geometric means:
+% \[
+% m_{ij}=\sqrt{m_i m_j}, \qquad m_{ijk}=(m_i m_j m_k)^{1/3}, \ldots
+% \]
+% This combinatorics produces some intriguing echoes:  
+% the Planck mass itself reappears as \(m_{12}\);  
+% \(m_{24}\sim 3\times10^{-38}\,\mathrm{kg}\), suggestive of neutrino bounds;  
+% \(m_{234}\sim 3.4\times10^{-32}\,\mathrm{kg}\), in neighbourhood of electron mass.  
+% 
+% It was this proliferation that inspired Weinberg’s image of a “dial”: spin it one way, the crossings fall near mesons; turn it another, and they brush past neutrinos or electrons.  
+% The pattern is seductive: real particles seem to lurk near these geometric means.  
+% It looks elegant. But elegance is not explanation. Unless some principle fixes the dial at a definite setting, most of these constructions remain suggestive curiosities rather than physics. When formulas from different corners of physics suddenly rhyme we might call that \emph{syntaxology}.
+% 
+% \subsection*{Symbolic Regression Without a Map}
+% In the spirit of an unguided machine we can \href{https://colab.research.google.com/drive/1Jc4zmPlcXqZImYC3wqJJT7Ry__WeUmSY?usp=sharing}{treat} each mass expression as a \emph{syntactic object} and quantify its \emph{structural complexity}.  
+% A simple industry-standard proxy is the \emph{functional form depth} which comprises the maximum nesting level of operators and functions in the expression tree.\footnote{This is essentially the tree-depth measure used in symbolic regression fitness functions.  
+% For example, $\sqrt{a\,b}$ has depth $2$ (multiply, then root), whereas $\log\!\sqrt{a\,b}$ has depth $3$.  
+% This is a coarse but widely-used measure of algebraic complexity.}
+% 
+% \begin{center}
+% \begin{tabular}{lcc}
+% \hline
+% Expression & log$_{10}$ mass (kg) & Complexity depth \\
+% \hline
+% $hH/c^2$ & $-68.4$ & 2 \\
+% $h/(c\,R_U)$ & $-67.6$ & 3 \\
+% $\sqrt{hH/G}$ & $-59.9$ & 2 \\
+% $h/(m_p c)$ & $-27.3$ & 3 \\
+% $m_P=\sqrt{h c/G}$ & $-7.6$ & 2 \\
+% $c^3/(GH)$ & $52.0$ & 2 \\
+% $\sqrt{m_P M_U}$ & $22.2$ & 3 \\
+% \hline
+% \end{tabular}
+% \end{center}
+% 
+% Here the $y$-axis is $\log_{10}(\mathrm{mass/kg})$, and the $x$-axis is \emph{syntactic complexity depth}.  
+% Even without a physical story, the low-complexity forms cluster at physically meaningful scales (Planck, baryonic universe, proton scale), while arbitrary composites wander.
+% 
+% \begin{figure}[h]
+% \centering
+% \includegraphics[width=0.9\textwidth]{Illustrations/mass_vs_complexity.png}
+% \caption{Mass scales (log$_{10}$ kg) vs.\ syntactic complexity depth.  
+% Lower complexity often aligns with physically motivated scales; higher complexity contrived numerology.}
+% \end{figure}
+% 
+% This “complexity spectrum” offers a crude visual heuristic:  
+% \emph{physics lives where syntax is simple and the constants are there for a reason}. The space of \emph{allowable} forms is infinite; physical reality occupies a vanishingly small subset.
+% 
+% 
+% 
+% To move from rhyme to reason, one must press these coincidences into \href{https://symbolic-regression.vercel.app/}{models}. Only then can we see whether they carry explanatory weight once embedded in dynamics. 
+% 
+% The best way to see the difference is to build the simplest garden-variety model and watch where it succeeds and where it slips. 
+% 
+% Let that garden be Newton’s.  Picture the universe as he sees it, as nothing more than a sphere of dust: matter with no pressure, expanding or contracting with time. 
+% Give it a radius \(R(t)\), a density \(\rho(t)\), and an expansion rate given by a "Hubble parameter":
+% \[
+% H(t)=\frac{\dot R}{R}.
+% \]
+% 
+% Now imagine standing on the boundary and placing a test particle there.  
+% Newton tells us to balance its kinetic energy against the pull of the whole sphere inside. 
+% That energy statement is
+% \[
+% \frac{1}{2}\dot R^2 - \frac{GM}{R} = \frac{k c^2}{2},
+% \qquad
+% M=\frac{4\pi}{3}\rho R^3,
+% \]
+% where the extra term \(k c^2/2\) encodes whether the geometry is open, flat, or closed.  With a little algebra\footnote{By multiply both sides by \(\displaystyle \frac{2}{R^2}\) and substituting for \(M\):
+% \[
+% \frac{\dot R^2}{R^2}-\frac{2G}{R^3}\!\left(\frac{4\pi}{3}\rho R^3\right)+\frac{k c^2}{R^2}=0
+% \;\;\Longrightarrow\;\;
+% H^2-\frac{8\pi G}{3}\rho+\frac{k c^2}{R^2}=0,
+% \]}, the Newtonian energy balance reshuffles into
+% \[
+% H^2=\frac{8\pi G}{3}\rho-\frac{k c^2}{R^2}.
+% \]
+% The left-hand side is simply the square of the expansion rate. 
+% On the right, we have a term proportional to the density and a term that looks like a curvature correction, with \(k\) playing the role of spatial geometry: positive for closed, zero for flat, negative for open. In other words, by juggling Newton’s kinetic and potential energies for a dust sphere, we stumble onto a formula that already carries the skeleton of Einstein’s cosmology. 
+% 
+% From our Newtonian form choose the spatially \emph{flat} case \(k=0\). In this limit the expansion is
+% balanced by a specific density, the \emph{critical density},
+% \[
+% \rho_c \;\equiv\; \frac{3H^2}{8\pi G}.
+% \]
+% \noindent
+% If we now take a Hubble-sized patch with radius \(R\sim c/H\), its mass is
+% \[
+% M_U \;\sim\; \rho_c\,\frac{4\pi}{3}R^3
+% \;\sim\; \Big(\frac{3H^2}{8\pi G}\Big)\,\frac{4\pi}{3}\,\Big(\frac{c}{H}\Big)^3
+% \;\sim\; \frac{c^3}{2G H}.
+% \]
+% This gives us a compact estimate for the mass within a Hubble volume. 
+% It has the right shape, even the right order of magnitude. 
+% But notice a hitch. If instead we try the different Newtonian shortcut of equating the Hubble recession speed $HR$ to the Newtonian escape velocity $\sqrt{2GM/R}$, we find:
+% \[
+% \rho \sim \frac{3H^2}{4\pi G},
+% \]
+% which is a factor of two larger than the correct critical density.  So even in Newton’s tidy garden, syntax needs a steady hand. The forms look familiar, but without Einstein’s pruning, the details slip.
+%  
+% 
+% \newpage
 % ===========================
-
-\section*{Planck \& Einstein as directed symbolic regressors}
-
+% 
+% \section*{Planck \& Einstein as directed symbolic regressors}
+% 
 % \subsection*{Planck’s Scaffolding}
-
-At the turn of the twentieth century, Planck faced a hopeless counting problem: how many ways can energy be distributed among oscillators if energy is continuous? The answer was infinitely many—too many for statistical mechanics to function. So, he did what mathematicians often do: he added scaffolding.
-
-He discretized. By chopping energy into chunks of size \(\epsilon\), the infinite became finite. With allowed energy levels \(0, \epsilon, 2\epsilon, \dots\), the combinatorics became tractable, entropy followed from Boltzmann’s formula, and thermodynamic laws yielded a plausible energy distribution. The plan was to solve the finite case, then let \(\epsilon \to 0\) to recover the classical world.
-
-But when Planck removed the scaffolding and took the limit, the formula collapsed into the Rayleigh–Jeans catastrophe. Only by keeping \(\epsilon = h\nu\) finite did the theory agree with observation. What began as an artificial regularization had become the law itself.
-
-This is symbolic regression at its most treacherous: introduce a fiction to make the math work, then discover that removing it breaks reality. Planck’s “temporary” discretization turned out to be nature’s permanent constraint. The scaffolding was the physics.
-
-Mathematics offers an infinitude of dimensionally consistent forms.  
-Matter prunes these to what the universe actually contains.  
-In Penrose’s tripartite framing, it takes a Mind of the form and complexity of Einstein's to supply the guiding hand of heuristics and constraints. Seen through a Machine Learning perspective, Einstein's uncovering of general relativity was by \emph{guided symbolic regression}:
-\[
-\text{terminals: } (g_{\mu\nu},\,T_{\mu\nu},\,G,\,c),\quad
-\text{operators: } (\nabla,\,\text{contraction},\,\text{variation}),
-\]
-with strict \emph{fitness constraints}:
-general covariance, equivalence principle, Newtonian limit, energy–momentum conservation. From countless syntactic possibilities, only his mighty equation survives,
-\[
-G_{\mu\nu}=\frac{8\pi G}{c^4}T_{\mu\nu}.
-\]
-
+% 
+% At the turn of the twentieth century, Planck faced a hopeless counting problem: how many ways can energy be distributed among oscillators if energy is continuous? The answer was infinitely many—too many for statistical mechanics to function. So, he did what mathematicians often do: he added scaffolding.
+% 
+% He discretized. By chopping energy into chunks of size \(\epsilon\), the infinite became finite. With allowed energy levels \(0, \epsilon, 2\epsilon, \dots\), the combinatorics became tractable, entropy followed from Boltzmann’s formula, and thermodynamic laws yielded a plausible energy distribution. The plan was to solve the finite case, then let \(\epsilon \to 0\) to recover the classical world.
+% 
+% But when Planck removed the scaffolding and took the limit, the formula collapsed into the Rayleigh–Jeans catastrophe. Only by keeping \(\epsilon = h\nu\) finite did the theory agree with observation. What began as an artificial regularization had become the law itself.
+% 
+% This is symbolic regression at its most treacherous: introduce a fiction to make the math work, then discover that removing it breaks reality. Planck’s “temporary” discretization turned out to be nature’s permanent constraint. The scaffolding was the physics.
+% 
+% Mathematics offers an infinitude of dimensionally consistent forms.  
+% Matter prunes these to what the universe actually contains.  
+% In Penrose’s tripartite framing, it takes a Mind of the form and complexity of Einstein's to supply the guiding hand of heuristics and constraints. Seen through a Machine Learning perspective, Einstein's uncovering of general relativity was by \emph{guided symbolic regression}:
+% \[
+% \text{terminals: } (g_{\mu\nu},\,T_{\mu\nu},\,G,\,c),\quad
+% \text{operators: } (\nabla,\,\text{contraction},\,\text{variation}),
+% \]
+% with strict \emph{fitness constraints}:
+% general covariance, equivalence principle, Newtonian limit, energy–momentum conservation. From countless syntactic possibilities, only his mighty equation survives,
+% \[
+% G_{\mu\nu}=\frac{8\pi G}{c^4}T_{\mu\nu}.
+% \]
+% 
 % \subsection*{Principle and Pruning in the Landscape of Syntax}
-
-Planck and Einstein were, in essence, directed symbolic regressors: explorers of syntax guided by principle. Where mathematics offers an infinite landscape of sterile coincidences, they pruned with constraints sharp enough to reveal necessity. Physics resides only in those rare intersections where form meets principle. From Newton’s garden to Planck’s scaffolding to Einstein’s symmetries, the lesson repeats: without constraint, algebra blooms into illusion; with it, syntax yields law. The constants of nature are not curiosities but tokens in the grammar of reality, anchors in a language where simplicity signals truth, and where only a mind, human or machine, can keep invention from drifting away from discovery.
-
-  
-Whether in 1905 or in the era of machine learning, the danger is the same: without principled constraints, your symbolic regression\footnote{Symbolic regression: a branch of machine learning which searches over a vast space of algebraic expressions to fit data. Without strong priors such as dimensional analysis, invariance principles, or known symmetries, it will happily produce elegant but meaningless formulae.} will return a forest of plausible nonsense.  
-
+% 
+% Planck and Einstein were, in essence, directed symbolic regressors: explorers of syntax guided by principle. Where mathematics offers an infinite landscape of sterile coincidences, they pruned with constraints sharp enough to reveal necessity. Physics resides only in those rare intersections where form meets principle. From Newton’s garden to Planck’s scaffolding to Einstein’s symmetries, the lesson repeats: without constraint, algebra blooms into illusion; with it, syntax yields law. The constants of nature are not curiosities but tokens in the grammar of reality, anchors in a language where simplicity signals truth, and where only a mind, human or machine, can keep invention from drifting away from discovery.
+% 
+%   
+% Whether in 1905 or in the era of machine learning, the danger is the same: without principled constraints, your symbolic regression\footnote{Symbolic regression: a branch of machine learning which searches over a vast space of algebraic expressions to fit data. Without strong priors such as dimensional analysis, invariance principles, or known symmetries, it will happily produce elegant but meaningless formulae.} will return a forest of plausible nonsense.  
+% 
 % \begin{quote}
 % On syntax, regression, and the grammar of reality:  
-
+% 
 % the regressive eye sees countless forms,  
-
+% 
 % the progressive mind prunes them to one.  
-
+% 
 % Syntax may wander, but truth lives  
-
+% 
 % where simplicity and principle meet.
 % \end{quote}
-
-Nina knew her whole scheme was half stagecraft, half physics, and maybe that was the charm.  But once you’d seen one “coincidence” like \(\mathcal{R}^2\) sidling up to \(\hbar\), you started spotting them everywhere, 
-like an earworm you couldn’t shake. And just then the waiter returned with another highball. A nod was as good as a wink. Sipping her third, eyes sparkling, she did not let him go. He is smiling (or is it smirking?) as he places the drink gently now beside her.
-
-\begin{itemize}[leftmargin=1.5cm]
-
-\item[Nina:] \textit{} You know, we’ve got it all wrong: anchoring time to caesium atoms. 
-What if we ditched that whole atomic-clock business?
-
-\item[Waiter:] \textit{} And replace it with what, Professor?
-
-\item[Nina:] The Cosmic Microwave Background. Its Wien peak today is about \(160.3~\mathrm{GHz}\). 
-Now measure that against the \emph{Planck time},
-\[
-t_P=\sqrt{\frac{\hbar G}{c^5}} \;\approx\; 5.39\times10^{-44}\,\mathrm{s}.
-\]
-Multiply the CMB peak frequency by this tick, and you get a pure, dimensionless number:
-\[
-\chi_0=\nu_{ CMB,0}\,t_P \;\approx\; 8.6\times 10^{-33}.
-\]
-
-\item[Waiter:] A dimensionless “cosmic clock ratio,” then. But does it actually \emph{say} anything?
-
-\item[Nina:] That’s the trick. Two ladders appear:
-
-\emph{First, the static ladder (today):}
-\[
-\frac{L_H}{\ell_P} \;\approx\;\frac{t_H}{t_P} \;\approx\;\mathcal{R}^{7/2}.
-\]
-Right now, the Hubble scale measured in Planck units sits almost exactly on the half-integer rung \(7/2\).
-
-\emph{Second, the dynamic ladder (future):}
-as the universe expands, \(\nu_{CMB}(t)\) redshifts and so does \(\nu_{CMB}(t)\,t_P\). 
-In about \(10^{11}\) years—when the CMB cools to \(\sim 4.6\) mK—this ratio will slide down to
-\[
-\nu_{CMB}(t)\,t_P = \mathcal{R}^{-2}.
-\]
-
-\item[Waiter:] So the Planck time sets the ruler, the CMB sets the tick, and Ramanujan supplies the rungs?
-
-\item[Nina:] Exactly. One coincidence frozen today at \(\mathcal{R}^{7/2}\), another awaiting us in the far future at \(\mathcal{R}^{-2}\). 
-Not numerology, but syntax.
-
-\item[Waiter:] \textit{(smiles)} Syntax I can live with. Numerology I only drink with. 
-Just don’t try to pay the bill in Ramanujans. The register only takes rupees.
-
-\end{itemize}
-
-\footnotetext{%
-\textbf{Symbolic regression as Machine Learning):} search over equation structures (sums, products, powers, logs, compositions) to fit data; 
-without constraints (dimensions, priors, symmetries), it will happily overfit with mathematically impeccable yet physically pointless forms.}
-
+% 
+% Nina knew her whole scheme was half stagecraft, half physics, and maybe that was the charm.  But once you’d seen one “coincidence” like \(\mathcal{R}^2\) sidling up to \(\hbar\), you started spotting them everywhere, 
+% like an earworm you couldn’t shake. And just then the waiter returned with another highball. A nod was as good as a wink. Sipping her third, eyes sparkling, she did not let him go. He is smiling (or is it smirking?) as he places the drink gently now beside her.
+% 
+% \begin{itemize}[leftmargin=1.5cm]
+% 
+% \item[Nina:] \textit{} You know, we’ve got it all wrong: anchoring time to caesium atoms. 
+% What if we ditched that whole atomic-clock business?
+% 
+% \item[Waiter:] \textit{} And replace it with what, Professor?
+% 
+% \item[Nina:] The Cosmic Microwave Background. Its Wien peak today is about \(160.3~\mathrm{GHz}\). 
+% Now measure that against the \emph{Planck time},
+% \[
+% t_P=\sqrt{\frac{\hbar G}{c^5}} \;\approx\; 5.39\times10^{-44}\,\mathrm{s}.
+% \]
+% Multiply the CMB peak frequency by this tick, and you get a pure, dimensionless number:
+% \[
+% \chi_0=\nu_{ CMB,0}\,t_P \;\approx\; 8.6\times 10^{-33}.
+% \]
+% 
+% \item[Waiter:] A dimensionless “cosmic clock ratio,” then. But does it actually \emph{say} anything?
+% 
+% \item[Nina:] That’s the trick. Two ladders appear:
+% 
+% \emph{First, the static ladder (today):}
+% \[
+% \frac{L_H}{\ell_P} \;\approx\;\frac{t_H}{t_P} \;\approx\;\mathcal{R}^{7/2}.
+% \]
+% Right now, the Hubble scale measured in Planck units sits almost exactly on the half-integer rung \(7/2\).
+% 
+% \emph{Second, the dynamic ladder (future):}
+% as the universe expands, \(\nu_{CMB}(t)\) redshifts and so does \(\nu_{CMB}(t)\,t_P\). 
+% In about \(10^{11}\) years—when the CMB cools to \(\sim 4.6\) mK—this ratio will slide down to
+% \[
+% \nu_{CMB}(t)\,t_P = \mathcal{R}^{-2}.
+% \]
+% 
+% \item[Waiter:] So the Planck time sets the ruler, the CMB sets the tick, and Ramanujan supplies the rungs?
+% 
+% \item[Nina:] Exactly. One coincidence frozen today at \(\mathcal{R}^{7/2}\), another awaiting us in the far future at \(\mathcal{R}^{-2}\). 
+% Not numerology, but syntax.
+% 
+% \item[Waiter:] \textit{(smiles)} Syntax I can live with. Numerology I only drink with. 
+% Just don’t try to pay the bill in Ramanujans. The register only takes rupees.
+% 
+% \end{itemize}
+% 
+% \footnotetext{%
+% \textbf{Symbolic regression as Machine Learning):} search over equation structures (sums, products, powers, logs, compositions) to fit data; 
+% without constraints (dimensions, priors, symmetries), it will happily overfit with mathematically impeccable yet physically pointless forms.}
+% 
 %%%%%%%%%%%%%%%%%%%%%%
-\section*{Mathematical Postscript: ramifications}
-
-The first taste of prime–splitting comes not in any exotic number ring, but in the integers themselves.  
-Fermat’s theorem on sums of two squares says that an odd prime $p$ can be written as $p=a^2+b^2$  
-iff $p\equiv 1 \pmod{4}$. Already here, the rational primes fall into two infinite families:  
-those with $p\equiv 1 \pmod{4}$ that appear as sums of two squares, and those with $p\equiv 3 \pmod{4}$ that do not. Viewed through $\mathbb{Z}[i]$ (the Gaussian integers), this is simply the splitting law:
-\begin{align*}
-p \ \text{splits in }\mathbb{Z}[i] & \iff p\equiv 1 \pmod{4}, \\
-p \ \text{inert} & \iff p\equiv 3 \pmod{4}, 
-\quad 2 \ \text{ramifies}.
-\end{align*}
-
-From here the pattern generalises. For any quadratic field $K=\mathbb{Q}(\sqrt{m})$, $m$ square-free, whether a prime $p$ \emph{splits}
-is determined by whether the field’s discriminant\footnote{For $ax^2+bx+c=0$ the familiar $b^2-4ac$ is a \emph{discriminant}. 
-In quadratic fields, the \emph{field discriminant} $\Delta_K$ plays an analogous role for arithmetic: it encodes the structure of 
-$\mathcal{O}_K$ and governs how rational primes factor—splitting, inertness, or ramification—inside $\mathcal{O}_K$.} $\Delta_K$ is a quadratic residue modulo $p$,
-and quadratic reciprocity turns this into explicit congruence conditions. That is why $-163$ is remarkable: it is the last imaginary
-quadratic field with class number $1$, so unique factorisation holds. By contrast, $-7$ is also a Heegner number, hence class number $1$
-as well, but primes still split there—class number $1$ guarantees unique factorisation, not the absence of splitting.
-
-\paragraph{Orders and discriminants.}
-For a quadratic field $K = \mathbb{Q}(\sqrt{m})$, $m$ squarefree, the maximal order $\mathcal{O}_K$ and discriminant $\Delta_K$ are
-\[
-\mathcal{O}_K =
-\begin{cases}
-\mathbb{Z}\!\left[\dfrac{1 + \sqrt{m}}{2}\right], & m \equiv 1 \pmod{4},\ \ \Delta_K = m,\\[0.8em]
-\mathbb{Z}[\sqrt{m}], & m \equiv 2,3 \pmod{4},\ \ \Delta_K = 4m.
-\end{cases}
-\]
-
-\paragraph{Two contrasting examples.}
-\[
--5 \equiv 3 \pmod{4}
-\quad\Rightarrow\quad 
-\mathcal{O}_{\mathbb{Q}(\sqrt{-5})} = \mathbb{Z}[\sqrt{-5}], \quad \Delta_K = -20,
-\]
-\[
--7 \equiv 1 \pmod{4}
-\quad\Rightarrow\quad 
-\mathcal{O}_{\mathbb{Q}(\sqrt{-7})} = \mathbb{Z}\!\left[\frac{1+\sqrt{-7}}{2}\right], \quad \Delta_K = -7.
-\]
-
-\begin{table}[h!]
-\centering
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{|c|c|c|c|p{5.0cm}|}
-\hline
-$m$ & $m \bmod 4$ & $\mathcal{O}_K$ & $\Delta_K$ & Splitting condition for $p \nmid \Delta_K$ \\
-\hline
-$-5$ & $3$ &
-$\mathbb{Z}[\sqrt{-5}]$ &
-$-20$ &
-$p$ splits $\iff \left(\frac{-5}{p}\right)=+1$,
-i.e.\ $p\equiv 1,3,7,9 \pmod{20}$;  
-inert otherwise; $2$ ramifies. \\
-\hline
-$-7$ & $1$ &
-$\mathbb{Z}\!\left[\frac{1+\sqrt{-7}}{2}\right]$ &
-$-7$ &
-$p$ splits $\iff \left(\frac{-7}{p}\right)=+1$,
-i.e.\ $p\equiv 1,2,4 \pmod{7}$;  
-inert otherwise; $7$ ramifies. \\
-\hline
-\end{tabular}
-\caption{How $m \bmod 4$ fixes $\mathcal{O}_K$, $\Delta_K$, and the prime-splitting law.}
-\end{table}
-
-\paragraph{Small-prime illustration.}
-For $\mathbb{Q}(\sqrt{-5})$:
-\[
-\text{Split: } 3,7,13,17,23, \dots \qquad \text{Inert: } 11,19,29, \dots
-\]
-A concrete split in elements:
-\[
-(3)=(1+\sqrt{-5})(1-\sqrt{-5}).
-\]
-
-For $\mathbb{Q}(\sqrt{-7})$ (write $\omega=\tfrac{1+\sqrt{-7}}{2}$ so $N(a+b\omega)=a^2+ab+2b^2$):
-\[
-\text{Split: } 2,11,23,29,37, \dots \qquad \text{Inert: } 3,5,13,17,19, \dots
-\]
-A concrete split:
-\[
-(2)=(\omega)(\omega'),\qquad \omega'=\tfrac{1-\sqrt{-7}}{2},\qquad N(\omega)=2.
-\]
-
-\paragraph{Heegner fields still split.}
-All nine imaginary quadratic fields with class number $1$ (the Heegner list) are UFDs, yet each has infinitely many split primes.  
-For $K=\mathbb{Q}(\sqrt{m})$ with Heegner $m$, the split primes are those with $\left(\frac{\Delta_K}{p}\right)=+1$:
-
-\begin{table}[h!]
-\centering
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{|c|c|p{10cm}|}
-\hline
-$m$ & $\Delta_K$  & Split congruences for $p\nmid \Delta_K$ \\
-\hline
-$-1$  & $-4$   & $p \equiv 1 \pmod{4}$. \\
-$-2$  & $-8$   & $p \equiv 1,3 \pmod{8}$. \\
-$-3$  & $-3$   & $p \equiv 1 \pmod{3}$. \\
-$-7$  & $-7$   & $p \equiv 1,2,4 \pmod{7}$. \\
-$-11$ & $-11$  & $p \equiv 1,3,4,5,9 \pmod{11}$. \\
-$-19$ & $-19$  & $p \equiv 1,4,5,6,7,9,11,16,17 \pmod{19}$. \\
-$-43$ & $-43$  & $\left(\frac{-43}{p}\right)=+1$ (exactly $21$ of the $42$ nonzero classes mod $43$). \\
-$-67$ & $-67$  & $\left(\frac{-67}{p}\right)=+1$ (exactly $33$ of the $66$ nonzero classes mod $67$). \\
-$-163$& $-163$ & $\left(\frac{-163}{p}\right)=+1$ (exactly $81$ of the $162$ nonzero classes mod $163$). \\
-\hline
-\end{tabular}
-\caption{Heegner (class number $1$) fields still have infinitely many split primes. 
-UFD means unique factorisation of \emph{elements}, not “no splitting.”}
-\end{table}
-
-
-\medskip
-The Gaussian $4n+1/4n+3$ story for $\mathbb{Q}(i)$ with $\Delta=-4$ is simply the most familiar member of this family—%
-the one where the congruence classes are smallest and the geometry easiest to picture—%
-but the same discriminant–residue criterion governs every quadratic field, from $-5$ and $-7$ all the way to $-163$.
-
-
-
-
+% \section*{Mathematical Postscript: ramifications}
+% 
+% The first taste of prime–splitting comes not in any exotic number ring, but in the integers themselves.  
+% Fermat’s theorem on sums of two squares says that an odd prime $p$ can be written as $p=a^2+b^2$  
+% iff $p\equiv 1 \pmod{4}$. Already here, the rational primes fall into two infinite families:  
+% those with $p\equiv 1 \pmod{4}$ that appear as sums of two squares, and those with $p\equiv 3 \pmod{4}$ that do not. Viewed through $\mathbb{Z}[i]$ (the Gaussian integers), this is simply the splitting law:
+% \begin{align*}
+% p \ \text{splits in }\mathbb{Z}[i] & \iff p\equiv 1 \pmod{4}, \\
+% p \ \text{inert} & \iff p\equiv 3 \pmod{4}, 
+% \quad 2 \ \text{ramifies}.
+% \end{align*}
+% 
+% From here the pattern generalises. For any quadratic field $K=\mathbb{Q}(\sqrt{m})$, $m$ square-free, whether a prime $p$ \emph{splits}
+% is determined by whether the field’s discriminant\footnote{For $ax^2+bx+c=0$ the familiar $b^2-4ac$ is a \emph{discriminant}. 
+% In quadratic fields, the \emph{field discriminant} $\Delta_K$ plays an analogous role for arithmetic: it encodes the structure of 
+% $\mathcal{O}_K$ and governs how rational primes factor—splitting, inertness, or ramification—inside $\mathcal{O}_K$.} $\Delta_K$ is a quadratic residue modulo $p$,
+% and quadratic reciprocity turns this into explicit congruence conditions. That is why $-163$ is remarkable: it is the last imaginary
+% quadratic field with class number $1$, so unique factorisation holds. By contrast, $-7$ is also a Heegner number, hence class number $1$
+% as well, but primes still split there—class number $1$ guarantees unique factorisation, not the absence of splitting.
+% 
+% \paragraph{Orders and discriminants.}
+% For a quadratic field $K = \mathbb{Q}(\sqrt{m})$, $m$ squarefree, the maximal order $\mathcal{O}_K$ and discriminant $\Delta_K$ are
+% \[
+% \mathcal{O}_K =
+% \begin{cases}
+% \mathbb{Z}\!\left[\dfrac{1 + \sqrt{m}}{2}\right], & m \equiv 1 \pmod{4},\ \ \Delta_K = m,\\[0.8em]
+% \mathbb{Z}[\sqrt{m}], & m \equiv 2,3 \pmod{4},\ \ \Delta_K = 4m.
+% \end{cases}
+% \]
+% 
+% \paragraph{Two contrasting examples.}
+% \[
+% -5 \equiv 3 \pmod{4}
+% \quad\Rightarrow\quad 
+% \mathcal{O}_{\mathbb{Q}(\sqrt{-5})} = \mathbb{Z}[\sqrt{-5}], \quad \Delta_K = -20,
+% \]
+% \[
+% -7 \equiv 1 \pmod{4}
+% \quad\Rightarrow\quad 
+% \mathcal{O}_{\mathbb{Q}(\sqrt{-7})} = \mathbb{Z}\!\left[\frac{1+\sqrt{-7}}{2}\right], \quad \Delta_K = -7.
+% \]
+% 
+% \begin{table}[h!]
+% \centering
+% \renewcommand{\arraystretch}{1.25}
+% \begin{tabular}{|c|c|c|c|p{5.0cm}|}
+% \hline
+% $m$ & $m \bmod 4$ & $\mathcal{O}_K$ & $\Delta_K$ & Splitting condition for $p \nmid \Delta_K$ \\
+% \hline
+% $-5$ & $3$ &
+% $\mathbb{Z}[\sqrt{-5}]$ &
+% $-20$ &
+% $p$ splits $\iff \left(\frac{-5}{p}\right)=+1$,
+% i.e.\ $p\equiv 1,3,7,9 \pmod{20}$;  
+% inert otherwise; $2$ ramifies. \\
+% \hline
+% $-7$ & $1$ &
+% $\mathbb{Z}\!\left[\frac{1+\sqrt{-7}}{2}\right]$ &
+% $-7$ &
+% $p$ splits $\iff \left(\frac{-7}{p}\right)=+1$,
+% i.e.\ $p\equiv 1,2,4 \pmod{7}$;  
+% inert otherwise; $7$ ramifies. \\
+% \hline
+% \end{tabular}
+% \caption{How $m \bmod 4$ fixes $\mathcal{O}_K$, $\Delta_K$, and the prime-splitting law.}
+% \end{table}
+% 
+% \paragraph{Small-prime illustration.}
+% For $\mathbb{Q}(\sqrt{-5})$:
+% \[
+% \text{Split: } 3,7,13,17,23, \dots \qquad \text{Inert: } 11,19,29, \dots
+% \]
+% A concrete split in elements:
+% \[
+% (3)=(1+\sqrt{-5})(1-\sqrt{-5}).
+% \]
+% 
+% For $\mathbb{Q}(\sqrt{-7})$ (write $\omega=\tfrac{1+\sqrt{-7}}{2}$ so $N(a+b\omega)=a^2+ab+2b^2$):
+% \[
+% \text{Split: } 2,11,23,29,37, \dots \qquad \text{Inert: } 3,5,13,17,19, \dots
+% \]
+% A concrete split:
+% \[
+% (2)=(\omega)(\omega'),\qquad \omega'=\tfrac{1-\sqrt{-7}}{2},\qquad N(\omega)=2.
+% \]
+% 
+% \paragraph{Heegner fields still split.}
+% All nine imaginary quadratic fields with class number $1$ (the Heegner list) are UFDs, yet each has infinitely many split primes.  
+% For $K=\mathbb{Q}(\sqrt{m})$ with Heegner $m$, the split primes are those with $\left(\frac{\Delta_K}{p}\right)=+1$:
+% 
+% \begin{table}[h!]
+% \centering
+% \renewcommand{\arraystretch}{1.15}
+% \begin{tabular}{|c|c|p{10cm}|}
+% \hline
+% $m$ & $\Delta_K$  & Split congruences for $p\nmid \Delta_K$ \\
+% \hline
+% $-1$  & $-4$   & $p \equiv 1 \pmod{4}$. \\
+% $-2$  & $-8$   & $p \equiv 1,3 \pmod{8}$. \\
+% $-3$  & $-3$   & $p \equiv 1 \pmod{3}$. \\
+% $-7$  & $-7$   & $p \equiv 1,2,4 \pmod{7}$. \\
+% $-11$ & $-11$  & $p \equiv 1,3,4,5,9 \pmod{11}$. \\
+% $-19$ & $-19$  & $p \equiv 1,4,5,6,7,9,11,16,17 \pmod{19}$. \\
+% $-43$ & $-43$  & $\left(\frac{-43}{p}\right)=+1$ (exactly $21$ of the $42$ nonzero classes mod $43$). \\
+% $-67$ & $-67$  & $\left(\frac{-67}{p}\right)=+1$ (exactly $33$ of the $66$ nonzero classes mod $67$). \\
+% $-163$& $-163$ & $\left(\frac{-163}{p}\right)=+1$ (exactly $81$ of the $162$ nonzero classes mod $163$). \\
+% \hline
+% \end{tabular}
+% \caption{Heegner (class number $1$) fields still have infinitely many split primes. 
+% UFD means unique factorisation of \emph{elements}, not “no splitting.”}
+% \end{table}
+% 
+% 
+% \medskip
+% The Gaussian $4n+1/4n+3$ story for $\mathbb{Q}(i)$ with $\Delta=-4$ is simply the most familiar member of this family—%
+% the one where the congruence classes are smallest and the geometry easiest to picture—%
+% but the same discriminant–residue criterion governs every quadratic field, from $-5$ and $-7$ all the way to $-163$.
+% 
+% 
+% 
+% 
+% >>>>>> end of annexed block <<<<<<
 \section*{Nina and John are a Reckoning}
 
 \lettrine{A} long mahogany table stretches across the room, cluttered with half-filled notebooks, and the lumbering weight of unfinished work. The rain taps against the window as John stands arms folded ready for the sanitarium, watching the water slide down in uneven rivulets. Nina sits at the table, flipping through pages without reading a single word. John, with a small, humorless breath, \textit{"We can work separately if you’d prefer."}  
@@ -911,7 +916,7 @@ Her French bully eats contentedly (for now) because he trusts that she will cont
 
 News of the collapse of Chris's Invariant fund had made its way even to Eleanor's loftier environs. Some within her invited Circle may be caught up in it and she was hoping that Nina, being a bit more inclined that way may have some gossip. And yet, when Nina arrived, she did not come alone. She came with her dog, in all his chubbiness, small, alert, and tethered to a lead that she held lightly, almost absentmindedly.
 
-Eleanor archubf a brow. \textit{"I didn't know you kept a pet."}
+Eleanor arching a brow. \textit{"I didn't know you kept a pet."}
 
 Nina suppressing a full smirk but discernably amused, takes a seat opposite her, the dog curling up beneath the table at her feet. \textit{"I didn’t, until recently."} She reaches down, scratching it behind its ears. \textit{"His name is 'I'."}
 

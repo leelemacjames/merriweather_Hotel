@@ -44,9 +44,9 @@ Demi was fascinated by the ways a puboid could be "partitioned" into smaller reg
 \]
 Each entry is the sum of the previous entry in the row and the one directly above it. The Bell numbers describe the number of distinct factorizations of puboid numbers, with the triangle encoding the structure of their partitions. For instance, \(B_3 = 5\) corresponds to the ways the puboid formed by \(p_1, p_2, p_3\) could be "partitioned" geometrically or algebraically.
 
-\section*{Zoom Call: Demi Moorish and Felicite Spearman}
+% \section*{Zoom Call: Demi Moorish and Felicite Spearman}
 
-The screen flickered to life, with Demi’s excited face greeting Felicite’s calm, analytical demeanor.
+The screen flickered to life, with Demi all excited juxtaposing Felicite, all calm and analytical demeanor.
 
 \textbf{Demi:} "Felicite, I’ve been diving into Bell numbers again, but this time with a twist. I’m thinking about their relationship to composite numbers—specifically, square-free composites with distinct prime factorizations. You know, the ones where the Möbius function doesn’t vanish."
 
@@ -54,10 +54,10 @@ The screen flickered to life, with Demi’s excited face greeting Felicite’s c
 
 \textbf{Demi:} "Exactly. For instance, take \( n = 42 \), which factors as \( 42 = 2 \cdot 3 \cdot 7 \). The Bell number \( B_3 = 5 \) perfectly describes the number of distinct partitions of these factors. Let me show you."
 
-She shared her screen and scribbled the following equations:
-\[
+She scribbled the following equations:
+\(
 \text{Partitions of } \{2, 3, 7\}: 
-\]
+\)
 \begin{align*}   
 \{\{2, 3, 7\}\}, &\quad \{\{2\}, \{3, 7\}\}, \quad \{\{3\}, \{2, 7\}\},\\ \{\{7\}, \{2, 3\}\}, &\quad \{\{2\}, \{3\}, \{7\}\}.
 \end{align*}
@@ -84,12 +84,9 @@ Felicite’s face lit up. "It reminds me of something else. Have you considered 
 
 \textbf{Demi:} "So you’re saying we could explore whether these partitions or scores have some underlying rank-based correlation?"
 
-\textbf{Felicite:} "Exactly. And who knows—maybe this could reveal new patterns in how composites 'fill the gaps' between primes."
+\textbf{Felicite:} "Exactly. And who knows, maybe this could reveal new patterns in how composites 'fill the gaps' between primes."
 
-\textbf{Demi:} "I love it. Between your rank coefficients and my Bell number partitions, I think we’ve got a lot to work on when I visit next month."
-
-
-\newpage
+% \textbf{Demi:} "I love it. Between your rank coefficients and my Bell number partitions, I think we’ve got a lot to work on when I visit next month."
 
 \section*{Modulo 4 Classification of Puboids}
 The modulo 4 behavior and sum-of-squares representation of $ P $ depend on the composition of its prime factors,
@@ -211,12 +208,12 @@ The inability of these algorithms to discern the algebraic modular structure hin
 
 The angular position of each integer is incremented by the golden angle, which is defined by the equation \(\frac{a+b}{a} = \frac{a}{b}\), where \(a\) and \(b\) are consecutive terms of the Fibonacci sequence and \(a > b\).
 
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.55\textwidth}
  The golden angle, \(\Phi\) is the fractional part of a full circle that is not covered when dividing the circumference into a segment proportional to \(\phi= \frac{1 + \sqrt{5}}{2} \approx 1.618\), the ratio of the length of the larger arc, \(a\) to the length of the smaller arc, \(b\) with the angle subtended by the smaller arc being:
 
  \(\Phi = 360^\circ\left(1 - \frac{1}{\phi}\right)\approx 137.508^\circ\). 
 \end{minipage}%
-\begin{minipage}{0.50\textwidth}
+\begin{minipage}{0.45\textwidth}
     \begin{figure}[H]
         \centering
         \includegraphics[width=\linewidth]{Illustrations/arcCircle.png}
@@ -224,6 +221,7 @@ The angular position of each integer is incremented by the golden angle, which i
         \label{fig:goldenAngle}
     \end{figure}
 \end{minipage}
+
 We have thus,
 \begin{align*}
  \frac{\text{Golden angle}}{360^\circ} &=\left(1 - \frac{2}{1 + \sqrt{5}}\right)=\left(\frac{\sqrt{5} - 1}{\sqrt{5} + 1}\right) \times \left(\frac{\sqrt{5} - 1}{\sqrt{5} - 1}\right)\\
@@ -237,8 +235,8 @@ Because this angle is an irrational multiple of \(360^\circ\), our sequence fill
 \begin{tabular}{|c|c|c|c|}
 \hline
 Index & Fib. & Angle & Ang \\ \hline
-27 & 514229 & 222.46619 & 21/17$\pi$ \\ 
-28 & 832040 & 222.45079 & 21/17$\pi$ \\ 
+% 27 & 514229 & 222.46619 & 21/17$\pi$ \\ 
+% 28 & 832040 & 222.45079 & 21/17$\pi$ \\ 
 29 & 1346269 & 222.42475 & 21/17$\pi$ \\ 
 30 & 2178309 & 222.38331 & 21/17$\pi$ \\ 
 31 & 3524578 & 222.31582 & 21/17$\pi$ \\ 
@@ -252,117 +250,120 @@ Index & Fib. & Angle & Ang \\ \hline
 
 
 % Given that golden angle is irrational, this clustering might not be expected to converge to a single angle. Instead, as you plot more and more Fibonacci numbers, you might expect these clusters to spread out and fill the circle more evenly due to the density property of irrational rotations. Not so.
-\newpage
 
-\section*{Pronic Fatigue}
-The \textit{metallic mean}, \(\mathcal{M}\), arises as the positive root of the quadratic equation:
-\begin{align*}
-\mathcal{M}^2 - n\mathcal{M} - 1 &= 0,\\
-\mathcal{M}(n) &= \frac{n + \sqrt{n^2 + 4}}{2}. \label{metallica}
-\end{align*}
-We have \(\mathcal{M}(1)=\Phi\). We can extend the field of this metallic mean formula to complex values of the index \(n\), specifically to those that generate roots of unity. If we ask what complex value of the index \(n = n_k\) satisfies:
-\[
-\mathcal{M}(n_k) = \omega_k = e^{2\pi i/k},
-\]
-then we solve:
-\[
-n + \sqrt{n^2 + 4} = 2\omega_k
-\]
-Isolating and squaring gives:
-\begin{align*}
-n^2 + 4 &= (2\omega_k - n)^2 = 4\omega_k^2 - 4n\omega_k \\
-\Rightarrow 1 &= \omega_k^2 - n\omega_k \\
-\Rightarrow n_k &= \frac{\omega_k^2 - 1}{\omega_k} = \omega_k - \frac{1}{\omega_k} = 2i \sin\left(\frac{2\pi}{k}\right)
-\end{align*}
+% >>>>>> ANNEX B (cut-sheet v2): pronic fatigue, metallic means and reciprocals of oblong numbers — block commented out below, pointer left in text <<<<<<
+\textit{(Pronic fatigue, metallic means and reciprocals of oblong numbers; the full working is set out in Annexe B.)}
 
-Thus, the imaginary value \(n_k = 2i \sin\left(\frac{2\pi}{k}\right)\) guarantees that \(\mathcal{M}(n_k)\) lies on the unit circle and coincides with a $k$th root of unity.
-
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-$k$ & $\omega_k$ & $n_k = 2i\sin\left(\frac{2\pi}{k}\right)$ \\
-\hline
-3 & $e^{2\pi i/3}$ & $i\sqrt{3}$  \\
-4 & $e^{2\pi i/4}$ & $2i$  \\
-5 & $e^{2\pi i/5}$ & $2i\sin\left(\frac{2\pi}{5}\right)$ \\
-6 & $e^{2\pi i/6}$ & $i\sqrt{3}$  \\
-7 & $e^{2\pi i/7}$ & $2i\sin\left(\frac{2\pi}{7}\right)$ \\
-8 & $e^{2\pi i/8}$ & $2i\sin\left(\frac{2\pi}{8}\right)$  \\
-9 & $e^{2\pi i/9}$ & $2i\sin\left(\frac{2\pi}{9}\right)$ \\
-10 & $e^{2\pi i/10}$ & $2i\sin\left(\frac{2\pi}{10}\right)$  \\
-12 & $e^{2\pi i/12}$ & $i$\\
-\hline
-\end{tabular}
-\end{center}
-
-\newpage
-
-\subsection*{Rational Metallic Means and Harmonic Structure}
-Consider again the cyclotomic angles:
-\[
-\theta_k = \frac{2\pi}{k},
-\]
-and their corresponding rational metallic means:
-\[
-\mathcal{M}_k = \frac{k}{k - 1}.
-\]
-We now ask: for what rational index \(n_k\) does this rational metallic mean arise from the standard metallic mean formula? That is,
-\[
-n_k = \mathcal{M_k} - \frac{1}{\mathcal{M_k}},
-\]
-which evaluates to:
-\[
-n_k = \frac{k}{k - 1} - \frac{k - 1}{k} = \frac{2k - 1}{k(k - 1)}.
-\]
-These are rational and their denominators form the set of \emph{oblong numbers}, or pronic integers, given by \(k(k - 1)\). This expression has a geometric interpretation being the \textbf{surface-area-to-volume ratio} for a rectangular object with dimensions \(k\) and \(k - 1\). It can also be written as:
-\[
-n_k = \frac{1}{k} + \frac{1}{k - 1} = \frac{2}{H(k, k - 1)},
-\]
-where \(H(k, k - 1)\) denotes the harmonic mean of \(k\) and \(k - 1\):
-\[
-H(k, k - 1) = \frac{2k(k - 1)}{k + (k - 1)}.
-\]
-
-This links the rational metallic mean directly to the rate of reciprocal combining between \(k\) and \(k - 1\). These values can be visualized as aspect ratios of unit-step growth rectangles, encoded in the pronic structure of their denominators.
-\subsection*{Reciprocals of Oblong Numbers}
-The sum of the reciprocals of the first $n$ oblong numbers (expressed as $k(k-1)$ for $k=2$ to $n+1$) is:
-\[
-\sum_{k=2}^{n+1} \frac{1}{k(k-1)}
-\]
-Using partial fraction decomposition:
-\[
-\frac{1}{k(k-1)} = \frac{1}{k-1} - \frac{1}{k}
-\]
-This gives a telescoping series:
-\[
-\sum_{k=2}^{n+1} \left( \frac{1}{k-1} - \frac{1}{k} \right) = 1 - \frac{1}{n+1}
-\]
-Thus,
-\[
-\sum_{k=2}^{n+1} \frac{1}{k(k-1)} = \frac{n}{n+1}
-\]
-
-This result reflects a harmonic compression ratio: the total sum of reciprocals of oblongs up to index $n$ yields the proportion $\frac{n}{n+1}$ — the \emph{inverse} of the rational metallic mean $\frac{k}{k-1}$. In other words, while the metallic mean expresses a growth ratio of successive integers, this telescoping sum captures the complementary compression ratio, tied to the same pronic structure.
-
-Hence, rational metallic means and oblong reciprocal series are dual views of the same pronic-harmonic framework.
-
-
+% \section*{Pronic Fatigue}
+% The \textit{metallic mean}, \(\mathcal{M}\), arises as the positive root of the quadratic equation:
+% \begin{align*}
+% \mathcal{M}^2 - n\mathcal{M} - 1 &= 0,\\
+% \mathcal{M}(n) &= \frac{n + \sqrt{n^2 + 4}}{2}. \label{metallica}
+% \end{align*}
+% We have \(\mathcal{M}(1)=\Phi\). We can extend the field of this metallic mean formula to complex values of the index \(n\), specifically to those that generate roots of unity. If we ask what complex value of the index \(n = n_k\) satisfies:
+% \[
+% \mathcal{M}(n_k) = \omega_k = e^{2\pi i/k},
+% \]
+% then we solve:
+% \[
+% n + \sqrt{n^2 + 4} = 2\omega_k
+% \]
+% Isolating and squaring gives:
+% \begin{align*}
+% n^2 + 4 &= (2\omega_k - n)^2 = 4\omega_k^2 - 4n\omega_k \\
+% \Rightarrow 1 &= \omega_k^2 - n\omega_k \\
+% \Rightarrow n_k &= \frac{\omega_k^2 - 1}{\omega_k} = \omega_k - \frac{1}{\omega_k} = 2i \sin\left(\frac{2\pi}{k}\right)
+% \end{align*}
+% 
+% Thus, the imaginary value \(n_k = 2i \sin\left(\frac{2\pi}{k}\right)\) guarantees that \(\mathcal{M}(n_k)\) lies on the unit circle and coincides with a $k$th root of unity.
+% 
+% \begin{center}
+% \begin{tabular}{|c|c|c|}
+% \hline
+% $k$ & $\omega_k$ & $n_k = 2i\sin\left(\frac{2\pi}{k}\right)$ \\
+% \hline
+% 3 & $e^{2\pi i/3}$ & $i\sqrt{3}$  \\
+% 4 & $e^{2\pi i/4}$ & $2i$  \\
+% 5 & $e^{2\pi i/5}$ & $2i\sin\left(\frac{2\pi}{5}\right)$ \\
+% 6 & $e^{2\pi i/6}$ & $i\sqrt{3}$  \\
+% 7 & $e^{2\pi i/7}$ & $2i\sin\left(\frac{2\pi}{7}\right)$ \\
+% 8 & $e^{2\pi i/8}$ & $2i\sin\left(\frac{2\pi}{8}\right)$  \\
+% 9 & $e^{2\pi i/9}$ & $2i\sin\left(\frac{2\pi}{9}\right)$ \\
+% 10 & $e^{2\pi i/10}$ & $2i\sin\left(\frac{2\pi}{10}\right)$  \\
+% 12 & $e^{2\pi i/12}$ & $i$\\
+% \hline
+% \end{tabular}
+% \end{center}
+% 
+% \newpage
+% 
+% \subsection*{Rational Metallic Means and Harmonic Structure}
+% Consider again the cyclotomic angles:
+% \[
+% \theta_k = \frac{2\pi}{k},
+% \]
+% and their corresponding rational metallic means:
+% \[
+% \mathcal{M}_k = \frac{k}{k - 1}.
+% \]
+% We now ask: for what rational index \(n_k\) does this rational metallic mean arise from the standard metallic mean formula? That is,
+% \[
+% n_k = \mathcal{M_k} - \frac{1}{\mathcal{M_k}},
+% \]
+% which evaluates to:
+% \[
+% n_k = \frac{k}{k - 1} - \frac{k - 1}{k} = \frac{2k - 1}{k(k - 1)}.
+% \]
+% These are rational and their denominators form the set of \emph{oblong numbers}, or pronic integers, given by \(k(k - 1)\). This expression has a geometric interpretation being the \textbf{surface-area-to-volume ratio} for a rectangular object with dimensions \(k\) and \(k - 1\). It can also be written as:
+% \[
+% n_k = \frac{1}{k} + \frac{1}{k - 1} = \frac{2}{H(k, k - 1)},
+% \]
+% where \(H(k, k - 1)\) denotes the harmonic mean of \(k\) and \(k - 1\):
+% \[
+% H(k, k - 1) = \frac{2k(k - 1)}{k + (k - 1)}.
+% \]
+% 
+% This links the rational metallic mean directly to the rate of reciprocal combining between \(k\) and \(k - 1\). These values can be visualized as aspect ratios of unit-step growth rectangles, encoded in the pronic structure of their denominators.
+% \subsection*{Reciprocals of Oblong Numbers}
+% The sum of the reciprocals of the first $n$ oblong numbers (expressed as $k(k-1)$ for $k=2$ to $n+1$) is:
+% \[
+% \sum_{k=2}^{n+1} \frac{1}{k(k-1)}
+% \]
+% Using partial fraction decomposition:
+% \[
+% \frac{1}{k(k-1)} = \frac{1}{k-1} - \frac{1}{k}
+% \]
+% This gives a telescoping series:
+% \[
+% \sum_{k=2}^{n+1} \left( \frac{1}{k-1} - \frac{1}{k} \right) = 1 - \frac{1}{n+1}
+% \]
+% Thus,
+% \[
+% \sum_{k=2}^{n+1} \frac{1}{k(k-1)} = \frac{n}{n+1}
+% \]
+% 
+% This result reflects a harmonic compression ratio: the total sum of reciprocals of oblongs up to index $n$ yields the proportion $\frac{n}{n+1}$ — the \emph{inverse} of the rational metallic mean $\frac{k}{k-1}$. In other words, while the metallic mean expresses a growth ratio of successive integers, this telescoping sum captures the complementary compression ratio, tied to the same pronic structure.
+% 
+% Hence, rational metallic means and oblong reciprocal series are dual views of the same pronic-harmonic framework.
+% 
+% 
 %%%%%%%%%%%%%%%%%
+% 
 
-\subsection*{Connections to Fibonacci and Complex Matrices}
+% \subsection*{Connections to Fibonacci and Complex Matrices}
 
-Demi's curiosity did not stop there. She was intrigued by the Fibonacci sequence, which emerged from determinants of certain complex matrices, and saw a potential link to her puboids.
+% Demi's curiosity did not stop there. She was intrigued by the Fibonacci sequence, which emerged from determinants of certain complex matrices, and saw a potential link to her puboids.
 
-\paragraph{Fibonacci and Determinants:} Fibonacci numbers can be derived also from the determinant of the Real matrix:
-\[
-A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}.
-\]
-The determinant of \(A^n\) generates Fibonacci numbers recursively, tying them to linear transformations and geometric symmetries.
+% \paragraph{Fibonacci and Determinants:} Fibonacci numbers can be derived also from the determinant of the Real matrix:
+% \[
+% A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}.
+% \]
+% The determinant of \(A^n\) generates Fibonacci numbers recursively, tying them to linear transformations and geometric symmetries.
 
-\paragraph{Puboids as Fibonacci Parallelepipeds:} Demi envisioned puboids as directed parallelepipeds whose structure encoded Fibonacci-like symmetries. If the primes \(p_1, p_2, p_3\) represented dimensions, then their interactions—via Bell numbers or partitions—could mimic the recursive properties of Fibonacci numbers.
+% \paragraph{Puboids as Fibonacci Parallelepipeds:} Demi envisioned puboids as directed parallelepipeds whose structure encoded Fibonacci-like symmetries. If the primes \(p_1, p_2, p_3\) represented dimensions, then their interactions—via Bell numbers or partitions—could mimic the recursive properties of Fibonacci numbers.
 
 
-
+% >>>>>> end of annexed block <<<<<<
 
 \newpage
 \section*{The circle is tightening}
@@ -447,12 +448,12 @@ As Demi began to gather her things, Eleanor added with a playful grin, \textit{�
 Demi has always known Ernest carries guilt. She has seen it in the way his eyes flick toward Sylvia at events, how he always avoids being alone with her. How he speaks of her brilliance in past tense, as if she had died instead of merely been broken.  
 \bigskip
 
-But it isn’t until she finds an old **wedding photo**—one where Sylvia, younger and full of promise, stands beside her as maid of honor—that something *shifts*.  
+But it isn’t until she finds an old wedding photo, one where Sylvia, younger and full of promise, stands beside her as maid of honor, that something shifts.  
 \bigskip
 
 The look in Ernest’s eyes in that photo is not that of a mere mentor. It is something else.  
 
-She dismisses it at first, but the more she thinks about it—the more she *watches*—the clearer the shape of it becomes.  
+She dismisses it at first, but the more she thinks about it, the more she watches, the clearer the shape of it becomes.  
 
 She is no fool. She knows about Ernest’s past indiscretions, his flirtations. But this—this is different. This is *guilt*.  
 
@@ -460,7 +461,7 @@ And guilt of that depth? It means something worse than an affair.
 
 She isn’t ready to ask. Not yet.  
 
-But one night, as she sits beside him in their quiet home, watching his fingers absently drum against the armrest as his gaze lingers—again—on the old wedding photo, she finally speaks.  
+But one night, as she sits beside him in their quiet home, watching his fingers absently drum against the armrest as his gaze lingers, again, on the old wedding photo, she finally speaks.  
 
 "It wasn’t just an accident, was it?"  
 
@@ -470,8 +471,8 @@ He doesn’t look at her. Doesn’t answer.
 
 That is all the answer she needs.  
 
-For the first time in years, Demi feels the weight of knowledge settle over her. And she makes a decision—not to press further. 
+For the first time in years, Demi feels the weight of knowledge settle over her and she makes a decision not to press further. 
 
 Because some truths don’t need to be spoken. Some wounds are better left closed.  
 
-And if Ernest carries this as his penance, then perhaps—just perhaps—that is enough.
+And if Ernest carries this as his penance, then perhaps, just perhaps that is enough.

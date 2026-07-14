@@ -1,0 +1,155 @@
+% universal settings
+\documentclass[a5paper,11pt,twoside,onecolumn,openany,extrafontsizes,final]{memoir}%,showtrims pour les traits de coupe
+%=======================
+%Pour le fond perdu  prépress
+%\setstocksize{224.8mm}{162.9mm}
+%\settrimmedsize{210mm}{148mm}{*}
+%\settrims{7.4mm}{7.45mm}
+\quarkmarks
+% \newcommand{\worp}[2]{\prescript{}{#1}{W}_{#2}} % Correct usage of \prescript
+\newcommand{\worp}[2]{W_{#2}^{#1}}
+\newtheorem{theorem}{Theorem}
+
+%=====================
+\input{styles}
+% defining the title and the author
+
+\title{Canonical Musings}
+\author{\Huge L McCulloch-James}
+\newcommand{\press}{A story of the meek deconstructing the world - Platonically}
+
+% BEGIN THE DOCUMENT
+\begin{document}
+\pagestyle{empty}
+% \includepdf{Illustrations/vign-cover2.png}
+% \includepdf{Illustrations/carte_zad.jpg}
+% the half title page
+%\halftitlepage
+%\cleardoublepage
+% the title page
+\titleM
+\vspace{2\baselineskip}
+%\par
+\vspace{\baselineskip}
+\begin{center}
+\begin {tabular}{lr}
+First edition: & 10 December 2024\\
+%Deuxième impression avec corrections: & 10 novembre 2017 \\
+Second edition: & 24 december 2024\\
+\end{tabular}
+\end{center}
+\vspace{2\baselineskip}
+\doclicenseThis
+\vspace*{\baselineskip}
+\centerline{\textit{Find this book in digital format at
+} \url{http://livretzad.lamad.net}} 
+%\centerline{\url{http://livretzad.lamad.net}}
+\clearpage
+
+% begin front matter
+\frontmatter
+\pagestyle{mystyle}
+% preface
+% \input{Chapitres/0_preamble}
+%\newpage\phantom{blabla}
+\clearpage
+\tableofcontents*
+
+% begin main matter
+\mainmatter
+\sloppybottom
+%%%%%%%insert these%%%%%%%%%%%%
+% %\input{Chapitres/1_preface}
+% \input{Chapitres/2_pourquoi}
+% %\input{Chapitres/2-plotOverview}
+\input{Chapitres/7-1EleanorMia}
+\input{Chapitres/8-14claude}
+\input{Chapitres/5_nina}
+\input{Chapitres/8-4emmi}
+\input{Chapitres/7_elean}
+\input{Chapitres/7-2EleanorTizianna}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%similitude and puboids
+\input{Chapitres/8-15willard2}
+\input{Chapitres/8-14dsmog}
+\input{Chapitres/8-15willardFlux}   % split from 8-14dsmog (cut-sheet v2)
+%%%%%%%%keep%%%%%%%%%%%%%%%%%
+\input{Chapitres/8-16yang.tex}
+\input{Chapitres/3_sylvia}
+% %%%%%%insert these%%%%%%%%%%%%
+\input{Chapitres/8-1baht1}
+\input{Chapitres/8-2bahti}
+\input{Chapitres/8-11demi}
+\input{Chapitres/8-0celiac}
+\input{Chapitres/8-0Jinyoung}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% maybe these
+\input{Chapitres/8-1aceliacJin}
+
+\input{Chapitres/8-1adiana}
+\input{Chapitres/8-1arajeev}
+
+%%%%%%%insert these%%%%%%%%
+% moved: 9_7meetings now appears once, after the fund arc (was input twice — build bug)
+\input{Chapitres/8-3arnie}
+\input{Chapitres/8-4Emmi2}
+%maybe this
+\input{Chapitres/8-5bernie}
+%dfeoo this
+\input{Chapitres/8-9chris}
+\input{Chapitres/8-20invariantBirth}   % fund founded — Zürich (extracted from 2-plotOverview)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{Chapitres/8-6jovan}
+\input{Chapitres/8-7Felicity}
+
+%%%%%%%%%periperal%%%%%%%%
+\input{Chapitres/8-10marj}
+\input{Chapitres/8-12Abu}
+\input{Chapitres/8-12samAbu}
+\input{Chapitres/8-21tooIntertwined}   % the flash-crash collapse — Vienna
+\input{Chapitres/8-22brokenPower}      % the reckoning — Emmi & Chris, London
+%\input{Chapitres/8-14}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 
+
+% begin back matter
+% \backmatter
+\input{Chapitres/9_6_points}
+\input{Chapitres/9_7meetings}
+\input{Chapitres/8-14greenTranche}  % split from 8-14claude; the funding payoff, after the roadshow (cut-sheet v2)
+\input{Chapitres/9_conclusion}
+\input{Chapitres/99_plusloin}
+
+\newpage\phantom{blabla}
+\pagestyle{empty}
+\includepdf{Illustrations/UlamMarj.png}
+
+\begin{thebibliography}{9}
+
+\bibitem{lattice_jets}
+L. McCulloch-James, \emph{Lattice Differences and Discrete Jets: Stirling Numbers, Worpitsky Coordinates, and the Geometry of Polynomial Space}, ResearchGate (2024). \url{https://www.researchgate.net/publication/398910122}
+
+\bibitem{inertial_frame}
+L. McCulloch-James, \emph{The Inertial Frame of Polynomial Space: Symmetry Breaking and Umbral Naturality in the Integer Lattice}, (2024).
+
+\bibitem{graham1994}
+R. L. Graham, D. E. Knuth, and O. Patashnik, \emph{Concrete Mathematics: A Foundation for Computer Science}, 2nd ed., Addison-Wesley (1994).
+
+\bibitem{rota1994}
+G.-C. Rota and B. D. Taylor, ``The classical umbral calculus,'' \emph{SIAM Journal on Mathematical Analysis}, Vol. 25, No. 2, pp. 694--711 (1994).
+
+\end{thebibliography}
+
+@book{oconnor1995habit,
+  author    = {Flannery O'Connor},
+  title     = {The Habit of Being: Letters of Flannery O'Connor},
+  editor    = {Sally Fitzgerald},
+  year      = {1995},
+  publisher = {Farrar, Straus and Giroux},
+  note      = {Originally published 1979}}
+\end{document}
+
+
+% END THE DOCUMENT
