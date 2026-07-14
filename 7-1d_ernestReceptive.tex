@@ -1,0 +1,573 @@
+% Split from 7-1EleanorMia.tex by cut-sheet v2/v3 — content below is the source scene, header adjusted
+\chapter*{Ernest, Uncharacteristically Receptive}
+% \section*{Ernest being uncharacteristically receptive}
+
+\noindent\emph{Eleanor and her erstwhile muse Ernest are ambling along together on the heath. Eleanor is keen to illuminate the meaning `of `characteristic equation,'' to her physicist friend. We will introduce more fully later when he shines. Here he is for her amusement.}
+
+\Er{Ok Eleanor, I bite you referred to the characteristic equation again. For me its a piece of ceremony as the polynomial, $\det(A - \lambda I)$ is set equal to zero, so we find the eigenvalues, and we go home. Why characteristic? Characteristic of what, exactly?}
+
+\El{Of everything Ernie. Of everything that the matrix is going to do to a vector, when it does it repeatedly. The word is doing serious \href{https://leelemacjames.github.io/Characteristic_Equation.pdf}{work}. Let me come at it from the side that makes it least ceremonial. Take say a recurrence, that is to say
+\[
+s_n = s_{n-1} + s_{n-2},
+\]
+and ask the question that anyone who has ever met a differential equation will reach for first: what pure exponentials would satisfy this? So we guess and try $s_n = x^n$, substitute, and divide through:
+\[
+x^2 = x + 1.
+\]
+That equation is now the rule the sequence must obey if it is to grow as a pure power. Its solutions are the only growth rates the recurrence will tolerate. Every legitimate sequence that satisfies the recurrence is a linear combination of those pure-power modes. The equation is {\emph{characteristic}} of the recurrence in the sense that it determines what the recurrence can possibly do.}
+
+\Er{So the equation is naming the eigenvalues.}
+
+\El{Exactly. Now bring the matrix in. Write the recurrence as a motion of a state vector,
+\[
+\begin{pmatrix} s_n \\ s_{n-1} \end{pmatrix}
+=
+\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}
+\begin{pmatrix} s_{n-1} \\ s_{n-2} \end{pmatrix},
+\]
+and ask the matrix for its characteristic polynomial in the usual way:
+\[
+\det\!\begin{pmatrix} 1 - \lambda & 1 \\ 1 & -\lambda \end{pmatrix} = \lambda^2 - \lambda - 1.
+\]
+Set it to zero and the same equation returns. This is where the term originates. The characteristic polynomial of a matrix is exactly the equation that the recurrence written from that matrix would yield by exponential substitution.}
+
+% >>>>>> ANNEX B (cut-sheet v2): eigenvalues as growth rates; growth versus periodicity; orbits as quanta — block commented out below, pointer left in text <<<<<<
+\textit{(Eigenvalues as growth rates; growth versus periodicity; orbits as quanta --- the full working is set out in Annexe B.)}
+
+% \subsection*{Eigenvalues as growth rates}
+% 
+% \Er{So the eigenvalues of the matrix are the growth rates of the sequence. I want to see it happen on the actual Fibonacci matrix, not in general.}
+% 
+% \El{Good. Take $A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$. We have already found its eigenvalues, the golden ratio $\varphi = (1+\sqrt 5)/2$ and its conjugate $\psi = (1-\sqrt 5)/2$. Now find a vector that the matrix merely stretches. Look for a $v = (a, b)^{\!\top}$ with $A v = \varphi v$. The first row gives $a + b = \varphi a$, so $b = (\varphi - 1) a$. Choose $a = \varphi$ to clear denominators; then $b = \varphi(\varphi - 1) = \varphi^2 - \varphi = 1$, using $\varphi^2 = \varphi + 1$. So
+% \[
+% v_\varphi = \begin{pmatrix} \varphi \\ 1 \end{pmatrix}, \qquad
+% A v_\varphi = \begin{pmatrix} \varphi + 1 \\ \varphi \end{pmatrix} = \begin{pmatrix} \varphi^2 \\ \varphi \end{pmatrix} = \varphi \begin{pmatrix} \varphi \\ 1 \end{pmatrix}.
+% \]
+% The matrix has stretched $v_\varphi$ by $\varphi$. By the same calculation with $\psi$ in place of $\varphi$, the matrix stretches $v_\psi = (\psi, 1)^{\!\top}$ by $\psi$. Two vectors, two stretches, no rotation. Now any starting state is a sum of these two:
+% \[
+% \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt 5} \begin{pmatrix} \varphi \\ 1 \end{pmatrix} - \frac{1}{\sqrt 5} \begin{pmatrix} \psi \\ 1 \end{pmatrix},
+% \]
+% which you can verify in one line: the bottom entries cancel to give zero, and the top entries give $(\varphi - \psi)/\sqrt 5 = \sqrt 5/\sqrt 5 = 1$.}
+% 
+% \Er{And applying $A$ to this combination?}
+% 
+% \El{The matrix acts on each piece separately, because they are independent of one another, and each piece is merely stretched. So
+% \[
+% A^n \begin{pmatrix} 1 \\ 0 \end{pmatrix}
+% = \frac{\varphi^n}{\sqrt 5} \begin{pmatrix} \varphi \\ 1 \end{pmatrix} - \frac{\psi^n}{\sqrt 5} \begin{pmatrix} \psi \\ 1 \end{pmatrix}.
+% \]
+% Read the bottom entry on both sides. The left side is the Fibonacci number $F_n$. The right side is $(\varphi^n - \psi^n)/\sqrt 5$. We have just derived Binet's formula by following one initial state along the matrix's natural axes.}
+% 
+% \Er{The Binet formula is the spectral decomposition.}
+% 
+% \El{The Binet formula \emph{is} the spectral decomposition, taught to schoolchildren without anyone naming what they are seeing. Two pure-power modes, one growing as $\varphi^n$ and one decaying as $|\psi|^n$, the orbit a fixed combination of the two. Because $|\psi| < 1$ the second mode dies away, and the ratio $F_{n+1}/F_n$ tends to $\varphi$. The decaying mode is what is left of the part of the initial state that pointed along $v_\psi$. The growing mode is what is left along $v_\varphi$. Spectral decomposition is all infinite-dimensional Hilbert spaces, but it is as well what a matrix does to its repeated action.}
+% 
+% \subsection*{The cleaving: growth versus periodicity}
+% 
+% \Er{You said you wanted to show me where growth and periodicity come apart. Are they not just different choices of eigenvalue?}
+% 
+% \El{They are, but I want you to see the constraint in something concrete. Let me write down a matrix you may not have met: the Fibonacci continuant being a tri-diagonal matrix with $i$ on both off-diagonals and ones down the main diagonal:
+% \[
+% M_n(i, i) = \begin{pmatrix}
+% 1 & i & & & \\
+% i & 1 & i & & \\
+% & i & 1 & \ddots & \\
+% & & \ddots & \ddots & i \\
+% & & & i & 1
+% \end{pmatrix}.
+% \]
+% Compute its determinant by cofactor expansion along the last row. The two non-zero entries in the last row are the bottom-right $1$ and the $i$ to its left, and the cofactor gives
+% \[
+% \det M_n = 1 \cdot \det M_{n-1} - i \cdot i \cdot \det M_{n-2} = \det M_{n-1} + \det M_{n-2},
+% \]
+% the Fibonacci recurrence, exactly. With $\det M_1 = 1$ and $\det M_2 = 1 \cdot 1 - i \cdot i = 2$, the sequence of determinants is $1, 2, 3, 5, 8, 13, 21, \dots$ The complex Fibonacci matrix produces the real Fibonacci numbers.}
+% 
+% \Er{The imaginary parts cancel.}
+% 
+% \El{They are forced to cancel, because the recurrence sees only the product $i \cdot i = -1$ and not the factors. The off-diagonals could have been any $(b, c)$ with $bc = -1$, real or complex, and the determinant would still be Fibonacci. The matrix
+% \[
+% M_n(b, c), \qquad bc = -1
+% \]
+% is an entire family, and the family generates the same sequence. Within the family there is one Hermitian choice waiting, and that is where the cleaving happens. Hermitian means $c = \bar b$, the off-diagonals are complex conjugates of each other, so
+% \[
+% bc = b \bar b = |b|^2 \geq 0.
+% \]
+% The product is forced to be non-negative. The Fibonacci value $bc = -1$ is forbidden. No Hermitian continuant of this shape can produce the Fibonacci sequence.}
+% 
+% \Er{Then what does the closest Hermitian sibling produce?}
+% 
+% \El{Take $b = i$ and $c = -i$, so $bc = i \cdot (-i) = 1$, the smallest positive value of the same magnitude. The matrix is
+% \[
+% M_n(i, -i) = \begin{pmatrix}
+% 1 & i & & & \\
+% -i & 1 & i & & \\
+% & -i & 1 & \ddots & \\
+% & & \ddots & \ddots & i \\
+% & & & -i & 1
+% \end{pmatrix},
+% \]
+% genuinely Hermitian: $M^\dagger = M$. Its cofactor recurrence is
+% \[
+% \det M_n = \det M_{n-1} - 1 \cdot \det M_{n-2},
+% \]
+% the same shape as Fibonacci but with the sign on the second term flipped. The characteristic equation becomes
+% \[
+% x^2 - x + 1 = 0,
+% \]
+% whose roots are $e^{\pm i\pi/3}$, the primitive sixth roots of unity. They sit on the unit circle. The determinant sequence is
+% \[
+% 1, \; 1, \; 0, \; -1, \; -1, \; 0, \; 1, \; 1, \; 0, \; \dots
+% \]
+% period six, no growth, no decay, exact return.}
+% 
+% \Er{Nice. Two matrices that look almost identical, but their orbits could not be more different.}
+% 
+% \El{Yes, the complex-symmetric one gives Fibonacci, exponential growth while the Hermitian one gives the period-six cycle. The spectral content has moved off the unit circle forced by the structural condition of Hermiticity. $c = \bar b$ is a constraint that pushes the eigenvalues onto the unit circle and without it the eigenvalues are free, and growth is possible.}
+% 
+% \subsection*{Orbits as quanta}
+% 
+% \Er{And I guess this is what quantum mechanics is doing?}
+% 
+% \El{Exactly. The Hamiltonian is Hermitian by postulate, its eigenvalues are real, and the evolution it generates,
+% \[
+% i \hbar \,\partial_t \psi = H \psi, \qquad \psi(t) = e^{-iHt/\hbar}\psi(0),
+% \]
+% is a unitary motion: each energy eigenstate evolves as $e^{-i E_n t/\hbar}$, a pure phase on its own unit circle. Discrete energy levels are nothing other than the eigenvalues of a Hermitian operator. The periodicity of their orbits is the periodicity you just saw in the Hermitian continuant.}
+% 
+% \Er{The discreteness of the spectrum is the same thing as the orbits being forced onto circles. \href{https://www.researchgate.net/publication/399227136_Closed_Loops_Beget_Discreteness_Symmetry_Topology_and_the_Geometric_Origins_of_Quantization}
+% {Closed Loops Beget Discreteness: Symmetry, Topology, and the Geometric Origins of Quantization}}
+% 
+%     \El{Precisely that. A bound state has a discrete energy because its eigenvalue is forced into place by Hermiticity and the boundary conditions. The orbit in time is the circle of phase rotation at that frequency, and the frequency is the energy in units of $\hbar$. If the Hamiltonian were not Hermitian, eigenvalues could acquire imaginary parts and the corresponding modes would grow or decay. The discrete eigenvalue and the closed orbit are the same fact in two languages. Physicists call this quantisation. In the recurrence it is the observation that the period-six sequence is the only orbit a particular Hermitian shape will tolerate.} 
+% 
+% Such modes appear in dissipative systems; they are described by non-Hermitian operators. The cleaving you saw in the recurrence is the cleaving between classical instability and quantum stationarity.}
+% 
+% \Er{We know that quanta arise from orbits.}
+% 
+% \El{The recurrence gives it teeth. Hermiticity forces eigenvalues onto a circle; the orbits they generate are closed periodic motions, one per eigenvalue. Each orbit is a loop, and the loop is discrete because the eigenvalue is discrete. }
+% 
+% \Er{And what turns the circle into a spiral, or into an exponential?}
+% 
+% \El{Loss of Hermiticity. Add a non-Hermitian perturbation and the eigenvalues drift off the unit circle. The orbits cease to be closed. They grow or they decay. Physics calls this dissipation. The recurrence saw it first: change $bc$ from $+1$ to $-1$, lose Hermiticity, lose periodicity, gain growth.}
+% 
+% \subsection*{What the characteristic equation is doing}
+% 
+% \Er{So when we write $x^2 = x + 1$ for Fibonacci, we are really doing spectral theory?}
+% 
+% \El{We are doing spectral theory in miniature. The polynomial is the characteristic equation of the companion matrix; its roots are the eigenvalues; the eigenvalues are the only growth rates the orbit can have; the orbit is a sum of pure-power modes, each riding on its own eigenvalue. The recurrence is a precursor to finite-dimensional quantum mechanics.}
+% 
+% the Hermitian case forces the eigenvalues onto a circle and the orbit into periodicity; the non-Hermitian case allows the eigenvalues off the circle and the orbit grows or decays. Spectral decomposition, eigenmode analysis, the quantisation of bound states, the instability of dissipative systems, all of it is present in the equation $x^2 = x + 1$ and in the question of what kind of matrix it came from.
+% 
+% \Er{And I guess, as I had not thought of it that way, that the characteristic equation is called characteristic because it characterises every behaviour the underlying operator can exhibit.}
+% 
+% \El{Every one. The growth rates, the oscillation frequencies, the closed-form solution, the spectral decomposition. All in two coefficients of a quadratic. That is what the word is naming.}
+% 
+% \medskip
+% 
+% \noindent\emph{They walk on. Ernest is quiet for a while, and obligingly so is Eleanor smiles.}
+% 
+% \noindent\emph{They continue their walk. Eleanor has been trying generalisations of the Delannoy recurrence and has not been satisfied with what she has found. She is in a mood to explain why.}
+% 
+%  
+% >>>>>> end of annexed block <<<<<<
+% >>>>>> ANNEX A (cut-sheet v2): the Stirling-numbers development — block commented out below, pointer left in text <<<<<<
+\textit{(The Stirling-numbers development --- the full working is set out in Annexe A.)}
+
+% \subsection*{A Stirling effort}
+%  
+% \El{Stirling did something to Pascal's recurrence that I have been trying to do to Delannoy's, and the result is not what I expected.}
+%  
+% \Er{Remind me. What did Stirling do?}
+%  
+% \El{He took the Pascal recurrence,
+% \[
+% \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1},
+% \]
+% and changed a silent weight of ones into the column index $k$:
+% \[
+% S(n,k) = k\,S(n-1,k) + S(n-1,k-1),
+% \]
+% whose array is the Stirling triangle of the second kind. The row sums are the Bell numbers\footnote{The Bell numbers are the $n$th moments of a Poisson distribution with mean one, and partitions of an $n$-set are counted by Stirling and totalled by Bell.}.}
+%  
+% \begin{center}
+% \begin{tikzpicture}[font=\footnotesize, every node/.style={inner sep=2pt}, x=8mm, y=-9mm]
+% Pascal triangle with construction arrows (left)
+% \node[font=\small\itshape, color=gold] at (2,-0.7) {Pascal};
+% \foreach \n/\k/\val in {0/0/1, 1/0/1, 1/1/1, 2/0/1, 2/1/2, 2/2/1, 3/0/1, 3/1/3, 3/2/3, 3/3/1, 4/0/1, 4/1/4, 4/2/6, 4/3/4, 4/4/1} {
+%   \node (P\n\k) at ({2*\k-\n+2},\n) [circle, draw=gold!40, fill=white, minimum size=5mm, inner sep=0pt, font=\scriptsize] {\val};
+% }
+% Arrows showing the merge: each interior entry has two parents
+% \foreach \a/\b/\c/\d in {0/0/1/0, 0/0/1/1, 1/0/2/0, 1/0/2/1, 1/1/2/1, 1/1/2/2, 2/0/3/0, 2/0/3/1, 2/1/3/1, 2/1/3/2, 2/2/3/2, 2/2/3/3, 3/0/4/0, 3/0/4/1, 3/1/4/1, 3/1/4/2, 3/2/4/2, 3/2/4/3, 3/3/4/3, 3/3/4/4} {
+%   \draw[->,>=stealth, color=gold!50, very thin] (P\a\b)--(P\c\d);
+% }
+% Stirling triangle with weighted arrows (right)
+% \node[font=\small\itshape, color=gold] at (10,-0.7) {Stirling};
+% \foreach \n/\k/\val in {0/0/1, 1/1/1, 2/1/1, 2/2/1, 3/1/1, 3/2/3, 3/3/1, 4/1/1, 4/2/7, 4/3/6, 4/4/1} {
+%   \node (S\n\k) at ({\k+8},\n) [circle, draw=gold!40, fill=white, minimum size=5mm, inner sep=0pt, font=\scriptsize] {\val};
+% }
+% Diagonal arrows weight 1
+% \foreach \a/\b/\c/\d in {0/0/1/1, 1/1/2/2, 2/1/3/2, 2/2/3/3, 3/1/4/2, 3/2/4/3, 3/3/4/4} {
+%   \draw[->,>=stealth, color=gold!40, very thin] (S\a\b)--(S\c\d);
+% }
+% Vertical arrows weight k
+% \foreach \a/\b/\c/\d/\w in {1/1/2/1/1, 2/1/3/1/1, 2/2/3/2/2, 3/1/4/1/1, 3/2/4/2/2, 3/3/4/3/3} {
+%   \draw[->,>=stealth, color=gold, thin] (S\a\b)--(S\c\d) node[midway, left=0pt, font=\tiny, color=gold] {$\w$};
+% }
+% Row sum spines
+% \node[color=dim, font=\scriptsize] at (6.9,0) {$=1$};
+% \node[color=dim, font=\scriptsize] at (6.9,1) {$=2$};
+% \node[color=dim, font=\scriptsize] at (6.9,2) {$=4$};
+% \node[color=dim, font=\scriptsize] at (6.9,3) {$=8$};
+% \node[color=dim, font=\scriptsize] at (6.9,4) {$=16$};
+% \node[color=dim, font=\scriptsize] at (7.1,4.7) {$2^n$};
+% \node[color=goldlt, font=\scriptsize] at (13.2,0) {$=1$};
+% \node[color=goldlt, font=\scriptsize] at (13.2,1) {$=1$};
+% \node[color=goldlt, font=\scriptsize] at (13.2,2) {$=2$};
+% \node[color=goldlt, font=\scriptsize] at (13.2,3) {$=5$};
+% \node[color=goldlt, font=\scriptsize] at (13.2,4) {$=15$};
+% \node[color=goldlt, font=\scriptsize\itshape] at (13.2,4.7) {Bell};
+% \end{tikzpicture}
+% \end{center}
+%  
+% \noindent\emph{Pascal: both arrows carry weight one, so every entry is the sum of its two parents and the row sums double. Stirling: the diagonal arrow still carries weight one, but the vertical arrow now carries weight $k$ equal to its destination column. The row sums no longer double; they climb as the Bell numbers.}
+%  
+% \El{And the Bell numbers, the row sums of Stirling, can themselves be revealed as in the Aitken array.}
+%  
+% \begin{center}
+% \begin{tikzpicture}[font=\footnotesize, every node/.style={inner sep=2pt}, x=14mm, y=-9mm]
+% \foreach \n/\k/\val in {0/0/1, 1/0/1, 1/1/2, 2/0/2, 2/1/3, 2/2/5, 3/0/5, 3/1/7, 3/2/10, 3/3/15, 4/0/15, 4/1/20, 4/2/27, 4/3/37, 4/4/52, 5/0/52, 5/1/67, 5/2/87, 5/3/114, 5/4/151, 5/5/203} {
+%   \node (B\n\k) at (\k,\n) [circle, draw=gold!40, fill=white, minimum size=6.5mm, inner sep=0pt, font=\scriptsize] {\val};
+% }
+% Highlight the left edge (Bell numbers themselves)
+% \foreach \n in {0,1,2,3,4,5} {
+%   \node[circle, draw=goldlt, thick, minimum size=6.5mm, inner sep=0pt, font=\scriptsize] at (0,\n) {};
+% }
+% Arrows showing construction: first entry of row n = last entry of row n-1
+% \foreach \n in {1,2,3,4,5} {
+%   \pgfmathtruncatemacro{\nm}{\n-1}
+%   \draw[->,>=stealth, color=gold!70, thin] (B\nm\nm) to[bend right=25] (B\n0);
+% }
+% Arrows showing the horizontal addition rule
+% \foreach \n/\k in {1/1, 2/1, 2/2, 3/1, 3/2, 3/3, 4/1, 4/2, 4/3, 4/4, 5/1, 5/2, 5/3, 5/4, 5/5} {
+%   \pgfmathtruncatemacro{\km}{\k-1}
+%   \pgfmathtruncatemacro{\nm}{\n-1}
+%   \draw[->,>=stealth, color=gold!30, thin] (B\n\km)--(B\n\k);
+%   \draw[->,>=stealth, color=gold!30, thin] (B\nm\km)--(B\n\k);
+% }
+% Side annotation
+% \node[color=goldlt, font=\scriptsize\itshape, anchor=west] at (5.7, 0) {left edge:};
+% \node[color=goldlt, font=\scriptsize, anchor=west] at (5.7, 0.6) {$B_0 = 1$};
+% \node[color=goldlt, font=\scriptsize, anchor=west] at (5.7, 1.2) {$B_1 = 1$};
+% \node[color=goldlt, font=\scriptsize, anchor=west] at (5.7, 1.8) {$B_2 = 2$};
+% \node[color=goldlt, font=\scriptsize, anchor=west] at (5.7, 2.4) {$B_3 = 5$};
+% \node[color=goldlt, font=\scriptsize, anchor=west] at (5.7, 3.0) {$B_4 = 15$};
+% \node[color=goldlt, font=\scriptsize, anchor=west] at (5.7, 3.6) {$B_5 = 52$};
+% \node[color=goldlt, font=\scriptsize, anchor=west] at (5.7, 4.2) {$B_6 = 203$};
+% \node[color=dim, font=\scriptsize\itshape, anchor=west] at (5.7, 4.9) {(Bell numbers)};
+% \end{tikzpicture}
+% \end{center}
+%  
+% \noindent\emph{The Aitken construction: the first entry of each row is the last entry of the row above, and each subsequent entry is the sum of the one to its left and the one to its upper-left. The left edge collects the Bell numbers $1, 1, 2, 5, 15, 52, 203, \dots$}
+% 
+% \Er{So what is the number $k$ weight on the first term of the recurrence doing?}
+%  
+% \El{Counting how many existing blocks element $n$ can join. Suppose I have a partition of $\{1, 2, 3\}$ into two blocks, say $\{\{1, 2\}, \{3\}\}$. I now bring in element $4$ and ask where it can go. It can join the block $\{1,2\}$, or join the block $\{3\}$, or open a new block of its own. That is three choices, two joinings and one new opening. The two joinings are the $k\,S(n-1,k)$ term with $k=2$, and the new opening is the $S(n-1,k-1)$ term feeding into row $n$ at column $k$. The factor $k$ is the number of joinings the element actually faces.}
+%  
+% \begin{center}
+% \begin{tikzpicture}[font=\footnotesize, every node/.style={inner sep=2.5pt}]
+% Source partition
+% \node[draw=dim, rounded corners=2pt, fill=black!2] (src) at (0,0) {$\{\{1,2\},\{3\}\}$};
+% \node[font=\scriptsize, color=dim] at (0,-0.55) {two blocks, $k=2$};
+%  
+% Choice 1: join {1,2}
+% \node[draw=gold, rounded corners=2pt] (c1) at (4.5,1.4) {$\{\{1,2,4\},\{3\}\}$};
+% \node[font=\scriptsize, color=gold] at (4.5,0.85) {join $\{1,2\}$};
+%  
+% Choice 2: join {3}
+% \node[draw=gold, rounded corners=2pt] (c2) at (4.5,0) {$\{\{1,2\},\{3,4\}\}$};
+% \node[font=\scriptsize, color=gold] at (4.5,-0.55) {join $\{3\}$};
+%  
+% Choice 3: open new
+% \node[draw=goldlt, rounded corners=2pt] (c3) at (4.5,-1.4) {$\{\{1,2\},\{3\},\{4\}\}$};
+% \node[font=\scriptsize, color=goldlt] at (4.5,-1.95) {open new block};
+%  
+% Arrows
+% \draw[->,>=stealth, color=gold] (src) -- (c1);
+% \draw[->,>=stealth, color=gold] (src) -- (c2);
+% \draw[->,>=stealth, color=goldlt] (src) -- (c3);
+%  
+% Annotation showing k=2 and +1
+% \node[font=\scriptsize\itshape, color=gold] at (9.5,0.7) {two joinings};
+% \node[font=\scriptsize\itshape, color=gold] at (9.5,0.3) {give $k\,S(n{-}1,k)$};
+% \node[font=\scriptsize\itshape, color=goldlt] at (9.5,-1.2) {one opening};
+% \node[font=\scriptsize\itshape, color=goldlt] at (9.5,-1.6) {gives $S(n{-}1,k{-}1)$};
+%  
+% \draw[dim, dashed] (6.5,1.4) -- (8.0,0.5);
+% \draw[dim, dashed] (6.5,0) -- (8.0,0.5);
+% \draw[dim, dashed] (6.5,-1.4) -- (8.0,-1.4);
+% \end{tikzpicture}
+% \end{center}
+%  
+% \Er{So the multiplier and combinatorial structure are one?}
+%  
+% \El{Yes the recurrence had two terms because the combinatorial choice has two cases, the multipliers on those terms had the values they had because the cases had the multiplicities they had. }
+%  
+% \El{And then I tried the same move on Delannoy.}
+%  
+% \Er{But Delannoy has three terms $\dots$}
+%  
+% \El{Three terms, three constants, all equal to one. I promoted each of them in turn to the column index $n$. Three candidate recurrences, with three candidate generalisations. The cleanest of them, the one I have been calling V2, is
+% \[
+% D(m,n) = D(m-1,n) + n\,D(m,n-1) + D(m-1,n-1).
+% \]
+% The right-step contribution carries the column-index multiplier. The recurrence is formally consistent and the first row is the factorials $1, 1, 2, 6, 24, \dots$ The first interior row has a closed form, $V_2(1,n) = n!\,(1 + n + H_n)$, so nicely involving the harmonic numbers and the whole array satisfies a recursive integration formula so this was looking promising.}
+%  
+% \Er{Then?}
+%  
+% \El{Then I looked up the central diagonal,
+% \[
+% V_2(n,n) = 1,\; 3,\; 22,\; 255,\; 4006,\; 79240,\; 1888076,\; \dots
+% \]}
+% 
+%  
+% \begin{center}
+% \begin{tikzpicture}[font=\footnotesize, every node/.style={inner sep=2.5pt}]
+% Top row labels (columns n)
+% \foreach \n in {0,1,2,3,4,5} {
+%   \node[color=dim, font=\scriptsize] at ({\n*1.3},0.6) {$n{=}\n$};
+% }
+% \node[color=dim, font=\scriptsize] at (-1.1, 0.6) {};
+% Row labels (m)
+% \foreach \m in {0,1,2,3,4} {
+%   \node[color=dim, font=\scriptsize] at (-1.0,{-\m*0.55}) {$m{=}\m$};
+% }
+% V2 array entries
+% row 0 (factorials)
+% \foreach \n/\v in {0/1, 1/1, 2/2, 3/6, 4/24, 5/120} {
+%   \node[color=gold] at ({\n*1.3},0) {\v};
+% }
+% row 1 (harmonic, n! (1+n+H_n))
+% \foreach \n/\v in {0/1, 1/3, 2/9, 3/35, 4/170, 5/994} {
+%   \node[color=goldlt] at ({\n*1.3},-0.55) {\v};
+% }
+% row 2 (with diagonal entry highlighted)
+% \foreach \n/\v in {0/1, 1/5, 3/110, 4/645, 5/4389} {
+%   \node at ({\n*1.3},-1.1) {\v};
+% }
+% \node[circle, draw=goldlt, thick, inner sep=1pt] at (2*1.3,-1.1) {22};
+% row 3
+% \foreach \n/\v in {0/1, 1/7, 2/41, 4/1775, 5/13909} {
+%   \node at ({\n*1.3},-1.65) {\v};
+% }
+% \node[circle, draw=goldlt, thick, inner sep=1pt] at (3*1.3,-1.65) {255};
+% row 4
+% \foreach \n/\v in {0/1, 1/9, 2/66, 3/494, 5/35714} {
+%   \node at ({\n*1.3},-2.2) {\v};
+% }
+% \node[circle, draw=goldlt, thick, inner sep=1pt] at (4*1.3,-2.2) {4006};
+% circle the (1,1) entry too
+% \node[circle, draw=goldlt, thick, inner sep=1pt] at (1*1.3,-0.55) {3};
+%  
+% Side annotations
+% \node[color=gold, font=\scriptsize\itshape, anchor=west] at (7.0, 0) {boundary row: $n!$};
+% \node[color=goldlt, font=\scriptsize\itshape, anchor=west] at (7.0, -0.55) {row 1: $n!(1{+}n{+}H_n)$};
+% \node[color=goldlt, font=\scriptsize\itshape, anchor=west] at (7.0, -1.4) {central diagonal:};
+% \node[color=goldlt, font=\scriptsize\itshape, anchor=west] at (7.0, -1.8) {$3,\,22,\,255,\,4006,\dots$};
+% \node[color=dim, font=\scriptsize\itshape, anchor=west] at (7.0, -2.4) {(not in OEIS)};
+% \end{tikzpicture}
+% \end{center}
+% 
+% \El{And the diagonal appear in no \href{https://oeis.org/A054594}{standard reference} I can find.}
+%  
+% \Er{And what does V2 count?}
+%  
+% \El{Lattice paths from the origin to $(m,n)$ using up-steps, right-steps, and diagonal-steps, where each right-step entering column $j$ carries a label drawn from $\{1, 2, \ldots, j\}$. That is the combinatorial reading the recurrence forces, and the labels make the arithmetic come out right. But notice what has happened to the word ``label.''}
+%  
+% \Er{A fresh stipulation? The path itself does not produce the label.}
+%  
+% \El{Exactly. In Stirling's case the multiplier $k$ was \emph{the number of blocks the path was already passing through}; it was a property the partition had whether or not we were counting. In V2 the multiplier $n$ is the column the path is entering, and there is nothing about the path that consults that column. The factor was inserted by me, not asked for by the combinatorial object.}
+%  
+% \Er{Like a man wearing a tag he did not choose. But wait let me press you on this. Why should the move that worked on Pascal not have worked on Delannoy? Both recurrences are constant-coefficient. Both admit a position-dependent promotion. If the promotion is structurally sound for one, we are right to expect it to be sound for another?}
+%  
+% \El{Nothing gives us the right. The reason Pascal-and-Stirling worked is that set partitions, the things Stirling's recurrence happens to count, were studied independently of any recurrence at all. People knew there were five ways to partition a three-element set before anyone wrote down $S(3,k) = (0, 1, 3, 1)$. The recurrence appeared and it matched what was already there. The match was a lucky meeting of two threads, one of them combinatorial and the other algebraic. Neither thread was produced by the other.}
+%  
+% \Er{Ok I see so Stirling's success was combinatorial?}
+%  
+% \El{Yes. Combinatorial and algebraic threads were both responding to the same underlying object, the partition of a set into blocks. But the \emph{availability} of the match, the fact that the combinatorial thread existed at all to be matched, is contingent. If no one had ever been interested in partitioning sets, Stirling's recurrence would still be formally consistent and would still produce $1, 1, 2, 5, 15, 52, \dots$, and the sequence would have no name and no application. It would be like V2.}
+%  
+% \Er{There is a counterfactual buried in what you just said. ``If no one had ever been interested.''}
+%  
+% \El{Yes and that is the crux of the matter. Stirling's recurrence is meaningful and thus plugged into that fabric because of a contingent fact about which questions people had asked.}
+%  
+% \Er{And the V2 recurrence is not plugged into the fabric.}
+%  
+% \El{It is not plugged into anything. It produces a clean sequence, with an exact combinatorial interpretation, but no question that anyone has asked before has $1, 3, 22, 255, 4006$ as its answer.}
+%  
+% \Er{Then we are talking about two kinds of meaning here.}
+%  
+% \El{Yes. Found and constructed meaning. Found meaning is what happens when a formal object aligns with a question already in circulation while constructed meaning is what happens when we write down a formal object and then engineer a question to which it is the answer. The latter lacks the weight of independent corroboration. Stirling's recurrence was tested by the partitions that it was found to count. V2 has never been tested.}
+%  
+% >>>>>> end of annexed block <<<<<<
+\subsection*{The landscape}
+
+\begin{figure}[H]\centering
+\includegraphics[width=1.0\textwidth]{Illustrations/vign-modulliSpace.png}
+\caption{Anthropic Inclinations}
+\label {Chessboard:modulli}
+\end{figure}
+ 
+\Er{You said the failure was instructive so what it has taught you.}
+ 
+\El{It has taught me that I have been thinking about generalisation in the wrong way. I had been imagining the space of recurrences as tress in a kind of forest, with famous recurrence trees scattered amongst the brambles. After enough such walks I was all scratches and no banana. I began to suspect that famous trees are rare and rare \emph{for a reason}.}
+ 
+\Er{What is the reason?}
+ 
+\El{The famous trees grow only where two independent combinatorial and algebraic root systems happen to cross. }
+ 
+\Er{This sounds familiar.}
+ 
+\El{Yes- you are thinking like me. I keep thinking of poor old string theorists. They have their {\emph{landscape}}, the moduli space of consistent string-theory vaccua. Estimates of its size run to ten-to-the-five-hundred, give or take a few hundred orders of magnitude, and each of those vacua is a formally consistent description of a universe with its own physical constants. The Standard Model, the description of the universe we actually inhabit, sits at only one of those $10^{500}$ points. Their big problem is to explain why the Standard Model is the one point we reside in, and the only candidate explanation that gets taken seriously is anthropic: at all other points, we would not be here to ask.}
+
+\Er{Yes there is a parallel?}
+ 
+\El{So the parallel is that the space of formally consistent recurrences is also a vast parameter space, with the named recurrences sitting at a vanishingly small subset of its points. For how ``vanishingly small'', consider just the position-dependent promotions of the three Delannoy constants. Each constant can be promoted to any polynomial in $m$ and $n$. If I restrict to polynomials of degree at most two, there are something like ten basis functions per constant, and three constants, so a thousand-or-so candidate generalisations. I checked a handful. None of them produces a sequence in any standard reference. The other handful might; I have no way to know without checking. But the count of named recurrences in this corner of the space, even in the broadest reading, is in the low single digits. The ratio of named to unnamed in this neighbourhood alone is something like a few in a thousand.}
+ 
+\Er{And the whole space of recurrences is much larger than that neighbourhood.}
+ 
+\El{The whole space is unbounded. Polynomials of any degree, multivariate, with any coefficients. And within that unbounded space the named recurrences are a finite, named subset sociologically chosen
+.}
+
+\begin{center}
+\begin{tikzpicture}[font=\footnotesize]
+% Background: faint dotted V points everywhere (anonymous recurrences)
+\foreach \x/\y in {0.3/0.6, 0.8/1.4, 1.5/0.3, 1.2/2.1, 0.5/2.6, 1.9/1.8, 2.4/0.9, 2.7/2.4, 3.1/1.3, 3.6/0.4, 3.9/2.0, 4.3/2.7, 0.4/3.3, 1.6/3.4, 2.3/3.7, 3.4/3.1, 4.5/3.4, 5.1/0.7, 5.3/2.1, 5.6/3.5, 5.9/1.5, 6.4/2.8, 6.7/0.5, 7.1/1.8, 7.3/3.3, 0.9/0.2, 4.0/0.8, 5.0/1.4, 6.0/2.4, 6.9/3.7, 1.1/3.8, 2.0/0.4, 2.9/3.5, 3.8/1.4, 4.6/2.2, 5.5/0.3, 6.2/1.2, 7.0/2.5, 0.6/1.9, 1.4/1.0} {
+  \node[color=dim, font=\tiny] at (\x,\y) {V};
+}
+% Named points: gold dots, larger
+\node[circle, fill=goldlt, inner sep=2pt] (Pasc) at (1.7,1.0) {};
+\node[color=gold, font=\scriptsize\itshape, anchor=south] at (1.7,1.15) {Pascal};
+\node[circle, fill=goldlt, inner sep=2pt] (Stir) at (2.9,2.0) {};
+\node[color=gold, font=\scriptsize\itshape, anchor=south] at (2.9,2.15) {Stirling};
+\node[circle, fill=goldlt, inner sep=2pt] (Eul) at (4.6,1.3) {};
+\node[color=gold, font=\scriptsize\itshape, anchor=south] at (4.6,1.45) {Eulerian};
+\node[circle, fill=goldlt, inner sep=2pt] (Del) at (5.8,2.6) {};
+\node[color=gold, font=\scriptsize\itshape, anchor=south] at (5.8,2.75) {Delannoy};
+% Metallic sweep line (passes through several named points along a parametric line)
+\draw[gold, thick] (0.4,0.4) -- (7.5,1.5);
+\node[circle, fill=goldlt, inner sep=1.5pt] at (1.5,0.56) {};
+\node[circle, fill=goldlt, inner sep=1.5pt] at (3.2,0.83) {};
+\node[circle, fill=goldlt, inner sep=1.5pt] at (5.0,1.11) {};
+\node[circle, fill=goldlt, inner sep=1.5pt] at (6.7,1.38) {};
+\node[color=gold, font=\scriptsize\itshape, anchor=west] at (7.6,1.55) {metallic sweep};
+\node[color=gold, font=\scriptsize, anchor=west] at (7.6,1.2) {(Fib, Pell,};
+\node[color=gold, font=\scriptsize, anchor=west] at (7.6,0.9) {bronze, $\ldots$)};
+% V2 marker: an X amid the Vs
+\node[color=goldlt, font=\small\itshape] at (3.5,2.6) {V2};
+\draw[goldlt, ->,>=stealth] (3.7,2.6) -- (3.95,2.85);
+% Frame
+\draw[dim, thin] (0,0) rectangle (7.5,4.1);
+\node[color=dim, font=\scriptsize, anchor=west] at (0.3,-0.3) {parameter space of formally consistent recurrences};
+% \node[color=dim, font=\scriptsize, anchor=east] at (7.5,-0.4) {gold dots: named points};
+\end{tikzpicture}
+\end{center}
+ 
+\Er{The analogy must slip somewhere at infinity?}
+ 
+\El{It slips at the selection mechanism. In physics the candidate explanation for why we find ourselves at the Standard Model is anthropic: at other points we would not exist. There is no mathematical anthropic principle.}
+ 
+% \Er{Then the mathematics landscape is even less explicable.}
+ 
+% \El{At least the physicists have a candidate. We have only the historical record of what questions were asked, which is contingent in a way that does not even reach toward an explanation. The history could have been otherwise. Other partitions, other matchings, other named sequences would have arisen, and the recurrences they call meaningful would be different recurrences, and the recurrences we call meaningful would be V2.}
+ 
+\Er{So in another world V2 is famous.}
+ 
+\El{In some other world V2 has a name and a literature of its own, and the sequence $1, 1, 2, 5, 15, 52, \dots$ that we now call the Bell numbers would sit unnamed in the local neighbourhood of someone else's famous recurrence. The famous-ness is portable across the parameter space. Where it lands is contingent.}
+  
+\Er{Will you stop the search?}
+ 
+\El{No. The search is interesting in itself. V2's central diagonal has an Abel-style integration formula and a closed form for its first row involving harmonic numbers. These are local features of the landscape, and local features can be worth knowing without being signposts to global landmarks.}
+ 
+\Er{And what will you do instead?}
+ 
+\El{I will look at parameter sweeps that have worked, and ask what those sweeps had in common that V2 lacked. The metallic continuants are an example. Replace the diagonal of the Fibonacci-shaped continuant with $m$ instead of $1$, and at each integer value of $m$ the determinant sequence is a named object: Fibonacci at $m=1$, Pell at $m=2$, the bronze numbers at $m=3$, and so on for every integer. There is also the metallic Bell construction, in which the binomial-convolution kernel is multiplied by $m^k$; at each integer the resulting sequence has an OEIS entry.}
+ 
+\begin{center}
+\begin{tikzpicture}[font=\footnotesize, every node/.style={inner sep=2pt}]
+% Column headers
+\foreach \k/\lbl in {1/$n{=}1$, 2/$n{=}2$, 3/$n{=}3$, 4/$n{=}4$, 5/$n{=}5$, 6/$n{=}6$, 7/$n{=}7$} {
+  \node[color=dim, font=\scriptsize] at ({\k*0.95},0.7) {\lbl};
+}
+% Row m=1: Fibonacci
+\node[anchor=east, color=gold, font=\small\itshape] at (0.5, 0) {Fibonacci $(m{=}1)$:};
+\foreach \k/\v in {1/1, 2/2, 3/3, 4/5, 5/8, 6/13, 7/21} {
+  \node[color=gold] at ({\k*0.95},0) {\v};
+}
+% Row m=2: Pell
+\node[anchor=east, color=gold, font=\small\itshape] at (0.5,-0.55) {Pell $(m{=}2)$:};
+\foreach \k/\v in {1/2, 2/5, 3/12, 4/29, 5/70, 6/169, 7/408} {
+  \node[color=gold] at ({\k*0.95},-0.55) {\v};
+}
+% Row m=3: bronze
+\node[anchor=east, color=gold, font=\small\itshape] at (0.5,-1.1) {bronze $(m{=}3)$:};
+\foreach \k/\v in {1/3, 2/10, 3/33, 4/109, 5/360, 6/1189, 7/3927} {
+  \node[color=gold] at ({\k*0.95},-1.1) {\v};
+}
+% Row m=4
+\node[anchor=east, color=dim, font=\small\itshape] at (0.5,-1.65) {$(m{=}4)$:};
+\foreach \k/\v in {1/4, 2/17, 3/72, 4/305, 5/1292, 6/5473, 7/23184} {
+  \node[color=dim] at ({\k*0.95},-1.65) {\v};
+}
+% Annotation: characteristic equation
+\node[color=goldlt, font=\scriptsize\itshape, anchor=west] at (7.3, -0.55) {$x^2 = m\,x + 1$};
+\node[color=goldlt, font=\scriptsize\itshape, anchor=west] at (7.3, -0.95) {each $m$ a named};
+\node[color=goldlt, font=\scriptsize\itshape, anchor=west] at (7.3, -1.30) {algebraic ratio};
+\end{tikzpicture}
+\end{center}
+ 
+\Er{What distinguishes them from V2?}
+ 
+\El{Before I answer, look at the silver Bell triangle. The $m=2$ analogue of the Aitken array, built with the same row-construction rule but with $m$ times the left neighbour instead of one times.}
+ 
+\begin{center}
+\begin{tikzpicture}[font=\footnotesize, every node/.style={inner sep=2pt}, x=17mm, y=-9mm]
+\foreach \n/\k/\val in {0/0/1, 1/0/1, 1/1/3, 2/0/3, 2/1/7, 2/2/17, 3/0/17, 3/1/37, 3/2/81, 3/3/179, 4/0/179, 4/1/375, 4/2/787, 4/3/1655, 4/4/3489} {
+  \node (Si\n\k) at (\k,\n) [draw=gold!40, fill=white, rounded corners=1.5pt, minimum width=10mm, minimum height=6mm, inner sep=0pt, font=\scriptsize] {\val};
+}
+% Highlight left edge (silver Bell numbers)
+\foreach \n in {0,1,2,3,4} {
+  \node[draw=goldlt, thick, rounded corners=1.5pt, minimum width=10mm, minimum height=6mm, inner sep=0pt, font=\scriptsize] at (0,\n) {};
+}
+% Wrap arrows
+\foreach \n in {1,2,3,4} {
+  \pgfmathtruncatemacro{\nm}{\n-1}
+  \draw[->,>=stealth, color=gold!70, thin] (Si\nm\nm) to[bend right=20] (Si\n0);
+}
+\node[color=goldlt, font=\scriptsize\itshape, anchor=west] at (3.0, 1) {row rule: $a_{n,k} = 2\,a_{n,k-1} + a_{n-1,k-1}$};
+\node[color=goldlt, font=\scriptsize\itshape, anchor=west] at (3.0, 1.7) {left edge: $1, 1, 3, 17, 179, 3489, \dots$};
+\node[color=goldlt, font=\scriptsize\itshape, anchor=west] at (3.0, 2.4) {(OEIS-documented; cf.\ Bell at $m=1$)};
+\end{tikzpicture}
+\end{center}
+ 
+\noindent\emph{The same Aitken construction with the left-neighbour weight changed from $1$ to $2$ delivers the silver Bell triangle $1, 1, 3, 17, 179, 3489, \ldots$, a sequence  documented in the \ref{https://oeis.org/A126443}{OEIS}.}
+ 
+\El{What distinguishes them from V2 is that the parameter $m$ in the metallic case has a meaning outside the recurrence. The number $m$ is the metallic ratio, the positive root of $x^2 = mx + 1$, and $m = 2$ is the silver ratio.}
+ 
+\Er{So a parameter sweep is more likely to produce named recurrences when the parameter is itself named.}
+ 
+\El{When the parameter is itself plugged into the fabric. The metallic ratios are plugged in. The same recurrence with $n$ replaced by a more meaningful parameter might land on a sequence of more interest.}
+ 
+\Er{Odd to see that the work of mathematics can also be the work of finding plugged-in parameters.}
+ 
+\El{When you see a vast parameter space of formally consistent constructions and realise that the formalism alone cannot pick out the meaningful subset, you feel your formalism shrink in your estimation.}
+ 
+\Er{The string theorists have lived with this for forty years.}
+ 
+\El{They have lived with it and they have not given up. They have developed habits of thought that take the size of the landscape seriously without pretending it is not there.}
+ 
+\medskip
+ 
+\noindent\emph{The two of them have reached the end of this path.}
+ 
+
+%%%%%%%%
+ 
+\newpage

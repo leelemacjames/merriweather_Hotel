@@ -1,0 +1,93 @@
+% Split from 8-16yang.tex by cut-sheet v2/v3 — content below is the source scene, header adjusted
+\chapter*{Yang's Redshifted Flux of Infinite Light Sources}
+
+\lettrine{L}{ee} Yang had always been captivated by the grandeur of cosmological phenomena. Unlike his colleague Willard Jones, who pondered the flux of stationary light sources, Lee turned his attention to the dynamics of an expanding universe. 
+
+\begin{figure}[H]
+\includegraphics[width=1.0\linewidth]{Illustrations/vignette_yang.png}
+\caption{Yang turning pages of a book and coffee into thoughts}
+\end{figure}
+
+He wondered: What is the total flux of light observed from an infinite grid of light sources if they are all receding according to Hubble's Law?
+
+\section*{The Setup: Hubble’s Law and Redshifted Flux}
+In Lee's scenario, each light source moves away from the observer at a speed proportional to its distance \( d \), governed by Hubble’s Law:
+\[
+v = H_0 d,
+\]
+where:
+\begin{itemize}
+    \item \( v \) is the velocity of the light source,
+    \item \( H_0 \) is the Hubble constant,
+    \item \( d \) is the distance to the light source.
+\end{itemize}
+
+The light from these sources undergoes a Doppler shift due to their motion. The observed frequency \( \nu_{\text{obs}} \) of the light is related to the emitted frequency \( \nu_{\text{emit}} \) by:
+\[
+\nu_{\text{obs}} = \nu_{\text{emit}} \frac{c}{c + v},
+\]
+where \( c \) is the speed of light.
+
+The observed flux \( F_{\text{obs}} \) from a single light source is affected by this redshift and the inverse square law:
+\[
+F_{\text{obs}} = \frac{L}{d^2} \cdot \left(\frac{\nu_{\text{obs}}}{\nu_{\text{emit}}}\right)^2,
+\]
+where \( L \) is the intrinsic luminosity of the source.
+
+% >>>>>> ANNEX D (cut-sheet v2): the total redshifted flux on a unit grid — block commented out below, pointer left in text <<<<<<
+\textit{(The total redshifted flux on a unit grid --- the full working is set out in Annexe D.)}
+
+% \section*{The Total Flux on a Unit Grid}
+% Assuming the light sources are located on a unit lattice grid in \( \mathbb{Z}^3 \), the distance to a source at \( (x, y, z) \) is:
+% \[
+% d = \sqrt{x^2 + y^2 + z^2}.
+% \]
+% 
+% The flux from a single source, incorporating Hubble’s Law, becomes:
+% \[
+% F_{\text{obs}}(x, y, z) = \frac{L}{(x^2 + y^2 + z^2)} \cdot \left(\frac{c}{c + H_0 \sqrt{x^2 + y^2 + z^2}}\right)^2.
+% \]
+% 
+% The total flux observed at the grid point is the sum over all lattice points, excluding the origin:
+% \[
+% F_{\text{total}} = \sum_{(x, y, z) \in \mathbb{Z}^3 \setminus \{(0, 0, 0)\}} \frac{L}{(x^2 + y^2 + z^2)} \cdot \left(\frac{c}{c + H_0 \sqrt{x^2 + y^2 + z^2}}\right)^2.
+% \]
+% 
+% 
+% \begin{figure}[H]
+% \includegraphics[width=1.0\linewidth]{Illustrations/vign-yang2.png}
+% \caption{Yang pondering the glare from an infinitude of candles}
+% \end{figure}
+% 
+% Lee noted two competing effects in the flux sum:
+% \begin{enumerate}
+%     \item \textbf{Distance Diminishes Brightness:} The inverse square law ensures that more distant sources contribute less to the total flux.
+%     \item \textbf{Redshift Reduces Flux:} Hubble’s Law implies that the observed flux from distant sources diminishes further due to redshift, with the term \( \left(\frac{c}{c + H_0 d}\right)^2 \) becoming smaller as \( d \) increases.
+% \end{enumerate}
+% 
+% To analyze the behavior of the flux, Lee approximated the redshift term for large distances:
+% \[
+% \frac{c}{c + H_0 d} \approx \frac{1}{H_0 d},
+% \]
+% leading to an approximate flux contribution:
+% \[
+% F_{\text{obs}}(x, y, z) \sim \frac{L}{(x^2 + y^2 + z^2)^3}.
+% \]
+% 
+% The total flux then becomes:
+% \[
+% F_{\text{total}} \sim \sum_{(x, y, z) \in \mathbb{Z}^3 \setminus \{(0, 0, 0)\}} \frac{L}{(x^2 + y^2 + z^2)^3}.
+% \]
+% 
+% This sum converges for \( s > 3/2 \), suggesting that the total flux observed is finite and dominated by contributions from nearby sources.
+% 
+% >>>>>> end of annexed block <<<<<<
+\section*{Interpreting the Redshifted Flux}
+Lee was struck by the philosophical implications of his calculations:
+\begin{itemize}
+    \item The finite total flux reinforced the idea that distant sources contribute less not only due to their distance but also due to the accelerating expansion of the universe.
+    \item The dominance of nearby sources mirrored the observer’s limited horizon, where most of the visible light originates from the local universe.
+    \item The interplay between geometry (lattice structure) and physics (redshift) revealed deeper connections between number theory and cosmology.
+\end{itemize}
+
+As Lee contemplated his findings, he marveled at the simplicity and profundity of the universe’s laws. The infinite grid of light sources, governed by Hubble’s Law, was not just a mathematical abstraction but a reflection of the universe’s expansion.

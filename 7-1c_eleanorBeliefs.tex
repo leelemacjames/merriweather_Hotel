@@ -1,0 +1,227 @@
+% Split from 7-1EleanorMia.tex by cut-sheet v2/v3 — content below is the source scene, header adjusted
+\chapter*{Eleanor Offers up her Beliefs}
+% \section*{Eleanor offers up her Beliefs}
+ 
+Eleanor put her pencil down. This being the moment, where she would normally pivot: change the subject, make tea, save the proper conversation for someone older, Ernest. No someone fully grown up perhaps. But there was something in the question, and something in the late-afternoon light coming through the window, and
+something in the simple fact that the little boy was \emph{paying
+attention}, that made her decide otherwise.
+ 
+``You know what I really think, Mo? About what mathematics is?''
+ 
+He looked up.
+ 
+``I think it's the language physics happens to speak. I don't think
+mathematics is a thing humans invented and then went looking for
+somewhere to use. I think we noticed that the world behaved in
+patterns, and we wrote down the patterns, and we called the
+writing-down \emph{mathematics}. The lattice your king walks on
+is a sketch of how \emph{space itself might
+actually work}.''
+ 
+Mo frowned. ``Space is made of little squares?''
+ 
+``Maybe. Maybe space is squares, or better cuboids,at the smallest scale and we just
+can't see it. There are physicists, proper physicists with budgets and grants, who suspect that space and time are made of tiny lattice cells, and what we experience as smooth motion is actually jitterbugging
+on a lattice the way your king walks on the chessboard. They have
+a names for it, calling them variously \emph{causal sets}, or \emph{spin foams},
+or \emph{lattice quantum gravity}, depending on which one of them you ask and how invested they are.''
+ 
+``And the king's three moves?''
+ 
+``Good. Yes. Consider the three ways the lattice lets a thing get from one point to a neighbouring point. East, North and Diagonally. The diagonal is the most efficient way of covering the most ground per move costs. \emph{That cost} is what physicists call \emph{action}.''
+ 
+She picks the pencil back up.
+ 
+``Now watch what happens. Suppose we say a king's path costs its
+Euclidean length. An east step costs one unit, a north step costs
+one unit, a diagonal step costs root two. So a path with lots of
+diagonals is short but each diagonal is expensive, and a path with
+no diagonals is long but each step is cheap. The total cost of a
+path is just the sum of its step-costs.''
+ 
+She wrote on the notebook.
+\[ \text{cost}(\gamma) \;=\; (\text{orthogonal steps})
+   \,+\, \sqrt{2} \,\cdot\, (\text{diagonal steps})
+\]
+``And then, and this is the bit that always startles students, we
+say that the \emph{probability} of a path being taken is
+proportional to the \emph{exponential of minus its cost}. Long paths
+are rare. Short paths are common. The geodesic, the all-diagonal
+path, the straight line, is the commonest of all.''
+ 
+``Why exponential?''
+ 
+``Because the cost add along the path, while we want the probability to \emph{multiply} along the path. We are ANDing probabilities so they need to multiplied. An exponential is the unique
+function that turns addition into multiplication. So if you want a
+rule of the form `the cost-cheaper path is the more likely path', and you want the probabilities of two independent halves of a path to multiply, then you are forced by a uniqueness theorem, to use an
+exponential.''
+ 
+Mo was quiet. She was undeterred, silence could mean just as well mean assimilation. She didn't have the patience to dwell on ORing giving rise to addition of probabilities.
+ 
+``And here is the thing, Mo, here is the thing about the king's walk on the chessboard that I want you to understand because nobody told \emph{me} this when I was your age.'' She paused. ``The same exponential, the same
+path-weighting, the same recurrence with three parents, these are more than just \href{https://leelemacjames.github.io/fowardsBackwards.pdf}{toy models}. They are \emph{exactly} the rules that govern how a particle gets from one point to another in quantum mechanics.
+Richard Feynman,  formulated the whole of quantum mechanics in 1948 by saying:
+
+\emph{To compute the chance of a particle going from here to there,
+sum the exponential-weighted contribution of every possible path it
+could have taken}. 
+
+He called it the \emph{path integral}. And what he meant by the sum over paths is exactly the sum I just wrote down
+on this chessboard, only continuous instead of discrete.''
+ 
+``So the king\,\ldots''
+ 
+``..yes the king is a Feynman particle and the chessboard is spacetime. The action is path length. And the rule that \emph{short paths dominate}, which we will write down in a moment, is what physicists
+have called, for two hundred and fifty years, the \emph{principle of
+least action}. It is the deepest rule in classical mechanics being the
+reason a ball thrown in the air follows a parabola is that being the path with the least action among all possible paths
+the ball could have taken.''
+ 
+Eleanor noted that Mo had stopped fidgeting; he was actually following. ``Let me give you the formula,'' she said. ``It's only one line.''
+ 
+\[
+  P(\gamma) \;=\; \frac{e^{-\beta L(\gamma)}}{Z}
+\]
+ 
+``$L$ is the cost of the path. The little Greek beta is the
+\emph{strength} of our preference for short paths. And $Z$ is the
+total over all paths, the thing that makes the probabilities add up
+to one. The physicists call $Z$ the \emph{partition function}
+because it tells you how the total probability is
+\emph{partitioned} among the available paths. It is the most
+important single quantity in statistical mechanics, and we are
+looking right at it on a chessboard.''
+ 
+``And $\beta$ is what?''
+ 
+``Temperature. Well, sort of given it has units of $J^{-1}$. Actually the reciprocal of temperature, technically, \(1/{kT}\).
+\emph{Cold} lattices have a big $\beta$, which means short paths win
+decisively. \emph{Hot} lattices have a small $\beta$, which means all paths are nearly equally likely. At infinite temperature the king moves at random and we recover the Delannoy count: forty-eight thousand paths, each with the same weight, because temperature is
+so high that the cost of a path becomes irrelevant. At zero temperature only the geodesic survives and the king is \emph{frozen onto the diagonal}. Between those two limits is the whole of physics.''
+ 
+% >>>>>> ANNEX C (cut-sheet v2): the forward–backward counting algorithm — block commented out below, pointer left in text <<<<<<
+\textit{(The forward–backward counting algorithm --- the full working is set out in Annexe C.)}
+
+% \subsection*{Forward-backward algorithm: Counting the innumerate}
+%  
+% Eleanor turns the page for there is more.
+%  
+% ``Now I'll tell you the trick that lets us \emph{compute} with all
+% this. Because the obvious problem is this: there are forty-eight
+% thousand paths on the chessboard, but if you took a twenty-by-twenty
+% board there would be, let me think, about ten to the fourteen paths.
+% You can't enumerate them. There is no computer fast enough. And yet
+% we want to compute averages over them. We want to know which cells
+% the king visits most often, which edges he uses, what his expected
+% length is. How do you take an average over a hundred trillion things
+% without listing them?''
+%  
+% ``You don't.''
+%  
+% ``You don't list them. You factorise.''
+%  
+% She drew two arrows on the chessboard, one going from a1 outward
+% and one coming inward from h8.
+%  
+% ``Here is the trick. Suppose I want to know how often the king
+% visits some middle cell, say e4. Any path that passes through e4
+% splits into two halves: the bit from a1 to e4, and the bit from e4
+% to h8. The two halves are \emph{independent}. Once the king is at
+% e4, he doesn't care how he got there. So the weight of all paths
+% through e4 is''
+% \[
+% \big(\text{weight of paths } a1 \to e4 \big)
+% \,\times\,
+% \big(\text{weight of paths } e4 \to h8 \big),
+% \]
+% ``a \emph{product}. Not a sum over a hundred trillion things. A
+% product of two numbers, each computed by a sixty-four-cell
+% recurrence. The first number we call $F$ for \emph{forward}. The
+% second we call $B$ for \emph{backward}. $F$ is the king's
+% accumulated arrival-weight; $B$ is his accumulated departure-weight.
+% We fill out $F$ by sweeping the chessboard from corner to corner
+% once. We fill out $B$ by sweeping the chessboard the other way
+% once. And then for any cell on the board, the visit probability is
+% just $F$ times $B$ divided by $Z$.''
+%   
+% ``$F$ at the destination corner. Or, equivalently, $B$ at the origin corner. They have to agree, because both compute the same total. And the whole calculation costs us, let me count, two passes over a sixty-four cell board, so about a hundred and twenty-eight
+% operations. Instead of a hundred trillion.''
+%  
+% Mo looked suitably stunned commensurate to having actually grasping that something enormous had just be regaled to him.
+%  
+% ``It's called the forward-backward algorithm,'' Eleanor said quietly. ``Or the sum-product algorithm. Or belief
+% propagation, or backpropagation, or the Baum--Welch algorithm. Every field that discovered it gave it a different name because each field thought it had invented it. Hidden Markov models in speech recognition. Belief propagation in artificial intelligence. The
+% backpropagation that trains the neural networks running on your phone. Probabilistic context-free grammars in computational linguistics. The transfer matrix method in statistical mechanics. The Feynman path integral in quantum field theory. \emph{All of these}, Mo, \emph{all of these}, are the same algorithm. The same algorithm we just derived on a chessboard.''
+%  
+% ``That can't be true.''
+%  
+% ``It is true. What you should take away tonight Mo is the \emph{shape} of all this. A lattice. A recurrence. A weight that multiplies along paths. A forward sum and a backward sum. The product gives you the probability of every intermediate state, and the algorithm runs in time proportional to the size of the lattice, not the number of paths. That is the whole story of computational physics and modern machine learning, and you can write it on the back of a chessboard.''
+%  
+% Mo was silent for a long time, then ``Auntie Eleanor,'' he said at last. ``Is \emph{all} of physics like this?''
+%  
+% ``More of it than the physicists like to admit.''
+%  
+% >>>>>> end of annexed block <<<<<<
+\subsection*{What Eleanor Knew and Did Not Say}
+ 
+There were things Eleanor did not tell Mo. She did not tell him that the \emph{negative-temperature} limit of
+the lattice, the regime in which the king is \emph{rewarded} for
+taking the longest possible path, corresponds, in physics, to the
+population-inverted states inside a laser, and that this connection
+was discovered by Norman Ramsey in 1956 and earned a Nobel Prize
+forty years later. She did not tell him that the \emph{expected
+length excess} of a random king-path over the geodesic, the
+quantity she had once spent a fortnight computing and which sits at
+exactly $1 - 1/\sqrt{2}$, is the same mathematical creature as the
+\emph{entropic correction} to free energy in a thermodynamic system
+at finite temperature, and that if you understood the king's
+lattice you understood, in microcosm, why ice melts.
+ 
+She did not tell him that the \emph{Delannoy diagonals}, the $(1, -1)$ directions in the lattice she had drawn, carry inside them the \emph{balancing problem}, which is a Diophantine question of the kind that ends up being the same question as \emph{which elliptic curves have integer points}, which is the same question as
+\emph{which lattices in $\mathbb{R}^n$ have many unit-distance pairs}, which is the question OpenAI's mathematical agent solved in May 2026 by an extraordinary feat of class field theory. She did
+not tell him that the king's chessboard is the smallest non-trivial example of a problem that runs straight from Year 9 combinatorics to the frontier of \href{https://leelemacjames.github.io/3d_dellanoy.pdf}{arithmetic geometry}.
+ 
+She did not tell him that the \emph{Eisenstein lattice}, with its
+six neighbours instead of four, does not require a Delannoy
+correction at all, because its six basis directions already include
+every geodesic the lattice metric admits, and that this is the same
+reason hexagonal packing is the densest possible packing of circles
+in the plane, and that this fact, proved by Thue in 1910, is the
+simplest example of an entire mathematical industry called
+\emph{sphere packing} whose hardest results were not proved until
+2016 by Maryna Viazovska, in dimensions eight and twenty-four,
+using modular forms of the kind that also appear, by no coincidence
+whatsoever, in string theory.
+ 
+in fairness she did not tell him these things, because Mo is just eleven. But she did made a mental note of the things he might be ready to hear next year, as she
+put the chessboard back in the cupboard and the Rubik's Cube back on the bookshelf paeched enough as she was, for a tea.
+  
+\subsection*{Epilogue: The Threads to an untethering}
+ 
+The mathematics Eleanor had began to unwind was the beginning of three
+different stories.
+ 
+The first story, hosted at \url{https://leelemacjames.github.io/feynman_delannoy.html} is a chessboard on a screen, with a slider for the inverse temperature $\beta$, on which you can move the dial between hot and cold and watch the king's visit probabilities reorganise from a diffuse cloud to a sharp diagonal ridge, and it
+is the closest a child can get to playing with a path integral on a Sunday afternoon.
+
+% The forward-backward algorithm runs in the
+% background, in the browser, recomputing the entire visit map every
+% time the slider moves.
+ 
+The second story  hosted at
+\url{https://leelemacjames.github.io/Dellanoy_Intro.pdf} is the paper,
+\emph{The King's Diagonal: Counting Lattice Paths Across the
+Chessboard} which derives the closed binomial
+formula, computes the silver-mean asymptotic, and works the chessboard answer of $48{,}639$ by hand. This is developed in 3d within 
+\url{https://leelemacjames.github.io/3d_dellanoy.pdf}
+ 
+The third story in 
+
+\noindent
+\url{https://leelemacjames.github.io/feynman_delannoy.html}
+proves the forward-backward identity in its general form and traces it through hidden Markov models, belief propagation, Feynman's composition law, and the backpropagation that trains modern neural networks.
+
+These were the ideas Eleanor were looking to develop, even as she was deciding what \emph{not} to tell Mo.
+ 
+\newpage
+%%%%%

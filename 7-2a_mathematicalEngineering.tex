@@ -1,0 +1,507 @@
+% Split from 7-2EleanorTizianna.tex by cut-sheet v2/v3 — content below is the source scene, header adjusted
+\chapter{Mathematical Engineering}
+
+\lettrine{T}{iziana} de Matteo, an Italian econophysicist from King’s College London, was no stranger to confronting chaos head on. 
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{Illustrations/vign-tizanna2.png}
+\caption{Tiziana in full flight}
+\end{figure}
+
+Whether navigating the turbulent waters of financial markets or finding hidden patterns in the noise of complex systems built by humans, she had a gift for extracting more clarity than providing.
+
+ On a bright afternoon, Tiziana is sat at her desk, engrossed in a spirited phone call with Eleanor.
+
+“Eleanor,” Tiziana began, her voice animated, “if we treat markets like stochastic systems, why not the number line? Primes are just as unpredictable as traders in a market: chaotic individually, but statistically regular when viewed as a collective.”
+
+Tiziana continued, "Imagine primes as part of a 'prime fluid,' where their gaps and distribution behave like the fluctuations in a turbulent flow. Instead of treating them purely deterministically, we could complement classical number theory with stochastic methods. After all, isn’t the interplay between structure and randomness what makes primes so fascinating?"
+
+Eleanor mulled with sceptical listening noises. "So you’re saying we need to embrace the noise of the primes, not just their symmetries. Like how physicists use both deterministic and stochastic models to study the same phenomenon?"
+
+Across the line, Eleanor smiled. “That’s exactly the analogy I’ve been mulling over. The stochastic viewpoint is a way to embrace the ‘noise’ of primes rather than fight it.  
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{Illustrations/vign-models.png}
+\caption{Models as mere Cartoon of Reality}
+\end{figure}
+
+Eleanor began sharing her philosophy: "no matter how well founded the theorems that reveal congruences of their modular arithmetic, or deep symmetries of the primes, these are ultimately just mathematical models: beautiful, but no less idealized than the standard model of particle physics. They are mere cartoons of reality. "Indeed!", she glibbed "Physics is just the pursuit of a description of an independent truth using increasingly less half-baked models, and maybe mathemaatics is no different".
+
+Eleanor gesturing as though tracing a fluid flow. "Take the Navier-Stokes equations, the cornerstone of fluid dynamics, but still just approximations, especially when you introduce turbulence. No matter how sophisticated our models, they’re abstractions of the chaotic reality of particle systems."
+
+Tizianna explained how she envisioned borrowing tools from the financial world to study the primes. "Take stochastic p-d-es, like those of Black-Scholes in finance. Bachelier's heat model in markets could be deployed in number theory. Primes have this unpredictable nature individually but are statistical predictably in the long run."
+
+% \begin{figure}[H]
+% \includegraphics[width=0.6\linewidth]{Illustrations/vign-tiziannaPostDoc.png}
+% % \caption{Financially Engineering Primes}
+% \end{figure}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+    \vspace{-15pt} % Adjust spacing as needed
+    \centering
+    \includegraphics[width=\linewidth]{Illustrations/vign-tiziannaPostDoc.png}
+    % \caption{Demi sensing a circling python.}
+    \vspace{-10pt} % Adjust spacing as needed
+\end{wrapfigure}
+
+\noindent Tiziana’s eyes lit up. "I have a post-doc working on that right now. In finance, we use stochastic partial differential equations to model the dynamics of prices. Why not apply non deterministic methods to the gaps between primes? Like Reynolds numbers for fluid dynamics, we could find dimensionless quantities that capture the essence of prime behavior. The density of primes thinning logarithmically could have parallels in market volatility.”
+
+\newpage
+\lettrine{W}{avelet} analysis, Tiziana continued, gathering together some code Chris had recently put together, "is a powerful tool, Eleanor, for uncovering the hidden rhythms of prime numbers. See it will let us explore how patterns and periodicities evolve across different scales, almost like listening to both the symphony and the fine notes of a piece of music."
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Illustrations/wavelet-analysis4n+1106.png}
+        %\caption{Caption for Figure 1}
+        \label{fig:wavelet1}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Illustrations/wavelet-analysis4n+3106.png}
+        %\caption{Caption for Figure 2}
+        \label{fig:wavelet3}
+    \end{subfigure}
+    \caption{\href{https://colab.research.google.com/drive/102qn_AFyFT4H40UIlAFYDZXutmGxPTM4?usp=sharing}{Wavelet} analysis of regular prime gaps}
+    \label{fig:wavelets}
+\end{figure}
+Eleanor nodded, intrigued. "So, how does it work with primes?"
+
+"Let me explain," Tiziana said, gesturing to the chart just popping up on the shared screen. "Wavelet analysis charts reveal behaviors over two dimensions: scale—think of it as frequency—and position in the sequence. At large scales, which you’ll see near the bottom of the chart, bright yellow regions emerge. These areas signify strong periodicities in the gaps between primes, showing that, over broader ranges, there’s a surprising degree of order."
+
+"And at smaller scales?" Eleanor asked, already anticipating the contrast.
+
+"Ah, that’s where things get more chaotic," Tiziana said with a grin. "Near the top of the chart, you’ll notice darker, noisier regions. These reflect higher-frequency variability—more erratic behavior in the smaller gaps between primes. The structure dissolves, giving way to the inherent randomness of prime distributions."
+
+Eleanor raised an eyebrow. "And does this behavior hold for different classes of primes?"
+
+"Absolutely," Tiziana replied. "Both $4n+1$ and $4n+3$ primes show periodic patterns at large scales, suggesting a shared underlying structure. But as we shift to smaller scales, their behavior diverges slightly, with variability increasing. It's like seeing order give way to complexity as you zoom in."
+
+She paused for a moment and added, "What fascinates me is this interplay—regularity at one level, chaos at another. Wavelet analysis captures that duality beautifully, and it opens up so many questions about the nature of primes."
+
+Eleanor smiled, clearly engrossed. "This is incredible, Tiziana. It feels like you're peeling back layers of the number line, revealing both its symmetry and its wild unpredictability."
+
+"Exactly!" Tiziana said. "It’s like prime numbers are whispering their secrets—if we know how to listen."
+
+Tiziana’s gaze shifted to the streets outside. “And just like markets, primes show this interplay between order and chaos. We need to look at them not just as numbers, but as players in a stochastic symphony using spectral analysis.”
+
+"So you see, Eleanor," Tiziana emboldened continued uninvited, "a \textit{Butterworth high-pass filter} is like a sieve for data. It removes the low-frequency trends, those slow, overarching patterns, and isolates the high-frequency variations—the intricate, rapid changes that are often more telling."
+
+Eleanor nodded, her curiosity piqued as Tiziana continued, her hands gesturing animatedly.
+
+"Once we’ve filtered the data," she said, "we use the Fast Fourier Transform, or FFT, to decompose what’s left into its constituent frequencies. It’s like breaking down a musical chord into its individual notes, identifying the underlying tones that make up the sound."
+
+"And what does that tell us?" Eleanor asked, leaning in.
+
+Tiziana smiled. "The resulting spectrum reveals the magnitude of variations across frequencies. Essentially, it highlights the periodicity and structure hidden in the gaps—be it in prime numbers, financial markets, or even biological rhythms. It's a way to see the hidden harmonies or the chaotic dissonance that might otherwise go unnoticed."
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{Illustrations/highFrequency.png}
+\caption{High Frequency Analysis of prime first and second differences}
+\end{figure}
+
+Eleanor's eyes lit up. "So, we could apply this to prime gaps?"
+
+"Exactly," Tiziana said with a grin. "The FFT and the Butterworth filter together are a powerful lens for uncovering patterns, even in something as seemingly random as the distribution of primes. Who knows what mysteries we might find lurking there?"
+
+% Tiziana leaned in, pointing to the graph. "This Discrete Fourier Transform (DFT) shows the frequency components of prime gaps. Both regular and irregular primes exhibit dense, noisy spectra, but their distributions reveal subtle differences. For instance, irregular primes show smoother trends in some regions, while regulars are more dominated by high-frequency components." She continued, "When we examine second-order differences—the 'gap-gaps'—the noise level rises."
+
+With a smile, she added, "These spectra feel like a code, Eleanor. The challenge is figuring out how to decipher it."
+
+
+% "Exactly. Think of the Prime Number Theorem—it’s like the mean field theory of primes, showing how their density thins logarithmically. But what if we could refine it using stochastic models to capture the noise around that average density? Perhaps even SPDEs could reveal new dynamics in prime gaps."
+
+% Tiziana smiled, clearly impressed. "This reminds me of our work in econophysics. We often find that stochastic models, inspired by physics, can uncover hidden structures in markets. Maybe the primes are no different—a kind of 'prime market' with its own dynamics and noise."
+
+% Tiziana nodded, her espresso untouched as she listened intently. "You’re saying the number line, with all its deep structure, is akin to those systems—beautifully chaotic yet statistically coherent?"
+
+% "Exactly," Eleanor replied. "The number line is like a fluid with stochastic properties, where primes are the eddies—chaotic in their individual positions but revealing patterns when viewed in aggregate."
+
+% "Precisely," Eleanor said. "The primes are not just numbers—they’re the whispers of a stochastic symphony, chaotic and unpredictable individually, yet harmonious in their collective patterns."
+
+% By the end of their conversation, Tiziana and Eleanor had outlined a vision for a new field: stochastic number theory. Eleanor imagined applying stochastic methods to study prime gaps, build models for their distribution, and even explore connections to SPDEs. Tiziana, drawing on her expertise in econophysics, saw parallels with financial markets and offered insights into how such models could be developed.
+
+% Eleanor concluded with a smile. "The number line may be the oldest structure we know, but it’s also the most mysterious. By blending stochastic tools with traditional number theory, we might just uncover new symmetries hidden in the noise."
+
+% \begin{quote}
+% \textit{"The primes are not merely numbers but a stochastic symphony—chaotic, unpredictable, yet harmonious in their aggregate. To understand them, we must listen not only to their deterministic melody but also to the noise of their dance."}
+% \end{quote}
+
+\newpage
+\lettrine{E}{leanor} leaned forward, sensing Tiziana was bluffing in using these prime classifications. “Tiziana,” she began, “just to be sure let me briefly explain the difference between the families of primes we've been looking at.”
+
+\subsection*{\( 4n+1 \): Primes Representable as the Sum of Two Squares}
+“These primes,” Eleanor continued, “are special because they can be written as the sum of two squares. For example:
+\[
+5 = 2^2 + 1^2, \quad 13 = 3^2 + 2^2, \quad \text{and so on.}
+\]
+This property arises from their connection to Fermat’s theorem on sums of two squares, which states that a prime can be expressed this way if and only if it’s of the form \( 4n+1 \). These primes are linked to deep results in number theory and even play a role in complex numbers, as they appear in factorizations over the Gaussian integers.”
+
+\subsection*{\( 4n+3 \): Primes Linked to Gaussian Primes}
+“Now, \( 4n+3 \) primes,” Eleanor continued, “are a bit different. These primes cannot be expressed as the sum of two squares. However, they have a fascinating relationship with Gaussian primes—complex numbers of the form \( a + bi \) where both \( a \) and \( b \) are integers. For \( 4n+3 \) primes, they remain irreducible in the Gaussian integers, meaning they don’t factor further into simpler Gaussian primes. This property makes them critical in studying the arithmetic of complex numbers.”
+
+Eleanor paused, smiling. “So, while both families of primes are infinite and central to number theory, their properties and connections to higher-dimensional arithmetic set them apart in beautiful ways.”
+\newpage
+
+\lettrine{E}{leanor} adjusted her glasses, “Let me explain the concept of regular and irregular primes, as classified by Ernst Kummer in his pioneering work on Fermat’s Last Theorem,” she began.
+
+\subsection*{Regular Primes: Tied to Bernoulli Numbers}
+“Regular primes,” Eleanor explained, “are those that exhibit a specific type of ‘behavior’ with respect to Bernoulli numbers. Specifically, a prime is regular if it does not divide the numerator of any even-indexed Bernoulli number \( B_{2k} \). For example, the primes \( 2, 3, 5, 7 \) are regular because they avoid this divisibility. These primes are associated with smooth, predictable properties in number theory and are, in a sense, less problematic for certain proofs, such as Kummer’s criterion for Fermat’s Last Theorem.”
+
+\subsection*{
+}
+“Irregular primes,” she continued, “are those that do divide the numerators of certain \( B_{2k} \). For instance, \( 37 \) and \( 59 \) are irregular primes. Their behavior is less predictable, and they appear as exceptions to the rules governing the regular primes. Irregular primes are linked to deep, unresolved questions in algebraic number theory, especially in connection with class groups and cyclotomic fields.”
+
+Eleanor smiled. “The distinction is fundamental to understanding higher algebra and number theory. While regular primes align with orderly arithmetic, irregular primes signal the presence of rich, intricate structures that are still not fully understood. It’s a reminder that even in the seemingly simple world of integers, surprises abound.”
+
+\newpage
+
+\section*{A Fickle Diffusive Chat}
+
+\lettrine{T}iziana sits at the corner of a dimly lit Irish bar in Camden, London nursing a glass of something indiscernible after a long day of administrative tactical meetings. Across the bar, Ben, a computational chemical engineer, animatedly gestured while explaining the challenges of managing his startup, a spin-off from Imperial College, while still have to pay the bills with bar work. 
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{Illustrations/vign-benPub.png}
+\caption{Ben by night an ethanol diffuser by day chemically enthused }
+\end{figure}
+
+“I can’t help but notice,” Ban said, “that your work in econophysics is really about the flow of money and risk. It’s like a form of diffusion.”
+
+Tiziana smiled. “That’s the Bachelier price diffusion way to put it. I was having a discussion with a number theorist recently  and now you say it, maybe diffusion can apply there too?”
+
+Ben leaned forward, intrigued. “It’s a bit unconventional, but yes, you could think of primes diffusing through the medium of composites along the number line. Fick’s Law of Diffusion could provide an analogy.”
+
+\subsection*{Fick’s Law and Primes}
+
+Ben grabbed a napkin and began sketching. “Fick’s first law states:
+\[
+J(x) = -D \frac{dC}{dx}.
+\]
+where:
+\begin{itemize}
+    \item \(J\) is the diffusion flux, or the rate of flow per unit area.
+    \item \(D\) is the diffusion coefficient, reflecting how easily the property spreads.
+    \item \(\frac{dC}{dx}\) is the concentration gradient.”
+\end{itemize}
+
+“Now,” he continued, “imagine prime numbers as a kind of concentration, \(C(x)\), along the number line. The prime number theorem tells us that the density of primes near a large number \(x\) is approximately:
+\[
+C(x) \sim \frac{1}{\ln(x)}.
+\]
+Differentiating this gives the gradient:
+\[
+\frac{dC}{dx} \sim -\frac{1}{x (\ln(x))^2}.
+\]”
+
+Tiziana nodded, scribbling notes on her phone. “So, I am wondering what we would mean by the flux of primes, \(J(x)\) or the diffusion coefficient \(D\)?”
+
+Ben paused. “I guess at a push \(D(x)\) could represent the irregularities in prime distribution—how primes cluster or form gaps. Locally, \(D(x)\) might reflect phenomena like twin primes or sequences of composites. Globally, it could relate to asymptotic trends from the prime number theorem or corrections from the Riemann Hypothesis.”
+
+Tiziana grinned. “So you’re saying the flux \(J(x)\) could capture how primes ‘diffuse’ into the gaps, and \(D(x)\) encodes the structural quirks of prime density?”
+
+“Exactly,” Ben replied. “It’s not a perfect analogy, but it’s a fresh perspective. You could even extend this to analyze gaps between primes numerically. For example:
+\[
+C(x) = \frac{\pi(x+\Delta x) - \pi(x)}{\Delta x},
+\]
+where \(\pi(x)\) is the prime-counting function. Compute \(\frac{dC}{dx}\) numerically over different ranges of \(x\), and study how \(D(x)\) varies.”
+
+% \section*{Dynamic Diffusion}
+
+Tiziana leaned knowingly, dran in by the Ben’s explanation
+
+. "But surely Fick’s law as a constitutive law, so while insightful, isn’t enough to capture the dynamics of prime distributions?"
+
+Ben nodded, stirring his drink thoughtfully. "Exactly. A static model like Fick’s first law assumes that the diffusion coefficient \(D\) is constant or only depends on local properties like density. But primes are anything but constant—they’re inherently irregular. To predict their ‘flux’ along the number line, we need a dynamic model where \(D(x)\) evolves with the system."
+
+Ben pulled out his notebook and scribbled down an equation. "Here’s how we can compute a dynamic \(D(x)\):
+\[
+D(x) = \frac{\text{mean gap in training interval at } x}{\text{maximum mean gap in training intervals}}.
+\]
+This way, \(D(x)\) reflects local variations in prime gaps and adjusts based on historical data."
+
+Tiziana tapped her chin. "But wouldn’t that just give us a static adaptation? How do we make it dynamic?"
+
+"Good question," Ben replied. "We introduce a second-order time-dependent term. Think of it as adding a ‘memory’ to the model, so it adapts based on recent changes:
+\[
+\frac{\partial C}{\partial t} = D(x, t) \frac{\partial^2 C}{\partial x^2} + \beta \frac{\partial D}{\partial t},
+\]
+where \(C(x, t)\) is the density of primes, and \(\beta\) is a weighting parameter that scales the dynamic contribution of \(D(x, t)\)."
+
+\subsection*{Boundary Conditions: Neumann Constraints}
+
+"To ensure our model behaves physically," Ben continued, "we impose Neumann boundary conditions. For example:
+\[
+\frac{\partial C}{\partial x} \bigg|_{x=0} = 0, \quad \frac{\partial C}{\partial x} \bigg|_{x=L} = 0,
+\]
+where \(L\) is the length of the number line segment. This ensures no ‘prime flux’ escapes the system."
+
+Tiziana raised an eyebrow. "So, we’re effectively modeling a closed system with no external influences. Interesting."
+
+"Now, to align the model predictions with observed data, we scale the predicted flux \(J_\text{predicted}\) to match the actual flux \(J_\text{actual}\):
+\[
+\text{scaling\_factor} = \frac{\text{mean}(|J_\text{actual}|)}{\text{mean}(|J_\text{predicted}|)}.
+\]
+This gives us:
+\[
+J_\text{scaled} = J_\text{predicted} \cdot \text{scaling\_factor}.
+\]"
+Tiziana nodded, scribbling notes. "So, the scaling factor acts like a calibration tool, ensuring the predicted flux is in line with reality." Ben continued, "To solve this, we just discretize the equation using finite differences:
+\[
+C^{t+1}_i = C^t_i + \frac{D_i \Delta t}{\Delta x^2} \left( C^t_{i+1} - 2C^t_i + C^t_{i-1} \right),
+\]
+where:
+\begin{itemize}
+    \item \( \Delta t \): Time step size, \quad, \( \Delta x \): Spatial step size,
+    \item \( i \): Spatial index, \( t \): Time index.
+\end{itemize}
+Initial conditions, \(C(x, 0)\), are derived from the prime gaps in the training data, with minor perturbations added for realism."
+
+Tiziana leaned back, impressed. "So, this would be a dynamic system that adapts as it learns."
+
+"Exactly," Ben said, his eyes gleaming. "The predictions for prime density and flux are continuously updated. And the scaling ensures the model captures both local and global trends. Mathematics is versatile. Whether it’s primes or Tesla stock prices, the tools are often the same."
+
+
+\section*{Primal Dynamic Fick}
+
+\lettrine{E}{leanor} stepped into Tiziana’s sleek, modern office in the heart of London. The towering windows offered a sprawling view of the bustling city, but Eleanor’s eyes were drawn to Tiziana’s desk, where a familiar plot was displayed on the monitor.
+
+Tiziana turned from her screen, her excitement evident. “Eleanor! Just in time. I’ve been itching to share this with you. It’s model, \href{https://colab.research.google.com/drive/194d9ivQPFXiWMbE9Bz1sHXyh6B6ee478?usp=sharing}{dynamicalFick.ipynb}  we discussed—a dynamical take on Fick’s Law applied to prime densities.”
+
+Eleanor raised an eyebrow and sat opposite Tiziana. “Let me guess, this is where primes meet physics?”
+
+“Exactly!” Tiziana gestured to the chart. “Here, let me walk you through it.”
+
+1. \textbf{Training Prime Density}  
+   Tiziana pointed to the first subplot, its oscillating red curve immediately grabbing Eleanor's attention.  “This is the prime density calculated for the training range—numbers between 2 and 5000. You can see how the density thins out as we move further along the number line, consistent with the Prime Number Theorem. But the interesting part is how we normalize the diffusion coefficient to capture these variations.”
+
+2. \textbf{Predicted Density in the Prediction Range}  
+   “Now look at this,” she said, pointing to the second subplot in orange. “The predicted density of primes for the range 5000 to 10000. We used the training density to initialize it, then let it evolve dynamically using the diffusion equation.”
+
+   Eleanor leaned in. “It doesn’t flatten as much as I expected. The perturbations keep it alive?”
+
+   “Precisely! We added minor random noise to the initialization, preventing the solution from becoming static too quickly.”
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Illustrations/fickLawDensity-dynamism.png}
+\caption{A Fick Model of Prime Flux}
+\label{fig:fick_model}
+\end{figure}
+
+3. \textbf{Predicted Flux}  
+   “Here’s where things get fascinating,” Tiziana continued, motioning to the third subplot in green. “This is the flux of primes, or how the density changes along the number line. The diffusion coefficient we used adjusts dynamically based on local prime gaps, so the model captures both global and local behaviors.”
+
+4. \textbf{Actual Flux from the Prediction Range}  
+   She shifted to the fourth subplot in purple.  
+   “This is the actual flux calculated directly from the prediction range. See the oscillations? These are the real fluctuations in prime density.”
+
+   Eleanor tilted her head. “And I see that the predicted flux, while capturing some patterns, doesn’t quite line up with the actual flux.”
+
+5. \textbf{Comparison of Predicted and Actual Flux}  
+   Tiziana nodded as they reached the final subplot, where the green and purple curves were overlaid.  
+   “Exactly. This is the heart of the challenge. While the model does reasonably well in capturing trends, it struggles to perfectly align with the true flux. This discrepancy arises because the model is inherently static—Fick’s Law assumes a steady-state diffusion process. But primes? They’re anything but steady.”
+
+Eleanor leaned back, her fingers steepled. “Tiziana, this is interesting work, but it highlights a deeper issue. Fick’s Law is great for smooth, continuous systems, but primes? They’re discrete, chaotic, and riddled with hidden patterns. To fully capture their behavior, don’t you think we need a second-order dynamic model?”
+
+Tiziana nodded. “Exactly where my thoughts have been heading. A purely static approach like this only scratches the surface. We need something that evolves in tandem with the number line—a dynamical system where the flux isn’t just driven by the density gradient but also adapts based on higher-order corrections, like local clustering or gaps.”
+
+“Perhaps with Neumann boundary conditions?” Eleanor suggested. “After all, the edges play a huge role in how these systems evolve.”
+
+“Neumann, yes,” Tiziana agreed. “And maybe we introduce an exponential weighting to give recent data more influence over the predictions. Something recursive, where the model learns as it moves forward.”
+
+Eleanor smiled. “Primes, as elusive as they are, might just bend to the laws of physics yet.”
+
+\begin{figure}[H]
+\includegraphics[width=1.0\linewidth]{Illustrations/vign-eleanorChemE.png}
+\caption{Eleanor putting Fick into action}
+\end{figure}
+\newpage
+\section*{Principal Components of Bonds \& Galaxies}
+
+\lettrine{J}{ohn} Leary swirled his drink, gaze lingering on the empty graph Tizianna had sketched on the napkin between them. The candlelight flickered against the polished wood of the small table in the bar’s corner.
+
+\smallskip
+
+\textit{John:} \textit{“So, let me get this straight. You’re saying bond yield movements—how different maturities shift over time—can be broken down into fundamental modes? Like eigenvectors of sorts?”}
+
+\smallskip
+
+
+\textit{Tizianna:} \textit{“Exactly. The \href{https://drive.google.com/drive/folders/1dCwpquk61sUNRt4IuU_L8M_gUsJO-UAL?usp=drive_link}{yield curve}—the plot of \href{https://www.bankofengland.co.uk}{interest rates across different maturities}—moves in a structured way. It’s not just noise. The dominant shifts can be extracted using Principal Component Analysis, or PCA.”} She tapped her pen against the napkin. \textit{“Think of it this way: instead of tracking hundreds of individual fluctuations, we can decompose the changes into three principal modes: level, slope, and curvature.”}
+
+% \textit{"Alright, Tizianna. I get PCA in finance—yield curves are decomposed into a handful of principal components: a global shift, a tilt, a curvature change. It’s all about reducing complexity. But what exactly are we looking at here?"} John leans in, tracing a curve on the screen.
+
+\smallskip
+
+\textit{John:} \textit{“And these modes explain most of the variance?”}
+
+\smallskip
+
+\textit{Tizianna:} \textit{“Yes. The first component, the ‘level shift,’ affects all maturities equally—it’s like the whole yield curve moving up or down. The second, the ‘slope shift,’ tilts the curve, meaning short-term rates move differently from long-term rates. And the third, the ‘curvature,’ accounts for humps or bends—where mid-range maturities behave differently from both short and long ends.”}
+
+\begin{figure}[H]\centering
+\includegraphics[width=1.0\textwidth]{Illustrations/termsPCA.png}
+\caption{\href{https://colab.research.google.com/drive/1hWmZkWkWrb3PMQi9Xjyts2E8KKMWp8R8?usp=sharing}{BoE Bond Yield curve and their PCA.}}
+\label {PCA-terms:fig}
+\end{figure}
+
+John frowned slightly, then smirked. \textit{“You make it sound like Fourier decomposition for finance.”}
+
+\smallskip
+
+\textit{Tizianna:} \textit{“It’s exactly that in spirit—an orthogonal decomposition of correlated movements into independent factors. And here’s where it gets interesting.”} She leaned forward, eyes gleaming. \textit{“What if I told you the same structural variance ideas can be applied to galactic rotation\footnote{We use SPARC data- a database of 175 late-type galaxies (spirals and irregulars) with Spitzer photometry\href{sparkdata}{http://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt}} curves?”}
+
+% She sat back, pleased. \textit{“In both finance and astrophysics, the key is realizing that not all complexity is real complexity. Most of it is structured variation.”}
+
+\smallskip
+
+\textit{John:} \textit{“Now you have my attention.”}
+
+\smallskip
+
+\textit{"Same fundamental idea, John."} Tizianna taps the left panel. \textit{"These are \href{http://astroweb.cwru.edu/SPARC/}{sample rotation curves} from different galaxies. The x-axis is radius in kiloparsecs, the y-axis is rotational velocity in km/s. You see the variety—some flatten out quickly, some keep rising, others dip a little. But there’s structure to that variety. If you analyze enough of them, you’ll see that their variation can also be reduced to principal components. The first component is the overall mass profile, controlling the bulk of the rotation. The second is a tilt—the difference between central bulge-dominated and disk-dominated rotation curves. The third captures local deviations—bumps from spiral arms, bars, or external perturbations.”} 
+
+\begin{figure}[H]\centering
+\includegraphics[width=1.0\textwidth]{Illustrations/PCA.png}
+\caption{\href{https://colab.research.google.com/drive/1aacKH9F4WTNoZefsW-i-TdjUzKVNFuIu?usp=sharing}{Galactic Rotation Curves and their PCA.}}
+\label {PCA-rotation:fig}
+\end{figure}
+
+
+
+\smallskip
+
+\textit{"So, instead of a messy set of curves, PCA extracts the main trends in their variation, just like in bond yields?"} John muses, nodding.
+
+\smallskip
+
+\textit{"Exactly. Now, look at the right panel—this shows the principal components extracted from a dataset of rotation curves, plotted against distance bins in megaparsecs. Each PC captures a dominant mode of variation across galaxies."}
+
+\smallskip
+
+John points at the legend. \textit{"PC1, PC2, PC3. Let me guess. PC1 is the overall scale of rotation? The fact that galaxies spin at different velocities but tend to have a consistent structure?"}
+
+\smallskip
+
+\textit{"That’s right. PC1 is the dominant trend—it captures the \textit{global rotation scale} of galaxies. If you scale up or down the entire rotation curve, that’s what PC1 represents. Large, fast-rotating galaxies contribute more to this component, which is why you see a strong variation across distance bins."}
+
+\smallskip
+
+John traces PC2’s downward trend with a finger. \textit{"And PC2? Looks like a tilting effect—higher values at small distances, dropping off for distant galaxies."}
+
+\smallskip
+
+\textit{"That’s the \textit{central acceleration effect}. Some galaxies have a sharp rise in velocity near the center, others don’t. This component differentiates between galaxies that have a very steep initial climb in their rotation curve versus those that build up more gradually. In finance, this would be like differentiating between short-term and long-term interest rate movements."}
+
+\smallskip
+
+John taps at the green PC3 curve. \textit{"And this last one?"}
+
+\smallskip
+
+Tizianna smirks. \textit{"That’s \textit{outer flattening}. Some rotation curves remain high at large radii, others start declining. PC3 picks up on that variation—whether the rotation stays stable in the outskirts or falls off. It’s like the convexity of a yield curve in finance."}
+
+\smallskip
+
+John leans back, digesting. \textit{"So instead of three factors shaping bond yields, we have three fundamental factors shaping galactic rotation: scale, central steepness, and outer flattening."}
+
+\smallskip
+
+\textit{"And just like in finance, these components are \textit{not independent}. A galaxy with a very strong PC1 (high global rotation) often has a corresponding pattern in PC2 and PC3. The same way a sharp yield curve tilt often comes with an overall rate shift."}
+
+\smallskip
+
+John chuckles. \textit{"I never thought I’d see galaxies and yield curves in the same framework. But you know what? It makes sense."}
+
+% \smallskip
+
+% Tizianna swirls her coffee. \textit{"Good. Now let’s see if you can price an exoplanetary derivative with that knowledge."}
+
+% \smallskip
+
+% John raises an eyebrow. \textit{"Let’s stick to galaxies for today, shall we?"}
+
+% \smallskip
+
+% John exhaled, chuckling. \textit{“So bond traders and galaxy modelers are dealing with the same underlying problem?”}
+
+% \smallskip
+
+Tizianna smiled. \textit{“Patterns in chaos, my dear John. The universe doesn’t waste structure.”} 
+\section*{Postscript}
+Google Drive is mounted in Google Colab allows access to directory:
+\begin{lstlisting}
+from google.colab import drive
+drive.mount('/content/drive')
+\end{lstlisting}
+Datasets are loaded using Pandas:
+\begin{lstlisting}
+import pandas as pd
+metadata_file = "/content/drive/MyDrive/galaxy_distances.csv"
+df_metadata = pd.read_csv(metadata_file)
+\end{lstlisting}
+Ensuring the date column is correctly formatted:
+\begin{lstlisting}
+df_metadata["Date"] = pd.to_datetime(df_metadata["Date"])
+\end{lstlisting}
+
+For structured datasets, data is read while handling missing files:
+\begin{lstlisting}
+import os
+data_path ="/content/drive/MyDrive/bookStuff/rotation/"
+file_path = os.path.join(data_path, "example_file.dat")
+if os.path.exists(file_path):
+    df = pd.read_csv(file_path, sep="\s+", comment="#", header=None)
+\end{lstlisting}
+This ensures robustness against missing files. Web scraping for data retrieval can be handled using `requests` and `BeautifulSoup`:
+\begin{lstlisting}
+import requests
+from bs4 import BeautifulSoup
+url = "https://example.com/data"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+\end{lstlisting}
+This extracts raw data from web sources and are converted into NumPy arrays:
+\begin{lstlisting}
+import numpy as np
+aligned_curves = np.array(df.values)
+\end{lstlisting}
+
+\noindent
+Principal Component Analysis is applied after data standardization:
+\begin{lstlisting}
+from sklearn.decomposition import PCA
+pca = PCA(n_components=3)
+transformed_data = pca.fit_transform(aligned_curves)
+\end{lstlisting}
+which extracts key features from high-dimensional datasets.
+
+\subsection{Attenuating Primes*}
+
+The primes are neither entirely random nor completely deterministic. Their sparsity increases amidst the composites, creating an attenuated "signal" that disperses into structured subsets. Two distinct partitions of the prime set are:
+\begin{enumerate}
+    \item \textbf{Arithmetic Partition (Fermat and Gauss Types):} 
+    \begin{itemize}
+        \item \( 4n+1 \): Primes representable as the sum of two squares.
+        \item \( 4n+3 \): Primes linked to Gaussian Primes.
+    \end{itemize}
+    \item \textbf{Regularity Partition (Kummer Types):} 
+    \begin{itemize}
+        \item \textit{Regular Primes}: those that do not divide the numerators of even-indexed Bernoulli numbers \( B_{2k} \).
+        \item \textit{Irregular Primes}: those that do divide the numerators of certain \( B_{2k} \).
+    \end{itemize}
+\end{enumerate}
+
+\begin{longtable}{|l|p{8cm}|}
+\hline
+\textbf{Prime type} & \textbf{First 15 examples} \\ \hline
+Regulars & 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 43, 47, 53 \\ \hline
+Irregulars & 37, 59, 103, 131, 283, 593, 617, 683, 691, 1721, 3617, 8089, 9349, 43867, 362903 \\ \hline
+Regular (\( 4n+1 \)) & 5, 13, 17, 29, 41, 53, 61, 73, 89, 97, 101, 109, 113, 137, 149 \\ \hline
+Regular (\( 4n+3 \)) & 3, 7, 11, 19, 23, 31, 43, 47, 67, 71, 79, 83, 107, 127, 139 \\ \hline
+Irregular (\( 4n+1 \)) & 37, 593, 617, 1721, 3617, 8089, 9349, 2294797, 2947939 \\ \hline
+Irregular (\( 4n+3 \)) & 59, 103, 131, 283, 683, 691, 43867, 362903, 657931, 2947939 \\ \hline
+\caption{First 15 Primes in Each Subset}
+\end{longtable}
+\newpage

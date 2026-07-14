@@ -1,0 +1,172 @@
+% Split from 7-1EleanorMia.tex by cut-sheet v2/v3 — content below is the source scene, header adjusted
+\chapter{Eleanor's Writing Plea I: Christmas by Numbers}
+% \section*{Christmas by numbers}
+
+\lettrine{E}{leanor} sits by the fireplace, Harold Davenport's "Multiplicative Number Theory" \cite{davenport2000multiplicative} resting on her lap. The soft glow of Christmas lights flickered, and the faint sound of carols on the radio filled the room. At least in her head they did.
+
+\begin{figure}[H]
+\includegraphics[width=\linewidth]{Illustrations/vign-emilyMia.png}
+\caption{Mia never felt the burden of living up to her Auntie's reputation}
+\end{figure}
+
+Her niece, Mia, visiting from Switzerland, sat across the room, a notebook in her hands. Mia, brimming with pre-youthful curiosity, had been playing with mathematical puzzles since her arrival.
+
+"Aunt Eleanor," Mia began, setting down her pen, "I’ve been thinking about Gauss’s trick for summing numbers. You know, \(1 + 2 + 3 + \dots + n\). It’s so elegant! But what if we wanted to sum squares or cubes instead? Is there a similar trick?"
+
+Eleanor smiled warmly. "Bless you Mia, a true mathematician’s question! Let me see, how should we look at this?  Ah, let’s make it festive, shall we? Have you ever thought about how many presents you’d receive if you got all the gifts from ‘The 12 Days of Christmas’?"
+
+Mia cocked her little big head, intrigued. "No… but now I’m curious." 
+
+
+Eleanor, still delighting at the question, grabs a nearby notepad and marker. "Well," she begins, \textit{"imagine that each day you receive all the gifts from the previous days plus the new ones for that day. On the first day, it’s just a partridge in a pear tree. But by the second day, you’ve already received two turtle doves and another partridge. By the twelfth day, you’d have accumulated quite the pile of presents."} She wrote on the notepad, saying "This forms the sequence of triangular numbers:"
+\[
+1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78.
+\]
+ To find the total number of presents across all 12 days, you simply sum these triangular numbers," she continued, writing it explicitly:
+\[
+\text{Total presents} = 1 + 3 + 6 + 10 + 15 + 21 + 28 + 36 + 45 + 55 + 66 + 78.
+\]
+"Now Mathematicians are lazy so we have a compact way of writing this"
+\[
+\text{Total presents} = \sum_{n=1}^{12} \frac{n(n+1)}{2}.
+\]
+
+"This sum," Eleanor explains, \textit{"represents the first 12 triangular numbers, which are just the cumulative sums of \(1, 2, 3, \dots, n\). "}
+"If you calculate this," Eleanor said, "the total number of presents is .... 364, that's one for each day of the year, minus Christmas!"
+
+Mia squinted. "What's that symbol? Looks like a weird E."
+
+"Ah," Eleanor replied, "that’s the Greek letter Sigma, and it’s used in mathematics as shorthand for summation. It tells us to add up all the terms of a sequence. For example, this says, ‘Start with \(n = 1\), then go to \(n = 2\), then \(n = 3\), and so on, until \(n = 12\). For each \(n\), calculate \(\frac{n(n+1)}{2}\), and then add all those results together.’" She expanded the sum for Mia:
+\[
+\text{Total presents} = \frac{1 \cdot 2}{2} + \frac{2 \cdot 3}{2} + \frac{3 \cdot 4}{2} + \dots + \frac{12 \cdot 13}{2}.
+\]
+\"See?" Eleanor continued, "Each term here corresponds to one of the triangular numbers: \(1, 3, 6, 10, \dots, 78\). They’re called triangular because if you arranged dots in a triangle with \(n\) rows, you’d get exactly that many dots."
+
+Mia’s eyes widening "Oh, like how 6 is a triangle with three rows: one dot on top, two in the next row, and three on the bottom?"
+
+"Exactly!" Eleanor beamed. "And when we add up the first 12 triangular numbers, the total is 364—one for every day of the year, except Christmas!"
+
+Mia locked in, "Oh, I see! So triangular numbers are just sums of the first \(n\) natural numbers."
+
+Eleanor decoratively "Yes! And it all connects back to \textit{Pascal’s triangle}:
+\[
+\begin{array}{ccccccccccccccc}
+& & & & & & 1 & & & & & & & \\
+& & & & & 1 & & 1 & & & & & & \\
+& & & & 1 & & 2 & & 1 & & & & & \\
+& & & 1 & & 3 & & 3 & & 1 & & & & \\
+& & 1 & & 4 & & 6 & & 4 & & 1 & & & \\
+& 1 & & 5 & & 10 & & 10 & & 5 & & 1 & & \\
+1 & & 6 & & 15 & & 20 & & 15 & & 6 & & 1 & \\
+\end{array}
+\]
+Triangular numbers, pyramid numbers, and so on—they’re all tied to the \textit{binomial coefficients}," Eleanor strokes along the diagonal \( 1, 3, 6, 10, 15 \). "So, for instance, the triangular numbers correspond to the third diagonal, and their general formula is:
+\[
+\binom{n+1}{2} = \frac{n(n+1)}{2}.
+\]
+\textit{"These combinatorial numbers,"} Eleanor concluded, \textit{"allow us to generalize the sums of many power series. From triangles to pyramids, Pascal’s triangle encodes them all."}
+
+Mia,a little furrowed, "Wait—when you write those large brackets, do you mean multiply? 
+
+Eleanor smiling, "Good! No, those aren’t multiplication brackets. That’s a shorthand notation for \textit{binomial coefficients}. It’s also called 'n Choose r,' and it’s written as \( \binom{n}{r} \).  It tells us how many ways we can choose \( r \) items from \( n \) items, without considering the order."
+\[
+\binom{n}{r} = \frac{n!}{r!(n-r)!}.
+\]
+"Here I've used more lazy notation: if we want to multiple a sequential set of numbers say \(3\times 2\times 1\) we write it as \(3!\)."
+
+Mia embodying her pretentious role as though she were a sausage  "So, the brackets are really about counting possibilities, not multiplying numbers?"
+
+Just to be sure Eleanor then sketched Pascal’s triangle in right angle triangle column form with Binomial coefficients:
+ 
+\begin{minipage}{0.5\textwidth}
+\[
+\begin{array}{cccc}
+\binom{n-1}{0} & \binom{n+0}{1} & \binom{n+1}{2} & \binom{n+2}{3}\\
+\hline
+\binom{1-1}{0} & & & \\
+\binom{2-1}{0} & \binom{1+0}{1} & & \\
+\binom{3-1}{0} & \binom{2+0}{1} & \binom{1+1}{2} & \\
+\binom{4-1}{0} & \binom{3+0}{1} & \binom{2+1}{2} & \binom{1+2}{3} \\
+\vdots & \vdots & \vdots & \vdots \\
+\end{array}
+\]
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+\[
+\begin{array}{cccc}
+\binom{n-1}{0} & \binom{n+0}{1} & \binom{n+1}{2} & \binom{n+2}{3}\\
+\hline
+\binom{0}{0} & & & \\
+\binom{1}{0} & \binom{1}{1} & & \\
+\binom{2}{0} & \binom{2}{1} & \binom{2}{2} & \\
+\binom{3}{0} & \binom{3}{1} & \binom{3}{2} & \binom{3}{3} \\
+\vdots & \vdots & \vdots & \vdots \\
+\end{array}
+\]
+\end{minipage}
+Eleanor explained further: "The sums of the third column (triangle numbers) and the fourth column (pyramid numbers) are:
+\[
+\sum_{k=0}^{n} \binom{n+k}{2} \quad \text{(triangular)}
+\quad
+\text{and} \quad
+\sum_{k=0}^{n} \binom{n+k}{3} \quad \text{(pyramid)}.
+\]
+"Let’s focus on triangular numbers, which correspond to the third column of Pascal’s triangle. For any given \(n\), the triangular number is defined as:
+\[
+T_n = \binom{n+1}{2} = \frac{(n+1)!}{2! \cdot (n+1-2)!}= \frac{(n+1) \cdot n}{2}
+\]
+\noindent
+"To be sure, let’s compute triangular numbers for small values of \(n\) as:
+\[
+\begin{aligned}
+T_1 &= \binom{1+1}{2} = \frac{1 \cdot 2}{2} = 1, \quad
+T_2 = \binom{2+1}{2} = \frac{2 \cdot 3}{2} = 3, \\
+T_3 &= \binom{3+1}{2} = \frac{3 \cdot 4}{2} = 6, \quad
+T_4 = \binom{4+1}{2} = \frac{4 \cdot 5}{2} = 10.
+\end{aligned}
+\]
+
+"So, \(k=1\) in the cumulative sum formula refers to extracting these triangular numbers.
+
+\noindent
+Eleanor added,  "Now, let’s explore how they help us with sums of presents. Similarly, \(k=2\) would correspond to the fourth column of Pascal’s triangle, which gives pyramid numbers. We have then as our number of Christmas presents the twelfth pyramid number:" 
+\[
+\binom{n+2}{3} = \frac{(n+2)!}{3! \cdot (n+2-3)!}= \frac{(n+2)(n+1)n}{3!} .
+\]
+"So if we want the total presents for the 12 days of Christmas, it’s just the twelfth pyramid number:
+\[
+\binom{12+2}{3} = \frac{14 \cdot 13 \cdot 12}{6} = 364.
+\]
+"And if we were really greedy and wanted presents for 364 days, not including Christmas of course, we would compute the 364th pyramid number:
+\[
+\binom{364+2}{3} = \frac{366 \cdot 365 \cdot 364}{6} = 8,113,620.
+\]
+Mia, "Great I get it", now getting greedy, "But what if I wanted to sum squares or cubes?"
+
+Eleanor said, her voice filled with enthusiasm. "So we have seen that when you sum squares, you’re dealing with pyramid numbers. So instead imagine stacking squares to form a pyramid,"
+\[
+\text{Sum of squares: } \sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}.
+\]
+"And stacking cubes," she continues:
+\[
+\text{Sum of cubes: } \sum_{k=1}^{n} k^3 = \left(\frac{n(n+1)}{2}\right)^2.
+\]
+"Notice anything interesting?" Eleanor asks.
+
+Mia studied the equations and gasped. "The sum of cubes is just the square of the sum of the first \(n\) numbers!"
+
+"Exactly!" Eleanor declares delight-fully. "It’s a beautiful symmetry in mathematics. 
+
+Mia, impressionable goes full precocious "Wow, it’s like the Christmas song is a subversive math lesson! But Aunt Eleanor, how do mathematicians figure out these formulas in the first place? It feels like magic."
+
+Eleanor chuckling, "Not magic, just patterns. For quadratic sequences like triangular numbers, the general term can be expressed as:
+\[
+a_n = An^2 + Bn + C,
+\]
+where \(A\), \(B\), and \(C\) are constants. You find these constants by solving a system of equations using the first few terms of the sequence. These constants actually can be plucked from another triangle due to a guy called Worpitzky. Once you have the general term, you can derive the sum formula."
+
+She paused, eyes all of a twinkle "Of course, there’s always more to explore. Why stop at cubes? Why not think about higher powers—or even fractional powers? Mathematics is infinite, just like your curiosity."
+
+Mia grinned. "Thanks, Aunt Eleanor. This is way better than Christmas stories of six reindeer and the likes."
+
+Eleanor raising her mug (of cognac). "To maths and to the gifts it keeps giving."
